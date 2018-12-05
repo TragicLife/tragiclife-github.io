@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>深入margin | 薛鸿杰的博客</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#6C88B7">
+    
+    
+    <meta name="keywords" content="css">
+    <meta name="description" content="设置元素的外边距，允许使用负值，适用于没有设置宽高的普通block元素，既非float、absolute/fixed、inline、table-cell元素。 设置方式1234567891011// 设置一个值，相当于四个方向的外边距都为10pxmargin: 10px;// 设置两个值，相当于设置上下、左右的外边距，即上下为10px，左右为5pxmargin: 10px 5px;// 设置三个值">
+<meta name="keywords" content="css">
+<meta property="og:type" content="article">
+<meta property="og:title" content="深入margin">
+<meta property="og:url" content="https://tragiclife.github.io/2018/12/04/css/deep-into-margin/index.html">
+<meta property="og:site_name" content="薛鸿杰的博客">
+<meta property="og:description" content="设置元素的外边距，允许使用负值，适用于没有设置宽高的普通block元素，既非float、absolute/fixed、inline、table-cell元素。 设置方式1234567891011// 设置一个值，相当于四个方向的外边距都为10pxmargin: 10px;// 设置两个值，相当于设置上下、左右的外边距，即上下为10px，左右为5pxmargin: 10px 5px;// 设置三个值">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-12-05T15:14:35.578Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="深入margin">
+<meta name="twitter:description" content="设置元素的外边距，允许使用负值，适用于没有设置宽高的普通block元素，既非float、absolute/fixed、inline、table-cell元素。 设置方式1234567891011// 设置一个值，相当于四个方向的外边距都为10pxmargin: 10px;// 设置两个值，相当于设置上下、左右的外边距，即上下为10px，左右为5pxmargin: 10px 5px;// 设置三个值">
+    
+        <link rel="alternate" type="application/atom+xml" title="薛鸿杰的博客" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide">
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand2.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">薛鸿杰</h5>
+          <a href="mailto:xuehongjiej@163.com" title="xuehongjiej@163.com" class="mail">xuehongjiej@163.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/">
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives">
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags">
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/TragicLife" target="_blank">
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">深入margin</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">深入margin</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2018-12-03T22:42:01.000Z" itemprop="datePublished" class="page-time">
+  2018-12-03
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#设置方式"><span class="post-toc-number">1.</span> <span class="post-toc-text">设置方式</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#特性"><span class="post-toc-number">2.</span> <span class="post-toc-text">特性</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#如何计算"><span class="post-toc-number">3.</span> <span class="post-toc-text">如何计算</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#margin重叠"><span class="post-toc-number">4.</span> <span class="post-toc-text">margin重叠</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#重叠的三种情境"><span class="post-toc-number">5.</span> <span class="post-toc-text">重叠的三种情境</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#实现水平垂直居中"><span class="post-toc-number">6.</span> <span class="post-toc-text">实现水平垂直居中</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#负值的应用场景"><span class="post-toc-number">7.</span> <span class="post-toc-text">负值的应用场景</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#margin失效情形"><span class="post-toc-number">8.</span> <span class="post-toc-text">margin失效情形</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#新属性值"><span class="post-toc-number">9.</span> <span class="post-toc-text">新属性值</span></a></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-css/deep-into-margin" class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">深入margin</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2018-12-03 22:42:01" datetime="2018-12-03T22:42:01.000Z" itemprop="datePublished">2018-12-03</time>
+
+            
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style="display:none">
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <p>设置元素的外边距，允许使用负值，适用于没有设置宽高的普通block元素，既非float、absolute/fixed、inline、table-cell元素。</p>
+<h4 id="设置方式"><a href="#设置方式" class="headerlink" title="设置方式"></a>设置方式</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">// 设置一个值，相当于四个方向的外边距都为10px</span><br><span class="line">margin: 10px;</span><br><span class="line"></span><br><span class="line">// 设置两个值，相当于设置上下、左右的外边距，即上下为10px，左右为5px</span><br><span class="line">margin: 10px 5px;</span><br><span class="line"></span><br><span class="line">// 设置三个值，相当于设置上、左右、下的外边距，即上为10px，左右为5px，下为1px</span><br><span class="line">margin: 10px 5px 1px;</span><br><span class="line"></span><br><span class="line">// 设置四个值，相当于设置上、右、下、左的外边距，即上为10px，右为5px，下为2px，左为1px</span><br><span class="line">margin: 10px 5px 2px 1px;</span><br></pre></td></tr></table></figure>
+<h4 id="特性"><a href="#特性" class="headerlink" title="特性"></a>特性</h4><ul>
+<li>可以改变元素尺寸</li>
+<li>适用于没有设置宽高的普通block元素，既非float、absolute/fixed、inline、table-cell元素。</li>
+</ul>
+<h4 id="如何计算"><a href="#如何计算" class="headerlink" title="如何计算"></a>如何计算</h4><p>普通元素的百分比margin都是相对于容器的宽度计算的<br>绝对定位元素的百分比margin是相对于第一个定位祖先元素（relative、absolute、fixed）的宽度计算的。</p>
+<h4 id="margin重叠"><a href="#margin重叠" class="headerlink" title="margin重叠"></a>margin重叠</h4><p>margin重叠特性只对block元素(除float和absolute)起作用，只发生在垂直方向上(writing-mode设置可变为水平方向)</p>
+<h4 id="重叠的三种情境"><a href="#重叠的三种情境" class="headerlink" title="重叠的三种情境"></a>重叠的三种情境</h4><ol>
+<li>相邻的兄弟元素</li>
+<li>父级元素和第一个或最后一个子元素</li>
+<li>空的block元素正正取大值，正负值相加，负负最负值</li>
+</ol>
+<h4 id="实现水平垂直居中"><a href="#实现水平垂直居中" class="headerlink" title="实现水平垂直居中"></a>实现水平垂直居中</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">// 元素宽高固定</span><br><span class="line">position:absolute;</span><br><span class="line">top: 50%;</span><br><span class="line">left: 50%;</span><br><span class="line">margin-top: -50px;</span><br><span class="line">margin-left: -100px;</span><br><span class="line">width: 100px;</span><br><span class="line">height: 200px;</span><br></pre></td></tr></table></figure>
+<h4 id="负值的应用场景"><a href="#负值的应用场景" class="headerlink" title="负值的应用场景"></a>负值的应用场景</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">// margin负值下的两端对齐</span><br><span class="line">ul &#123;</span><br><span class="line">  margin-right:-20px;</span><br><span class="line">&#125;</span><br><span class="line">li &#123;</span><br><span class="line">  margin-right:20px;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// margin负值下的等高布局</span><br><span class="line">div &#123;</span><br><span class="line">  margin-bottom:-600px;</span><br><span class="line">  padding-bottom:600px;</span><br><span class="line">&#125;</span><br><span class="line">// margin负值下的两栏自适应布局</span><br></pre></td></tr></table></figure>
+<h4 id="margin失效情形"><a href="#margin失效情形" class="headerlink" title="margin失效情形"></a>margin失效情形</h4><ol>
+<li>inline水平元素的垂直margin无效</li>
+<li>margin重叠</li>
+<li>display:table-cell等</li>
+<li>position:absolute;当其父元素设置为relative时会生效</li>
+<li>前一个元素float以后，后一个元素的margin-left要大于前一个元素的宽度时才会生效</li>
+<li>内联特性导致无效</li>
+</ol>
+<h4 id="新属性值"><a href="#新属性值" class="headerlink" title="新属性值"></a>新属性值</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">// (一开始相当于margin-left):文档流开始的方向left</span><br><span class="line">margin-start</span><br><span class="line"></span><br><span class="line">// 相当于margin-top</span><br><span class="line">margin-before</span><br><span class="line"></span><br><span class="line">// 相当于margin-bottom</span><br><span class="line">margin-after</span><br><span class="line"></span><br><span class="line">// 重叠效果</span><br><span class="line">margin-collapse</span><br><span class="line">可选值：collapse(默认重叠) | discard(取消margin效果) | separate(不重叠)</span><br></pre></td></tr></table></figure>
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2018-12-05T15:14:35.578Z" itemprop="dateUpdated">2018-12-05 15:14:35</time>
+</span><br>
+
+
+        
+        这里可以写作者留言，标签和 hexo 中所有变量及辅助函数等均可调用，示例：<a href="/2018/12/04/css/deep-into-margin/" target="_blank" rel="external">https://tragiclife.github.io/2018/12/04/css/deep-into-margin/</a>
+        
+    </div>
+    
+    <footer>
+        <a href="https://tragiclife.github.io">
+            <img src="/img/avatar.jpg" alt="薛鸿杰">
+            薛鸿杰
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/css/">css</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://tragiclife.github.io/2018/12/04/css/deep-into-margin/&title=《深入margin》 — 薛鸿杰的博客&pic=https://tragiclife.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://tragiclife.github.io/2018/12/04/css/deep-into-margin/&title=《深入margin》 — 薛鸿杰的博客&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://tragiclife.github.io/2018/12/04/css/deep-into-margin/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《深入margin》 — 薛鸿杰的博客&url=https://tragiclife.github.io/2018/12/04/css/deep-into-margin/&via=https://tragiclife.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://tragiclife.github.io/2018/12/04/css/deep-into-margin/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2018/12/05/css/deep-into-padding/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">深入padding</h4>
+      </a>
+    </div>
+  
+
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style="display:none">
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style="display:none">
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>薛鸿杰 &copy; 2018</span>
+            <span>
+                
+                <a href="http://www.miitbeian.gov.cn/" target="_blank">粤ICP备18140620号-1</a><br>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://tragiclife.github.io/2018/12/04/css/deep-into-margin/&title=《深入margin》 — 薛鸿杰的博客&pic=https://tragiclife.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://tragiclife.github.io/2018/12/04/css/deep-into-margin/&title=《深入margin》 — 薛鸿杰的博客&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://tragiclife.github.io/2018/12/04/css/deep-into-margin/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《深入margin》 — 薛鸿杰的博客&url=https://tragiclife.github.io/2018/12/04/css/deep-into-margin/&via=https://tragiclife.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://tragiclife.github.io/2018/12/04/css/deep-into-margin/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACNElEQVR42u3aS26EMBAFwLn/pcl2pAh4zyaRsItVFjC4WHT69/nE1/F1jd1/9uzve/K31BcGBsZrGcfldXbP9eHaD5G/9/R3MDAwNmAkoTC/JzlKEpqT92JgYGCc3XPE11jwxcDAwJhhtAncdfqYB18MDAyMJIFLgmbLa4vnB2pxDAyMFzLyZtn///0n8w0MDIxXMcaCYB5e2yMOhmYMDIylGXmAyw/XJnlRgZo07DAwMJZmJEXpdbE6s0Z23W67LqGLF2NgYLyW0Y4Yk8CaJHx5QI+GExgYGJsxkqOPJZHtswUbAwNjA8bYekQREB8qg2+qcAwMjKUZ7TpFvhw21jKrgz4GBsbSjKRb1ZajMw21fFBaN90wMDBezphpkOXsBPlwYYyBgbEEo/WNtczyEjfP9G6KWAwMjIUYedHYFpbtsdok9dP+B8DAwHgtY2Y8mReWyeChDfc3qSEGBsZyjHb9a2x5az7pPH0KAwNjaUYb7PKh5lOrGMVwAgMDY2lGOyZMlsnGStM8cYxWLjAwMBZiPPVzeSDOC+MiocTAwNiG0QbTdjFiJg29GTZgYGBswMiPO79s2n6aqDGHgYGxKOMor/agY8scdaDHwMBYmtEOC9tFijq9mwjZGBgYazPGCtexkJoz8nEpBgbGPoy8HG3b/Xka2oZ+DAwMjCQtm89GZ9LKqJ2IgYGBUa5ftIsaefKKgYGxA6NtnD21qDHzgTAwMPZhjK04zAwdnypcMTAwNmD8AGRCIuBIVaAzAAAAAElFTkSuQmCC" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+</body>
+</html>

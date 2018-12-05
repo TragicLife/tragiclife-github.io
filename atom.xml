@@ -1,66 +1,90 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>Hexo</title>
+  <title>薛鸿杰的博客</title>
   <icon>https://www.gravatar.com/avatar/4f853191bd7c2a6954041f3c64c97642</icon>
   
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://tragiclife.github.io/"/>
-  <updated>2018-12-01T15:08:12.489Z</updated>
+  <updated>2018-12-05T16:32:49.533Z</updated>
   <id>https://tragiclife.github.io/</id>
   
   <author>
-    <name>Jay</name>
+    <name>薛鸿杰</name>
     <email>xuehongjiej@163.com</email>
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>hello</title>
-    <link href="https://tragiclife.github.io/2018/11/29/hello/"/>
-    <id>https://tragiclife.github.io/2018/11/29/hello/</id>
-    <published>2018-11-29T15:17:39.000Z</published>
-    <updated>2018-12-01T15:08:12.489Z</updated>
+    <title>deep-into-border</title>
+    <link href="https://tragiclife.github.io/2018/12/06/css/deep-into-border/"/>
+    <id>https://tragiclife.github.io/2018/12/06/css/deep-into-border/</id>
+    <published>2018-12-05T23:16:00.000Z</published>
+    <updated>2018-12-05T16:32:49.533Z</updated>
     
-    <content type="html"><![CDATA[<h3 id="方法一"><a href="#方法一" class="headerlink" title="方法一"></a>方法一</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">// 进入要下载文件的目录</span><br><span class="line">cd /usr/local/node</span><br><span class="line">// 下载nodejs: wget https://npm.taobao.org/mirrors/node/v10.13.0/node-v10.13.0-linux-x64.tar.gz</span><br><span class="line">// 进入目录</span><br><span class="line">cd node-v10.13.0-linux-x64/bin</span><br><span class="line">// 查看node版本</span><br><span class="line">./node -v</span><br><span class="line">// 设置软连接</span><br><span class="line">ln -s /usr/local/node/node-v10.13.0-linux-x64/bin/node /usr/local/bin/node</span><br><span class="line">ln -s /usr/local/node/node-v10.13.0-linux-x64/bin/npm /usr/local/bin/npm</span><br></pre></td></tr></table></figure><h3 id="方法二"><a href="#方法二" class="headerlink" title="方法二"></a>方法二</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">// 安装EPEL。</span><br><span class="line">yum install epel-release -y</span><br><span class="line">// 安装Node.js 和 npm。</span><br><span class="line">yum install nodejs npm --enablerepo=epel</span><br><span class="line">// 安装进程管理器以便控制Node.js应用程序，这个进程管理器可以保持应用程序一直在运行，运行以下命令进行安装。</span><br><span class="line">npm install pm2 -g</span><br><span class="line">// 安装后可以通过 node -v 和 npm -v 命令来检查 Node.js 的版本。</span><br></pre></td></tr></table></figure><h4 id="设置淘宝镜像"><a href="#设置淘宝镜像" class="headerlink" title="设置淘宝镜像"></a>设置淘宝镜像</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm config set registry https://registry.npm.taobao.org</span><br></pre></td></tr></table></figure><h3 id="使用nvm"><a href="#使用nvm" class="headerlink" title="使用nvm"></a>使用nvm</h3><p><a href="https://github.com/creationix/nvm" target="_blank" rel="noopener">官网</a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">nvm uninstall 6.11.0     // 移除 node 6.11.0</span><br><span class="line">nvm use 6.11.0           // 使用 node 6.11.0</span><br><span class="line">nvm ls                   // 查看目前已安装的 node 及当前所使用的 node</span><br><span class="line">nvm ls-remote            // 查看目前线上所能安装的所有 node 版本</span><br><span class="line">nvm alias default 6.11.0 // 使用 6.11.0 作为预设使用的 node 版本</span><br></pre></td></tr></table></figure></p>]]></content>
+    <content type="html"><![CDATA[<p>border-style为dashed时，不同浏览器下实线和空白区域的比例不同</p><p>dotted<br>形状不同</p><p>当border-color没有指定颜色时，默认使用color作为边框颜色，类似的还有box-shadow,text-shadow ，outline</p><p>让背景图固定距离右侧50px<br>border-right:50px solid transparent<br>background-position:100% 40px </p><p>投影(元素不可见时该属性也是不可见的)<br>filter:drop-shadow(20px 0 #ff8040)</p>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;h3 id=&quot;方法一&quot;&gt;&lt;a href=&quot;#方法一&quot; class=&quot;headerlink&quot; title=&quot;方法一&quot;&gt;&lt;/a&gt;方法一&lt;/h3&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;s
+        &lt;p&gt;border-style为dashed时，不同浏览器下实线和空白区域的比例不同&lt;/p&gt;
+&lt;p&gt;dotted&lt;br&gt;形状不同&lt;/p&gt;
+&lt;p&gt;当border-color没有指定颜色时，默认使用color作为边框颜色，类似的还有box-shadow,text-shadow ，ou
       
     
     </summary>
     
-      <category term="Diary" scheme="https://tragiclife.github.io/categories/Diary/"/>
     
-    
-      <category term="PS3" scheme="https://tragiclife.github.io/tags/PS3/"/>
-    
-      <category term="Games" scheme="https://tragiclife.github.io/tags/Games/"/>
+      <category term="css" scheme="https://tragiclife.github.io/tags/css/"/>
     
   </entry>
   
   <entry>
-    <title>Hello World</title>
-    <link href="https://tragiclife.github.io/2018/11/29/hello-world/"/>
-    <id>https://tragiclife.github.io/2018/11/29/hello-world/</id>
-    <published>2018-11-29T14:00:25.263Z</published>
-    <updated>2018-11-29T14:00:25.264Z</updated>
+    <title>深入padding</title>
+    <link href="https://tragiclife.github.io/2018/12/05/css/deep-into-padding/"/>
+    <id>https://tragiclife.github.io/2018/12/05/css/deep-into-padding/</id>
+    <published>2018-12-04T21:37:28.000Z</published>
+    <updated>2018-12-05T16:28:53.637Z</updated>
     
-    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>]]></content>
+    <content type="html"><![CDATA[<h4 id="padding是否生效"><a href="#padding是否生效" class="headerlink" title="padding是否生效"></a>padding是否生效</h4><h5 id="对于block水平元素"><a href="#对于block水平元素" class="headerlink" title="对于block水平元素"></a>对于block水平元素</h5><ol><li>padding值过大，一定会影响尺寸</li><li>width非auto，padding一定影响尺寸</li><li>width为auto或box-sizing为border-box，同时padding值没有过大，不影响尺寸</li></ol><h5 id="对于inline水平元素"><a href="#对于inline水平元素" class="headerlink" title="对于inline水平元素"></a>对于inline水平元素</h5><p>水平padding影响尺寸，垂直padding不影响尺寸，但是会影响背景色(占据空间)</p><h4 id="支持的属性值"><a href="#支持的属性值" class="headerlink" title="支持的属性值"></a>支持的属性值</h4><ol><li>不支持负值</li><li>百分比根据宽度计算(如果设置50%则为一个正方形)</li><li>inline元素的padding：同样相对于宽度计算，默认的宽度高度细节有差异，padding会断行</li></ol><blockquote><p>inline元素的垂直padding会让让空白节点显现，既规范中的strut，可以通过font-size:0去除</p></blockquote><p>ol/ul标签内置padding-left是以px为单位的，如果字号很小，间距就会很开；如果字号很大，就会跑到容器外面<br>input、textarea、button都有内置padding<br>在firefox下设置button的padding为0时依然有padding值，通过设置button::-moz-focus-inner{padding:0}。<br>IE7下文字越多，button的padding值越大，通过设置button{overflow:visiable;}去除。<br>可访问性隐藏：将元素设置absolute，定位到看不见的地方，或者设置z-index为-1隐藏在背景之下。<br>可通过使用label来代替button<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;button id＝&quot;btn&quot;&gt;&lt;/button&gt;</span><br><span class="line">&lt;label for＝&quot;btn&quot;&gt;&lt;/label&gt;</span><br></pre></td></tr></table></figure></p><p>通过background-clip:content-box与padding结合，实现border与内容区域之间空白的效果</p><h4 id="如何得到一个正方形"><a href="#如何得到一个正方形" class="headerlink" title="如何得到一个正方形"></a>如何得到一个正方形</h4><p><style>.square-container{width: 50px;height: 50px;}.square {width: 100%;padding-top: 100%;background-color: blue;}</style></p><p><div class="square-container"><div class="square"></div></div><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">.square-container&#123;</span><br><span class="line">  width: 50px;</span><br><span class="line">  height: 50px;</span><br><span class="line">&#125;</span><br><span class="line">.square &#123;</span><br><span class="line">  width: 100%;</span><br><span class="line">  padding-top: 100%;</span><br><span class="line">  background-color: blue;</span><br><span class="line">&#125;</span><br><span class="line">&lt;div class=&quot;square-container&quot;&gt;</span><br><span class="line">  &lt;div class=&quot;square&quot;&gt;&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure></p>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.
+        &lt;h4 id=&quot;padding是否生效&quot;&gt;&lt;a href=&quot;#padding是否生效&quot; class=&quot;headerlink&quot; title=&quot;padding是否生效&quot;&gt;&lt;/a&gt;padding是否生效&lt;/h4&gt;&lt;h5 id=&quot;对于block水平元素&quot;&gt;&lt;a href=&quot;#对于bloc
       
     
     </summary>
     
+    
+      <category term="css" scheme="https://tragiclife.github.io/tags/css/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>深入margin</title>
+    <link href="https://tragiclife.github.io/2018/12/04/css/deep-into-margin/"/>
+    <id>https://tragiclife.github.io/2018/12/04/css/deep-into-margin/</id>
+    <published>2018-12-03T22:42:01.000Z</published>
+    <updated>2018-12-05T15:14:35.578Z</updated>
+    
+    <content type="html"><![CDATA[<p>设置元素的外边距，允许使用负值，适用于没有设置宽高的普通block元素，既非float、absolute/fixed、inline、table-cell元素。</p><h4 id="设置方式"><a href="#设置方式" class="headerlink" title="设置方式"></a>设置方式</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">// 设置一个值，相当于四个方向的外边距都为10px</span><br><span class="line">margin: 10px;</span><br><span class="line"></span><br><span class="line">// 设置两个值，相当于设置上下、左右的外边距，即上下为10px，左右为5px</span><br><span class="line">margin: 10px 5px;</span><br><span class="line"></span><br><span class="line">// 设置三个值，相当于设置上、左右、下的外边距，即上为10px，左右为5px，下为1px</span><br><span class="line">margin: 10px 5px 1px;</span><br><span class="line"></span><br><span class="line">// 设置四个值，相当于设置上、右、下、左的外边距，即上为10px，右为5px，下为2px，左为1px</span><br><span class="line">margin: 10px 5px 2px 1px;</span><br></pre></td></tr></table></figure><h4 id="特性"><a href="#特性" class="headerlink" title="特性"></a>特性</h4><ul><li>可以改变元素尺寸</li><li>适用于没有设置宽高的普通block元素，既非float、absolute/fixed、inline、table-cell元素。</li></ul><h4 id="如何计算"><a href="#如何计算" class="headerlink" title="如何计算"></a>如何计算</h4><p>普通元素的百分比margin都是相对于容器的宽度计算的<br>绝对定位元素的百分比margin是相对于第一个定位祖先元素（relative、absolute、fixed）的宽度计算的。</p><h4 id="margin重叠"><a href="#margin重叠" class="headerlink" title="margin重叠"></a>margin重叠</h4><p>margin重叠特性只对block元素(除float和absolute)起作用，只发生在垂直方向上(writing-mode设置可变为水平方向)</p><h4 id="重叠的三种情境"><a href="#重叠的三种情境" class="headerlink" title="重叠的三种情境"></a>重叠的三种情境</h4><ol><li>相邻的兄弟元素</li><li>父级元素和第一个或最后一个子元素</li><li>空的block元素正正取大值，正负值相加，负负最负值</li></ol><h4 id="实现水平垂直居中"><a href="#实现水平垂直居中" class="headerlink" title="实现水平垂直居中"></a>实现水平垂直居中</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">// 元素宽高固定</span><br><span class="line">position:absolute;</span><br><span class="line">top: 50%;</span><br><span class="line">left: 50%;</span><br><span class="line">margin-top: -50px;</span><br><span class="line">margin-left: -100px;</span><br><span class="line">width: 100px;</span><br><span class="line">height: 200px;</span><br></pre></td></tr></table></figure><h4 id="负值的应用场景"><a href="#负值的应用场景" class="headerlink" title="负值的应用场景"></a>负值的应用场景</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">// margin负值下的两端对齐</span><br><span class="line">ul &#123;</span><br><span class="line">  margin-right:-20px;</span><br><span class="line">&#125;</span><br><span class="line">li &#123;</span><br><span class="line">  margin-right:20px;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// margin负值下的等高布局</span><br><span class="line">div &#123;</span><br><span class="line">  margin-bottom:-600px;</span><br><span class="line">  padding-bottom:600px;</span><br><span class="line">&#125;</span><br><span class="line">// margin负值下的两栏自适应布局</span><br></pre></td></tr></table></figure><h4 id="margin失效情形"><a href="#margin失效情形" class="headerlink" title="margin失效情形"></a>margin失效情形</h4><ol><li>inline水平元素的垂直margin无效</li><li>margin重叠</li><li>display:table-cell等</li><li>position:absolute;当其父元素设置为relative时会生效</li><li>前一个元素float以后，后一个元素的margin-left要大于前一个元素的宽度时才会生效</li><li>内联特性导致无效</li></ol><h4 id="新属性值"><a href="#新属性值" class="headerlink" title="新属性值"></a>新属性值</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">// (一开始相当于margin-left):文档流开始的方向left</span><br><span class="line">margin-start</span><br><span class="line"></span><br><span class="line">// 相当于margin-top</span><br><span class="line">margin-before</span><br><span class="line"></span><br><span class="line">// 相当于margin-bottom</span><br><span class="line">margin-after</span><br><span class="line"></span><br><span class="line">// 重叠效果</span><br><span class="line">margin-collapse</span><br><span class="line">可选值：collapse(默认重叠) | discard(取消margin效果) | separate(不重叠)</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;设置元素的外边距，允许使用负值，适用于没有设置宽高的普通block元素，既非float、absolute/fixed、inline、table-cell元素。&lt;/p&gt;
+&lt;h4 id=&quot;设置方式&quot;&gt;&lt;a href=&quot;#设置方式&quot; class=&quot;headerlink&quot; titl
+      
+    
+    </summary>
+    
+    
+      <category term="css" scheme="https://tragiclife.github.io/tags/css/"/>
     
   </entry>
   
