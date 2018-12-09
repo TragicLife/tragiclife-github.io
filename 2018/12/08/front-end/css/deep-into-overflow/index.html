@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>深入overflow | 薛鸿杰的博客</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#6C88B7">
+    
+    
+    <meta name="keywords" content="css">
+    <meta name="description" content="相关问题 overfloe-x、overflow-y(IE8+)如果overflow-x与overflow-y相同，则等同于overflow；如果两个设置不同，切其中一个设置为visible则visible会被重置为auto 表格元素无效，需要先设置table-layout:fixed overflow:auto时，chrome下能显示padding-bottom，而其他浏览器都不显示paddin">
+<meta name="keywords" content="css">
+<meta property="og:type" content="article">
+<meta property="og:title" content="深入overflow">
+<meta property="og:url" content="https://tragiclife.github.io/2018/12/08/front-end/css/deep-into-overflow/index.html">
+<meta property="og:site_name" content="薛鸿杰的博客">
+<meta property="og:description" content="相关问题 overfloe-x、overflow-y(IE8+)如果overflow-x与overflow-y相同，则等同于overflow；如果两个设置不同，切其中一个设置为visible则visible会被重置为auto 表格元素无效，需要先设置table-layout:fixed overflow:auto时，chrome下能显示padding-bottom，而其他浏览器都不显示paddin">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-12-07T17:15:17.841Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="深入overflow">
+<meta name="twitter:description" content="相关问题 overfloe-x、overflow-y(IE8+)如果overflow-x与overflow-y相同，则等同于overflow；如果两个设置不同，切其中一个设置为visible则visible会被重置为auto 表格元素无效，需要先设置table-layout:fixed overflow:auto时，chrome下能显示padding-bottom，而其他浏览器都不显示paddin">
+    
+        <link rel="alternate" type="application/atom+xml" title="薛鸿杰的博客" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide">
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand2.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">薛鸿杰</h5>
+          <a href="mailto:xuehongjiej@163.com" title="xuehongjiej@163.com" class="mail">xuehongjiej@163.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/">
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives">
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags">
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/TragicLife" target="_blank">
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">深入overflow</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">深入overflow</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2018-12-07T22:28:51.000Z" itemprop="datePublished" class="page-time">
+  2018-12-07
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#相关问题"><span class="post-toc-number">1.</span> <span class="post-toc-text">相关问题</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#作用"><span class="post-toc-number">2.</span> <span class="post-toc-text">作用</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#BFC属性"><span class="post-toc-number">3.</span> <span class="post-toc-text">BFC属性</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#文字溢出出省略号"><span class="post-toc-number">4.</span> <span class="post-toc-text">文字溢出出省略号</span></a></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-front-end/css/deep-into-overflow" class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">深入overflow</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2018-12-07 22:28:51" datetime="2018-12-07T22:28:51.000Z" itemprop="datePublished">2018-12-07</time>
+
+            
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style="display:none">
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h4 id="相关问题"><a href="#相关问题" class="headerlink" title="相关问题"></a>相关问题</h4><ol>
+<li>overfloe-x、overflow-y(IE8+)<br>如果overflow-x与overflow-y相同，则等同于overflow；如果两个设置不同，切其中一个设置为visible则visible会被重置为auto</li>
+<li>表格元素无效，需要先设置table-layout:fixed</li>
+<li>overflow:auto时，chrome下能显示padding-bottom，而其他浏览器都不显示padding-bottom</li>
+</ol>
+<p>无论什么浏览器，默认滚动条都来自html标签，而不是body标签</p>
+<p><strong>获取滚动高度</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">chrome:document.body.scrollTop</span><br><span class="line">其他浏览器:document.documentElement.scrollTop</span><br></pre></td></tr></table></figure></p>
+<p>滚动条的宽度等于外部容器减去内部元素的clientWidth</p>
+<p>出现滚动条时，修复水平居中的元素跳动问题</p>
+<ol>
+<li>设置html{overflow-y:scroll}</li>
+<li>container{padding-left:calc(100vw - 100%)}，既设置滚动条的宽度，适用于IE9+及其他浏览器</li>
+</ol>
+<p>格式化上下文<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">overflow:auto/scroll/hidden</span><br></pre></td></tr></table></figure></p>
+<h4 id="作用"><a href="#作用" class="headerlink" title="作用"></a>作用</h4><ol>
+<li>清除浮动影响overflow:hidden;_zoom:1;</li>
+<li>避免margin穿透问题</li>
+<li>两栏自适应布局</li>
+</ol>
+<h4 id="BFC属性"><a href="#BFC属性" class="headerlink" title="BFC属性"></a>BFC属性</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">// 自适应，但溢出不可见，限制了应用场景</span><br><span class="line">overflow:hidden</span><br><span class="line"></span><br><span class="line">// 包裹性+破坏性，无法自适应，块状浮动布局</span><br><span class="line">float+float</span><br><span class="line"></span><br><span class="line">position:absolute  </span><br><span class="line"></span><br><span class="line">// 包裹性，无法自适应，IE6、7不识别</span><br><span class="line">display:inline-block</span><br><span class="line"></span><br><span class="line">// 包裹性，无溢出特性，绝对宽度也能自适应</span><br><span class="line">display:table-cell</span><br></pre></td></tr></table></figure>
+<p>两栏自适应布局<br>display:table-cell;width:2000px;//IE8+ BFC特性<br><em>display:inline-block;</em>width:auto;//IE7- 伪BFC特性</p>
+<p><strong>元素的父元素没有设置position:absolute/relative/fixed时，父元素的overflow无法包裹住position:absolute的子元素</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">让overflow起作用例子：</span><br><span class="line">// 父元素设置</span><br><span class="line">overflow:hidden;</span><br><span class="line">position:relative</span><br><span class="line">// 子元素设置</span><br><span class="line">position:absolute</span><br><span class="line"></span><br><span class="line">div  overflow:hidden</span><br><span class="line">  div  display:relative</span><br><span class="line">    div  position:absolute</span><br><span class="line"></span><br><span class="line">div  overflow:hidden</span><br><span class="line">  div  transform:translate(0)</span><br></pre></td></tr></table></figure></p>
+<p><strong>overflow失效妙用</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">// 父元素</span><br><span class="line">height:0;</span><br><span class="line">overflow:hidden;</span><br><span class="line">text-align:right;</span><br><span class="line">// 子元素</span><br><span class="line">position:absolute</span><br></pre></td></tr></table></figure></p>
+<p>resize拉伸(horizontal、vertical、both)<br>元素的overflow不能是visible</p>
+<h4 id="文字溢出出省略号"><a href="#文字溢出出省略号" class="headerlink" title="文字溢出出省略号"></a>文字溢出出省略号</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">// 单行省略</span><br><span class="line">width:100px;</span><br><span class="line">white-space:nowrap;</span><br><span class="line">text-overflow:ellipisis;</span><br><span class="line">overflow:hidden;</span><br><span class="line"></span><br><span class="line">// 多行省略号</span><br><span class="line">display: -webkit-box;</span><br><span class="line">-webkit-box-orient: vertical;</span><br><span class="line">-webkit-line-clamp: 2; // 显示的行数</span><br><span class="line">overflow: hidden;</span><br><span class="line">text-overflow: ellipsis;</span><br></pre></td></tr></table></figure>
+<p>IE7下，当宽度或高度设置为100%时，会出现滚动条<br>IE7解决文字越多，padding越大问题，设置overflow:visible</p>
+<p>锚点定位<br>锚点定位的触发<br>url地址中的锚链与锚点元素<br>可focus的锚点元素处于focus态</p>
+<p>作用<br>快速定位<br>选项卡技术</p>
+<p>应用场景<br>单页应用</p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2018-12-07T17:15:17.841Z" itemprop="dateUpdated">2018-12-07 17:15:17</time>
+</span><br>
+
+
+        
+        这里可以写作者留言，标签和 hexo 中所有变量及辅助函数等均可调用，示例：<a href="/2018/12/08/front-end/css/deep-into-overflow/" target="_blank" rel="external">https://tragiclife.github.io/2018/12/08/front-end/css/deep-into-overflow/</a>
+        
+    </div>
+    
+    <footer>
+        <a href="https://tragiclife.github.io">
+            <img src="/img/avatar.jpg" alt="薛鸿杰">
+            薛鸿杰
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/css/">css</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://tragiclife.github.io/2018/12/08/front-end/css/deep-into-overflow/&title=《深入overflow》 — 薛鸿杰的博客&pic=https://tragiclife.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://tragiclife.github.io/2018/12/08/front-end/css/deep-into-overflow/&title=《深入overflow》 — 薛鸿杰的博客&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://tragiclife.github.io/2018/12/08/front-end/css/deep-into-overflow/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《深入overflow》 — 薛鸿杰的博客&url=https://tragiclife.github.io/2018/12/08/front-end/css/deep-into-overflow/&via=https://tragiclife.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://tragiclife.github.io/2018/12/08/front-end/css/deep-into-overflow/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2018/12/08/front-end/css/screen-adaptation/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">屏幕适配</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2018/12/07/front-end/css/deep-into-float/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">深入float</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style="display:none">
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style="display:none">
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>薛鸿杰 &copy; 2018</span>
+            <span>
+                
+                <a href="http://www.miitbeian.gov.cn/" target="_blank">粤ICP备18140620号-1</a><br>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://tragiclife.github.io/2018/12/08/front-end/css/deep-into-overflow/&title=《深入overflow》 — 薛鸿杰的博客&pic=https://tragiclife.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://tragiclife.github.io/2018/12/08/front-end/css/deep-into-overflow/&title=《深入overflow》 — 薛鸿杰的博客&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://tragiclife.github.io/2018/12/08/front-end/css/deep-into-overflow/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《深入overflow》 — 薛鸿杰的博客&url=https://tragiclife.github.io/2018/12/08/front-end/css/deep-into-overflow/&via=https://tragiclife.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://tragiclife.github.io/2018/12/08/front-end/css/deep-into-overflow/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACvklEQVR42u3ay27iQBAFUP7/pzPbSIztW49GRDpeIRygjxddnVv1esXXz6/r/Z33999fX71zdffn4nqduPDw8PAGS79fdPJjV3eTb0t+PV8zHh4e3mlesk3nW/l98UgeblKW7teDh4eH9228e1jyzflxGQ8PD++v8+437uq2fv86XwMeHh7e53lJHJAEuL1Qo/eAlrMWPDw8vJiXd5G+5/WR/h4eHh7euKuebNb5QMBuay1aLR4eHt4BXr7h5k39autr3oR7GFzAw8PDW+XtbvqTk211jCB56Hh4eHif5FWDiWShp3OUh3waDw8P7xivOt40aVblDysfLPjP/wp4eHh4B3jRJhuXk14AkX9qVivw8PDwNnl5UNuLbnuDAgthBB4eHt4xXq889HbmOawQRuDh4eGt8npn0TxQSA7c1W9LCtIDFQ8PD2/MmzSiJj+fb/3V4QY8PDy8z/DyRUyaUvnf99pgeHh4eKd5VVgyKLCVBlTbdQ9DV3h4eHirvPzQPGlQ9Q7oyd0ohsDDw8Nb4lVjhWpgsdVgq8YWDzUQDw8Pb8ybBArVsYCk2PSiikIDDA8PD2/MqxaG6nF5PlA1LzN4eHh4u7xes//chj4pMw+TEXh4eHhLvHmE2gt/8+CjB8bDw8P7JC9vYk0Wmscc+aBDYUoCDw8Pb8CbDAFUt/78IF79lcLQAB4eHt4SL9nEe/FuEvgWltsbt8LDw8M7xqsWiWp4MWm55WNehckIPDw8vCJvlF4U8dVjdz6qdXkXDw8P7wCvt+H22lpb35A0wEb1BA8PDy/g9VpT1QZ/En8cKRt4eHh4x3jJQTlvm+Ut/9f4enigeHh4eF/Gywet8pA3j4nx8PDw/i6velyuNt5GpQUPDw/vGC+PWXtDBs25hnjg4PKzeHh4eAd41X/4q3cn+PyxruUZeHh4eHfXP3f1nHE+gM0zAAAAAElFTkSuQmCC" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+</body>
+</html>

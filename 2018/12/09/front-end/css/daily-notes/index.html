@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>日常小记-样式 | 薛鸿杰的博客</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#6C88B7">
+    
+    
+    <meta name="keywords" content="css">
+    <meta name="description" content="命名规范BEM(block element modifier) 记录的知识点浏览器html默认字体大小为16px，设置font-size为62.5%后可换算为10px 常用的屏幕大小手机屏：&amp;lt;768pad屏：≥768显示器：≥992大屏显示器：≥1200 word-break：break-all设置后火狐下的文字会比较对齐 50vh表示50%的设备高度，50vw表示50%的设备宽度 禁止文本">
+<meta name="keywords" content="css">
+<meta property="og:type" content="article">
+<meta property="og:title" content="日常小记-样式">
+<meta property="og:url" content="https://tragiclife.github.io/2018/12/09/front-end/css/daily-notes/index.html">
+<meta property="og:site_name" content="薛鸿杰的博客">
+<meta property="og:description" content="命名规范BEM(block element modifier) 记录的知识点浏览器html默认字体大小为16px，设置font-size为62.5%后可换算为10px 常用的屏幕大小手机屏：&amp;lt;768pad屏：≥768显示器：≥992大屏显示器：≥1200 word-break：break-all设置后火狐下的文字会比较对齐 50vh表示50%的设备高度，50vw表示50%的设备宽度 禁止文本">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-12-08T16:28:27.303Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="日常小记-样式">
+<meta name="twitter:description" content="命名规范BEM(block element modifier) 记录的知识点浏览器html默认字体大小为16px，设置font-size为62.5%后可换算为10px 常用的屏幕大小手机屏：&amp;lt;768pad屏：≥768显示器：≥992大屏显示器：≥1200 word-break：break-all设置后火狐下的文字会比较对齐 50vh表示50%的设备高度，50vw表示50%的设备宽度 禁止文本">
+    
+        <link rel="alternate" type="application/atom+xml" title="薛鸿杰的博客" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide">
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand2.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">薛鸿杰</h5>
+          <a href="mailto:xuehongjiej@163.com" title="xuehongjiej@163.com" class="mail">xuehongjiej@163.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/">
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives">
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags">
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/TragicLife" target="_blank">
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">日常小记-样式</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">日常小记-样式</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2018-12-09T00:12:08.000Z" itemprop="datePublished" class="page-time">
+  2018-12-09
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#命名规范"><span class="post-toc-number">1.</span> <span class="post-toc-text">命名规范</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#记录的知识点"><span class="post-toc-number">2.</span> <span class="post-toc-text">记录的知识点</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#实现左右300px，中间自适应布局"><span class="post-toc-number">3.</span> <span class="post-toc-text">实现左右300px，中间自适应布局</span></a></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-front-end/css/daily-notes" class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">日常小记-样式</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2018-12-09 00:12:08" datetime="2018-12-09T00:12:08.000Z" itemprop="datePublished">2018-12-09</time>
+
+            
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style="display:none">
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h4 id="命名规范"><a href="#命名规范" class="headerlink" title="命名规范"></a>命名规范</h4><p>BEM(block element modifier)</p>
+<h4 id="记录的知识点"><a href="#记录的知识点" class="headerlink" title="记录的知识点"></a>记录的知识点</h4><p>浏览器html默认字体大小为16px，设置font-size为62.5%后可换算为10px</p>
+<p><strong>常用的屏幕大小</strong><br>手机屏：&lt;768<br>pad屏：≥768<br>显示器：≥992<br>大屏显示器：≥1200</p>
+<p>word-break：break-all<br>设置后火狐下的文字会比较对齐</p>
+<p>50vh表示50%的设备高度，50vw表示50%的设备宽度</p>
+<p><strong>禁止文本选中</strong><br>user-select:none</p>
+<p><strong>链接的伪类</strong><br>:link :visited :hover :active(点击时)</p>
+<p>ie浏览器的option标签不可改变样式、不触发事件(由select触发)</p>
+<p>子元素都为float，则父元素需要设置float才能被撑开</p>
+<p>bsckground:url() repeat attachment position/size origin clip</p>
+<p>使用inline-block边距会多出4个像素，可通过font-size:0去除</p>
+<p>文字要超过一行text-align:justify才会生效</p>
+<p>textarea添加spellcheck＝”false”去除检查</p>
+<p>display:inline-block的元素可以通过vertical-align:middle实现居中</p>
+<p>resize属性可以设置文本框的拖动，其overflow需要设置为overflow/auto/scroll</p>
+<p>制作梯形<br>transform: perspective(20px) rotateX(-1deg ) rotateY(-2deg) translateZ(0)</p>
+<p>实现模糊效果(支持IOS)<br>backdrop-filter:blur(10px);</p>
+<p>matrix(a,b,c,d,e,f)<br>e和f相当于translate<br>a和d相当于scale<br>b和c相当于rotate</p>
+<p>使滚动变流畅<br>-webkit-overflow-scrolling: touch; </p>
+<p>-webkit-overflow-scrolling产生的问题<br>滚动中scrollTop不会变化、不触发scroll事件，只在停下来的时候触发<br>手势可穿过其它元素触发元素滚动<br>滚动时暂停其它transition<br>有时会卡住不动，浏览器容器回弹停止后才可滑动</p>
+<p>文本渐变<br>h2[data-text] {<br>  position: relative;<br>}<br>h2[data-text]::after {<br>  content: attr(data-text);<br>  z-index: 10;<br>  color: #e3e3e3;<br>  position: absolute;<br>  top: 0;<br>  left: 0;<br>  -webkit-mask-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0,0,0,0)), color-stop(50%, rgba(0,0,0,1)), to(rgba(0,0,0,0)));<br>}</p>
+<p>黑白图片<br>img {<br>  filter: grayscale(100%);<br>}</p>
+<p>优化文本显示<br>.text {<br>  -moz-osx-font-smoothing: grayscale;<br>  -webkit-font-smoothing: antialiased;<br>  text-rendering: optimizeLegibility;<br>}</p>
+<p>文本模糊<br>.text{<br>  text-shadow: 0 0 5px rgba(0, 0, 0, .5)<br>}</p>
+<p>表格单元格等宽<br>.table {<br>  table-layout: fixed;<br>}</p>
+<p>多行省略号<br>display: -webkit-box;<br>-webkit-box-orient: vertical;<br>-webkit-line-clamp: 2; // 显示的行数<br>overflow: hidden;<br>text-overflow: ellipsis;</p>
+<p>伸缩盒<br>子元素的宽度没有超过父元素宽度或没有设置flex-wrap: wrap时，align-content不生效</p>
+<p>GPU硬件加速<br>1、设置will-change:transform进行硬件加速，还需要设置trsnsform:translateZ(0)进行hack<br>2、transform: translate3d(0, 0, 0)</p>
+<p>避免隐式合成<br>保持动画的对象的z-index尽可能的高。理想的，这些元素应该是body元素的直接子元素。当然，这不是总可能的。所以你可以克隆一个元素，把它放在body元素下仅仅是为了做动画。<br>将元素上设置will-change CSS属性，元素上有了这个属性，浏览器会提升这个元素成为一个复合层（不是总是）。这样动画就可以平滑的开始和结束。但是不要滥用这个属性，否则会大大增加内存消耗。</p>
+<p>动画优化<br>减少浏览器的重排和重绘的发生。<br>不要使用table布局。<br>css动画中尽量只使用transform和opacity，这不会发生重排和重绘。<br>尽可能地只使用css做动画。<br>避免浏览器的隐式合成。<br>改变复合层的尺寸。(使用小图片，通过scale放大)</p>
+<p>只有块级元素或者行内块元素transform属性才回生效</p>
+<p>scroll-behavior: smooth<br>使用锚点切换时平滑滚动</p>
+<h4 id="实现左右300px，中间自适应布局"><a href="#实现左右300px，中间自适应布局" class="headerlink" title="实现左右300px，中间自适应布局"></a>实现左右300px，中间自适应布局</h4><p>1、float(优：兼容性好；缺：需要清除浮动)<br>2、position:absolute(优：布局快；缺：兄弟元素都需要脱离文档流处理，可使用性差)<br>3、flex(比较完美)<br>4、table、table-cell(易处理；其中一个单元格高度增长时，其余也会跟着增长)<br>5、grid</p>
+<p>background的设置顺序<br>background:bg-color bg-image position/bg-size bg-repeat bg-origin bg-clip bg-attachment initial|inherit;</p>
+<p>:last-child<br>匹配父元素的最后一个元素</p>
+<p>position:fixed宽高受父级元素影响问题<br>如果父级元素使用了transform，则其position为fixed的子元素设置的宽高受父元素影响</p>
+<p>touch-action<br><a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/touch-action" target="_blank" rel="noopener">https://developer.mozilla.org/zh-CN/docs/Web/CSS/touch-action</a><br><a href="https://www.zhangxinxu.com/wordpress/2018/07/chrome-safari-touchmove-preventdefault-treated-as-passive/" target="_blank" rel="noopener">https://www.zhangxinxu.com/wordpress/2018/07/chrome-safari-touchmove-preventdefault-treated-as-passive/</a></p>
+<p>移动端设置cursor: pointer时，点击元素会有背景色<br>设置元素*{-webkit-tap-highlight-color: transparent; }</p>
+<p>图片上下排列3px间隔的消除方法<br>给居上的图片加vertical-align: top<br>给居上的图片加display: block<br>设置font-size: 0</p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2018-12-08T16:28:27.303Z" itemprop="dateUpdated">2018-12-08 16:28:27</time>
+</span><br>
+
+
+        
+        这里可以写作者留言，标签和 hexo 中所有变量及辅助函数等均可调用，示例：<a href="/2018/12/09/front-end/css/daily-notes/" target="_blank" rel="external">https://tragiclife.github.io/2018/12/09/front-end/css/daily-notes/</a>
+        
+    </div>
+    
+    <footer>
+        <a href="https://tragiclife.github.io">
+            <img src="/img/avatar.jpg" alt="薛鸿杰">
+            薛鸿杰
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/css/">css</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://tragiclife.github.io/2018/12/09/front-end/css/daily-notes/&title=《日常小记-样式》 — 薛鸿杰的博客&pic=https://tragiclife.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://tragiclife.github.io/2018/12/09/front-end/css/daily-notes/&title=《日常小记-样式》 — 薛鸿杰的博客&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://tragiclife.github.io/2018/12/09/front-end/css/daily-notes/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《日常小记-样式》 — 薛鸿杰的博客&url=https://tragiclife.github.io/2018/12/09/front-end/css/daily-notes/&via=https://tragiclife.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://tragiclife.github.io/2018/12/09/front-end/css/daily-notes/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2018/12/10/front-end/css/css-reveal-secrets/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">css揭秘</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2018/12/08/front-end/css/screen-adaptation/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">屏幕适配</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style="display:none">
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style="display:none">
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>薛鸿杰 &copy; 2018</span>
+            <span>
+                
+                <a href="http://www.miitbeian.gov.cn/" target="_blank">粤ICP备18140620号-1</a><br>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://tragiclife.github.io/2018/12/09/front-end/css/daily-notes/&title=《日常小记-样式》 — 薛鸿杰的博客&pic=https://tragiclife.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://tragiclife.github.io/2018/12/09/front-end/css/daily-notes/&title=《日常小记-样式》 — 薛鸿杰的博客&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://tragiclife.github.io/2018/12/09/front-end/css/daily-notes/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《日常小记-样式》 — 薛鸿杰的博客&url=https://tragiclife.github.io/2018/12/09/front-end/css/daily-notes/&via=https://tragiclife.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://tragiclife.github.io/2018/12/09/front-end/css/daily-notes/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACsUlEQVR42u3aS27jMBAFQN//0snWgCH59YeBApRWgaSRWVyQnNf9esXXz9v1fufz6ed19c79/atfeZ248PDw8AZDzwdx/2Y+QVek+zeTkeDh4eGd5l0N6Oqd3qKfbzDV8Vzex8PDw3swLx/il6X89n08PDy8/8vLo4pkOpJpwsPDw3sarxox5Iv11rH7eNaCh4eHF/PyKtJz/j5S38PDw8MbV9UnJa68uJU0EDRHi4eHh3eAly+41UN2NVZIvtYbJx4eHt4JXjU+6LVG9QLcScsCHh4e3gle7+d7E1Gdmklc8prMLh4eHl6rqj5pn8qX+OpCX72Dh4eHd4LXa7rKh1tdyvPYd7Zj4OHh4e30Gk2aBibLei/eLYQReHh4eKu83kqbHLLnMW51nV/oOMPDw8Mb55y9MlWyDeRNXb2WhS89ZXh4eHhLvEnwWi10zVOF5Hfx8PDwTvB6Ba3JQTzfiqphBB4eHt5f8vJCVH7k7TVg9UprX4pkeHh4eMd4vX/ci26rgexkI8HDw8M7wUsweSxb/c5a3DDZJPDw8PCWeNXDbr5A5w0EybQWtgc8PDy8JV4vOMgX8WqrQa9rbLTX4eHh4XWejtoIeltIvrUsNCjg4eHhLfEmW0J++J6c9CdgPDw8vBO8vzku98LZ3oSWq3x4eHh4LV71QFyNKqpD7yUJ5WQaDw8Pb4lXLsbHEW31C3mwW9gY8PDw8FZ51W2gd2iek8pFMjw8PLxVXu+/972nyYaRH9mjp3h4eHgHeNUF934oeRCchxEJfr6d4OHh4VV5+VI+bxqYtFg1NwY8PDy8Y7w8jNhtJphfX76Ph4eH9wBeHuNONpL51OPh4eE9mVcF7H6/XvLDw8PD2+FtxQp5oNArX5Vbu/Dw8PAO8Jq9WvHUVIthOeZInoGHh4d3d/0CXYiIvQK5TCoAAAAASUVORK5CYII=" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+</body>
+</html>

@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://tragiclife.github.io/"/>
-  <updated>2018-12-05T16:32:49.533Z</updated>
+  <updated>2018-12-09T16:16:47.180Z</updated>
   <id>https://tragiclife.github.io/</id>
   
   <author>
@@ -17,11 +17,130 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>deep-into-border</title>
-    <link href="https://tragiclife.github.io/2018/12/06/css/deep-into-border/"/>
-    <id>https://tragiclife.github.io/2018/12/06/css/deep-into-border/</id>
+    <title>css揭秘</title>
+    <link href="https://tragiclife.github.io/2018/12/10/front-end/css/css-reveal-secrets/"/>
+    <id>https://tragiclife.github.io/2018/12/10/front-end/css/css-reveal-secrets/</id>
+    <published>2018-12-10T00:04:00.000Z</published>
+    <updated>2018-12-09T16:16:47.180Z</updated>
+    
+    <content type="html"><![CDATA[<h4 id="实用效果"><a href="#实用效果" class="headerlink" title="实用效果"></a>实用效果</h4><p><strong>使用box-shadow制作假边框，第四个值为增大或者减小投影面积(box-shadow范围内不会触发事件)</strong><br>box-shadow: 0 0 0 10px #655, 0 0 0 15px deeppink;<br>box-shadow 是层层叠加的，第一层投影位于最顶层，依次类推。因此，你需要按此规律调整扩张半径。比如说，在前面的代码中，我们想在外圈再加一道 5px 的外框，那就需要指定扩张半径的值为15px （ 10px+5px ），会随着border-radius贴合border</p><p>outline<br>不触发事件，不随border-radius而贴合border</p><p>background-origin<br>通过backgroun-origin改变background-position的基准位置</p><p>reapting-linear-gradient<br>linear-gradient的扩展</p><p>利用linear-gradient实现网格<br>background: white;background-image: linear-gradient(90deg, rgba(200,0,0,.5) 50%, transparent 0), linear-gradient( rgba(200,0,0,.5) 50%, transparent 0);<br>background-size: 30px 30px;</p><p>形状<br>自适应的椭圆(元素为正方形时展示圆形)<br>border-radius: 50% / 50%;可简写为border-radius: 50%;</p><p><strong>切角效果</strong></p><p><style>.corner-cutting{display: inline-block;width:100px; height: 100px;line-height: 100px;background: linear-gradient(135deg, transparent 15px, #58a 0) top left, linear-gradient(-135deg, transparent 15px, #58a 0) top right, linear-gradient(-45deg, transparent 15px, #58a 0) bottom right,linear-gradient(45deg, transparent 15px, #58a 0) bottom left;background-size: 50% 50%;background-repeat: no-repeat;text-align: center;}.clip-path{clip-path:polygon(20px 0, calc(100% - 20px) 0, 100% 20px,100% calc(100% - 20px), calc(100% - 20px) 100%,20px 100%, 0 calc(100% - 20px), 0 20px);}</style></p><div class="corner-cutting">background</div>    <div class="corner-cutting clip-path">clip-path</div><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">.corner-cutting &#123;</span><br><span class="line">  width: 100px;</span><br><span class="line">  height: 100px;</span><br><span class="line">  background: linear-gradient(135deg, transparent 15px, #58a 0) top left, </span><br><span class="line">    linear-gradient(-135deg, transparent 15px, #58a 0) top right, </span><br><span class="line">    linear-gradient(-45deg, transparent 15px, #58a 0) bottom right,</span><br><span class="line">    linear-gradient(45deg, transparent 15px, #58a 0) bottom left;</span><br><span class="line">  background-size: 50% 50%;</span><br><span class="line">  background-repeat: no-repeat;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// 或者使用clip-path</span><br><span class="line">clip-path:polygon(20px 0, calc(100% - 20px) 0, 100% 20px,100% calc(100% - 20px), calc(100% - 20px) 100%,20px 100%, 0 calc(100% - 20px), 0 20px);</span><br></pre></td></tr></table></figure><br><br><strong>制作单边倾斜的梯形</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">transform: perspective(.5em) rotateX(5deg);</span><br><span class="line">transform-origin: bottom left;</span><br></pre></td></tr></table></figure><br><br>投影<br>单边投影<br>box-shadow: 0 5px 4px -4px black;<br>邻边投影<br>box-shadow: 3px 3px 6px -3px black;<br>两侧投影<br>box-shadow: 5px 0 5px -5px black, -5px 0 5px -5px black;<br><br>滤镜<br>filter: bulr(1px) grayscale() drop-shadow(3px 3px 6px black;)<br>blur 元素模糊<br>drop-shadow 类似于box-shadow<br><br>设置缩进<br>tab-size: 2;<br><br>空心字效果<br>text-shadow: 1px 1px black, -1px -1px black, 1px -1px black, -1px 1px black;<br>或text-shadow: 0 0 1px black, 0 0 1px black, 0 0 1px black, 0 0 1px black, 0 0 1px black, 0 0 1px black;<br><br>使用text-shadow实现文字模糊效果<br>color: transparent;<br>text-shadow: 0 0 .1em white, 0 0 .3em white;<br><br>利用svg实现环形文字效果<br><br><div class="circular"><br><svg viewbox="0 0 100 100"><br/><path d="M 0,50 a 50,50 0 1,1 0,1 z" id="circle"/><br/><text><textpath xlink:href="#circle">circular reasoning works because</textpath></text><br/></svg></div><p>用户体验<br>使用合适的cursor<br>增大可点击范围<br>border: 10px solid transparent;<br>background-clip: padding-box;<br>需要边框时增加box-shadow: 0 0 0 1px rgba(0,0,0,.3) inset;</p><p>水平居中<br>行内元素：对其父元素设置text-align:center;<br>块级元素：对其自身设置margin:0 auto;</p><p>实现水平垂直居中<br>position: absolute;top: 50%;left: 50%;transform: translate(-50%, -50%);<br>margin: 50% auto 0;transform: translateY(-50%);(只适用于全屏居中)<br>父元素设置display:flex;min-height:100vh;margin:0;子元素设置margin:auto;</p><p>小球回弹动画<br>@keyframes bounce {<br>  60%, 80%, to {<br>    transform: translateY(400px);<br>    animation-timing-function: ease;<br>  }<br>  70% { transform: translateY(300px); }<br>  90% { transform: translateY(360px); }<br>}<br>.ball {animation: bounce 3s cubic-bezier(.1,.25,1,.25);}</p><p>利用steps对png背景做切换<br>animation: loader 1s infinite steps(8);<br>@keyframes loader {to { background-position: -800px 0; }}</p><p>实现闪烁效果<br>.highlight {animation: .5s blink-smooth 6 alternate;}<br>@keyframes blink-smooth { to { color: transparent } }</p><p>背景图片来回播放<br>@keyframes panoramic {to { background-position: 100% 0; }}<br>.panoramic {<br>  width: 150px; height: 150px;<br>  background: url(“img/naxos-greece.jpg”);<br>  background-size: auto 100%;<br>  animation: panoramic 10s linear infinite alternate;<br>  animation-play-state: paused;<br>}<br>.panoramic:hover, .panoramic:focus {<br>  animation-play-state: running;<br>}</p><p>利用translate实现transform-origin的效果<br>transform: rotate(30deg);<br>transform-origin: 200px 300px;<br>上面两行等同于下面两行<br>transform: translate(200px, 300px) rotate(30deg) translate(-200px, -300px);<br>transform-origin: 0 0;</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h4 id=&quot;实用效果&quot;&gt;&lt;a href=&quot;#实用效果&quot; class=&quot;headerlink&quot; title=&quot;实用效果&quot;&gt;&lt;/a&gt;实用效果&lt;/h4&gt;&lt;p&gt;&lt;strong&gt;使用box-shadow制作假边框，第四个值为增大或者减小投影面积(box-shadow范围内不会触发事件)
+      
+    
+    </summary>
+    
+    
+      <category term="css" scheme="https://tragiclife.github.io/tags/css/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>日常小记-样式</title>
+    <link href="https://tragiclife.github.io/2018/12/09/front-end/css/daily-notes/"/>
+    <id>https://tragiclife.github.io/2018/12/09/front-end/css/daily-notes/</id>
+    <published>2018-12-09T00:12:08.000Z</published>
+    <updated>2018-12-08T16:28:27.303Z</updated>
+    
+    <content type="html"><![CDATA[<h4 id="命名规范"><a href="#命名规范" class="headerlink" title="命名规范"></a>命名规范</h4><p>BEM(block element modifier)</p><h4 id="记录的知识点"><a href="#记录的知识点" class="headerlink" title="记录的知识点"></a>记录的知识点</h4><p>浏览器html默认字体大小为16px，设置font-size为62.5%后可换算为10px</p><p><strong>常用的屏幕大小</strong><br>手机屏：&lt;768<br>pad屏：≥768<br>显示器：≥992<br>大屏显示器：≥1200</p><p>word-break：break-all<br>设置后火狐下的文字会比较对齐</p><p>50vh表示50%的设备高度，50vw表示50%的设备宽度</p><p><strong>禁止文本选中</strong><br>user-select:none</p><p><strong>链接的伪类</strong><br>:link :visited :hover :active(点击时)</p><p>ie浏览器的option标签不可改变样式、不触发事件(由select触发)</p><p>子元素都为float，则父元素需要设置float才能被撑开</p><p>bsckground:url() repeat attachment position/size origin clip</p><p>使用inline-block边距会多出4个像素，可通过font-size:0去除</p><p>文字要超过一行text-align:justify才会生效</p><p>textarea添加spellcheck＝”false”去除检查</p><p>display:inline-block的元素可以通过vertical-align:middle实现居中</p><p>resize属性可以设置文本框的拖动，其overflow需要设置为overflow/auto/scroll</p><p>制作梯形<br>transform: perspective(20px) rotateX(-1deg ) rotateY(-2deg) translateZ(0)</p><p>实现模糊效果(支持IOS)<br>backdrop-filter:blur(10px);</p><p>matrix(a,b,c,d,e,f)<br>e和f相当于translate<br>a和d相当于scale<br>b和c相当于rotate</p><p>使滚动变流畅<br>-webkit-overflow-scrolling: touch; </p><p>-webkit-overflow-scrolling产生的问题<br>滚动中scrollTop不会变化、不触发scroll事件，只在停下来的时候触发<br>手势可穿过其它元素触发元素滚动<br>滚动时暂停其它transition<br>有时会卡住不动，浏览器容器回弹停止后才可滑动</p><p>文本渐变<br>h2[data-text] {<br>  position: relative;<br>}<br>h2[data-text]::after {<br>  content: attr(data-text);<br>  z-index: 10;<br>  color: #e3e3e3;<br>  position: absolute;<br>  top: 0;<br>  left: 0;<br>  -webkit-mask-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0,0,0,0)), color-stop(50%, rgba(0,0,0,1)), to(rgba(0,0,0,0)));<br>}</p><p>黑白图片<br>img {<br>  filter: grayscale(100%);<br>}</p><p>优化文本显示<br>.text {<br>  -moz-osx-font-smoothing: grayscale;<br>  -webkit-font-smoothing: antialiased;<br>  text-rendering: optimizeLegibility;<br>}</p><p>文本模糊<br>.text{<br>  text-shadow: 0 0 5px rgba(0, 0, 0, .5)<br>}</p><p>表格单元格等宽<br>.table {<br>  table-layout: fixed;<br>}</p><p>多行省略号<br>display: -webkit-box;<br>-webkit-box-orient: vertical;<br>-webkit-line-clamp: 2; // 显示的行数<br>overflow: hidden;<br>text-overflow: ellipsis;</p><p>伸缩盒<br>子元素的宽度没有超过父元素宽度或没有设置flex-wrap: wrap时，align-content不生效</p><p>GPU硬件加速<br>1、设置will-change:transform进行硬件加速，还需要设置trsnsform:translateZ(0)进行hack<br>2、transform: translate3d(0, 0, 0)</p><p>避免隐式合成<br>保持动画的对象的z-index尽可能的高。理想的，这些元素应该是body元素的直接子元素。当然，这不是总可能的。所以你可以克隆一个元素，把它放在body元素下仅仅是为了做动画。<br>将元素上设置will-change CSS属性，元素上有了这个属性，浏览器会提升这个元素成为一个复合层（不是总是）。这样动画就可以平滑的开始和结束。但是不要滥用这个属性，否则会大大增加内存消耗。</p><p>动画优化<br>减少浏览器的重排和重绘的发生。<br>不要使用table布局。<br>css动画中尽量只使用transform和opacity，这不会发生重排和重绘。<br>尽可能地只使用css做动画。<br>避免浏览器的隐式合成。<br>改变复合层的尺寸。(使用小图片，通过scale放大)</p><p>只有块级元素或者行内块元素transform属性才回生效</p><p>scroll-behavior: smooth<br>使用锚点切换时平滑滚动</p><h4 id="实现左右300px，中间自适应布局"><a href="#实现左右300px，中间自适应布局" class="headerlink" title="实现左右300px，中间自适应布局"></a>实现左右300px，中间自适应布局</h4><p>1、float(优：兼容性好；缺：需要清除浮动)<br>2、position:absolute(优：布局快；缺：兄弟元素都需要脱离文档流处理，可使用性差)<br>3、flex(比较完美)<br>4、table、table-cell(易处理；其中一个单元格高度增长时，其余也会跟着增长)<br>5、grid</p><p>background的设置顺序<br>background:bg-color bg-image position/bg-size bg-repeat bg-origin bg-clip bg-attachment initial|inherit;</p><p>:last-child<br>匹配父元素的最后一个元素</p><p>position:fixed宽高受父级元素影响问题<br>如果父级元素使用了transform，则其position为fixed的子元素设置的宽高受父元素影响</p><p>touch-action<br><a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/touch-action" target="_blank" rel="noopener">https://developer.mozilla.org/zh-CN/docs/Web/CSS/touch-action</a><br><a href="https://www.zhangxinxu.com/wordpress/2018/07/chrome-safari-touchmove-preventdefault-treated-as-passive/" target="_blank" rel="noopener">https://www.zhangxinxu.com/wordpress/2018/07/chrome-safari-touchmove-preventdefault-treated-as-passive/</a></p><p>移动端设置cursor: pointer时，点击元素会有背景色<br>设置元素*{-webkit-tap-highlight-color: transparent; }</p><p>图片上下排列3px间隔的消除方法<br>给居上的图片加vertical-align: top<br>给居上的图片加display: block<br>设置font-size: 0</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h4 id=&quot;命名规范&quot;&gt;&lt;a href=&quot;#命名规范&quot; class=&quot;headerlink&quot; title=&quot;命名规范&quot;&gt;&lt;/a&gt;命名规范&lt;/h4&gt;&lt;p&gt;BEM(block element modifier)&lt;/p&gt;
+&lt;h4 id=&quot;记录的知识点&quot;&gt;&lt;a href=&quot;#记录的知
+      
+    
+    </summary>
+    
+    
+      <category term="css" scheme="https://tragiclife.github.io/tags/css/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>屏幕适配</title>
+    <link href="https://tragiclife.github.io/2018/12/08/front-end/css/screen-adaptation/"/>
+    <id>https://tragiclife.github.io/2018/12/08/front-end/css/screen-adaptation/</id>
+    <published>2018-12-08T00:34:18.000Z</published>
+    <updated>2018-12-07T17:12:18.000Z</updated>
+    
+    <content type="html"><![CDATA[<h4 id="常见移动web适配方法"><a href="#常见移动web适配方法" class="headerlink" title="常见移动web适配方法"></a>常见移动web适配方法</h4><h5 id="PC"><a href="#PC" class="headerlink" title="PC"></a>PC</h5><p>960px/1000px居中<br>盒子模型，定高，定宽<br>display:inline-block</p><h5 id="移动web"><a href="#移动web" class="headerlink" title="移动web:"></a>移动web:</h5><p>定高，宽度百分比<br>flex<br>Media Query(媒体查询)</p><h4 id="Media-Query"><a href="#Media-Query" class="headerlink" title="Media Query"></a>Media Query</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">@media 媒体类型 and (媒体特性)</span><br><span class="line">如: @media screen and (max-width:320px)</span><br><span class="line">可在标签上引用</span><br><span class="line">&lt;link href=&quot;&quot; media=&quot;screen and (max-width:320px)&quot;/&gt;</span><br></pre></td></tr></table></figure><h4 id="rem原理和简介"><a href="#rem原理和简介" class="headerlink" title="rem原理和简介"></a>rem原理和简介</h4><p>字体单位<br>值根据html根元素大小而定，同样可以作为宽度、高度等单位<br>适配原理<br>将px替换成rem，动态修改html的font-size适配<br>兼容性<br>IOS6以上、Android2.1以上</p><h4 id="js动态修改font-size"><a href="#js动态修改font-size" class="headerlink" title="js动态修改font-size"></a>js动态修改font-size</h4><p>let htmlWidth = document.docElement.clientWidth || document.body.clientWidth<br>let $html = document.querySelector(‘html’)<br>$html.style.fontSize = htmWidth / 3.75 + ‘px’</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h4 id=&quot;常见移动web适配方法&quot;&gt;&lt;a href=&quot;#常见移动web适配方法&quot; class=&quot;headerlink&quot; title=&quot;常见移动web适配方法&quot;&gt;&lt;/a&gt;常见移动web适配方法&lt;/h4&gt;&lt;h5 id=&quot;PC&quot;&gt;&lt;a href=&quot;#PC&quot; class=&quot;head
+      
+    
+    </summary>
+    
+    
+      <category term="css" scheme="https://tragiclife.github.io/tags/css/"/>
+    
+      <category term="rem" scheme="https://tragiclife.github.io/tags/rem/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>深入overflow</title>
+    <link href="https://tragiclife.github.io/2018/12/08/front-end/css/deep-into-overflow/"/>
+    <id>https://tragiclife.github.io/2018/12/08/front-end/css/deep-into-overflow/</id>
+    <published>2018-12-07T22:28:51.000Z</published>
+    <updated>2018-12-07T17:15:17.841Z</updated>
+    
+    <content type="html"><![CDATA[<h4 id="相关问题"><a href="#相关问题" class="headerlink" title="相关问题"></a>相关问题</h4><ol><li>overfloe-x、overflow-y(IE8+)<br>如果overflow-x与overflow-y相同，则等同于overflow；如果两个设置不同，切其中一个设置为visible则visible会被重置为auto</li><li>表格元素无效，需要先设置table-layout:fixed</li><li>overflow:auto时，chrome下能显示padding-bottom，而其他浏览器都不显示padding-bottom</li></ol><p>无论什么浏览器，默认滚动条都来自html标签，而不是body标签</p><p><strong>获取滚动高度</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">chrome:document.body.scrollTop</span><br><span class="line">其他浏览器:document.documentElement.scrollTop</span><br></pre></td></tr></table></figure></p><p>滚动条的宽度等于外部容器减去内部元素的clientWidth</p><p>出现滚动条时，修复水平居中的元素跳动问题</p><ol><li>设置html{overflow-y:scroll}</li><li>container{padding-left:calc(100vw - 100%)}，既设置滚动条的宽度，适用于IE9+及其他浏览器</li></ol><p>格式化上下文<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">overflow:auto/scroll/hidden</span><br></pre></td></tr></table></figure></p><h4 id="作用"><a href="#作用" class="headerlink" title="作用"></a>作用</h4><ol><li>清除浮动影响overflow:hidden;_zoom:1;</li><li>避免margin穿透问题</li><li>两栏自适应布局</li></ol><h4 id="BFC属性"><a href="#BFC属性" class="headerlink" title="BFC属性"></a>BFC属性</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">// 自适应，但溢出不可见，限制了应用场景</span><br><span class="line">overflow:hidden</span><br><span class="line"></span><br><span class="line">// 包裹性+破坏性，无法自适应，块状浮动布局</span><br><span class="line">float+float</span><br><span class="line"></span><br><span class="line">position:absolute  </span><br><span class="line"></span><br><span class="line">// 包裹性，无法自适应，IE6、7不识别</span><br><span class="line">display:inline-block</span><br><span class="line"></span><br><span class="line">// 包裹性，无溢出特性，绝对宽度也能自适应</span><br><span class="line">display:table-cell</span><br></pre></td></tr></table></figure><p>两栏自适应布局<br>display:table-cell;width:2000px;//IE8+ BFC特性<br><em>display:inline-block;</em>width:auto;//IE7- 伪BFC特性</p><p><strong>元素的父元素没有设置position:absolute/relative/fixed时，父元素的overflow无法包裹住position:absolute的子元素</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">让overflow起作用例子：</span><br><span class="line">// 父元素设置</span><br><span class="line">overflow:hidden;</span><br><span class="line">position:relative</span><br><span class="line">// 子元素设置</span><br><span class="line">position:absolute</span><br><span class="line"></span><br><span class="line">div  overflow:hidden</span><br><span class="line">  div  display:relative</span><br><span class="line">    div  position:absolute</span><br><span class="line"></span><br><span class="line">div  overflow:hidden</span><br><span class="line">  div  transform:translate(0)</span><br></pre></td></tr></table></figure></p><p><strong>overflow失效妙用</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">// 父元素</span><br><span class="line">height:0;</span><br><span class="line">overflow:hidden;</span><br><span class="line">text-align:right;</span><br><span class="line">// 子元素</span><br><span class="line">position:absolute</span><br></pre></td></tr></table></figure></p><p>resize拉伸(horizontal、vertical、both)<br>元素的overflow不能是visible</p><h4 id="文字溢出出省略号"><a href="#文字溢出出省略号" class="headerlink" title="文字溢出出省略号"></a>文字溢出出省略号</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">// 单行省略</span><br><span class="line">width:100px;</span><br><span class="line">white-space:nowrap;</span><br><span class="line">text-overflow:ellipisis;</span><br><span class="line">overflow:hidden;</span><br><span class="line"></span><br><span class="line">// 多行省略号</span><br><span class="line">display: -webkit-box;</span><br><span class="line">-webkit-box-orient: vertical;</span><br><span class="line">-webkit-line-clamp: 2; // 显示的行数</span><br><span class="line">overflow: hidden;</span><br><span class="line">text-overflow: ellipsis;</span><br></pre></td></tr></table></figure><p>IE7下，当宽度或高度设置为100%时，会出现滚动条<br>IE7解决文字越多，padding越大问题，设置overflow:visible</p><p>锚点定位<br>锚点定位的触发<br>url地址中的锚链与锚点元素<br>可focus的锚点元素处于focus态</p><p>作用<br>快速定位<br>选项卡技术</p><p>应用场景<br>单页应用</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h4 id=&quot;相关问题&quot;&gt;&lt;a href=&quot;#相关问题&quot; class=&quot;headerlink&quot; title=&quot;相关问题&quot;&gt;&lt;/a&gt;相关问题&lt;/h4&gt;&lt;ol&gt;
+&lt;li&gt;overfloe-x、overflow-y(IE8+)&lt;br&gt;如果overflow-x与overflow-y相同
+      
+    
+    </summary>
+    
+    
+      <category term="css" scheme="https://tragiclife.github.io/tags/css/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>深入float</title>
+    <link href="https://tragiclife.github.io/2018/12/07/front-end/css/deep-into-float/"/>
+    <id>https://tragiclife.github.io/2018/12/07/front-end/css/deep-into-float/</id>
+    <published>2018-12-06T21:39:30.000Z</published>
+    <updated>2018-12-06T14:59:32.900Z</updated>
+    
+    <content type="html"><![CDATA[<h4 id="设置初衷"><a href="#设置初衷" class="headerlink" title="设置初衷"></a>设置初衷</h4><p>为了文字的环绕<br>float元素会产生BFC(块级格式化上下文，block formatting context)</p><h4 id="特性"><a href="#特性" class="headerlink" title="特性"></a>特性</h4><ol><li><p>包裹具有包裹性的相关属性</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">display:inline-block/table-cell</span><br><span class="line">position:absolute/fixed/sticky</span><br><span class="line">overflow:hidden/scroll</span><br></pre></td></tr></table></figure></li><li><p>破坏(父元素塌陷)<br>具有破坏性的相关属性</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">display:none</span><br><span class="line">position:absolute/fixed/sticky</span><br></pre></td></tr></table></figure></li></ol><h4 id="能形成BFC的样式"><a href="#能形成BFC的样式" class="headerlink" title="能形成BFC的样式"></a>能形成BFC的样式</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">float:left/right</span><br><span class="line">position:absolute/fixed</span><br><span class="line">overflow:hidden/scroll(IE7+)</span><br><span class="line">display:inline-block/table-cell(IE8+)</span><br><span class="line">width/height/zoom:1...(IE6/IE7)</span><br></pre></td></tr></table></figure><h4 id="清除浮动-较佳使用"><a href="#清除浮动-较佳使用" class="headerlink" title="清除浮动(较佳使用)"></a>清除浮动(较佳使用)</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">.clearfix:after&#123;content:&apos;&apos;;display:table;clear:both;&#125;</span><br><span class="line">.clesrfix&#123;*zoom:1;&#125;  //IE6、7</span><br><span class="line">应用于包含浮动元素的父元素上</span><br></pre></td></tr></table></figure><p>浮动与两侧皆适应的流体布局<br>display:table-cell;<em>display:inline-block;<br>width:2000px;</em>width:auto</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h4 id=&quot;设置初衷&quot;&gt;&lt;a href=&quot;#设置初衷&quot; class=&quot;headerlink&quot; title=&quot;设置初衷&quot;&gt;&lt;/a&gt;设置初衷&lt;/h4&gt;&lt;p&gt;为了文字的环绕&lt;br&gt;float元素会产生BFC(块级格式化上下文，block formatting context)&lt;/p
+      
+    
+    </summary>
+    
+    
+      <category term="css" scheme="https://tragiclife.github.io/tags/css/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>深入border</title>
+    <link href="https://tragiclife.github.io/2018/12/06/front-end/css/deep-into-border/"/>
+    <id>https://tragiclife.github.io/2018/12/06/front-end/css/deep-into-border/</id>
     <published>2018-12-05T23:16:00.000Z</published>
-    <updated>2018-12-05T16:32:49.533Z</updated>
+    <updated>2018-12-06T13:13:36.670Z</updated>
     
     <content type="html"><![CDATA[<p>border-style为dashed时，不同浏览器下实线和空白区域的比例不同</p><p>dotted<br>形状不同</p><p>当border-color没有指定颜色时，默认使用color作为边框颜色，类似的还有box-shadow,text-shadow ，outline</p><p>让背景图固定距离右侧50px<br>border-right:50px solid transparent<br>background-position:100% 40px </p><p>投影(元素不可见时该属性也是不可见的)<br>filter:drop-shadow(20px 0 #ff8040)</p>]]></content>
     
@@ -43,8 +162,8 @@
   
   <entry>
     <title>深入padding</title>
-    <link href="https://tragiclife.github.io/2018/12/05/css/deep-into-padding/"/>
-    <id>https://tragiclife.github.io/2018/12/05/css/deep-into-padding/</id>
+    <link href="https://tragiclife.github.io/2018/12/05/front-end/css/deep-into-padding/"/>
+    <id>https://tragiclife.github.io/2018/12/05/front-end/css/deep-into-padding/</id>
     <published>2018-12-04T21:37:28.000Z</published>
     <updated>2018-12-05T16:28:53.637Z</updated>
     
@@ -66,8 +185,8 @@
   
   <entry>
     <title>深入margin</title>
-    <link href="https://tragiclife.github.io/2018/12/04/css/deep-into-margin/"/>
-    <id>https://tragiclife.github.io/2018/12/04/css/deep-into-margin/</id>
+    <link href="https://tragiclife.github.io/2018/12/04/front-end/css/deep-into-margin/"/>
+    <id>https://tragiclife.github.io/2018/12/04/front-end/css/deep-into-margin/</id>
     <published>2018-12-03T22:42:01.000Z</published>
     <updated>2018-12-05T15:14:35.578Z</updated>
     
