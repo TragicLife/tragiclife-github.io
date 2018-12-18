@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>Canvas | 薛鸿杰的博客</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#6C88B7">
+    
+    
+    <meta name="keywords" content="js,canvas">
+    <meta name="description" content="https://www.cnblogs.com/charmingyj/p/5527223.html 初始化// 创建canvas对象var ctx = $(“#canvas”)[0].getContext(‘2d’);var ctx2 = $(“#canvas2”)[0].getContext(‘2d’); // 设置线条颜色ctx.strokeStyle = ‘#00f’; // 设置填充颜色c">
+<meta name="keywords" content="js,canvas">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Canvas">
+<meta property="og:url" content="https://tragiclife.github.io/2018/12/17/front-end/js/canvas/index.html">
+<meta property="og:site_name" content="薛鸿杰的博客">
+<meta property="og:description" content="https://www.cnblogs.com/charmingyj/p/5527223.html 初始化// 创建canvas对象var ctx = $(“#canvas”)[0].getContext(‘2d’);var ctx2 = $(“#canvas2”)[0].getContext(‘2d’); // 设置线条颜色ctx.strokeStyle = ‘#00f’; // 设置填充颜色c">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-12-16T15:46:42.252Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Canvas">
+<meta name="twitter:description" content="https://www.cnblogs.com/charmingyj/p/5527223.html 初始化// 创建canvas对象var ctx = $(“#canvas”)[0].getContext(‘2d’);var ctx2 = $(“#canvas2”)[0].getContext(‘2d’); // 设置线条颜色ctx.strokeStyle = ‘#00f’; // 设置填充颜色c">
+    
+        <link rel="alternate" type="application/atom+xml" title="薛鸿杰的博客" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide">
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand2.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">薛鸿杰</h5>
+          <a href="mailto:xuehongjiej@163.com" title="xuehongjiej@163.com" class="mail">xuehongjiej@163.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/">
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives">
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags">
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/TragicLife" target="_blank">
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">Canvas</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">Canvas</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2018-12-16T23:39:44.000Z" itemprop="datePublished" class="page-time">
+  2018-12-16
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#初始化"><span class="post-toc-number">1.</span> <span class="post-toc-text">初始化</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#文本"><span class="post-toc-number">2.</span> <span class="post-toc-text">文本</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#线条"><span class="post-toc-number">3.</span> <span class="post-toc-text">线条</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#圆"><span class="post-toc-number">4.</span> <span class="post-toc-text">圆</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#绘制圆弧"><span class="post-toc-number">5.</span> <span class="post-toc-text">绘制圆弧</span></a></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-front-end/js/canvas" class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">Canvas</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2018-12-16 23:39:44" datetime="2018-12-16T23:39:44.000Z" itemprop="datePublished">2018-12-16</time>
+
+            
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style="display:none">
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <p><a href="https://www.cnblogs.com/charmingyj/p/5527223.html" target="_blank" rel="noopener">https://www.cnblogs.com/charmingyj/p/5527223.html</a></p>
+<h4 id="初始化"><a href="#初始化" class="headerlink" title="初始化"></a>初始化</h4><p>// 创建canvas对象<br>var ctx = $(“#canvas”)[0].getContext(‘2d’);<br>var ctx2 = $(“#canvas2”)[0].getContext(‘2d’);</p>
+<p>// 设置线条颜色<br>ctx.strokeStyle = ‘#00f’;</p>
+<p>// 设置填充颜色<br>ctx.fillStyle = ‘#f00’;<br>//fillRect(x, y, width, height)</p>
+<p>// 绘制有颜色填充的矩形,参数：起始坐标<br>ctx.fillRect(0,0,100,50);<br>//strokeRect(x, y, width, height)</p>
+<p>// 绘制无填充色的矩形<br>ctx.strokeRect(150,0,100,50);</p>
+<h4 id="文本"><a href="#文本" class="headerlink" title="文本"></a>文本</h4><p>// 设置字体大小和字体<br>ctx.font = ‘30px Arial’;<br>ctx.cont = ‘italic 30px serif’; // 斜体</p>
+<p>// 绘制实心文字<br>ctx.fillText(‘Canvas’,150,25);</p>
+<p>// 绘制空心文字<br>ctx.strokeText(‘Canvas’,0,25);</p>
+<p>// 设置颜色渐变<br>var grd = ctx.createLinearGradient(0,0,100,0); //参数：起始坐标(x0,y0),终止坐标(x1,y1)<br>grd.addColorStop(0,’blue’); //指定停止颜色,值为0-1<br>grd.addColorStop(0.5,’white’);<br>grd.addColorStop(1,’red’);<br>ctx.fillStyle = grd;<br>ctx.fillRect(0,50,100,50);</p>
+<p>//clearRect(x, y, width, height)<br>ctx.clearRect(0,30,10,10); //清空矩形区域的内容,参数：x坐标,y坐标,宽度,高度</p>
+<h4 id="线条"><a href="#线条" class="headerlink" title="线条"></a>线条</h4><p>//moveTo(x, y)<br>// 定义线条开始的坐标<br>ctx2.moveTo(0,0);<br>//lineTo(x, y)</p>
+<p>// 定义线条结束的坐标<br>ctx2.lineTo(200,100);</p>
+<p>// 绘制线条，或者使用fill<br>ctx2.stroke();</p>
+<h4 id="圆"><a href="#圆" class="headerlink" title="圆"></a>圆</h4><p>// 重新生成一条路径<br>ctx2.beginPath();<br>//arc(x, y, radius, startAngle, endAngle, anticlockwise)</p>
+<p>// 绘制圆形，参数：x坐标，y坐标，圆的半径，起始角度，终止角度;anticlockwise：false为顺时针，true为逆时针(默认为false)<br>ctx2.arc(100,50,30,0,Math.PI * 2,false);<br>ctx2.stroke();</p>
+<h4 id="绘制圆弧"><a href="#绘制圆弧" class="headerlink" title="绘制圆弧"></a>绘制圆弧</h4><p>ctx2.beginPath();<br>ctx2.moveTo(25,50);<br>ctx2.arc(25,50,25,0,Math.PI * 0.5,false); //参数：x坐标，y坐标，半径，起始角度(圆的正右方开始)，终止角度，是否逆时针(false为顺时针，true为逆时针)<br>ctx2.lineTo(25,50)<br>ctx2.stroke();</p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2018-12-16T15:46:42.252Z" itemprop="dateUpdated">2018-12-16 15:46:42</time>
+</span><br>
+
+
+        
+        以上内容为个人记录
+        
+    </div>
+    
+    <footer>
+        <a href="https://tragiclife.github.io">
+            <img src="/img/avatar.jpg" alt="薛鸿杰">
+            薛鸿杰
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/canvas/">canvas</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://tragiclife.github.io/2018/12/17/front-end/js/canvas/&title=《Canvas》 — 薛鸿杰的博客&pic=https://tragiclife.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://tragiclife.github.io/2018/12/17/front-end/js/canvas/&title=《Canvas》 — 薛鸿杰的博客&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://tragiclife.github.io/2018/12/17/front-end/js/canvas/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Canvas》 — 薛鸿杰的博客&url=https://tragiclife.github.io/2018/12/17/front-end/js/canvas/&via=https://tragiclife.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://tragiclife.github.io/2018/12/17/front-end/js/canvas/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2018/12/19/front-end/js/error-catch/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">错误捕获</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2018/12/17/front-end/js/object/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">对象</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style="display:none">
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style="display:none">
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>薛鸿杰 &copy; 2018</span>
+            <span>
+                
+                <a href="http://www.miitbeian.gov.cn/" target="_blank">粤ICP备18140620号-1</a><br>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://tragiclife.github.io/2018/12/17/front-end/js/canvas/&title=《Canvas》 — 薛鸿杰的博客&pic=https://tragiclife.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://tragiclife.github.io/2018/12/17/front-end/js/canvas/&title=《Canvas》 — 薛鸿杰的博客&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://tragiclife.github.io/2018/12/17/front-end/js/canvas/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Canvas》 — 薛鸿杰的博客&url=https://tragiclife.github.io/2018/12/17/front-end/js/canvas/&via=https://tragiclife.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://tragiclife.github.io/2018/12/17/front-end/js/canvas/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACKElEQVR42u3aO47DMAxF0ex/054mxTSW7yM1A1i8qgIjkXVSEPzo88Hr+rXunpDv332T7LlhyZAh47WMa7lqDAJbn4GfTYYMGXMYJBSuX0nA/A/iZ5MhQ4aMGokcLv2VDBkyZHBGLbFLQ7kMGTJk1IpYTqoVqCQ0b6jFZciQ8UIGb5b9/+c/mW/IkCHjVYwrXOlu6xDcP893HxkyZBzN4AGuNtrk4wGCfBiIypAh41AGaYTxkMfHnOkFjocnMmTIGMDoDCD5oXlSGJ9BhgwZYxi1Rn+Nnb4LpYYyZMg4mpGG1E7iyAcD6zTxNsOVIUPGoYza9Qi+A+/8kSL24baIDBkyjmbwZC5t93fYKEzLkCFjGKMffHl6xy+EPbxdhgwZRzP6CR9v1aUNOE6SIUPGHEaa6vUL3TTgfvhUQYYMGQMY/cb9riI22EeGDBkDGP0EkT8vhtT1r2TIkHEogxel6YHSsFsbFciQIWMCoxYu+SWwDe1+3uaTIUPGAEbalCeNOV709staGTJkTGPwJG9XEct3Q11DGTJkHMpIx5BpUpgWsXFjToYMGYcyrnClQZaH1PQPkiFDxhxGOiysXYlIg2wtZMuQIeNsRtroJxfF+JAgGFKuC2wZMmQMYPDARxI1PvisFbEyZMiQkTJqrbq0GH6gypAhQwa/9NAYdqbtuQ0BV4YMGa9ipM36NATvCtwbanEZMmS8kFG74pC2+NNWWj9My5Ah4wjGD0kQDywlLbXxAAAAAElFTkSuQmCC" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+</body>
+</html>

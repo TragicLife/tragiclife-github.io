@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>事件 | 薛鸿杰的博客</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#6C88B7">
+    
+    
+    <meta name="keywords" content="js,Event">
+    <meta name="description" content="事件的绑定与解绑事件绑定1234567addEventListener(type, fn, useCapture/options)options可传值：passive: false 是否阻止默认事件；如果设置为true，则即使在触发的函数中使用e.preventDefault也不会生效capture: false 触发阶段；true为捕获时触发，false为冒泡时触发once: 只执行一次atta">
+<meta name="keywords" content="js,Event">
+<meta property="og:type" content="article">
+<meta property="og:title" content="事件">
+<meta property="og:url" content="https://tragiclife.github.io/2018/12/16/front-end/js/event/index.html">
+<meta property="og:site_name" content="薛鸿杰的博客">
+<meta property="og:description" content="事件的绑定与解绑事件绑定1234567addEventListener(type, fn, useCapture/options)options可传值：passive: false 是否阻止默认事件；如果设置为true，则即使在触发的函数中使用e.preventDefault也不会生效capture: false 触发阶段；true为捕获时触发，false为冒泡时触发once: 只执行一次atta">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-12-18T16:21:52.326Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="事件">
+<meta name="twitter:description" content="事件的绑定与解绑事件绑定1234567addEventListener(type, fn, useCapture/options)options可传值：passive: false 是否阻止默认事件；如果设置为true，则即使在触发的函数中使用e.preventDefault也不会生效capture: false 触发阶段；true为捕获时触发，false为冒泡时触发once: 只执行一次atta">
+    
+        <link rel="alternate" type="application/atom+xml" title="薛鸿杰的博客" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide">
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand2.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">薛鸿杰</h5>
+          <a href="mailto:xuehongjiej@163.com" title="xuehongjiej@163.com" class="mail">xuehongjiej@163.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/">
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives">
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags">
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/TragicLife" target="_blank">
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">事件</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">事件</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2018-12-15T23:17:49.000Z" itemprop="datePublished" class="page-time">
+  2018-12-15
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#事件的绑定与解绑"><span class="post-toc-number">1.</span> <span class="post-toc-text">事件的绑定与解绑</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#事件绑定"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">事件绑定</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#事件解绑"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">事件解绑</span></a></li></ol></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#自定义事件"><span class="post-toc-number">2.</span> <span class="post-toc-text">自定义事件</span></a></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-front-end/js/event" class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">事件</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2018-12-15 23:17:49" datetime="2018-12-15T23:17:49.000Z" itemprop="datePublished">2018-12-15</time>
+
+            
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style="display:none">
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h4 id="事件的绑定与解绑"><a href="#事件的绑定与解绑" class="headerlink" title="事件的绑定与解绑"></a>事件的绑定与解绑</h4><h5 id="事件绑定"><a href="#事件绑定" class="headerlink" title="事件绑定"></a>事件绑定</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">addEventListener(type, fn, useCapture/options)</span><br><span class="line">options可传值：</span><br><span class="line">passive: false 是否阻止默认事件；如果设置为true，则即使在触发的函数中使用e.preventDefault也不会生效</span><br><span class="line">capture: false 触发阶段；true为捕获时触发，false为冒泡时触发</span><br><span class="line">once: 只执行一次</span><br><span class="line"></span><br><span class="line">attachEvent</span><br></pre></td></tr></table></figure>
+<h5 id="事件解绑"><a href="#事件解绑" class="headerlink" title="事件解绑"></a>事件解绑</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">removeEventListener(type, fn, useCapture/options)</span><br><span class="line">options可传值：</span><br><span class="line">passive: false 是否阻止默认事件；如果设置为true，则即使在触发的函数中使用e.preventDefault也不会生效</span><br><span class="line">capture: false 触发阶段；true为捕获时触发，false为冒泡时触发</span><br><span class="line">once: 只执行一次</span><br></pre></td></tr></table></figure>
+<h4 id="自定义事件"><a href="#自定义事件" class="headerlink" title="自定义事件"></a>自定义事件</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">使用handleEvent</span><br><span class="line">var tap = &#123;</span><br><span class="line">  handleEvent: function(e) &#123;</span><br><span class="line">    console.log(this.name);</span><br><span class="line">  &#125;,</span><br><span class="line">  name:&apos;tap&apos;</span><br><span class="line">&#125;;</span><br><span class="line">document.querySelector(&apos;.wea_mod&apos;).addEventListener(&apos;click&apos;, tap, false);</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">使用CustomEvent</span><br><span class="line">var tap2 = document.querySelector(&apos;.wea_mod&apos;);</span><br><span class="line">tap2.addEventListener(&apos;tap&apos;, function(e)&#123;</span><br><span class="line">  console.log(&apos;custom &apos; + e.detail);</span><br><span class="line">&#125;, false);</span><br><span class="line">var evt = new window.CustomEvent(&apos;tap&apos;, &#123;</span><br><span class="line">  bubbles: true, // 如果为 true，事件将冒泡到触发事件的元素的祖先</span><br><span class="line">  cancelable: true, // 如果为 true，可以使用事件对象的 stopPropagation() 方法取消事件传播。</span><br><span class="line">  detail: &#123;&#125; // 细节参数、自定义参数</span><br><span class="line">&#125;);</span><br><span class="line">tap2.dispatchEvent(evt); // 触发自定义事件，返回一个布尔值，判断是否阻止默认事件，false为阻止默认事件</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">使用new Event(不能使用自定义参数detail)</span><br><span class="line">var btn = document.querySelector(&apos;.wea_mod&apos;);</span><br><span class="line">var ev = new Event(&apos;test&apos;, &#123;</span><br><span class="line">    bubbles: &apos;true&apos;,</span><br><span class="line">    cancelable: &apos;true&apos;</span><br><span class="line">&#125;);</span><br><span class="line">btn.addEventListener(&apos;test&apos;, function (event) &#123;</span><br><span class="line">    console.log(event.bubbles);</span><br><span class="line">    console.log(event.cancelable);</span><br><span class="line">    console.log(event.detail);</span><br><span class="line">&#125;, false);</span><br><span class="line">btn.dispatchEvent(ev);</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">使用createEvent</span><br><span class="line">let evt = document.createEvent(&quot;HTMLEvents&quot;); // 可传值HTMLEvents、MouseEvents、UIEvents以及CustomEvent(自定义事件)</span><br><span class="line">// 初始化</span><br><span class="line">evt.initEvent(&quot;alert&quot;, false, false); // eventType,canBubble,cancelable</span><br><span class="line">// 触发</span><br><span class="line">week.dispatchEvent(evt);</span><br></pre></td></tr></table></figure>
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2018-12-18T16:21:52.326Z" itemprop="dateUpdated">2018-12-18 16:21:52</time>
+</span><br>
+
+
+        
+        以上内容为个人记录
+        
+    </div>
+    
+    <footer>
+        <a href="https://tragiclife.github.io">
+            <img src="/img/avatar.jpg" alt="薛鸿杰">
+            薛鸿杰
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Event/">Event</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://tragiclife.github.io/2018/12/16/front-end/js/event/&title=《事件》 — 薛鸿杰的博客&pic=https://tragiclife.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://tragiclife.github.io/2018/12/16/front-end/js/event/&title=《事件》 — 薛鸿杰的博客&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://tragiclife.github.io/2018/12/16/front-end/js/event/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《事件》 — 薛鸿杰的博客&url=https://tragiclife.github.io/2018/12/16/front-end/js/event/&via=https://tragiclife.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://tragiclife.github.io/2018/12/16/front-end/js/event/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2018/12/17/front-end/js/object/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">对象</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2018/12/15/front-end/other/mobile-screen-pixels/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">移动端屏幕像素</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style="display:none">
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style="display:none">
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>薛鸿杰 &copy; 2018</span>
+            <span>
+                
+                <a href="http://www.miitbeian.gov.cn/" target="_blank">粤ICP备18140620号-1</a><br>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://tragiclife.github.io/2018/12/16/front-end/js/event/&title=《事件》 — 薛鸿杰的博客&pic=https://tragiclife.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://tragiclife.github.io/2018/12/16/front-end/js/event/&title=《事件》 — 薛鸿杰的博客&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://tragiclife.github.io/2018/12/16/front-end/js/event/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《事件》 — 薛鸿杰的博客&url=https://tragiclife.github.io/2018/12/16/front-end/js/event/&via=https://tragiclife.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://tragiclife.github.io/2018/12/16/front-end/js/event/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACK0lEQVR42u3aSW7EMAwFUd//0s42gKHu+qQSwGJpZaQnPS0YcbguvO7H+v331fPq1ec3rz61ecmQIeO1jPvj4tv6vAn+6up3V++RIUPGHAYJhf3gmx4Q2ZsMGTJk1LZINlcL6zJkyJDRZ5Cf3Jv6ypAhYw4jDZckleWXwlpAlyFDxhwGr7r///Of9DdkyJDxKsYdrn4Zjlz44l3JkCHjaAYPcPxaljYjUYJKGqIyZMgYwNgw7hCySWMgCNkyZMg4mlEb4SLv3EtKf1eGDBlnMHiwS9uT8cmVWpgyZMiYxkiHG8gIRRpASYBGWbgMGTIOYpBN8M3xjXaSWHSrlSFDxnGM2mWOh8LOBTQ4GhkyZBzNSIceOqNjtYGwYmIsQ4aMIxj8Yrer0N8J6K0xCxkyZLyWQdLXfqqZNkQ5SYYMGXMYtTDKR7g2lPv50ciQIeM4Bi/ck5ZAcI3rhNTnp2TIkDGAwRuQaYk//ba0VSBDhowJjFpbMU1c+10LVAqUIUPGAEYaLmu1r86YxZcLpQwZMgYwOIanpmkqy4/ySuO3DBkyjmDwZ77RThIbH4oMGTIOZdzhShPUvS2HJVWGDBlHM9JmYTr4xRsPtX8AMUyGDBmvZfAg23nmY2TFMQ4ZMmQMYOyqX+0NvrwYJ0OGDBkdBinDkcGLoDEgQ4aM8QweIvm1jzcetgVcGTJkvJDRKdbzQLmrzSlDhoxpDJ46pmMWnVLahkExGTJknMD4AcFZGQa2er+dAAAAAElFTkSuQmCC" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+</body>
+</html>
