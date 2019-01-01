@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>文件类型转换 | 薛鸿杰的博客</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#6C88B7">
+    
+    
+    <meta name="keywords" content="">
+    <meta name="description" content="canvas转dataURL：canvas对象、转换格式、图像品质123function canvasToDataURL(canvas, format, quality) &amp;#123;  return canvas.toDataURL(format || &amp;apos;image/jpeg&amp;apos;, quality || 1.0);&amp;#125; DataURL转canvas12345678910">
+<meta property="og:type" content="article">
+<meta property="og:title" content="文件类型转换">
+<meta property="og:url" content="https://tragiclife.github.io/2018/12/23/front-end/js/file-type-conversion/index.html">
+<meta property="og:site_name" content="薛鸿杰的博客">
+<meta property="og:description" content="canvas转dataURL：canvas对象、转换格式、图像品质123function canvasToDataURL(canvas, format, quality) &amp;#123;  return canvas.toDataURL(format || &amp;apos;image/jpeg&amp;apos;, quality || 1.0);&amp;#125; DataURL转canvas12345678910">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-12-22T16:15:23.302Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="文件类型转换">
+<meta name="twitter:description" content="canvas转dataURL：canvas对象、转换格式、图像品质123function canvasToDataURL(canvas, format, quality) &amp;#123;  return canvas.toDataURL(format || &amp;apos;image/jpeg&amp;apos;, quality || 1.0);&amp;#125; DataURL转canvas12345678910">
+    
+        <link rel="alternate" type="application/atom+xml" title="薛鸿杰的博客" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide">
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand2.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">薛鸿杰</h5>
+          <a href="mailto:xuehongjiej@163.com" title="xuehongjiej@163.com" class="mail">xuehongjiej@163.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/">
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives">
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags">
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/TragicLife" target="_blank">
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">文件类型转换</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">文件类型转换</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2018-12-23T00:10:50.000Z" itemprop="datePublished" class="page-time">
+  2018-12-23
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#canvas转dataURL：canvas对象、转换格式、图像品质"><span class="post-toc-number">1.</span> <span class="post-toc-text">canvas转dataURL：canvas对象、转换格式、图像品质</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#DataURL转canvas"><span class="post-toc-number">2.</span> <span class="post-toc-text">DataURL转canvas</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#image转canvas：图片地址"><span class="post-toc-number">3.</span> <span class="post-toc-text">image转canvas：图片地址</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#canvas转image"><span class="post-toc-number">4.</span> <span class="post-toc-text">canvas转image</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#File-Blob对象转DataURL"><span class="post-toc-number">5.</span> <span class="post-toc-text">File/Blob对象转DataURL</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#DataURL转Blob对象"><span class="post-toc-number">6.</span> <span class="post-toc-text">DataURL转Blob对象</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Blob转image"><span class="post-toc-number">7.</span> <span class="post-toc-text">Blob转image</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#image转Blob"><span class="post-toc-number">8.</span> <span class="post-toc-text">image转Blob</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Blob转canvas"><span class="post-toc-number">9.</span> <span class="post-toc-text">Blob转canvas</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#canvas转Blob"><span class="post-toc-number">10.</span> <span class="post-toc-text">canvas转Blob</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#image转dataURL"><span class="post-toc-number">11.</span> <span class="post-toc-text">image转dataURL</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#dataURL转image，这个不需要转，直接给了src就能用"><span class="post-toc-number">12.</span> <span class="post-toc-text">dataURL转image，这个不需要转，直接给了src就能用</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#将base64转换为文件"><span class="post-toc-number">13.</span> <span class="post-toc-text">将base64转换为文件</span></a></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-front-end/js/file-type-conversion" class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">文件类型转换</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2018-12-23 00:10:50" datetime="2018-12-23T00:10:50.000Z" itemprop="datePublished">2018-12-23</time>
+
+            
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style="display:none">
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h4 id="canvas转dataURL：canvas对象、转换格式、图像品质"><a href="#canvas转dataURL：canvas对象、转换格式、图像品质" class="headerlink" title="canvas转dataURL：canvas对象、转换格式、图像品质"></a>canvas转dataURL：canvas对象、转换格式、图像品质</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">function canvasToDataURL(canvas, format, quality) &#123;</span><br><span class="line">  return canvas.toDataURL(format || &apos;image/jpeg&apos;, quality || 1.0);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="DataURL转canvas"><a href="#DataURL转canvas" class="headerlink" title="DataURL转canvas"></a>DataURL转canvas</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">function dataURLToCanvas(dataurl, cb) &#123;</span><br><span class="line">  let canvas = document.createElement(&apos;canvas&apos;);</span><br><span class="line">  let ctx = canvas.getContext(&apos;2d&apos;);</span><br><span class="line">  let img = new Image();</span><br><span class="line">  img.onload = function () &#123;</span><br><span class="line">    canvas.width = img.width;</span><br><span class="line">    canvas.height = img.height;</span><br><span class="line">    ctx.drawImage(img, 0, 0);</span><br><span class="line">    cb(canvas);</span><br><span class="line">  &#125;;</span><br><span class="line">  img.src = dataurl;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="image转canvas：图片地址"><a href="#image转canvas：图片地址" class="headerlink" title="image转canvas：图片地址"></a>image转canvas：图片地址</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">function imageToCanvas(src, cb) &#123;</span><br><span class="line">  let canvas = document.createElement(&apos;canvas&apos;);</span><br><span class="line">  let ctx = canvas.getContext(&apos;2d&apos;);</span><br><span class="line">  let img = new Image();</span><br><span class="line">  img.src = src;</span><br><span class="line">  img.onload = function () &#123;</span><br><span class="line">    canvas.width = img.width;</span><br><span class="line">    canvas.height = img.height;</span><br><span class="line">    ctx.drawImage(img, 0, 0);</span><br><span class="line">    cb(canvas);</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="canvas转image"><a href="#canvas转image" class="headerlink" title="canvas转image"></a>canvas转image</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">function canvasToImage(canvas) &#123;</span><br><span class="line">  let img = new Image();</span><br><span class="line">  img.src = canvas.toDataURL(&apos;image/jpeg&apos;, 1.0);</span><br><span class="line">  return img;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="File-Blob对象转DataURL"><a href="#File-Blob对象转DataURL" class="headerlink" title="File/Blob对象转DataURL"></a>File/Blob对象转DataURL</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">function fileOrBlobToDataURL(obj, cb) &#123;</span><br><span class="line">  let a = new FileReader();</span><br><span class="line">  a.readAsDataURL(obj);</span><br><span class="line">  a.onload = function (e) &#123;</span><br><span class="line">    cb(e.target.result);</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="DataURL转Blob对象"><a href="#DataURL转Blob对象" class="headerlink" title="DataURL转Blob对象"></a>DataURL转Blob对象</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">function dataURLToBlob(dataurl) &#123;</span><br><span class="line">  let arr = dataurl.split(&apos;,&apos;);</span><br><span class="line">  let mime = arr[0].match(/:(.*?);/)[1];</span><br><span class="line">  let bstr = atob(arr[1]);</span><br><span class="line">  let n = bstr.length;</span><br><span class="line">  let u8arr = new Uint8Array(n);</span><br><span class="line">  while (n--) &#123;</span><br><span class="line">    u8arr[n] = bstr.charCodeAt(n);</span><br><span class="line">  &#125;</span><br><span class="line">  return new Blob([u8arr], &#123;type: mime&#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="Blob转image"><a href="#Blob转image" class="headerlink" title="Blob转image"></a>Blob转image</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">function blobToImage(blob, cb) &#123;</span><br><span class="line">  fileOrBlobToDataURL(blob, function (dataurl) &#123;</span><br><span class="line">    let img = new Image();</span><br><span class="line">    img.src = dataurl;</span><br><span class="line">    cb(img);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="image转Blob"><a href="#image转Blob" class="headerlink" title="image转Blob"></a>image转Blob</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">function imageToBlob(src, cb) &#123;</span><br><span class="line">  imageToCanvas(src, function (canvas) &#123;</span><br><span class="line">    cb(dataURLToBlob(canvasToDataURL(canvas)));</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="Blob转canvas"><a href="#Blob转canvas" class="headerlink" title="Blob转canvas"></a>Blob转canvas</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">function BlobToCanvas(blob, cb) &#123;</span><br><span class="line">  fileOrBlobToDataURL(blob, function (dataurl) &#123;</span><br><span class="line">    dataURLToCanvas(dataurl, cb);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="canvas转Blob"><a href="#canvas转Blob" class="headerlink" title="canvas转Blob"></a>canvas转Blob</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">function canvasToBlob(canvas, cb) &#123;</span><br><span class="line">  cb(dataURLToBlob(canvasToDataURL(canvas)));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="image转dataURL"><a href="#image转dataURL" class="headerlink" title="image转dataURL"></a>image转dataURL</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">function imageToDataURL(src, cb) &#123;</span><br><span class="line">  imageToCanvas(src, function (canvas) &#123;</span><br><span class="line">    cb(canvasToDataURL(canvas));</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="dataURL转image，这个不需要转，直接给了src就能用"><a href="#dataURL转image，这个不需要转，直接给了src就能用" class="headerlink" title="dataURL转image，这个不需要转，直接给了src就能用"></a>dataURL转image，这个不需要转，直接给了src就能用</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">function dataURLToImage(dataurl) &#123;</span><br><span class="line">  let img = new Image();</span><br><span class="line">  img.src = d;</span><br><span class="line">  return img;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="将base64转换为文件"><a href="#将base64转换为文件" class="headerlink" title="将base64转换为文件"></a>将base64转换为文件</h4><blockquote>
+<p>filename需要带后缀，否则会转成tmp</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">function dataURLToFile(dataurl, filename) &#123;</span><br><span class="line">  let arr = dataurl.split(&apos;,&apos;);</span><br><span class="line">  let bstr = window.atob(arr[1]);</span><br><span class="line">  let len = bstr.length;</span><br><span class="line">  let u8arr = new Uint8Array(len);</span><br><span class="line">  let mime = arr[0].match(/:(.*?);/)[1];</span><br><span class="line"></span><br><span class="line">  while (len--) &#123;</span><br><span class="line">    u8arr[len] = bstr.charCodeAt(len);</span><br><span class="line">  &#125;</span><br><span class="line">  return new File([u8arr], filename, &#123;type: mime&#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2018-12-22T16:15:23.302Z" itemprop="dateUpdated">2018-12-22 16:15:23</time>
+</span><br>
+
+
+        
+        以上内容为个人记录
+        
+    </div>
+    
+    <footer>
+        <a href="https://tragiclife.github.io">
+            <img src="/img/avatar.jpg" alt="薛鸿杰">
+            薛鸿杰
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://tragiclife.github.io/2018/12/23/front-end/js/file-type-conversion/&title=《文件类型转换》 — 薛鸿杰的博客&pic=https://tragiclife.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://tragiclife.github.io/2018/12/23/front-end/js/file-type-conversion/&title=《文件类型转换》 — 薛鸿杰的博客&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://tragiclife.github.io/2018/12/23/front-end/js/file-type-conversion/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《文件类型转换》 — 薛鸿杰的博客&url=https://tragiclife.github.io/2018/12/23/front-end/js/file-type-conversion/&via=https://tragiclife.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://tragiclife.github.io/2018/12/23/front-end/js/file-type-conversion/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2018/12/24/front-end/other/front-end-basics/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">基础小记</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2018/12/20/front-end/js/regexp/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">正则</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <!-- <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style="display:none">
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style="display:none">
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div> -->
+    <div class="bottom">
+        <p><span>薛鸿杰 &copy; 2018 - 2019</span>
+            <span>
+                
+                <a href="http://www.miitbeian.gov.cn/" target="_blank">粤ICP备18140620号-1</a><br>
+                
+                <!-- Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a> -->
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://tragiclife.github.io/2018/12/23/front-end/js/file-type-conversion/&title=《文件类型转换》 — 薛鸿杰的博客&pic=https://tragiclife.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://tragiclife.github.io/2018/12/23/front-end/js/file-type-conversion/&title=《文件类型转换》 — 薛鸿杰的博客&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://tragiclife.github.io/2018/12/23/front-end/js/file-type-conversion/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《文件类型转换》 — 薛鸿杰的博客&url=https://tragiclife.github.io/2018/12/23/front-end/js/file-type-conversion/&via=https://tragiclife.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://tragiclife.github.io/2018/12/23/front-end/js/file-type-conversion/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACuUlEQVR42u3a0W7cMAwEwPz/T6evBdK77pKSE7Tjp0MusTUKINIkPz7i6/PL9f7nv3+b3OHr5+TbYxceHh7eeuktI19cDm436+Xa8PDw8K7x3i83P5RfLSsPDJv14OHh4f18XnFAH/p9PDw8vH+DlwSJ/POsbIGHh4f3PC+/dVtuyAu+ybcXay14eHh4Xe5alBh+wucr/T08PDy8dVc9P3DfN6veH/FJMj1cLR4eHt4FXn7g5sNV7dBAy87XiYeHh3ebtwkM+cPep8j5RhTtMTw8PLwLvLz5lB/N+RjWrNCQJ/F4eHh4Z3nJY/LfaZtesyZZvk48PDy8Z3j7gsKN2LUaCMDDw8M7yrsxHJBvTR5U2kDyMr3Gw8PDW/NmwwH5nm2KsG01JSrd4uHh4a157bHeHtazAnGbuNdDV3h4eHhr3uy1Py/RtoXdUyMIeHh4eDd4m0LtZiOS4dRZKRkPDw/vSd5siZv2f5uy5+Hn49R/AA8PDy9Io1ev+uuRghnjL2vDw8PDO8prW1CzvlLdshoFmD88Fw8PD+8CL/+D9tBvBxHaVlldIMbDw8M7ypsNBLQJ92dw5Yl1saF4eHh4F3h5sz8/6PcFhXZQICp/4OHh4T3CS5LgWaKcp+b5evDw8PCe5OWpcPKAU/fMt2lVa8HDw8Mrec8UcDcFiLbg+w31aTw8vP+YtykE1D239dhWHRjw8PDwjvLyReTjUO1YVVE1ibcGDw8P7yxv9nq/LxDMAkn9LR4eHt4F3iqexOnvrDg7a7YNLzw8PLySNwsG7X3aLUiCUBQY8PDw8K7xks7RqbZZ2+5KgtZw3AoPDw/vEd6s5Z+n48kWFEELDw8P7wfw8iGDNnXORxOKci0eHh7eNV7estoUFGbjCHni/jIw4OHh4R3ltS/8eft/1lRrt/7AhYeHh5fe/xe15pxxv6DINAAAAABJRU5ErkJggg==" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+</body>
+</html>

@@ -29,7 +29,7 @@
 <meta property="og:site_name" content="薛鸿杰的博客">
 <meta property="og:description" content="相关问题 overfloe-x、overflow-y(IE8+)如果overflow-x与overflow-y相同，则等同于overflow；如果两个设置不同，切其中一个设置为visible则visible会被重置为auto 表格元素无效，需要先设置table-layout:fixed overflow:auto时，chrome下能显示padding-bottom，而其他浏览器都不显示paddin">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-12-07T17:15:17.841Z">
+<meta property="og:updated_time" content="2019-01-01T15:35:27.772Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="深入overflow">
 <meta name="twitter:description" content="相关问题 overfloe-x、overflow-y(IE8+)如果overflow-x与overflow-y相同，则等同于overflow；如果两个设置不同，切其中一个设置为visible则visible会被重置为auto 表格元素无效，需要先设置table-layout:fixed overflow:auto时，chrome下能显示padding-bottom，而其他浏览器都不显示paddin">
@@ -151,7 +151,7 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#相关问题"><span class="post-toc-number">1.</span> <span class="post-toc-text">相关问题</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#作用"><span class="post-toc-number">2.</span> <span class="post-toc-text">作用</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#BFC属性"><span class="post-toc-number">3.</span> <span class="post-toc-text">BFC属性</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#文字溢出出省略号"><span class="post-toc-number">4.</span> <span class="post-toc-text">文字溢出出省略号</span></a></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#相关问题"><span class="post-toc-number">1.</span> <span class="post-toc-text">相关问题</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#作用"><span class="post-toc-number">2.</span> <span class="post-toc-text">作用</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#BFC属性"><span class="post-toc-number">3.</span> <span class="post-toc-text">BFC属性</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#文字溢出出省略号"><span class="post-toc-number">4.</span> <span class="post-toc-text">文字溢出出省略号</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#其他"><span class="post-toc-number">5.</span> <span class="post-toc-text">其他</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#获取滚动高度"><span class="post-toc-number">5.1.</span> <span class="post-toc-text">获取滚动高度</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#出现滚动条时，修复水平居中的元素跳动问题"><span class="post-toc-number">5.2.</span> <span class="post-toc-text">出现滚动条时，修复水平居中的元素跳动问题</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#块级格式化上下文"><span class="post-toc-number">5.3.</span> <span class="post-toc-text">块级格式化上下文</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#元素包裹问题"><span class="post-toc-number">5.4.</span> <span class="post-toc-text">元素包裹问题</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#overflow失效妙用"><span class="post-toc-number">5.5.</span> <span class="post-toc-text">overflow失效妙用</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#锚点定位"><span class="post-toc-number">5.6.</span> <span class="post-toc-text">锚点定位</span></a></li></ol></li></ol>
         </nav>
     </aside>
 
@@ -174,35 +174,35 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h4 id="相关问题"><a href="#相关问题" class="headerlink" title="相关问题"></a>相关问题</h4><ol>
+            <h2 id="相关问题"><a href="#相关问题" class="headerlink" title="相关问题"></a>相关问题</h2><ol>
 <li>overfloe-x、overflow-y(IE8+)<br>如果overflow-x与overflow-y相同，则等同于overflow；如果两个设置不同，切其中一个设置为visible则visible会被重置为auto</li>
 <li>表格元素无效，需要先设置table-layout:fixed</li>
 <li>overflow:auto时，chrome下能显示padding-bottom，而其他浏览器都不显示padding-bottom</li>
 </ol>
-<p>无论什么浏览器，默认滚动条都来自html标签，而不是body标签</p>
-<p><strong>获取滚动高度</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">chrome:document.body.scrollTop</span><br><span class="line">其他浏览器:document.documentElement.scrollTop</span><br></pre></td></tr></table></figure></p>
-<p>滚动条的宽度等于外部容器减去内部元素的clientWidth</p>
-<p>出现滚动条时，修复水平居中的元素跳动问题</p>
-<ol>
-<li>设置html{overflow-y:scroll}</li>
-<li>container{padding-left:calc(100vw - 100%)}，既设置滚动条的宽度，适用于IE9+及其他浏览器</li>
-</ol>
-<p>格式化上下文<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">overflow:auto/scroll/hidden</span><br></pre></td></tr></table></figure></p>
-<h4 id="作用"><a href="#作用" class="headerlink" title="作用"></a>作用</h4><ol>
-<li>清除浮动影响overflow:hidden;_zoom:1;</li>
+<h2 id="作用"><a href="#作用" class="headerlink" title="作用"></a>作用</h2><ol>
+<li>清除浮动影响<code>overflow:hidden;_zoom:1</code>;</li>
 <li>避免margin穿透问题</li>
 <li>两栏自适应布局</li>
 </ol>
-<h4 id="BFC属性"><a href="#BFC属性" class="headerlink" title="BFC属性"></a>BFC属性</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">// 自适应，但溢出不可见，限制了应用场景</span><br><span class="line">overflow:hidden</span><br><span class="line"></span><br><span class="line">// 包裹性+破坏性，无法自适应，块状浮动布局</span><br><span class="line">float+float</span><br><span class="line"></span><br><span class="line">position:absolute  </span><br><span class="line"></span><br><span class="line">// 包裹性，无法自适应，IE6、7不识别</span><br><span class="line">display:inline-block</span><br><span class="line"></span><br><span class="line">// 包裹性，无溢出特性，绝对宽度也能自适应</span><br><span class="line">display:table-cell</span><br></pre></td></tr></table></figure>
-<p>两栏自适应布局<br>display:table-cell;width:2000px;//IE8+ BFC特性<br><em>display:inline-block;</em>width:auto;//IE7- 伪BFC特性</p>
-<p><strong>元素的父元素没有设置position:absolute/relative/fixed时，父元素的overflow无法包裹住position:absolute的子元素</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">让overflow起作用例子：</span><br><span class="line">// 父元素设置</span><br><span class="line">overflow:hidden;</span><br><span class="line">position:relative</span><br><span class="line">// 子元素设置</span><br><span class="line">position:absolute</span><br><span class="line"></span><br><span class="line">div  overflow:hidden</span><br><span class="line">  div  display:relative</span><br><span class="line">    div  position:absolute</span><br><span class="line"></span><br><span class="line">div  overflow:hidden</span><br><span class="line">  div  transform:translate(0)</span><br></pre></td></tr></table></figure></p>
-<p><strong>overflow失效妙用</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">// 父元素</span><br><span class="line">height:0;</span><br><span class="line">overflow:hidden;</span><br><span class="line">text-align:right;</span><br><span class="line">// 子元素</span><br><span class="line">position:absolute</span><br></pre></td></tr></table></figure></p>
-<p>resize拉伸(horizontal、vertical、both)<br>元素的overflow不能是visible</p>
-<h4 id="文字溢出出省略号"><a href="#文字溢出出省略号" class="headerlink" title="文字溢出出省略号"></a>文字溢出出省略号</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">// 单行省略</span><br><span class="line">width:100px;</span><br><span class="line">white-space:nowrap;</span><br><span class="line">text-overflow:ellipisis;</span><br><span class="line">overflow:hidden;</span><br><span class="line"></span><br><span class="line">// 多行省略号</span><br><span class="line">display: -webkit-box;</span><br><span class="line">-webkit-box-orient: vertical;</span><br><span class="line">-webkit-line-clamp: 2; // 显示的行数</span><br><span class="line">overflow: hidden;</span><br><span class="line">text-overflow: ellipsis;</span><br></pre></td></tr></table></figure>
-<p>IE7下，当宽度或高度设置为100%时，会出现滚动条<br>IE7解决文字越多，padding越大问题，设置overflow:visible</p>
-<p>锚点定位<br>锚点定位的触发<br>url地址中的锚链与锚点元素<br>可focus的锚点元素处于focus态</p>
-<p>作用<br>快速定位<br>选项卡技术</p>
-<p>应用场景<br>单页应用</p>
+<h2 id="BFC属性"><a href="#BFC属性" class="headerlink" title="BFC属性"></a>BFC属性</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">// 自适应，但溢出不可见，限制了应用场景</span><br><span class="line">overflow:hidden</span><br><span class="line"></span><br><span class="line">// 包裹性+破坏性，无法自适应，块状浮动布局</span><br><span class="line">float+float</span><br><span class="line"></span><br><span class="line">position:absolute  </span><br><span class="line"></span><br><span class="line">// 包裹性，无法自适应，IE6、7不识别</span><br><span class="line">display:inline-block</span><br><span class="line"></span><br><span class="line">// 包裹性，无溢出特性，绝对宽度也能自适应</span><br><span class="line">display:table-cell</span><br></pre></td></tr></table></figure>
+<h2 id="文字溢出出省略号"><a href="#文字溢出出省略号" class="headerlink" title="文字溢出出省略号"></a>文字溢出出省略号</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">// 单行省略</span><br><span class="line">width:100px;</span><br><span class="line">white-space:nowrap;</span><br><span class="line">text-overflow:ellipisis;</span><br><span class="line">overflow:hidden;</span><br><span class="line"></span><br><span class="line">// 多行省略号</span><br><span class="line">display: -webkit-box;</span><br><span class="line">-webkit-box-orient: vertical;</span><br><span class="line">-webkit-line-clamp: 2; // 显示的行数</span><br><span class="line">overflow: hidden;</span><br><span class="line">text-overflow: ellipsis;</span><br></pre></td></tr></table></figure>
+<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><ul>
+<li>无论什么浏览器，默认滚动条都来自html标签，而不是body标签</li>
+<li>滚动条的宽度等于外部容器减去内部元素的clientWidth</li>
+</ul>
+<h3 id="获取滚动高度"><a href="#获取滚动高度" class="headerlink" title="获取滚动高度"></a>获取滚动高度</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">chrome:document.body.scrollTop</span><br><span class="line">其他浏览器:document.documentElement.scrollTop</span><br></pre></td></tr></table></figure>
+<h3 id="出现滚动条时，修复水平居中的元素跳动问题"><a href="#出现滚动条时，修复水平居中的元素跳动问题" class="headerlink" title="出现滚动条时，修复水平居中的元素跳动问题"></a>出现滚动条时，修复水平居中的元素跳动问题</h3><ol>
+<li>设置<code>html{overflow-y:scroll}</code></li>
+<li><code>container{padding-left:calc(100vw - 100%)}</code>，既设置滚动条的宽度，适用于IE9+及其他浏览器</li>
+</ol>
+<h3 id="块级格式化上下文"><a href="#块级格式化上下文" class="headerlink" title="块级格式化上下文"></a>块级格式化上下文</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">overflow:auto/scroll/hidden</span><br></pre></td></tr></table></figure>
+<h3 id="元素包裹问题"><a href="#元素包裹问题" class="headerlink" title="元素包裹问题"></a>元素包裹问题</h3><p>元素的父元素没有设置position:absolute/relative/fixed时，父元素的overflow无法包裹住position:absolute的子元素<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=&quot;container&quot;&gt;</span><br><span class="line">  &lt;div class=&quot;item&quot;&gt;&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">.container &#123;</span><br><span class="line">  position: relative;</span><br><span class="line">  overflow: hidden;</span><br><span class="line">&#125;</span><br><span class="line">.item &#123;</span><br><span class="line">  position: absolute;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="overflow失效妙用"><a href="#overflow失效妙用" class="headerlink" title="overflow失效妙用"></a>overflow失效妙用</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">// 父元素</span><br><span class="line">height:0;</span><br><span class="line">overflow:hidden;</span><br><span class="line">text-align:right;</span><br><span class="line">// 子元素</span><br><span class="line">position:absolute</span><br></pre></td></tr></table></figure>
+<h3 id="锚点定位"><a href="#锚点定位" class="headerlink" title="锚点定位"></a>锚点定位</h3><ul>
+<li>锚点定位的触发</li>
+<li>url地址中的锚链与锚点元素</li>
+<li>可focus的锚点元素处于focus态</li>
+</ul>
 
         </div>
 
@@ -211,7 +211,7 @@
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2018-12-07T17:15:17.841Z" itemprop="dateUpdated">2018-12-07 17:15:17</time>
+    最后更新时间：<time datetime="2019-01-01T15:35:27.772Z" itemprop="dateUpdated">2019-01-01 15:35:27</time>
 </span><br>
 
 
@@ -335,7 +335,7 @@
 </div>
 
         <footer class="footer">
-    <div class="top">
+    <!-- <div class="top">
         
 <p>
     <span id="busuanzi_container_site_uv" style="display:none">
@@ -353,14 +353,14 @@
             
             <span>博客内容遵循 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
         </p>
-    </div>
+    </div> -->
     <div class="bottom">
-        <p><span>薛鸿杰 &copy; 2018</span>
+        <p><span>薛鸿杰 &copy; 2018 - 2019</span>
             <span>
                 
                 <a href="http://www.miitbeian.gov.cn/" target="_blank">粤ICP备18140620号-1</a><br>
                 
-                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+                <!-- Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a> -->
             </span>
         </p>
     </div>

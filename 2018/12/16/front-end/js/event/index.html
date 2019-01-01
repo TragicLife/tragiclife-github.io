@@ -21,18 +21,18 @@
     
     
     <meta name="keywords" content="js,Event">
-    <meta name="description" content="事件的绑定与解绑事件绑定1234567addEventListener(type, fn, useCapture/options)options可传值：passive: false 是否阻止默认事件；如果设置为true，则即使在触发的函数中使用e.preventDefault也不会生效capture: false 触发阶段；true为捕获时触发，false为冒泡时触发once: 只执行一次atta">
+    <meta name="description" content="事件的绑定与解绑事件绑定123456789addEventListener(type, fn, useCapture/options)useCapture: 默认为false，监听冒泡阶段options可传值： - passive: false 是否阻止默认事件；如果设置为true，则即使在触发的函数中使用e.preventDefault也不会生效 - capture: false 触发阶段；tr">
 <meta name="keywords" content="js,Event">
 <meta property="og:type" content="article">
 <meta property="og:title" content="事件">
 <meta property="og:url" content="https://tragiclife.github.io/2018/12/16/front-end/js/event/index.html">
 <meta property="og:site_name" content="薛鸿杰的博客">
-<meta property="og:description" content="事件的绑定与解绑事件绑定1234567addEventListener(type, fn, useCapture/options)options可传值：passive: false 是否阻止默认事件；如果设置为true，则即使在触发的函数中使用e.preventDefault也不会生效capture: false 触发阶段；true为捕获时触发，false为冒泡时触发once: 只执行一次atta">
+<meta property="og:description" content="事件的绑定与解绑事件绑定123456789addEventListener(type, fn, useCapture/options)useCapture: 默认为false，监听冒泡阶段options可传值： - passive: false 是否阻止默认事件；如果设置为true，则即使在触发的函数中使用e.preventDefault也不会生效 - capture: false 触发阶段；tr">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-12-18T16:21:52.326Z">
+<meta property="og:updated_time" content="2018-12-23T10:49:23.450Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="事件">
-<meta name="twitter:description" content="事件的绑定与解绑事件绑定1234567addEventListener(type, fn, useCapture/options)options可传值：passive: false 是否阻止默认事件；如果设置为true，则即使在触发的函数中使用e.preventDefault也不会生效capture: false 触发阶段；true为捕获时触发，false为冒泡时触发once: 只执行一次atta">
+<meta name="twitter:description" content="事件的绑定与解绑事件绑定123456789addEventListener(type, fn, useCapture/options)useCapture: 默认为false，监听冒泡阶段options可传值： - passive: false 是否阻止默认事件；如果设置为true，则即使在触发的函数中使用e.preventDefault也不会生效 - capture: false 触发阶段；tr">
     
         <link rel="alternate" type="application/atom+xml" title="薛鸿杰的博客" href="/atom.xml">
     
@@ -174,8 +174,8 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h4 id="事件的绑定与解绑"><a href="#事件的绑定与解绑" class="headerlink" title="事件的绑定与解绑"></a>事件的绑定与解绑</h4><h5 id="事件绑定"><a href="#事件绑定" class="headerlink" title="事件绑定"></a>事件绑定</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">addEventListener(type, fn, useCapture/options)</span><br><span class="line">options可传值：</span><br><span class="line">passive: false 是否阻止默认事件；如果设置为true，则即使在触发的函数中使用e.preventDefault也不会生效</span><br><span class="line">capture: false 触发阶段；true为捕获时触发，false为冒泡时触发</span><br><span class="line">once: 只执行一次</span><br><span class="line"></span><br><span class="line">attachEvent</span><br></pre></td></tr></table></figure>
-<h5 id="事件解绑"><a href="#事件解绑" class="headerlink" title="事件解绑"></a>事件解绑</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">removeEventListener(type, fn, useCapture/options)</span><br><span class="line">options可传值：</span><br><span class="line">passive: false 是否阻止默认事件；如果设置为true，则即使在触发的函数中使用e.preventDefault也不会生效</span><br><span class="line">capture: false 触发阶段；true为捕获时触发，false为冒泡时触发</span><br><span class="line">once: 只执行一次</span><br></pre></td></tr></table></figure>
+            <h4 id="事件的绑定与解绑"><a href="#事件的绑定与解绑" class="headerlink" title="事件的绑定与解绑"></a>事件的绑定与解绑</h4><h5 id="事件绑定"><a href="#事件绑定" class="headerlink" title="事件绑定"></a>事件绑定</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">addEventListener(type, fn, useCapture/options)</span><br><span class="line">useCapture: 默认为false，监听冒泡阶段</span><br><span class="line">options可传值：</span><br><span class="line"> - passive: false 是否阻止默认事件；如果设置为true，则即使在触发的函数中使用e.preventDefault也不会生效</span><br><span class="line"> - capture: false 触发阶段；true为捕获时触发，false为冒泡时触发</span><br><span class="line"> - once: 只执行一次</span><br><span class="line"></span><br><span class="line">IE</span><br><span class="line">attachEvent(&apos;on&apos; + type, listener);</span><br></pre></td></tr></table></figure>
+<h5 id="事件解绑"><a href="#事件解绑" class="headerlink" title="事件解绑"></a>事件解绑</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">// 传值与绑定相同</span><br><span class="line">removeEventListener(type, fn, useCapture/options)</span><br><span class="line"></span><br><span class="line">IE</span><br><span class="line">detachEvent(&apos;on&apos; + type, listener);</span><br></pre></td></tr></table></figure>
 <h4 id="自定义事件"><a href="#自定义事件" class="headerlink" title="自定义事件"></a>自定义事件</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">使用handleEvent</span><br><span class="line">var tap = &#123;</span><br><span class="line">  handleEvent: function(e) &#123;</span><br><span class="line">    console.log(this.name);</span><br><span class="line">  &#125;,</span><br><span class="line">  name:&apos;tap&apos;</span><br><span class="line">&#125;;</span><br><span class="line">document.querySelector(&apos;.wea_mod&apos;).addEventListener(&apos;click&apos;, tap, false);</span><br></pre></td></tr></table></figure>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">使用CustomEvent</span><br><span class="line">var tap2 = document.querySelector(&apos;.wea_mod&apos;);</span><br><span class="line">tap2.addEventListener(&apos;tap&apos;, function(e)&#123;</span><br><span class="line">  console.log(&apos;custom &apos; + e.detail);</span><br><span class="line">&#125;, false);</span><br><span class="line">var evt = new window.CustomEvent(&apos;tap&apos;, &#123;</span><br><span class="line">  bubbles: true, // 如果为 true，事件将冒泡到触发事件的元素的祖先</span><br><span class="line">  cancelable: true, // 如果为 true，可以使用事件对象的 stopPropagation() 方法取消事件传播。</span><br><span class="line">  detail: &#123;&#125; // 细节参数、自定义参数</span><br><span class="line">&#125;);</span><br><span class="line">tap2.dispatchEvent(evt); // 触发自定义事件，返回一个布尔值，判断是否阻止默认事件，false为阻止默认事件</span><br></pre></td></tr></table></figure>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">使用new Event(不能使用自定义参数detail)</span><br><span class="line">var btn = document.querySelector(&apos;.wea_mod&apos;);</span><br><span class="line">var ev = new Event(&apos;test&apos;, &#123;</span><br><span class="line">    bubbles: &apos;true&apos;,</span><br><span class="line">    cancelable: &apos;true&apos;</span><br><span class="line">&#125;);</span><br><span class="line">btn.addEventListener(&apos;test&apos;, function (event) &#123;</span><br><span class="line">    console.log(event.bubbles);</span><br><span class="line">    console.log(event.cancelable);</span><br><span class="line">    console.log(event.detail);</span><br><span class="line">&#125;, false);</span><br><span class="line">btn.dispatchEvent(ev);</span><br></pre></td></tr></table></figure>
@@ -187,7 +187,7 @@
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2018-12-18T16:21:52.326Z" itemprop="dateUpdated">2018-12-18 16:21:52</time>
+    最后更新时间：<time datetime="2018-12-23T10:49:23.450Z" itemprop="dateUpdated">2018-12-23 10:49:23</time>
 </span><br>
 
 
@@ -311,7 +311,7 @@
 </div>
 
         <footer class="footer">
-    <div class="top">
+    <!-- <div class="top">
         
 <p>
     <span id="busuanzi_container_site_uv" style="display:none">
@@ -329,14 +329,14 @@
             
             <span>博客内容遵循 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
         </p>
-    </div>
+    </div> -->
     <div class="bottom">
-        <p><span>薛鸿杰 &copy; 2018</span>
+        <p><span>薛鸿杰 &copy; 2018 - 2019</span>
             <span>
                 
                 <a href="http://www.miitbeian.gov.cn/" target="_blank">粤ICP备18140620号-1</a><br>
                 
-                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+                <!-- Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a> -->
             </span>
         </p>
     </div>

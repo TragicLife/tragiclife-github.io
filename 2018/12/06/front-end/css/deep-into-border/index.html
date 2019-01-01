@@ -21,18 +21,18 @@
     
     
     <meta name="keywords" content="css">
-    <meta name="description" content="border-style为dashed时，不同浏览器下实线和空白区域的比例不同 dotted形状不同 当border-color没有指定颜色时，默认使用color作为边框颜色，类似的还有box-shadow,text-shadow ，outline 让背景图固定距离右侧50pxborder-right:50px solid transparentbackground-position:100% 4">
+    <meta name="description" content="特性 border-style为dashed时，不同浏览器下实线和空白区域的比例不同 border-style为dotted时，形状不同 当border-color没有指定颜色时，默认使用color作为边框颜色，类似的还有box-shadow,text-shadow,outline  应用场景让背景图固定距离右侧50px12border-right:50px solid transparent;b">
 <meta name="keywords" content="css">
 <meta property="og:type" content="article">
 <meta property="og:title" content="深入border">
 <meta property="og:url" content="https://tragiclife.github.io/2018/12/06/front-end/css/deep-into-border/index.html">
 <meta property="og:site_name" content="薛鸿杰的博客">
-<meta property="og:description" content="border-style为dashed时，不同浏览器下实线和空白区域的比例不同 dotted形状不同 当border-color没有指定颜色时，默认使用color作为边框颜色，类似的还有box-shadow,text-shadow ，outline 让背景图固定距离右侧50pxborder-right:50px solid transparentbackground-position:100% 4">
+<meta property="og:description" content="特性 border-style为dashed时，不同浏览器下实线和空白区域的比例不同 border-style为dotted时，形状不同 当border-color没有指定颜色时，默认使用color作为边框颜色，类似的还有box-shadow,text-shadow,outline  应用场景让背景图固定距离右侧50px12border-right:50px solid transparent;b">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-12-06T13:13:36.670Z">
+<meta property="og:updated_time" content="2019-01-01T15:28:48.172Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="深入border">
-<meta name="twitter:description" content="border-style为dashed时，不同浏览器下实线和空白区域的比例不同 dotted形状不同 当border-color没有指定颜色时，默认使用color作为边框颜色，类似的还有box-shadow,text-shadow ，outline 让背景图固定距离右侧50pxborder-right:50px solid transparentbackground-position:100% 4">
+<meta name="twitter:description" content="特性 border-style为dashed时，不同浏览器下实线和空白区域的比例不同 border-style为dotted时，形状不同 当border-color没有指定颜色时，默认使用color作为边框颜色，类似的还有box-shadow,text-shadow,outline  应用场景让背景图固定距离右侧50px12border-right:50px solid transparent;b">
     
         <link rel="alternate" type="application/atom+xml" title="薛鸿杰的博客" href="/atom.xml">
     
@@ -148,6 +148,13 @@
 
 <div class="container body-wrap">
     
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#特性"><span class="post-toc-number">1.</span> <span class="post-toc-text">特性</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#应用场景"><span class="post-toc-number">2.</span> <span class="post-toc-text">应用场景</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#让背景图固定距离右侧50px"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">让背景图固定距离右侧50px</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#实现三角形"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">实现三角形</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#实现梯形"><span class="post-toc-number">2.3.</span> <span class="post-toc-text">实现梯形</span></a></li></ol></li></ol>
+        </nav>
+    </aside>
+
 
 <article id="post-front-end/css/deep-into-border" class="post-article article-type-post fade" itemprop="blogPost">
 
@@ -167,11 +174,20 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <p>border-style为dashed时，不同浏览器下实线和空白区域的比例不同</p>
-<p>dotted<br>形状不同</p>
-<p>当border-color没有指定颜色时，默认使用color作为边框颜色，类似的还有box-shadow,text-shadow ，outline</p>
-<p>让背景图固定距离右侧50px<br>border-right:50px solid transparent<br>background-position:100% 40px </p>
-<p>投影(元素不可见时该属性也是不可见的)<br>filter:drop-shadow(20px 0 #ff8040)</p>
+            <h2 id="特性"><a href="#特性" class="headerlink" title="特性"></a>特性</h2><ul>
+<li>border-style为dashed时，不同浏览器下实线和空白区域的比例不同</li>
+<li>border-style为dotted时，形状不同</li>
+<li>当border-color没有指定颜色时，默认使用color作为边框颜色，类似的还有box-shadow,text-shadow,outline</li>
+</ul>
+<h2 id="应用场景"><a href="#应用场景" class="headerlink" title="应用场景"></a>应用场景</h2><h3 id="让背景图固定距离右侧50px"><a href="#让背景图固定距离右侧50px" class="headerlink" title="让背景图固定距离右侧50px"></a>让背景图固定距离右侧50px</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">border-right:50px solid transparent;</span><br><span class="line">background-position:100% 40px ;</span><br></pre></td></tr></table></figure>
+<h3 id="实现三角形"><a href="#实现三角形" class="headerlink" title="实现三角形"></a>实现三角形</h3><p><style>.triangle {margin-bottom: 10px;width: 0;height: 0;border: 25px solid transparent;border-bottom-color: blue;}</style></p>
+<div class="triangle"></div>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=&quot;triangle&quot;&gt;&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">.triangle &#123;</span><br><span class="line">  width: 50px;</span><br><span class="line">  height: 50px;</span><br><span class="line">  border: 25px solid transparent;</span><br><span class="line">  border-bottom-color: blue;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="实现梯形"><a href="#实现梯形" class="headerlink" title="实现梯形"></a>实现梯形</h3><p><style>.trapezoid {margin-bottom: 10px;width: 70px;height: 0;border: 25px solid transparent;border-bottom-color: blue;}</style></p>
+<div class="trapezoid"></div>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=&quot;trapezoid&quot;&gt;&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">.trapezoid &#123;</span><br><span class="line">  width: 50px;</span><br><span class="line">  height: 50px;</span><br><span class="line">  border: 25px solid transparent;</span><br><span class="line">  border-bottom-color: blue;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
         </div>
 
@@ -180,7 +196,7 @@
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2018-12-06T13:13:36.670Z" itemprop="dateUpdated">2018-12-06 13:13:36</time>
+    最后更新时间：<time datetime="2019-01-01T15:28:48.172Z" itemprop="dateUpdated">2019-01-01 15:28:48</time>
 </span><br>
 
 
@@ -304,7 +320,7 @@
 </div>
 
         <footer class="footer">
-    <div class="top">
+    <!-- <div class="top">
         
 <p>
     <span id="busuanzi_container_site_uv" style="display:none">
@@ -322,14 +338,14 @@
             
             <span>博客内容遵循 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
         </p>
-    </div>
+    </div> -->
     <div class="bottom">
-        <p><span>薛鸿杰 &copy; 2018</span>
+        <p><span>薛鸿杰 &copy; 2018 - 2019</span>
             <span>
                 
                 <a href="http://www.miitbeian.gov.cn/" target="_blank">粤ICP备18140620号-1</a><br>
                 
-                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+                <!-- Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a> -->
             </span>
         </p>
     </div>

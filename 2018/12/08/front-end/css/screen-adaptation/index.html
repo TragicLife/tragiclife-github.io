@@ -21,18 +21,18 @@
     
     
     <meta name="keywords" content="css,rem">
-    <meta name="description" content="常见移动web适配方法PC960px/1000px居中盒子模型，定高，定宽display:inline-block 移动web:定高，宽度百分比flexMedia Query(媒体查询) Media Query1234@media 媒体类型 and (媒体特性)如: @media screen and (max-width:320px)可在标签上引用&amp;lt;link href=&amp;quot;&amp;quo">
+    <meta name="description" content="常见移动web适配方法PC 960px/1000px居中 盒子模型，定高，定宽 display:inline-block  移动web: 定高，宽度百分比 flex Media Query(媒体查询)  Media Query1234@media 媒体类型 and (媒体特性)如: @media screen and (max-width:320px)可在标签上引用&amp;lt;link href=&amp;q">
 <meta name="keywords" content="css,rem">
 <meta property="og:type" content="article">
 <meta property="og:title" content="屏幕适配">
 <meta property="og:url" content="https://tragiclife.github.io/2018/12/08/front-end/css/screen-adaptation/index.html">
 <meta property="og:site_name" content="薛鸿杰的博客">
-<meta property="og:description" content="常见移动web适配方法PC960px/1000px居中盒子模型，定高，定宽display:inline-block 移动web:定高，宽度百分比flexMedia Query(媒体查询) Media Query1234@media 媒体类型 and (媒体特性)如: @media screen and (max-width:320px)可在标签上引用&amp;lt;link href=&amp;quot;&amp;quo">
+<meta property="og:description" content="常见移动web适配方法PC 960px/1000px居中 盒子模型，定高，定宽 display:inline-block  移动web: 定高，宽度百分比 flex Media Query(媒体查询)  Media Query1234@media 媒体类型 and (媒体特性)如: @media screen and (max-width:320px)可在标签上引用&amp;lt;link href=&amp;q">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-12-07T17:12:18.000Z">
+<meta property="og:updated_time" content="2019-01-01T15:43:41.458Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="屏幕适配">
-<meta name="twitter:description" content="常见移动web适配方法PC960px/1000px居中盒子模型，定高，定宽display:inline-block 移动web:定高，宽度百分比flexMedia Query(媒体查询) Media Query1234@media 媒体类型 and (媒体特性)如: @media screen and (max-width:320px)可在标签上引用&amp;lt;link href=&amp;quot;&amp;quo">
+<meta name="twitter:description" content="常见移动web适配方法PC 960px/1000px居中 盒子模型，定高，定宽 display:inline-block  移动web: 定高，宽度百分比 flex Media Query(媒体查询)  Media Query1234@media 媒体类型 and (媒体特性)如: @media screen and (max-width:320px)可在标签上引用&amp;lt;link href=&amp;q">
     
         <link rel="alternate" type="application/atom+xml" title="薛鸿杰的博客" href="/atom.xml">
     
@@ -151,7 +151,7 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#常见移动web适配方法"><span class="post-toc-number">1.</span> <span class="post-toc-text">常见移动web适配方法</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#PC"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">PC</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#移动web"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">移动web:</span></a></li></ol></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Media-Query"><span class="post-toc-number">2.</span> <span class="post-toc-text">Media Query</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#rem原理和简介"><span class="post-toc-number">3.</span> <span class="post-toc-text">rem原理和简介</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#js动态修改font-size"><span class="post-toc-number">4.</span> <span class="post-toc-text">js动态修改font-size</span></a></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#常见移动web适配方法"><span class="post-toc-number">1.</span> <span class="post-toc-text">常见移动web适配方法</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#PC"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">PC</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#移动web"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">移动web:</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Media-Query"><span class="post-toc-number">2.</span> <span class="post-toc-text">Media Query</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#rem原理和简介"><span class="post-toc-number">3.</span> <span class="post-toc-text">rem原理和简介</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#适配原理"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">适配原理</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#兼容性"><span class="post-toc-number">3.2.</span> <span class="post-toc-text">兼容性</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#js动态修改font-size"><span class="post-toc-number">4.</span> <span class="post-toc-text">js动态修改font-size</span></a></li></ol>
         </nav>
     </aside>
 
@@ -174,12 +174,24 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h4 id="常见移动web适配方法"><a href="#常见移动web适配方法" class="headerlink" title="常见移动web适配方法"></a>常见移动web适配方法</h4><h5 id="PC"><a href="#PC" class="headerlink" title="PC"></a>PC</h5><p>960px/1000px居中<br>盒子模型，定高，定宽<br>display:inline-block</p>
-<h5 id="移动web"><a href="#移动web" class="headerlink" title="移动web:"></a>移动web:</h5><p>定高，宽度百分比<br>flex<br>Media Query(媒体查询)</p>
-<h4 id="Media-Query"><a href="#Media-Query" class="headerlink" title="Media Query"></a>Media Query</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">@media 媒体类型 and (媒体特性)</span><br><span class="line">如: @media screen and (max-width:320px)</span><br><span class="line">可在标签上引用</span><br><span class="line">&lt;link href=&quot;&quot; media=&quot;screen and (max-width:320px)&quot;/&gt;</span><br></pre></td></tr></table></figure>
-<h4 id="rem原理和简介"><a href="#rem原理和简介" class="headerlink" title="rem原理和简介"></a>rem原理和简介</h4><p>字体单位<br>值根据html根元素大小而定，同样可以作为宽度、高度等单位<br>适配原理<br>将px替换成rem，动态修改html的font-size适配<br>兼容性<br>IOS6以上、Android2.1以上</p>
-<h4 id="js动态修改font-size"><a href="#js动态修改font-size" class="headerlink" title="js动态修改font-size"></a>js动态修改font-size</h4><p>let htmlWidth = document.docElement.clientWidth || document.body.clientWidth<br>let $html = document.querySelector(‘html’)<br>$html.style.fontSize = htmWidth / 3.75 + ‘px’</p>
-
+            <h2 id="常见移动web适配方法"><a href="#常见移动web适配方法" class="headerlink" title="常见移动web适配方法"></a>常见移动web适配方法</h2><h3 id="PC"><a href="#PC" class="headerlink" title="PC"></a>PC</h3><ul>
+<li>960px/1000px居中</li>
+<li>盒子模型，定高，定宽</li>
+<li>display:inline-block</li>
+</ul>
+<h3 id="移动web"><a href="#移动web" class="headerlink" title="移动web:"></a>移动web:</h3><ul>
+<li>定高，宽度百分比</li>
+<li>flex</li>
+<li>Media Query(媒体查询)</li>
+</ul>
+<h2 id="Media-Query"><a href="#Media-Query" class="headerlink" title="Media Query"></a>Media Query</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">@media 媒体类型 and (媒体特性)</span><br><span class="line">如: @media screen and (max-width:320px)</span><br><span class="line">可在标签上引用</span><br><span class="line">&lt;link href=&quot;&quot; media=&quot;screen and (max-width:320px)&quot;/&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="rem原理和简介"><a href="#rem原理和简介" class="headerlink" title="rem原理和简介"></a>rem原理和简介</h2><ol>
+<li>字体单位</li>
+<li>值根据html根元素大小而定，同样可以作为宽度、高度等单位</li>
+</ol>
+<h3 id="适配原理"><a href="#适配原理" class="headerlink" title="适配原理"></a>适配原理</h3><p>将px替换成rem，动态修改html的font-size适配</p>
+<h3 id="兼容性"><a href="#兼容性" class="headerlink" title="兼容性"></a>兼容性</h3><p>IOS6以上、Android2.1以上</p>
+<h2 id="js动态修改font-size"><a href="#js动态修改font-size" class="headerlink" title="js动态修改font-size"></a>js动态修改font-size</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">(function computedWidth()&#123;</span><br><span class="line">  let htmlWidth = document.documentElement.clientWidth || document.body.clientWidth;</span><br><span class="line">  let $html = document.querySelector(&apos;html&apos;);</span><br><span class="line">  $html.style.fontSize = htmWidth / 3.75 + &apos;px&apos;; // iPhone6的手机尺寸</span><br><span class="line"></span><br><span class="line">  //屏幕宽度变化时</span><br><span class="line">  window.addEventListener(&apos;resize&apos;, computedWidth);</span><br><span class="line">  //横竖屏切换时</span><br><span class="line">  window.addEventListener(&apos;orientationchange&apos;, computedWidth);</span><br><span class="line">&#125;)();</span><br></pre></td></tr></table></figure>
         </div>
 
         <blockquote class="post-copyright">
@@ -187,7 +199,7 @@
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2018-12-07T17:12:18.000Z" itemprop="dateUpdated">2018-12-07 17:12:18</time>
+    最后更新时间：<time datetime="2019-01-01T15:43:41.458Z" itemprop="dateUpdated">2019-01-01 15:43:41</time>
 </span><br>
 
 
@@ -311,7 +323,7 @@
 </div>
 
         <footer class="footer">
-    <div class="top">
+    <!-- <div class="top">
         
 <p>
     <span id="busuanzi_container_site_uv" style="display:none">
@@ -329,14 +341,14 @@
             
             <span>博客内容遵循 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
         </p>
-    </div>
+    </div> -->
     <div class="bottom">
-        <p><span>薛鸿杰 &copy; 2018</span>
+        <p><span>薛鸿杰 &copy; 2018 - 2019</span>
             <span>
                 
                 <a href="http://www.miitbeian.gov.cn/" target="_blank">粤ICP备18140620号-1</a><br>
                 
-                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+                <!-- Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a> -->
             </span>
         </p>
     </div>

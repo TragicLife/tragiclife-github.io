@@ -29,7 +29,7 @@
 <meta property="og:site_name" content="薛鸿杰的博客">
 <meta property="og:description" content="padding是否生效对于block水平元素 padding值过大，一定会影响尺寸 width非auto，padding一定影响尺寸 width为auto或box-sizing为border-box，同时padding值没有过大，不影响尺寸  对于inline水平元素水平padding影响尺寸，垂直padding不影响尺寸，但是会影响背景色(占据空间) 支持的属性值 不支持负值 百分比根据宽度计算">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-12-05T16:28:53.637Z">
+<meta property="og:updated_time" content="2019-01-01T15:26:48.635Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="深入padding">
 <meta name="twitter:description" content="padding是否生效对于block水平元素 padding值过大，一定会影响尺寸 width非auto，padding一定影响尺寸 width为auto或box-sizing为border-box，同时padding值没有过大，不影响尺寸  对于inline水平元素水平padding影响尺寸，垂直padding不影响尺寸，但是会影响背景色(占据空间) 支持的属性值 不支持负值 百分比根据宽度计算">
@@ -151,7 +151,7 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#padding是否生效"><span class="post-toc-number">1.</span> <span class="post-toc-text">padding是否生效</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#对于block水平元素"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">对于block水平元素</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#对于inline水平元素"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">对于inline水平元素</span></a></li></ol></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#支持的属性值"><span class="post-toc-number">2.</span> <span class="post-toc-text">支持的属性值</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#如何得到一个正方形"><span class="post-toc-number">3.</span> <span class="post-toc-text">如何得到一个正方形</span></a></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#padding是否生效"><span class="post-toc-number">1.</span> <span class="post-toc-text">padding是否生效</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#对于block水平元素"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">对于block水平元素</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#对于inline水平元素"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">对于inline水平元素</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#支持的属性值"><span class="post-toc-number">2.</span> <span class="post-toc-text">支持的属性值</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#应用场景"><span class="post-toc-number">3.</span> <span class="post-toc-text">应用场景</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#实现border与内容区域之间空白的效果"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">实现border与内容区域之间空白的效果</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#如何得到一个正方形"><span class="post-toc-number">3.2.</span> <span class="post-toc-text">如何得到一个正方形</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#其他"><span class="post-toc-number">4.</span> <span class="post-toc-text">其他</span></a></li></ol>
         </nav>
     </aside>
 
@@ -174,24 +174,32 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h4 id="padding是否生效"><a href="#padding是否生效" class="headerlink" title="padding是否生效"></a>padding是否生效</h4><h5 id="对于block水平元素"><a href="#对于block水平元素" class="headerlink" title="对于block水平元素"></a>对于block水平元素</h5><ol>
+            <h2 id="padding是否生效"><a href="#padding是否生效" class="headerlink" title="padding是否生效"></a>padding是否生效</h2><h3 id="对于block水平元素"><a href="#对于block水平元素" class="headerlink" title="对于block水平元素"></a>对于block水平元素</h3><ol>
 <li>padding值过大，一定会影响尺寸</li>
 <li>width非auto，padding一定影响尺寸</li>
 <li>width为auto或box-sizing为border-box，同时padding值没有过大，不影响尺寸</li>
 </ol>
-<h5 id="对于inline水平元素"><a href="#对于inline水平元素" class="headerlink" title="对于inline水平元素"></a>对于inline水平元素</h5><p>水平padding影响尺寸，垂直padding不影响尺寸，但是会影响背景色(占据空间)</p>
-<h4 id="支持的属性值"><a href="#支持的属性值" class="headerlink" title="支持的属性值"></a>支持的属性值</h4><ol>
+<h3 id="对于inline水平元素"><a href="#对于inline水平元素" class="headerlink" title="对于inline水平元素"></a>对于inline水平元素</h3><p>水平padding影响尺寸，垂直padding不影响尺寸，但是会影响背景色(占据空间)</p>
+<h2 id="支持的属性值"><a href="#支持的属性值" class="headerlink" title="支持的属性值"></a>支持的属性值</h2><ol>
 <li>不支持负值</li>
 <li>百分比根据宽度计算(如果设置50%则为一个正方形)</li>
 <li>inline元素的padding：同样相对于宽度计算，默认的宽度高度细节有差异，padding会断行</li>
 </ol>
-<blockquote>
-<p>inline元素的垂直padding会让让空白节点显现，既规范中的strut，可以通过font-size:0去除</p>
-</blockquote>
-<p>ol/ul标签内置padding-left是以px为单位的，如果字号很小，间距就会很开；如果字号很大，就会跑到容器外面<br>input、textarea、button都有内置padding<br>在firefox下设置button的padding为0时依然有padding值，通过设置button::-moz-focus-inner{padding:0}。<br>IE7下文字越多，button的padding值越大，通过设置button{overflow:visiable;}去除。<br>可访问性隐藏：将元素设置absolute，定位到看不见的地方，或者设置z-index为-1隐藏在背景之下。<br>可通过使用label来代替button<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;button id＝&quot;btn&quot;&gt;&lt;/button&gt;</span><br><span class="line">&lt;label for＝&quot;btn&quot;&gt;&lt;/label&gt;</span><br></pre></td></tr></table></figure></p>
-<p>通过background-clip:content-box与padding结合，实现border与内容区域之间空白的效果</p>
-<h4 id="如何得到一个正方形"><a href="#如何得到一个正方形" class="headerlink" title="如何得到一个正方形"></a>如何得到一个正方形</h4><p><style>.square-container{width: 50px;height: 50px;}.square {width: 100%;padding-top: 100%;background-color: blue;}</style></p>
-<p><div class="square-container"><div class="square"></div></div><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">.square-container&#123;</span><br><span class="line">  width: 50px;</span><br><span class="line">  height: 50px;</span><br><span class="line">&#125;</span><br><span class="line">.square &#123;</span><br><span class="line">  width: 100%;</span><br><span class="line">  padding-top: 100%;</span><br><span class="line">  background-color: blue;</span><br><span class="line">&#125;</span><br><span class="line">&lt;div class=&quot;square-container&quot;&gt;</span><br><span class="line">  &lt;div class=&quot;square&quot;&gt;&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure></p>
+<h2 id="应用场景"><a href="#应用场景" class="headerlink" title="应用场景"></a>应用场景</h2><h3 id="实现border与内容区域之间空白的效果"><a href="#实现border与内容区域之间空白的效果" class="headerlink" title="实现border与内容区域之间空白的效果"></a>实现border与内容区域之间空白的效果</h3><p><style>.clip-container {margin: 10px;padding: 10px;width: 50px;height: 50px;border: 10px solid red;background-color: blue;background-clip: content-box;}</style></p>
+<div class="clip-container"></div>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=&quot;clip-container&quot;&gt;&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">// 利用background-clip实现</span><br><span class="line">.clip-container &#123;</span><br><span class="line">  padding: 10px;</span><br><span class="line">  width: 50px;</span><br><span class="line">  height: 50px;</span><br><span class="line">  border: 10px solid red;</span><br><span class="line">  background-color: blue;</span><br><span class="line">  background-clip: content-box;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="如何得到一个正方形"><a href="#如何得到一个正方形" class="headerlink" title="如何得到一个正方形"></a>如何得到一个正方形</h3><p><style>.square-container{margin: 10px;width: 50px;height: 50px;}.square {width: 100%;padding-top: 100%;background-color: blue;}</style></p>
+<div class="square-container"><div class="square"></div></div>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=&quot;square-container&quot;&gt;</span><br><span class="line">  &lt;div class=&quot;square&quot;&gt;&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">.square-container&#123;</span><br><span class="line">  width: 50px;</span><br><span class="line">  height: 50px;</span><br><span class="line">&#125;</span><br><span class="line">.square &#123;</span><br><span class="line">  width: 100%;</span><br><span class="line">  padding-top: 100%;</span><br><span class="line">  background-color: blue;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><ul>
+<li>inline元素的垂直padding会让让空白节点显现，既规范中的strut，可以通过font-size:0去除</li>
+<li>ol/ul标签内置padding-left是以px为单位的，如果字号很小，间距就会很开；如果字号很大，就会跑到容器外面</li>
+<li>在firefox下设置button的padding为0时依然有padding值，通过设置<code>button::-moz-focus-inner{padding:0}</code>。</li>
+<li>IE7下文字越多，button的padding值越大，通过设置<code>button{overflow:visiable;}</code>去除。</li>
+<li>可访问性隐藏：将元素设置absolute，定位到看不见的地方，或者设置<code>z-index:-1</code>隐藏在背景之下。</li>
+</ul>
 
         </div>
 
@@ -200,7 +208,7 @@
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2018-12-05T16:28:53.637Z" itemprop="dateUpdated">2018-12-05 16:28:53</time>
+    最后更新时间：<time datetime="2019-01-01T15:26:48.635Z" itemprop="dateUpdated">2019-01-01 15:26:48</time>
 </span><br>
 
 
@@ -324,7 +332,7 @@
 </div>
 
         <footer class="footer">
-    <div class="top">
+    <!-- <div class="top">
         
 <p>
     <span id="busuanzi_container_site_uv" style="display:none">
@@ -342,14 +350,14 @@
             
             <span>博客内容遵循 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
         </p>
-    </div>
+    </div> -->
     <div class="bottom">
-        <p><span>薛鸿杰 &copy; 2018</span>
+        <p><span>薛鸿杰 &copy; 2018 - 2019</span>
             <span>
                 
                 <a href="http://www.miitbeian.gov.cn/" target="_blank">粤ICP备18140620号-1</a><br>
                 
-                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+                <!-- Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a> -->
             </span>
         </p>
     </div>

@@ -28,7 +28,7 @@
 <meta property="og:site_name" content="薛鸿杰的博客">
 <meta property="og:description" content="vue界面渲染时出现花括号{}123456在挂载vue的标签上使用v-cloak，设置v-cloak属性的样式，vue渲染完后会自动移除该属性&amp;lt;div class=&amp;quot;app&amp;quot; v-cloak&amp;gt;&amp;lt;/div&amp;gt;[v-cloak]&amp;#123;  display: none;&amp;#125; 使用:style或:class绑定时，key名带中划线(-)问题1用引号将该">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-12-14T15:38:31.101Z">
+<meta property="og:updated_time" content="2018-12-27T16:07:07.548Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="项目中遇到的那些事">
 <meta name="twitter:description" content="vue界面渲染时出现花括号{}123456在挂载vue的标签上使用v-cloak，设置v-cloak属性的样式，vue渲染完后会自动移除该属性&amp;lt;div class=&amp;quot;app&amp;quot; v-cloak&amp;gt;&amp;lt;/div&amp;gt;[v-cloak]&amp;#123;  display: none;&amp;#125; 使用:style或:class绑定时，key名带中划线(-)问题1用引号将该">
@@ -216,6 +216,7 @@
 <blockquote>
 <p>better-scroll的bug</p>
 </blockquote>
+<p><strong>vue中同事使用keep-alive和better-scroll</strong><br>同时使用keep-alive和better-scroll时，better-scroll注册的事件不会自动销毁，需要手动调用bScroll.destroy()方法进行销毁。</p>
 <h2 id="svg"><a href="#svg" class="headerlink" title="svg"></a>svg</h2><p><strong>使用animate时，animate动画不运行</strong></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">1. 获取animate的DOM，调用beginElement方法执行动画</span><br><span class="line">2. animate的dur设置的时间太小(小于25ms)，动画不会执行</span><br></pre></td></tr></table></figure>
 <h2 id="JS"><a href="#JS" class="headerlink" title="JS"></a>JS</h2><p><strong>canvas绘制问题</strong></p>
@@ -261,7 +262,7 @@
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2018-12-14T15:38:31.101Z" itemprop="dateUpdated">2018-12-14 15:38:31</time>
+    最后更新时间：<time datetime="2018-12-27T16:07:07.548Z" itemprop="dateUpdated">2018-12-27 16:07:07</time>
 </span><br>
 
 
@@ -383,7 +384,7 @@
 </div>
 
         <footer class="footer">
-    <div class="top">
+    <!-- <div class="top">
         
 <p>
     <span id="busuanzi_container_site_uv" style="display:none">
@@ -401,14 +402,14 @@
             
             <span>博客内容遵循 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
         </p>
-    </div>
+    </div> -->
     <div class="bottom">
-        <p><span>薛鸿杰 &copy; 2018</span>
+        <p><span>薛鸿杰 &copy; 2018 - 2019</span>
             <span>
                 
                 <a href="http://www.miitbeian.gov.cn/" target="_blank">粤ICP备18140620号-1</a><br>
                 
-                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+                <!-- Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a> -->
             </span>
         </p>
     </div>
