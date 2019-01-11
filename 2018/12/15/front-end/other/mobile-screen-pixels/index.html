@@ -28,7 +28,7 @@
 <meta property="og:site_name" content="薛鸿杰的博客">
 <meta property="og:description" content="Pixel 移动开发像素知识px: css pixels 逻辑像素，浏览器使用的抽象单位dp,pt: device independent pixels 设备无关像素dpr: devicePixelRatio 设备像素缩放比 计算公式：1px = (dpr)² * dp DPI: 打印机每英寸可以喷的墨汁点(印刷行业)PPI: 屏幕每英寸的像素数量，即单位英寸内的像素密度 计算公式：以iPhone">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-12-18T16:21:10.062Z">
+<meta property="og:updated_time" content="2019-01-11T15:59:11.117Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="移动端屏幕像素">
 <meta name="twitter:description" content="Pixel 移动开发像素知识px: css pixels 逻辑像素，浏览器使用的抽象单位dp,pt: device independent pixels 设备无关像素dpr: devicePixelRatio 设备像素缩放比 计算公式：1px = (dpr)² * dp DPI: 打印机每英寸可以喷的墨汁点(印刷行业)PPI: 屏幕每英寸的像素数量，即单位英寸内的像素密度 计算公式：以iPhone">
@@ -147,6 +147,13 @@
 
 <div class="container body-wrap">
     
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Pixel-移动开发像素知识"><span class="post-toc-number">1.</span> <span class="post-toc-text">Pixel 移动开发像素知识</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Viewport"><span class="post-toc-number">2.</span> <span class="post-toc-text">Viewport</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#手机浏览器默认为我们做两件事"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">手机浏览器默认为我们做两件事</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#为什么不适用默认的980px的布局viewport-layout-viewport"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">为什么不适用默认的980px的布局viewport(layout viewport)</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#meta标签"><span class="post-toc-number">3.</span> <span class="post-toc-text">meta标签</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#响应式设计"><span class="post-toc-number">4.</span> <span class="post-toc-text">响应式设计</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#媒体类型："><span class="post-toc-number">4.1.</span> <span class="post-toc-text">媒体类型：</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#常用媒体查询参数："><span class="post-toc-number">4.2.</span> <span class="post-toc-text">常用媒体查询参数：</span></a></li></ol></li></ol>
+        </nav>
+    </aside>
+
 
 <article id="post-front-end/other/mobile-screen-pixels" class="post-article article-type-post fade" itemprop="blogPost">
 
@@ -166,7 +173,7 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <p>Pixel 移动开发像素知识<br>px: css pixels 逻辑像素，浏览器使用的抽象单位<br>dp,pt: device independent pixels 设备无关像素<br>dpr: devicePixelRatio 设备像素缩放比</p>
+            <h2 id="Pixel-移动开发像素知识"><a href="#Pixel-移动开发像素知识" class="headerlink" title="Pixel 移动开发像素知识"></a>Pixel 移动开发像素知识</h2><p>px: css pixels 逻辑像素，浏览器使用的抽象单位<br>dp,pt: device independent pixels 设备无关像素<br>dpr: devicePixelRatio 设备像素缩放比</p>
 <p>计算公式：1px = (dpr)² * dp</p>
 <p>DPI: 打印机每英寸可以喷的墨汁点(印刷行业)<br>PPI: 屏幕每英寸的像素数量，即单位英寸内的像素密度</p>
 <p>计算公式：以iPhone5为例子<br>ppi = √ (1136² + 640²) / 4 = 326ppi (视网膜Retina屏)</p>
@@ -197,26 +204,30 @@
 </tr>
 </tbody>
 </table>
+<blockquote>
 <p>Retina屏(高清屏): dpr都是大于等于2</p>
+</blockquote>
 <p>PPI越高，像素数越高，图像越清晰<br>但可视度越低(小)，系统默认设置缩放比越大</p>
-<p>Viewport<br>手机浏览器默认为我们做两件事<br>页面渲染在980px(ios)的viewport(为了排版正确)<br>缩放(排版正确后，再缩放到手机屏幕大小) //这就是网页在手机上，会全屏显示的原因</p>
+<h2 id="Viewport"><a href="#Viewport" class="headerlink" title="Viewport"></a>Viewport</h2><h3 id="手机浏览器默认为我们做两件事"><a href="#手机浏览器默认为我们做两件事" class="headerlink" title="手机浏览器默认为我们做两件事"></a>手机浏览器默认为我们做两件事</h3><ol>
+<li>页面渲染在980px(ios)的viewport(为了排版正确)</li>
+<li>缩放(排版正确后，再缩放到手机屏幕大小) //这就是网页在手机上，会全屏显示的原因</li>
+</ol>
 <p>visual viewport：度量/视口viewport宽高<br>visual viewport是页面当前显示在屏幕上的部分。用户可以通过滚动来改变他所看到的页面的部分，或者通过缩放来改变visual viewport的大小。<br>// 无法改变，通过缩放scale控制<br>layout viewport: 布局viewport 如图，ios的默认layout viewport为980px<br>// 可以理解为就是body的宽度，在此之上渲染页面</p>
-<p>为什么不适用默认的980px的布局viewport(layout viewport)<br>宽度不可控制，不同系统不同设备的默认值都可能不同<br>页面先在layout viewport全屏渲染css,再通过缩放由visual viewport展示，交互不友好<br>链接不可点<br>有缩放，缩放后又有滚动<br>font-size:40px=PC的12px,不规范，字体设置是另外一门学问了。</p>
-<p>meta标签</p>
-<p><meta name="viewport" content="name=value,name=value"><br>width: 设置布局viewport的特定值(device-width)<br>initial-scale: 设置页面的初始缩放<br>minimum-scale: 最小缩放<br>maximum-scale: 最大缩放<br>user-scalable: 用户能否缩放<br>最常用写法</p>
-<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
-
+<h3 id="为什么不适用默认的980px的布局viewport-layout-viewport"><a href="#为什么不适用默认的980px的布局viewport-layout-viewport" class="headerlink" title="为什么不适用默认的980px的布局viewport(layout viewport)"></a>为什么不适用默认的980px的布局viewport(layout viewport)</h3><ul>
+<li>宽度不可控制，不同系统不同设备的默认值都可能不同</li>
+<li>页面先在layout viewport全屏渲染css,再通过缩放由visual viewport展示，交互不友好</li>
+<li>链接不可点</li>
+<li>有缩放，缩放后又有滚动</li>
+<li>font-size:40px=PC的12px,不规范，字体设置是另外一门学问了。</li>
+</ul>
+<h2 id="meta标签"><a href="#meta标签" class="headerlink" title="meta标签"></a>meta标签</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;meta name=&quot;viewport&quot; content=&quot;name=value,name=value&quot;&gt;</span><br><span class="line">width: 设置布局viewport的特定值(device-width)</span><br><span class="line">initial-scale: 设置页面的初始缩放</span><br><span class="line">minimum-scale: 最小缩放</span><br><span class="line">maximum-scale: 最大缩放</span><br><span class="line">user-scalable: 用户能否缩放</span><br></pre></td></tr></table></figure>
+<p>最常用写法<code>&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width,initial-scale=1,user-scalable=no&quot;&gt;</code></p>
 <p>方案一：根据设备的实际宽度来设计(常用)<br>手机宽320px，拿320px设计<br>方案二：1px=1dp<br>缩放0.5。根据设备的物理像素dp等于抽象像素px来设计。1像素边框和高清图片都不需要额外处理。</p>
-<p>响应式设计<br>媒体类型：<br>screen(屏幕)<br>print(打印机)<br>handheld(手持设备)<br>all(通用)<br>常用媒体查询参数：<br>width(视口宽度)<br>height(视口高度)<br>device-width(设备宽度)<br>device-height(设备高度)<br>orientation(检查设备处于横向(landscape)还是竖屏(portrait))</p>
-<p>移动web页面上的click事件响应都要慢上300ms<br>使用tap事件代替click事件</p>
-<p>自定义tap事件原理：<br>在touchstart、touchend时记录时间、手指位置，在touchend时进行比较，如果手指位置为同一位置(或允许移动一个非常小的位移值)且时间间隔较短(一般认为是200ms)，且过程中未曾触发过touchmove，即可认为出发了手持设备上的”click”，一般称它为”tap”</p>
-<p>tap透传的解决方案<br>使用缓动动画，过渡300ms的延迟<br>中间层dom元素的加入，让中间层接受这个“穿透”事件，稍后隐藏<br>“上下”都使用tap事件，原理上解决tap透传事件(但不可避免原生标签的click事件)<br>改用Fastclick的库</p>
-<p>触摸事件<br>touchstart: 手指触摸屏幕触发(已经有手指放屏幕上不会触发)<br>touchmove: 手指在屏幕华东，连续触发<br>touchend: 手指离开屏幕时触发<br>touchcancel: 系统取消touch时候触发(不常用)</p>
-<p>触摸属性<br>touches: 跟踪触摸操作的touch对象数组<br>targetTouches: 特定事件目标的touch对象数组<br>changeTouches: 上次触摸改变的touch对象数组</p>
-<p>每个touch对象包含属性:<br>clientX: 触摸目标在视口中的x坐标<br>clientY: 触摸目标在视口中的y坐标<br>identifier: 标识触摸的唯一ID<br>pageX: 触摸目标在页面中的x坐标(包含滚动)<br>pageY: 触摸目标在页面中的y坐标(包含滚动)<br>screenX: 触摸目标在屏幕中的x坐标<br>screenY: 触摸目标在屏幕中的y坐标<br>target: 触摸目标的DOM节点</p>
-<p>弹性滚动<br>body层滚动(系统特殊化处理):<br>自带弹性滚动，overflow: hidden失效，GIF和定时器暂停<br>局部滚动:<br>没有弹性滚动，没有惯性滚动，不流畅<br>局部滚动开启弹性滚动(仅支持IOS)<br>-webkit-overflow-scrolling: touch;<br>上拉加载使用scroll事件，而不是touch事件(因为android中会有bug)</p>
-<p>-webkit-overflow-scrolling:touch偶尔卡住或不能滑动的bug<br>在使用该属性的元素上不设置定位或者手动设置定位为static<br>在webkit-overflow-scrolling:touch属性的下一层子元素上，将height加1%或1px。从而主动触发scrollbar。</p>
-<p>-webkit-overflow-scrolling:touch还会导致的bug<br>滚动中 scrollTop 属性不会变化<br>手势可穿过其他元素触发元素滚动<br>滚动时暂停其他 transition</p>
+<h2 id="响应式设计"><a href="#响应式设计" class="headerlink" title="响应式设计"></a>响应式设计</h2><h3 id="媒体类型："><a href="#媒体类型：" class="headerlink" title="媒体类型："></a>媒体类型：</h3><p>screen // 屏幕<br>print // 打印机<br>handheld // 手持设备<br>all // 通用</p>
+<h3 id="常用媒体查询参数："><a href="#常用媒体查询参数：" class="headerlink" title="常用媒体查询参数："></a>常用媒体查询参数：</h3><p>width // 视口宽度<br>height // 视口高度<br>device-width // 设备宽度<br>device-height // 设备高度<br>orientation // 定义输出设备中的页面可见区域高度是否大于或等于宽度。大于或等于为portrait(竖屏)，其余为landscape(横屏)</p>
+<blockquote>
+<p>@media screen and (max-width: 300px) {}</p>
+</blockquote>
 
         </div>
 
@@ -225,7 +236,7 @@
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2018-12-18T16:21:10.062Z" itemprop="dateUpdated">2018-12-18 16:21:10</time>
+    最后更新时间：<time datetime="2019-01-11T15:59:11.117Z" itemprop="dateUpdated">2019-01-11 15:59:11</time>
 </span><br>
 
 

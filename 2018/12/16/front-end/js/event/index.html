@@ -29,7 +29,7 @@
 <meta property="og:site_name" content="薛鸿杰的博客">
 <meta property="og:description" content="事件的绑定与解绑事件绑定123456789addEventListener(type, fn, useCapture/options)useCapture: 默认为false，监听冒泡阶段options可传值： - passive: false 是否阻止默认事件；如果设置为true，则即使在触发的函数中使用e.preventDefault也不会生效 - capture: false 触发阶段；tr">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-12-23T10:49:23.450Z">
+<meta property="og:updated_time" content="2019-01-08T13:06:27.959Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="事件">
 <meta name="twitter:description" content="事件的绑定与解绑事件绑定123456789addEventListener(type, fn, useCapture/options)useCapture: 默认为false，监听冒泡阶段options可传值： - passive: false 是否阻止默认事件；如果设置为true，则即使在触发的函数中使用e.preventDefault也不会生效 - capture: false 触发阶段；tr">
@@ -180,6 +180,16 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">使用CustomEvent</span><br><span class="line">var tap2 = document.querySelector(&apos;.wea_mod&apos;);</span><br><span class="line">tap2.addEventListener(&apos;tap&apos;, function(e)&#123;</span><br><span class="line">  console.log(&apos;custom &apos; + e.detail);</span><br><span class="line">&#125;, false);</span><br><span class="line">var evt = new window.CustomEvent(&apos;tap&apos;, &#123;</span><br><span class="line">  bubbles: true, // 如果为 true，事件将冒泡到触发事件的元素的祖先</span><br><span class="line">  cancelable: true, // 如果为 true，可以使用事件对象的 stopPropagation() 方法取消事件传播。</span><br><span class="line">  detail: &#123;&#125; // 细节参数、自定义参数</span><br><span class="line">&#125;);</span><br><span class="line">tap2.dispatchEvent(evt); // 触发自定义事件，返回一个布尔值，判断是否阻止默认事件，false为阻止默认事件</span><br></pre></td></tr></table></figure>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">使用new Event(不能使用自定义参数detail)</span><br><span class="line">var btn = document.querySelector(&apos;.wea_mod&apos;);</span><br><span class="line">var ev = new Event(&apos;test&apos;, &#123;</span><br><span class="line">    bubbles: &apos;true&apos;,</span><br><span class="line">    cancelable: &apos;true&apos;</span><br><span class="line">&#125;);</span><br><span class="line">btn.addEventListener(&apos;test&apos;, function (event) &#123;</span><br><span class="line">    console.log(event.bubbles);</span><br><span class="line">    console.log(event.cancelable);</span><br><span class="line">    console.log(event.detail);</span><br><span class="line">&#125;, false);</span><br><span class="line">btn.dispatchEvent(ev);</span><br></pre></td></tr></table></figure>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">使用createEvent</span><br><span class="line">let evt = document.createEvent(&quot;HTMLEvents&quot;); // 可传值HTMLEvents、MouseEvents、UIEvents以及CustomEvent(自定义事件)</span><br><span class="line">// 初始化</span><br><span class="line">evt.initEvent(&quot;alert&quot;, false, false); // eventType,canBubble,cancelable</span><br><span class="line">// 触发</span><br><span class="line">week.dispatchEvent(evt);</span><br></pre></td></tr></table></figure>
+<p>移动web页面上的click事件响应都要慢上300ms<br>使用自定义tap事件代替click事件</p>
+<p>自定义tap事件原理<br>在touchstart、touchend时记录时间、手指位置，在touchend时进行比较，如果手指位置为同一位置(或允许移动一个非常小的位移值)且时间间隔较短(一般认为是200ms)，且过程中未曾触发过touchmove，即可认为出发了手持设备上的”click”，一般称它为”tap”</p>
+<p>tap透传的解决方案<br>使用缓动动画，过渡300ms的延迟<br>中间层dom元素的加入，让中间层接受这个“穿透”事件，稍后隐藏<br>“上下”都使用tap事件，原理上解决tap透传事件(但不可避免原生标签的click事件)<br>改用Fastclick的库</p>
+<p>触摸事件<br>touchstart: 手指触摸屏幕触发(已经有手指放屏幕上不会触发)<br>touchmove: 手指在屏幕华东，连续触发<br>touchend: 手指离开屏幕时触发<br>touchcancel: 系统取消touch时候触发(不常用)</p>
+<p>触摸属性<br>touches: 跟踪触摸操作的touch对象数组<br>targetTouches: 特定事件目标的touch对象数组<br>changeTouches: 上次触摸改变的touch对象数组</p>
+<p>每个touch对象包含属性:<br>clientX: 触摸目标在视口中的x坐标<br>clientY: 触摸目标在视口中的y坐标<br>identifier: 标识触摸的唯一ID<br>pageX: 触摸目标在页面中的x坐标(包含滚动)<br>pageY: 触摸目标在页面中的y坐标(包含滚动)<br>screenX: 触摸目标在屏幕中的x坐标<br>screenY: 触摸目标在屏幕中的y坐标<br>target: 触摸目标的DOM节点</p>
+<p>弹性滚动<br>body层滚动(系统特殊化处理):<br>自带弹性滚动，overflow: hidden失效，GIF和定时器暂停<br>局部滚动:<br>没有弹性滚动，没有惯性滚动，不流畅<br>局部滚动开启弹性滚动(仅支持IOS)<br>-webkit-overflow-scrolling: touch;<br>上拉加载使用scroll事件，而不是touch事件(因为android中会有bug)</p>
+<p>-webkit-overflow-scrolling:touch偶尔卡住或不能滑动的bug<br>在使用该属性的元素上不设置定位或者手动设置定位为static<br>在webkit-overflow-scrolling:touch属性的下一层子元素上，将height加1%或1px。从而主动触发scrollbar。</p>
+<p>-webkit-overflow-scrolling:touch还会导致的bug<br>滚动中 scrollTop 属性不会变化<br>手势可穿过其他元素触发元素滚动<br>滚动时暂停其他 transition</p>
+
         </div>
 
         <blockquote class="post-copyright">
@@ -187,7 +197,7 @@
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2018-12-23T10:49:23.450Z" itemprop="dateUpdated">2018-12-23 10:49:23</time>
+    最后更新时间：<time datetime="2019-01-08T13:06:27.959Z" itemprop="dateUpdated">2019-01-08 13:06:27</time>
 </span><br>
 
 

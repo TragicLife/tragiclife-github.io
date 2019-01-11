@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>节流与防抖 | 薛鸿杰的博客</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#6C88B7">
+    
+    
+    <meta name="keywords" content="throttle,debounce">
+    <meta name="description" content="函数节流1234567891011121314151617function throttle(method,delay,duration)&amp;#123;  var timer=null, begin=new Date();  return function()&amp;#123;    var context=this,                     args=arguments,">
+<meta name="keywords" content="throttle,debounce">
+<meta property="og:type" content="article">
+<meta property="og:title" content="节流与防抖">
+<meta property="og:url" content="https://tragiclife.github.io/2019/01/06/front-end/js/throttle-and-debounce/index.html">
+<meta property="og:site_name" content="薛鸿杰的博客">
+<meta property="og:description" content="函数节流1234567891011121314151617function throttle(method,delay,duration)&amp;#123;  var timer=null, begin=new Date();  return function()&amp;#123;    var context=this,                     args=arguments,">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-01-08T14:54:59.390Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="节流与防抖">
+<meta name="twitter:description" content="函数节流1234567891011121314151617function throttle(method,delay,duration)&amp;#123;  var timer=null, begin=new Date();  return function()&amp;#123;    var context=this,                     args=arguments,">
+    
+        <link rel="alternate" type="application/atom+xml" title="薛鸿杰的博客" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide">
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand2.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">薛鸿杰</h5>
+          <a href="mailto:xuehongjiej@163.com" title="xuehongjiej@163.com" class="mail">xuehongjiej@163.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/">
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives">
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags">
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/TragicLife" target="_blank">
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">节流与防抖</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">节流与防抖</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2019-01-05T22:44:02.000Z" itemprop="datePublished" class="page-time">
+  2019-01-05
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#函数节流"><span class="post-toc-number">1.</span> <span class="post-toc-text">函数节流</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#防抖函数"><span class="post-toc-number">2.</span> <span class="post-toc-text">防抖函数</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#简单的防抖动函数"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">简单的防抖动函数</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#防抖动函数"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">防抖动函数</span></a></li></ol></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-front-end/js/throttle-and-debounce" class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">节流与防抖</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2019-01-05 22:44:02" datetime="2019-01-05T22:44:02.000Z" itemprop="datePublished">2019-01-05</time>
+
+            
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style="display:none">
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h2 id="函数节流"><a href="#函数节流" class="headerlink" title="函数节流"></a>函数节流</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">function throttle(method,delay,duration)&#123;</span><br><span class="line">  var timer=null, begin=new Date();</span><br><span class="line">  return function()&#123;</span><br><span class="line">    var context=this,             </span><br><span class="line">        args=arguments, </span><br><span class="line">        current=new Date();</span><br><span class="line">    clearTimeout(timer);</span><br><span class="line">    if(current-begin&gt;=duration)&#123;</span><br><span class="line">      method.apply(context,args);</span><br><span class="line">      begin=current;</span><br><span class="line">    &#125;else&#123;</span><br><span class="line">      timer=setTimeout(function()&#123;</span><br><span class="line">        method.apply(context,args);</span><br><span class="line">      &#125;,delay);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="防抖函数"><a href="#防抖函数" class="headerlink" title="防抖函数"></a>防抖函数</h2><h3 id="简单的防抖动函数"><a href="#简单的防抖动函数" class="headerlink" title="简单的防抖动函数"></a>简单的防抖动函数</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">function debounce(func, wait, immediate) &#123;</span><br><span class="line">  // 定时器变量</span><br><span class="line">  var timeout;</span><br><span class="line">  return function() &#123;</span><br><span class="line">    // 每次触发 scroll handler 时先清除定时器</span><br><span class="line">    clearTimeout(timeout);</span><br><span class="line">    // 指定 xx ms 后触发真正想进行的操作 handler</span><br><span class="line">    timeout = setTimeout(func, wait);</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h3 id="防抖动函数"><a href="#防抖动函数" class="headerlink" title="防抖动函数"></a>防抖动函数</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">function debounce(func, wait, immediate) &#123;</span><br><span class="line">  var timeout;</span><br><span class="line">  return function() &#123;</span><br><span class="line">    var context = this, args = arguments;</span><br><span class="line">    var later = function() &#123;</span><br><span class="line">      timeout = null;</span><br><span class="line">      if (!immediate) func.apply(context, args);</span><br><span class="line">    &#125;;</span><br><span class="line">    var callNow = immediate &amp; !timeout;</span><br><span class="line">    clearTimeout(timeout);</span><br><span class="line">    timeout = setTimeout(later, wait);</span><br><span class="line">    if (callNow) func.apply(context, args);</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2019-01-08T14:54:59.390Z" itemprop="dateUpdated">2019-01-08 14:54:59</time>
+</span><br>
+
+
+        
+        以上内容为个人记录
+        
+    </div>
+    
+    <footer>
+        <a href="https://tragiclife.github.io">
+            <img src="/img/avatar.jpg" alt="薛鸿杰">
+            薛鸿杰
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/debounce/">debounce</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/throttle/">throttle</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://tragiclife.github.io/2019/01/06/front-end/js/throttle-and-debounce/&title=《节流与防抖》 — 薛鸿杰的博客&pic=https://tragiclife.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://tragiclife.github.io/2019/01/06/front-end/js/throttle-and-debounce/&title=《节流与防抖》 — 薛鸿杰的博客&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://tragiclife.github.io/2019/01/06/front-end/js/throttle-and-debounce/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《节流与防抖》 — 薛鸿杰的博客&url=https://tragiclife.github.io/2019/01/06/front-end/js/throttle-and-debounce/&via=https://tragiclife.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://tragiclife.github.io/2019/01/06/front-end/js/throttle-and-debounce/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2019/01/11/front-end/css/scss/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">scss</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2019/01/03/front-end/wx/wx/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">微信</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <!-- <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style="display:none">
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style="display:none">
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div> -->
+    <div class="bottom">
+        <p><span>薛鸿杰 &copy; 2018 - 2019</span>
+            <span>
+                
+                <a href="http://www.miitbeian.gov.cn/" target="_blank">粤ICP备18140620号-1</a><br>
+                
+                <!-- Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a> -->
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://tragiclife.github.io/2019/01/06/front-end/js/throttle-and-debounce/&title=《节流与防抖》 — 薛鸿杰的博客&pic=https://tragiclife.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://tragiclife.github.io/2019/01/06/front-end/js/throttle-and-debounce/&title=《节流与防抖》 — 薛鸿杰的博客&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://tragiclife.github.io/2019/01/06/front-end/js/throttle-and-debounce/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《节流与防抖》 — 薛鸿杰的博客&url=https://tragiclife.github.io/2019/01/06/front-end/js/throttle-and-debounce/&via=https://tragiclife.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://tragiclife.github.io/2019/01/06/front-end/js/throttle-and-debounce/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACqklEQVR42u3aQW4bMRAEQP3/0841gGOpe4aUFaD2ZMi7KxYPJNUzj0d8ff11ff/8+z3J/T+9If/vsQsPDw9vMfSfBvf8k+ekdiIOfzseHh7eNV4yoJ9enQ8iX7fz8byw4OHh4X0AL3k2eSohPZ84PDw8vP+F93xjeH5/++bkKTw8PLzf4t14dbugPw9/r2cteHh4eF3KGlWRPufvK/U9PDw8vHVVvQ0L2ne28UQ9Wjw8PLwLvHzBvTfQfZT8ojkMDw8P7yjvVCCbl6/ydqvnUxMFynh4eHgXePvQYQZIJi4PR4qoAg8PD2/Na3/Y7xn7bSMvtuHh4eHd482W6fYoPFvcLzYE4OHh4a2bBpKgYVYS2zQKHAsj8PDw8I7y8gdObR6zELadUDw8PLx7vP3CnWfGs+1nFiLj4eHh3eBtluY8gEgi2lmS8OL4joeHh/dGXrJhzBb9fFPZHOvx8PDw3s/LD8r7CWoPzcm01vOEh4eHF/OSm9q4oU5B4omebTN4eHh4Z3mz5oDNFNSBQtye9Y+R4OHh4f0SLw8g2qHPSl/5f/Hw8PDu8dqHZ4v1Zjrab6nrdXh4eHhrXk7KS/ubvGQYBOPh4eFd4LULeh49FAffRdEr2qLw8PDw3sKbLfHtUTifoKSo9qIMhoeHh3eNNxtu8jX7AGIYN+Ph4eFd5hU/8i/npcfux8PDw3sjL2+raj/fF9WKceLh4eEd5X2VV3v8TQ7Q+1atqKcMDw8P7xBvtZ+MylTt4GYTUV94eHh4Ja/dDGatAG3p69QE4eHh4d3j7Qtjs2L/Y329GBseHh7eB/CSQDY/cM8aAoqpx8PDw/sYXj6g/AjebirR1oKHh4d3jZeEEbPYIm9NaFsZotIXHh4e3gVe+4O/PVi3TQZtYezAhYeHh5fy/gDY6/k+sr+nEAAAAABJRU5ErkJggg==" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+</body>
+</html>

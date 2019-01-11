@@ -141,6 +141,227 @@
     <ul class="post-list">
     
         <li class="post-list-item fade">
+            <article id="post-front-end/js/error-catch" class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2018-12-18 23:37:38" datetime="2018-12-18T23:37:38.000Z" itemprop="datePublished">2018-12-18</time>
+
+        
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/2018/12/19/front-end/js/error-catch/">错误捕获</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        Vue中的错误捕获例子
+123456789101112// 2.2.0+支持，2.4.0+支持自定义事件的捕获Vue.config.errorHandler = (err, vm, info) =&gt; &#123;  let &#123;    message, // 异常信息    name, // 异常名称    script,  // 异常脚本url    line,  // 异常...
+    
+
+        <a href="/2018/12/19/front-end/js/error-catch/" class="post-more waves-effect waves-button">
+            阅读全文…
+        </a>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/error/">error</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vue/">vue</a></li></ul>
+
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-front-end/js/canvas" class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2018-12-16 23:39:44" datetime="2018-12-16T23:39:44.000Z" itemprop="datePublished">2018-12-16</time>
+
+        
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/2018/12/17/front-end/js/canvas/">Canvas</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        https://www.cnblogs.com/charmingyj/p/5527223.html
+初始化// 创建canvas对象var ctx = $(“#canvas”)[0].getContext(‘2d’);var ctx2 = $(“#canvas2”)[0].getContext(‘2d’);
+// 设置线条颜色ctx.strokeStyle = ‘#00f’;
+// 设置填充...
+    
+
+        <a href="/2018/12/17/front-end/js/canvas/" class="post-more waves-effect waves-button">
+            阅读全文…
+        </a>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/canvas/">canvas</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li></ul>
+
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-front-end/js/object" class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2018-12-16 23:28:19" datetime="2018-12-16T23:28:19.000Z" itemprop="datePublished">2018-12-16</time>
+
+        
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/2018/12/17/front-end/js/object/">对象</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        判断是不是数组12345if(typeof Array.isArray===&quot;undefined&quot;)&#123;   Array.isArray = function(arg)&#123;         return Object.prototype.toString.call(arg)===&quot;[object Array]&quot;    &#125;;  ...
+    
+
+        <a href="/2018/12/17/front-end/js/object/" class="post-more waves-effect waves-button">
+            阅读全文…
+        </a>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Object/">Object</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li></ul>
+
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-front-end/js/event" class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2018-12-15 23:17:49" datetime="2018-12-15T23:17:49.000Z" itemprop="datePublished">2018-12-15</time>
+
+        
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/2018/12/16/front-end/js/event/">事件</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        事件的绑定与解绑事件绑定123456789addEventListener(type, fn, useCapture/options)useCapture: 默认为false，监听冒泡阶段options可传值： - passive: false 是否阻止默认事件；如果设置为true，则即使在触发的函数中使用e.preventDefault也不会生效 - capture: false 触发阶段...
+    
+
+        <a href="/2018/12/16/front-end/js/event/" class="post-more waves-effect waves-button">
+            阅读全文…
+        </a>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Event/">Event</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li></ul>
+
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-front-end/other/mobile-screen-pixels" class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2018-12-14 22:12:06" datetime="2018-12-14T22:12:06.000Z" itemprop="datePublished">2018-12-14</time>
+
+        
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/2018/12/15/front-end/other/mobile-screen-pixels/">移动端屏幕像素</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        Pixel 移动开发像素知识px: css pixels 逻辑像素，浏览器使用的抽象单位dp,pt: device independent pixels 设备无关像素dpr: devicePixelRatio 设备像素缩放比
+计算公式：1px = (dpr)² * dp
+DPI: 打印机每英寸可以喷的墨汁点(印刷行业)PPI: 屏幕每英寸的像素数量，即单位英寸内的像素密度
+计算公式：以iPh...
+    
+
+        <a href="/2018/12/15/front-end/other/mobile-screen-pixels/" class="post-more waves-effect waves-button">
+            阅读全文…
+        </a>
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
             <article id="post-front-end/other/interview-record" class="article-card article-type-post" itemprop="blogPost">
 
     <div class="post-meta">
@@ -197,7 +418,7 @@
 
   
     <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/2018/12/13/front-end/other/problems-encountered-in-the-project/">项目中遇到的那些事</a>
+      <a class="post-title-link" href="/2018/12/13/front-end/other/problems-encountered-in-the-project/">项目中的那些事</a>
     </h3>
   
 
@@ -285,7 +506,7 @@
     <div class="post-content" id="post-content" itemprop="postContent">
 
     
-        meta标签12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273747576777879808182838485868788899091929394959697989910...
+        基本123456789101112131415161718192021222324// 更加标准的 lang 属性写法 http://zhi.hu/XyIa&lt;html lang=&quot;zh-cmn-Hans&quot;&gt;// 声明文档使用的字符编码&lt;meta charset=&apos;utf-8&apos;&gt;// 优先使用 IE 最新版本和 Chrome&lt...
     
 
         <a href="/2018/12/11/front-end/html/tag-meta/" class="post-more waves-effect waves-button">
@@ -349,252 +570,6 @@
 
         </li>
     
-        <li class="post-list-item fade">
-            <article id="post-front-end/css/css-reveal-secrets" class="article-card article-type-post" itemprop="blogPost">
-
-    <div class="post-meta">
-        <time class="post-time" title="2018-12-10 00:04:00" datetime="2018-12-10T00:04:00.000Z" itemprop="datePublished">2018-12-10</time>
-
-        
-
-
-    </div>
-
-    
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/2018/12/10/front-end/css/css-reveal-secrets/">css揭秘</a>
-    </h3>
-  
-
-
-
-
-    <div class="post-content" id="post-content" itemprop="postContent">
-
-    
-        边框使用box-shadow制作假边框，第四个值为增大或者减小投影面积(box-shadow范围内不会触发事件)box-shadow 是层层叠加的，第一层投影位于最顶层，依次类推。因此，你需要按此规律调整扩张半径。比如说，在前面的代码中，我们想在外圈再加一道 5px 的外框，那就需要指定扩张半径的值为15px （ 10px+5px ），会随着border-radius贴合border
-.bo...
-    
-
-        <a href="/2018/12/10/front-end/css/css-reveal-secrets/" class="post-more waves-effect waves-button">
-            阅读全文…
-        </a>
-    </div>
-    
-    <div class="post-footer">
-        
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/css/">css</a></li></ul>
-
-    </div>
-    
-</article>
-
-        </li>
-    
-        <li class="post-list-item fade">
-            <article id="post-front-end/css/daily-notes" class="article-card article-type-post" itemprop="blogPost">
-
-    <div class="post-meta">
-        <time class="post-time" title="2018-12-09 00:12:08" datetime="2018-12-09T00:12:08.000Z" itemprop="datePublished">2018-12-09</time>
-
-        
-
-
-    </div>
-
-    
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/2018/12/09/front-end/css/daily-notes/">日常小记-样式</a>
-    </h3>
-  
-
-
-
-
-    <div class="post-content" id="post-content" itemprop="postContent">
-
-    
-        命名规范BEM(block element modifier)
-常用的屏幕大小手机屏：&lt;768pad屏：≥768显示器：≥992大屏显示器：≥1200
-禁止文本选中1user-select:none
-链接的伪类
-
-:link  // 初始
-:visited  // 访问后
-:hover  // 鼠标悬停时
-:active  // 点击时
-
-浮动问题子元素都为float，则父元素需要设置...
-    
-
-        <a href="/2018/12/09/front-end/css/daily-notes/" class="post-more waves-effect waves-button">
-            阅读全文…
-        </a>
-    </div>
-    
-    <div class="post-footer">
-        
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/css/">css</a></li></ul>
-
-    </div>
-    
-</article>
-
-        </li>
-    
-        <li class="post-list-item fade">
-            <article id="post-front-end/css/screen-adaptation" class="article-card article-type-post" itemprop="blogPost">
-
-    <div class="post-meta">
-        <time class="post-time" title="2018-12-08 00:34:18" datetime="2018-12-08T00:34:18.000Z" itemprop="datePublished">2018-12-08</time>
-
-        
-
-
-    </div>
-
-    
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/2018/12/08/front-end/css/screen-adaptation/">屏幕适配</a>
-    </h3>
-  
-
-
-
-
-    <div class="post-content" id="post-content" itemprop="postContent">
-
-    
-        常见移动web适配方法PC
-960px/1000px居中
-盒子模型，定高，定宽
-display:inline-block
-
-移动web:
-定高，宽度百分比
-flex
-Media Query(媒体查询)
-
-Media Query1234@media 媒体类型 and (媒体特性)如: @media screen and (max-width:320px)可在标签上引用&lt;link href...
-    
-
-        <a href="/2018/12/08/front-end/css/screen-adaptation/" class="post-more waves-effect waves-button">
-            阅读全文…
-        </a>
-    </div>
-    
-    <div class="post-footer">
-        
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/css/">css</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/rem/">rem</a></li></ul>
-
-    </div>
-    
-</article>
-
-        </li>
-    
-        <li class="post-list-item fade">
-            <article id="post-front-end/css/deep-into-overflow" class="article-card article-type-post" itemprop="blogPost">
-
-    <div class="post-meta">
-        <time class="post-time" title="2018-12-07 22:28:51" datetime="2018-12-07T22:28:51.000Z" itemprop="datePublished">2018-12-07</time>
-
-        
-
-
-    </div>
-
-    
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/2018/12/08/front-end/css/deep-into-overflow/">深入overflow</a>
-    </h3>
-  
-
-
-
-
-    <div class="post-content" id="post-content" itemprop="postContent">
-
-    
-        相关问题
-overfloe-x、overflow-y(IE8+)如果overflow-x与overflow-y相同，则等同于overflow；如果两个设置不同，切其中一个设置为visible则visible会被重置为auto
-表格元素无效，需要先设置table-layout:fixed
-overflow:auto时，chrome下能显示padding-bottom，而其他浏览器都不显示pad...
-    
-
-        <a href="/2018/12/08/front-end/css/deep-into-overflow/" class="post-more waves-effect waves-button">
-            阅读全文…
-        </a>
-    </div>
-    
-    <div class="post-footer">
-        
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/css/">css</a></li></ul>
-
-    </div>
-    
-</article>
-
-        </li>
-    
-        <li class="post-list-item fade">
-            <article id="post-front-end/css/deep-into-float" class="article-card article-type-post" itemprop="blogPost">
-
-    <div class="post-meta">
-        <time class="post-time" title="2018-12-06 21:39:30" datetime="2018-12-06T21:39:30.000Z" itemprop="datePublished">2018-12-06</time>
-
-        
-
-
-    </div>
-
-    
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/2018/12/07/front-end/css/deep-into-float/">深入float</a>
-    </h3>
-  
-
-
-
-
-    <div class="post-content" id="post-content" itemprop="postContent">
-
-    
-        设置初衷为了文字的环绕float元素会产生BFC(块级格式化上下文，block formatting context)
-特性包裹具有包裹性的相关属性123display:inline-block/table-cellposition:absolute/fixed/stickyoverflow:hidden/scroll
-破坏(父元素塌陷)具有破坏性的相关属性12display:nonepos...
-    
-
-        <a href="/2018/12/07/front-end/css/deep-into-float/" class="post-more waves-effect waves-button">
-            阅读全文…
-        </a>
-    </div>
-    
-    <div class="post-footer">
-        
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/css/">css</a></li></ul>
-
-    </div>
-    
-</article>
-
-        </li>
-    
     </ul>
 
     
@@ -604,6 +579,9 @@ overflow:auto时，chrome下能显示padding-bottom，而其他浏览器都不�
     </div>
 </nav>
 
+
+    <!-- 显示live2d -->
+    <script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":true,"debug":false,"model":{"jsonPath":"/live2dw/assets/assets/wanko.model.json"},"display":{"position":"right","width":100,"height":200},"mobile":{"show":false},"log":false});</script>
 
 </div>
 
