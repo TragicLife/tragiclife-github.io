@@ -29,7 +29,7 @@
 <meta property="og:site_name" content="薛鸿杰的博客">
 <meta property="og:description" content="命名规范BEM(block element modifier) 常用的屏幕大小手机屏：&amp;lt;768pad屏：≥768显示器：≥992大屏显示器：≥1200 禁止文本选中1user-select:none 链接的伪类  :link  // 初始 :visited  // 访问后 :hover  // 鼠标悬停时 :active  // 点击时  浮动问题子元素都为float，则父元素需要设置flo">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-01-01T16:01:43.807Z">
+<meta property="og:updated_time" content="2019-01-12T15:54:02.658Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="日常小记-样式">
 <meta name="twitter:description" content="命名规范BEM(block element modifier) 常用的屏幕大小手机屏：&amp;lt;768pad屏：≥768显示器：≥992大屏显示器：≥1200 禁止文本选中1user-select:none 链接的伪类  :link  // 初始 :visited  // 访问后 :hover  // 鼠标悬停时 :active  // 点击时  浮动问题子元素都为float，则父元素需要设置flo">
@@ -252,6 +252,7 @@
 <li>使用3D硬件加速提升动画性能时，最好给元素增加一个z-index属性，人为干扰复合层的排序，可以有效减少chrome创建不必要的复合层，提升渲染性能，移动端优化效果尤为明显</li>
 </ul>
 <p><strong>元素容器宽度固定，当元素超出容器时整个元素换行处理</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=&quot;container&quot;&gt;</span><br><span class="line">  &lt;div class=&quot;item&quot;&gt;123&lt;/div&gt;</span><br><span class="line">  &lt;div class=&quot;item&quot;&gt;123&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">方法一</span><br><span class="line">.item &#123;</span><br><span class="line">  display: inline-block;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">方法二</span><br><span class="line">.container &#123;</span><br><span class="line">  display: flex;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p><strong>实现半圆阴影</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">.half_circle &#123;</span><br><span class="line">  position: absolute;</span><br><span class="line">  top: 50%;</span><br><span class="line">  left: -.25rem;</span><br><span class="line">  z-index: 1;</span><br><span class="line">  width: .2rem;</span><br><span class="line">  height: .2rem;</span><br><span class="line">  border-radius: 50%;</span><br><span class="line">  transform: translate(0, -50%);</span><br><span class="line">  /*background: radial-gradient(circle, #fbfbfb 10px, #fff);*/</span><br><span class="line">  box-shadow: inset 0 0 10px 0 rgba(0, 0, 0, .1);</span><br><span class="line">  &amp;:before &#123;</span><br><span class="line">    content: &apos;&apos;;</span><br><span class="line">    position: absolute;</span><br><span class="line">    top: 0;</span><br><span class="line">    left: 0;</span><br><span class="line">    z-index: 3;</span><br><span class="line">    width: .1rem;</span><br><span class="line">    height: .2rem;</span><br><span class="line">    background: linear-gradient(to left, rgb(250, 250, 250), #fff);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><ul>
 <li>浏览器html默认字体大小为16px，设置font-size为62.5%后可换算为10px</li>
 <li>只有块级元素或者行内块元素transform属性才回生效</li>
@@ -272,7 +273,7 @@
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2019-01-01T16:01:43.807Z" itemprop="dateUpdated">2019-01-01 16:01:43</time>
+    最后更新时间：<time datetime="2019-01-12T15:54:02.658Z" itemprop="dateUpdated">2019-01-12 15:54:02</time>
 </span><br>
 
 
