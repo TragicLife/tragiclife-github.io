@@ -186,9 +186,9 @@
     </summary>
     
     
-      <category term="sdk" scheme="https://tragiclife.github.io/tags/sdk/"/>
-    
       <category term="微信" scheme="https://tragiclife.github.io/tags/%E5%BE%AE%E4%BF%A1/"/>
+    
+      <category term="sdk" scheme="https://tragiclife.github.io/tags/sdk/"/>
     
   </entry>
   
@@ -213,9 +213,9 @@
     </summary>
     
     
-      <category term="企业微信" scheme="https://tragiclife.github.io/tags/%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1/"/>
-    
       <category term="sdk" scheme="https://tragiclife.github.io/tags/sdk/"/>
+    
+      <category term="企业微信" scheme="https://tragiclife.github.io/tags/%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1/"/>
     
   </entry>
   
