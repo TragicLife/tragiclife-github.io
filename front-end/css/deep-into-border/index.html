@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>深入border | 薛鸿杰的博客</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#6C88B7">
+    
+    
+    <meta name="keywords" content="css">
+    <meta name="description" content="特性 border-style为dashed时，不同浏览器下实线和空白区域的比例不同 border-style为dotted时，形状不同 当border-color没有指定颜色时，默认使用color作为边框颜色，类似的还有box-shadow,text-shadow,outline  应用场景让背景图固定距离右侧50px12border-right:50px solid transparent;b">
+<meta name="keywords" content="css">
+<meta property="og:type" content="article">
+<meta property="og:title" content="深入border">
+<meta property="og:url" content="https://tragiclife.github.io/front-end/css/deep-into-border/index.html">
+<meta property="og:site_name" content="薛鸿杰的博客">
+<meta property="og:description" content="特性 border-style为dashed时，不同浏览器下实线和空白区域的比例不同 border-style为dotted时，形状不同 当border-color没有指定颜色时，默认使用color作为边框颜色，类似的还有box-shadow,text-shadow,outline  应用场景让背景图固定距离右侧50px12border-right:50px solid transparent;b">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-01-01T15:28:48.172Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="深入border">
+<meta name="twitter:description" content="特性 border-style为dashed时，不同浏览器下实线和空白区域的比例不同 border-style为dotted时，形状不同 当border-color没有指定颜色时，默认使用color作为边框颜色，类似的还有box-shadow,text-shadow,outline  应用场景让背景图固定距离右侧50px12border-right:50px solid transparent;b">
+    
+        <link rel="alternate" type="application/atom+xml" title="薛鸿杰的博客" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide">
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand2.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">薛鸿杰</h5>
+          <a href="mailto:xuehongjiej@163.com" title="xuehongjiej@163.com" class="mail">xuehongjiej@163.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/">
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives">
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags">
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/TragicLife" target="_blank">
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">深入border</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">深入border</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2018-12-05T23:16:00.000Z" itemprop="datePublished" class="page-time">
+  2018-12-05
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#特性"><span class="post-toc-number">1.</span> <span class="post-toc-text">特性</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#应用场景"><span class="post-toc-number">2.</span> <span class="post-toc-text">应用场景</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#让背景图固定距离右侧50px"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">让背景图固定距离右侧50px</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#实现三角形"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">实现三角形</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#实现梯形"><span class="post-toc-number">2.3.</span> <span class="post-toc-text">实现梯形</span></a></li></ol></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-front-end/css/deep-into-border" class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">深入border</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2018-12-05 23:16:00" datetime="2018-12-05T23:16:00.000Z" itemprop="datePublished">2018-12-05</time>
+
+            
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style="display:none">
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h2 id="特性"><a href="#特性" class="headerlink" title="特性"></a>特性</h2><ul>
+<li>border-style为dashed时，不同浏览器下实线和空白区域的比例不同</li>
+<li>border-style为dotted时，形状不同</li>
+<li>当border-color没有指定颜色时，默认使用color作为边框颜色，类似的还有box-shadow,text-shadow,outline</li>
+</ul>
+<h2 id="应用场景"><a href="#应用场景" class="headerlink" title="应用场景"></a>应用场景</h2><h3 id="让背景图固定距离右侧50px"><a href="#让背景图固定距离右侧50px" class="headerlink" title="让背景图固定距离右侧50px"></a>让背景图固定距离右侧50px</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">border-right:50px solid transparent;</span><br><span class="line">background-position:100% 40px ;</span><br></pre></td></tr></table></figure>
+<h3 id="实现三角形"><a href="#实现三角形" class="headerlink" title="实现三角形"></a>实现三角形</h3><p><style>.triangle {margin-bottom: 10px;width: 0;height: 0;border: 25px solid transparent;border-bottom-color: blue;}</style></p>
+<div class="triangle"></div>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=&quot;triangle&quot;&gt;&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">.triangle &#123;</span><br><span class="line">  width: 50px;</span><br><span class="line">  height: 50px;</span><br><span class="line">  border: 25px solid transparent;</span><br><span class="line">  border-bottom-color: blue;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="实现梯形"><a href="#实现梯形" class="headerlink" title="实现梯形"></a>实现梯形</h3><p><style>.trapezoid {margin-bottom: 10px;width: 70px;height: 0;border: 25px solid transparent;border-bottom-color: blue;}</style></p>
+<div class="trapezoid"></div>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=&quot;trapezoid&quot;&gt;&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">.trapezoid &#123;</span><br><span class="line">  width: 50px;</span><br><span class="line">  height: 50px;</span><br><span class="line">  border: 25px solid transparent;</span><br><span class="line">  border-bottom-color: blue;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2019-01-01T15:28:48.172Z" itemprop="dateUpdated">2019-01-01 15:28:48</time>
+</span><br>
+
+
+        
+        以上内容为个人记录
+        
+    </div>
+    
+    <footer>
+        <a href="https://tragiclife.github.io">
+            <img src="/img/avatar.jpg" alt="薛鸿杰">
+            薛鸿杰
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/css/">css</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://tragiclife.github.io/front-end/css/deep-into-border/&title=《深入border》 — 薛鸿杰的博客&pic=https://tragiclife.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://tragiclife.github.io/front-end/css/deep-into-border/&title=《深入border》 — 薛鸿杰的博客&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://tragiclife.github.io/front-end/css/deep-into-border/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《深入border》 — 薛鸿杰的博客&url=https://tragiclife.github.io/front-end/css/deep-into-border/&via=https://tragiclife.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://tragiclife.github.io/front-end/css/deep-into-border/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/front-end/css/deep-into-float/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">深入float</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/front-end/css/deep-into-padding/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">深入padding</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <!-- <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style="display:none">
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style="display:none">
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div> -->
+    <div class="bottom">
+        <p><span>薛鸿杰 &copy; 2018 - 2019</span>
+            <span>
+                
+                <a href="http://www.miitbeian.gov.cn/" target="_blank">粤ICP备18140620号-1</a><br>
+                
+                <!-- Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a> -->
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://tragiclife.github.io/front-end/css/deep-into-border/&title=《深入border》 — 薛鸿杰的博客&pic=https://tragiclife.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://tragiclife.github.io/front-end/css/deep-into-border/&title=《深入border》 — 薛鸿杰的博客&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://tragiclife.github.io/front-end/css/deep-into-border/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《深入border》 — 薛鸿杰的博客&url=https://tragiclife.github.io/front-end/css/deep-into-border/&via=https://tragiclife.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://tragiclife.github.io/front-end/css/deep-into-border/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACK0lEQVR42u3aQW7CQAwFUO5/abpthQjfdlIp5mVVRTDxSyVjj+fxiK/ny/V6/92d3/ffrXz83dMuDAyM2zKeh1fC6L2C6mv6sA4GBsYXMJJUePyZJAUn6bj3XAwMDIxqOXicmpPki4GBgTFPuGc1tDkeAwMDI2liextkk8b4kl4cAwPjhox81/3//75kvoGBgXErxrN4zRPoWZH8eQoGBsZqxnwMedym9prVajwYGBi7GZOEmx/wSlrc3pGyE0pDDAyMmzOqj6wG/eF3IB5OYGBg7GYky+WHuubbZ3mghRSMgYGxglFtSpOkWX0dJ/wfMDAwljKSL+cBzcvEUROLgYGxlDE5eDF/BcmaF/IwMDBuwugVc/mQoFoC5iVpNMLEwMBYx5in1CTE3mjzw7MwMDBWM/KyLC8Wq9Vo9RjHh003DAyMpYxq09hbdFKANjEYGBiLGPnYMg+3N/i8cKMfAwPjtozJEvPDE/NSEgMD4xsYvXFj0oLOx5bNqDAwMJYy8nR5vFyvxKwORwtNLAYGxlLG8XJ5UzopQJutLwYGxhcw8gayejgsKRaro4VH/v4wMDBuzngWr94u/RXFYvSLgYGBsYJx7pgzeVhvCDpZDQMDYwcjSbKTYnFSAjbnsRgYGEsZeeLrBdF7TQUkBgYGRnG7Pw8xYReqVwwMDIx4+yxpO6vU8ggTAwNjHeOszfok9PwwxwlnRjAwMFYwqnVXNax5EPPWFwMD47aMH6vsLLowU2gNAAAAAElFTkSuQmCC" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+</body>
+</html>

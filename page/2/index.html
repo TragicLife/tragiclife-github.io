@@ -141,6 +141,129 @@
     <ul class="post-list">
     
         <li class="post-list-item fade">
+            <article id="post-front-end/other/front-end-basics" class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2018-12-23 23:12:07" datetime="2018-12-23T23:12:07.000Z" itemprop="datePublished">2018-12-23</time>
+
+        
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/front-end/other/front-end-basics/">基础小记</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        网页加载优化123456789// DNS Prefetch 应该尽量的放在网页的前面，推荐放在 &lt;meta charset=&quot;UTF-8&quot;&gt; 后面。具体使用方法如下：&lt;meta http-equiv=&quot;x-dns-prefetch-control&quot; content=&quot;on&quot;&gt;&lt;link rel=&qu...
+    
+
+        <a href="/front-end/other/front-end-basics/" class="post-more waves-effect waves-button">
+            阅读全文…
+        </a>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/css/">css</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/html/">html</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li></ul>
+
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-front-end/js/file-type-conversion" class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2018-12-23 00:10:50" datetime="2018-12-23T00:10:50.000Z" itemprop="datePublished">2018-12-23</time>
+
+        
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/front-end/js/file-type-conversion/">文件类型转换</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        canvas转dataURL：canvas对象、转换格式、图像品质123function canvasToDataURL(canvas, format, quality) &#123;  return canvas.toDataURL(format || &apos;image/jpeg&apos;, quality || 1.0);&#125;
+DataURL转canvas12345678...
+    
+
+        <a href="/front-end/js/file-type-conversion/" class="post-more waves-effect waves-button">
+            阅读全文…
+        </a>
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-front-end/js/regexp" class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2018-12-20 00:35:46" datetime="2018-12-20T00:35:46.000Z" itemprop="datePublished">2018-12-20</time>
+
+        
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/front-end/js/regexp/">正则</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        正则应用场景文件夹命名1/[\/\\:*?&quot;&lt;&gt;!]+/匹配特殊符号
+去除字符串两端空白123String.prototype.trim ＝ function()&#123;  return this.replace(/(∧\s*)|(\s*$)/g,&apos;&apos;);&#125;
+匹配location.search中的请求参数123let reg = new...
+    
+
+        <a href="/front-end/js/regexp/" class="post-more waves-effect waves-button">
+            阅读全文…
+        </a>
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
             <article id="post-front-end/js/error-catch" class="article-card article-type-post" itemprop="blogPost">
 
     <div class="post-meta">
@@ -156,7 +279,7 @@
 
   
     <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/2018/12/19/front-end/js/error-catch/">错误捕获</a>
+      <a class="post-title-link" href="/front-end/js/error-catch/">错误捕获</a>
     </h3>
   
 
@@ -166,11 +289,10 @@
     <div class="post-content" id="post-content" itemprop="postContent">
 
     
-        Vue中的错误捕获例子
-123456789101112// 2.2.0+支持，2.4.0+支持自定义事件的捕获Vue.config.errorHandler = (err, vm, info) =&gt; &#123;  let &#123;    message, // 异常信息    name, // 异常名称    script,  // 异常脚本url    line,  // 异常...
+        Vue中的错误捕获123456789101112// 2.2.0+支持，2.4.0+支持自定义事件的捕获Vue.config.errorHandler = (err, vm, info) =&gt; &#123;  let &#123;    message, // 异常信息    name, // 异常名称    script,  // 异常脚本url    line,  // 异常行号 ...
     
 
-        <a href="/2018/12/19/front-end/js/error-catch/" class="post-more waves-effect waves-button">
+        <a href="/front-end/js/error-catch/" class="post-more waves-effect waves-button">
             阅读全文…
         </a>
     </div>
@@ -201,7 +323,7 @@
 
   
     <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/2018/12/17/front-end/js/canvas/">Canvas</a>
+      <a class="post-title-link" href="/front-end/js/canvas/">Canvas</a>
     </h3>
   
 
@@ -211,13 +333,10 @@
     <div class="post-content" id="post-content" itemprop="postContent">
 
     
-        https://www.cnblogs.com/charmingyj/p/5527223.html
-初始化// 创建canvas对象var ctx = $(“#canvas”)[0].getContext(‘2d’);var ctx2 = $(“#canvas2”)[0].getContext(‘2d’);
-// 设置线条颜色ctx.strokeStyle = ‘#00f’;
-// 设置填充...
+        初始化1234567891011121314151617// 创建canvas对象var ctx = $(&quot;#canvas&quot;)[0].getContext(&apos;2d&apos;);var ctx2 = $(&quot;#canvas2&quot;)[0].getContext(&apos;2d&apos;);// 设置线条颜色ctx.strokeStyle = &...
     
 
-        <a href="/2018/12/17/front-end/js/canvas/" class="post-more waves-effect waves-button">
+        <a href="/front-end/js/canvas/" class="post-more waves-effect waves-button">
             阅读全文…
         </a>
     </div>
@@ -248,7 +367,7 @@
 
   
     <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/2018/12/17/front-end/js/object/">对象</a>
+      <a class="post-title-link" href="/front-end/js/object/">对象</a>
     </h3>
   
 
@@ -258,10 +377,10 @@
     <div class="post-content" id="post-content" itemprop="postContent">
 
     
-        判断是不是数组12345if(typeof Array.isArray===&quot;undefined&quot;)&#123;   Array.isArray = function(arg)&#123;         return Object.prototype.toString.call(arg)===&quot;[object Array]&quot;    &#125;;  ...
+        判断是不是数组/对象123456789// 是否为数组if(typeof Array.isArray===&quot;undefined&quot;)&#123;  Array.isArray = function(arg)&#123;    return Object.prototype.toString.call(arg) === &apos;[object Array]&apos;  ...
     
 
-        <a href="/2018/12/17/front-end/js/object/" class="post-more waves-effect waves-button">
+        <a href="/front-end/js/object/" class="post-more waves-effect waves-button">
             阅读全文…
         </a>
     </div>
@@ -292,7 +411,7 @@
 
   
     <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/2018/12/16/front-end/js/event/">事件</a>
+      <a class="post-title-link" href="/front-end/js/event/">事件</a>
     </h3>
   
 
@@ -302,13 +421,15 @@
     <div class="post-content" id="post-content" itemprop="postContent">
 
     
-        https://www.cnblogs.com/diligenceday/p/4175721.htmlhttps://www.imooc.com/article/71101
-事件级别
+        事件级别
 DOM0    element.onclick = function(){}
-DOM2    element.addEventListener(‘click’, function(){}, false)    ...
+DOM2    element.addEventListener(‘click’, function(){}, false)    IE:attachEventListener
+DOM3    element.addEventListener(‘keyup’, function(){}, false)
+
+...
     
 
-        <a href="/2018/12/16/front-end/js/event/" class="post-more waves-effect waves-button">
+        <a href="/front-end/js/event/" class="post-more waves-effect waves-button">
             阅读全文…
         </a>
     </div>
@@ -339,7 +460,7 @@ DOM2    element.addEventListener(‘click’, function(){}, false)    ...
 
   
     <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/2018/12/15/front-end/other/mobile-screen-pixels/">移动端屏幕像素</a>
+      <a class="post-title-link" href="/front-end/other/mobile-screen-pixels/">移动端屏幕像素</a>
     </h3>
   
 
@@ -355,7 +476,7 @@ DPI: 打印机每英寸可以喷的墨汁点(印刷行业)PPI: 屏幕每英寸�
 计算公式：以iPh...
     
 
-        <a href="/2018/12/15/front-end/other/mobile-screen-pixels/" class="post-more waves-effect waves-button">
+        <a href="/front-end/other/mobile-screen-pixels/" class="post-more waves-effect waves-button">
             阅读全文…
         </a>
     </div>
@@ -380,7 +501,7 @@ DPI: 打印机每英寸可以喷的墨汁点(印刷行业)PPI: 屏幕每英寸�
 
   
     <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/2018/12/14/front-end/other/interview-record/">面试记录</a>
+      <a class="post-title-link" href="/front-end/other/interview-record/">面试记录</a>
     </h3>
   
 
@@ -396,7 +517,7 @@ DPI: 打印机每英寸可以喷的墨汁点(印刷行业)PPI: 屏幕每英寸�
 12345678910111213141516171819202122//html&lt;div class=&apos;box&apos;&gt;&lt;div...
     
 
-        <a href="/2018/12/14/front-end/other/interview-record/" class="post-more waves-effect waves-button">
+        <a href="/front-end/other/interview-record/" class="post-more waves-effect waves-button">
             阅读全文…
         </a>
     </div>
@@ -421,7 +542,7 @@ DPI: 打印机每英寸可以喷的墨汁点(印刷行业)PPI: 屏幕每英寸�
 
   
     <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/2018/12/13/front-end/other/problems-encountered-in-the-project/">项目中的那些事</a>
+      <a class="post-title-link" href="/front-end/other/problems-encountered-in-the-project/">项目中的那些事</a>
     </h3>
   
 
@@ -435,138 +556,9 @@ DPI: 打印机每英寸可以喷的墨汁点(印刷行业)PPI: 屏幕每英寸�
 使用:style或:class绑定时，key名带中划线(-)问题1用引...
     
 
-        <a href="/2018/12/13/front-end/other/problems-encountered-in-the-project/" class="post-more waves-effect waves-button">
+        <a href="/front-end/other/problems-encountered-in-the-project/" class="post-more waves-effect waves-button">
             阅读全文…
         </a>
-    </div>
-    
-</article>
-
-        </li>
-    
-        <li class="post-list-item fade">
-            <article id="post-front-end/js/daily-notes" class="article-card article-type-post" itemprop="blogPost">
-
-    <div class="post-meta">
-        <time class="post-time" title="2018-12-11 23:59:39" datetime="2018-12-11T23:59:39.000Z" itemprop="datePublished">2018-12-11</time>
-
-        
-
-
-    </div>
-
-    
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/2018/12/12/front-end/js/daily-notes/">日常小记-JS</a>
-    </h3>
-  
-
-
-
-
-    <div class="post-content" id="post-content" itemprop="postContent">
-
-    
-        $(“p”).empty与$(“p”).remove1234$(&quot;p&quot;).empty移除p标签中的文本及其子节点，留下p标签$(&quot;p&quot;).remove移除p标签及其文本内容还有其子节点
-事件绑定12345678910111213DOM2级事件addEventListener(type, listener, useCapture/options);rem...
-    
-
-        <a href="/2018/12/12/front-end/js/daily-notes/" class="post-more waves-effect waves-button">
-            阅读全文…
-        </a>
-    </div>
-    
-</article>
-
-        </li>
-    
-        <li class="post-list-item fade">
-            <article id="post-front-end/html/tag-meta" class="article-card article-type-post" itemprop="blogPost">
-
-    <div class="post-meta">
-        <time class="post-time" title="2018-12-11 00:43:10" datetime="2018-12-11T00:43:10.000Z" itemprop="datePublished">2018-12-11</time>
-
-        
-
-
-    </div>
-
-    
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/2018/12/11/front-end/html/tag-meta/">meta标签</a>
-    </h3>
-  
-
-
-
-
-    <div class="post-content" id="post-content" itemprop="postContent">
-
-    
-        基本123456789101112131415161718192021222324// 更加标准的 lang 属性写法 http://zhi.hu/XyIa&lt;html lang=&quot;zh-cmn-Hans&quot;&gt;// 声明文档使用的字符编码&lt;meta charset=&apos;utf-8&apos;&gt;// 优先使用 IE 最新版本和 Chrome&lt...
-    
-
-        <a href="/2018/12/11/front-end/html/tag-meta/" class="post-more waves-effect waves-button">
-            阅读全文…
-        </a>
-    </div>
-    
-    <div class="post-footer">
-        
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/html/">html</a></li></ul>
-
-    </div>
-    
-</article>
-
-        </li>
-    
-        <li class="post-list-item fade">
-            <article id="post-front-end/css/css-centered" class="article-card article-type-post" itemprop="blogPost">
-
-    <div class="post-meta">
-        <time class="post-time" title="2018-12-11 00:03:53" datetime="2018-12-11T00:03:53.000Z" itemprop="datePublished">2018-12-11</time>
-
-        
-
-
-    </div>
-
-    
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/2018/12/11/front-end/css/css-centered/">css实现居中</a>
-    </h3>
-  
-
-
-
-
-    <div class="post-content" id="post-content" itemprop="postContent">
-
-    
-        定位1234position: absolute;top: 50%;left: 50%;transform: translate(-50%, -50%);
-伸缩盒123display: flex;justify-content: center;align-items: center;
-
-    
-
-        <a href="/2018/12/11/front-end/css/css-centered/" class="post-more waves-effect waves-button">
-            阅读全文…
-        </a>
-    </div>
-    
-    <div class="post-footer">
-        
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/css/">css</a></li></ul>
-
     </div>
     
 </article>
@@ -578,7 +570,7 @@ DPI: 打印机每英寸可以喷的墨汁点(印刷行业)PPI: 屏幕每英寸�
     
 <nav id="page-nav">
     <div class="inner">
-    <a class="extend prev" rel="prev" href="/">上一页</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/3/">下一页</a>
+    <a class="extend prev" rel="prev" href="/">上一页</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/3/">下一页</a>
     </div>
 </nav>
 

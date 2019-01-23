@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>对象 | 薛鸿杰的博客</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#6C88B7">
+    
+    
+    <meta name="keywords" content="js,Object">
+    <meta name="description" content="判断是不是数组/对象123456789// 是否为数组if(typeof Array.isArray===&amp;quot;undefined&amp;quot;)&amp;#123;  Array.isArray = function(arg)&amp;#123;    return Object.prototype.toString.call(arg) === &amp;apos;[object Array]&amp;apos;  &amp;#1">
+<meta name="keywords" content="js,Object">
+<meta property="og:type" content="article">
+<meta property="og:title" content="对象">
+<meta property="og:url" content="https://tragiclife.github.io/front-end/js/object/index.html">
+<meta property="og:site_name" content="薛鸿杰的博客">
+<meta property="og:description" content="判断是不是数组/对象123456789// 是否为数组if(typeof Array.isArray===&amp;quot;undefined&amp;quot;)&amp;#123;  Array.isArray = function(arg)&amp;#123;    return Object.prototype.toString.call(arg) === &amp;apos;[object Array]&amp;apos;  &amp;#1">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-01-19T15:48:10.395Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="对象">
+<meta name="twitter:description" content="判断是不是数组/对象123456789// 是否为数组if(typeof Array.isArray===&amp;quot;undefined&amp;quot;)&amp;#123;  Array.isArray = function(arg)&amp;#123;    return Object.prototype.toString.call(arg) === &amp;apos;[object Array]&amp;apos;  &amp;#1">
+    
+        <link rel="alternate" type="application/atom+xml" title="薛鸿杰的博客" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide">
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand2.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">薛鸿杰</h5>
+          <a href="mailto:xuehongjiej@163.com" title="xuehongjiej@163.com" class="mail">xuehongjiej@163.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/">
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives">
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags">
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/TragicLife" target="_blank">
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">对象</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">对象</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2018-12-16T23:28:19.000Z" itemprop="datePublished" class="page-time">
+  2018-12-16
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#判断是不是数组-对象"><span class="post-toc-number">1.</span> <span class="post-toc-text">判断是不是数组/对象</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#defineProperty-defineProperties"><span class="post-toc-number">2.</span> <span class="post-toc-text">defineProperty/defineProperties</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#对象拷贝"><span class="post-toc-number">3.</span> <span class="post-toc-text">对象拷贝</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#浅拷贝"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">浅拷贝</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#深拷贝"><span class="post-toc-number">3.2.</span> <span class="post-toc-text">深拷贝</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#new的过程"><span class="post-toc-number">4.</span> <span class="post-toc-text">new的过程</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#禁止扩展方法"><span class="post-toc-number">5.</span> <span class="post-toc-text">禁止扩展方法</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#preventExtensions"><span class="post-toc-number">5.1.</span> <span class="post-toc-text">preventExtensions</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#isExtensible"><span class="post-toc-number">5.2.</span> <span class="post-toc-text">isExtensible</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#seal"><span class="post-toc-number">5.3.</span> <span class="post-toc-text">seal</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#isSealed"><span class="post-toc-number">5.4.</span> <span class="post-toc-text">isSealed</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#freeze"><span class="post-toc-number">5.5.</span> <span class="post-toc-text">freeze</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#isFrozen"><span class="post-toc-number">5.6.</span> <span class="post-toc-text">isFrozen</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#汇总表格"><span class="post-toc-number">5.7.</span> <span class="post-toc-text">汇总表格</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#其他"><span class="post-toc-number">6.</span> <span class="post-toc-text">其他</span></a></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-front-end/js/object" class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">对象</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2018-12-16 23:28:19" datetime="2018-12-16T23:28:19.000Z" itemprop="datePublished">2018-12-16</time>
+
+            
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style="display:none">
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h2 id="判断是不是数组-对象"><a href="#判断是不是数组-对象" class="headerlink" title="判断是不是数组/对象"></a>判断是不是数组/对象</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">// 是否为数组</span><br><span class="line">if(typeof Array.isArray===&quot;undefined&quot;)&#123;</span><br><span class="line">  Array.isArray = function(arg)&#123;</span><br><span class="line">    return Object.prototype.toString.call(arg) === &apos;[object Array]&apos;</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// 是否为对象</span><br><span class="line">Object.prototype.toString.call(arg) === &apos;[object Object]&apos;</span><br></pre></td></tr></table></figure>
+<h2 id="defineProperty-defineProperties"><a href="#defineProperty-defineProperties" class="headerlink" title="defineProperty/defineProperties"></a>defineProperty/defineProperties</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">writable、value和set、get不能同时存在</span><br><span class="line">Object.defineProperty(obj, prop, &#123;</span><br><span class="line">  configurable: false, //是否可以通过delete删除，能否修改属性的特性。直白点：是否可配置</span><br><span class="line">  enumerable: false, //枚举性，表示是否可以通过for-in循环返回</span><br><span class="line">  writable: false, //可写性：是否可以修改属性的值</span><br><span class="line">  value: undefined, //包含属性的值，也就是对应的可读性。</span><br><span class="line">  set: undefined,</span><br><span class="line">  get: undefined</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<h2 id="对象拷贝"><a href="#对象拷贝" class="headerlink" title="对象拷贝"></a>对象拷贝</h2><h3 id="浅拷贝"><a href="#浅拷贝" class="headerlink" title="浅拷贝"></a>浅拷贝</h3><ol>
+<li><code>Object.assign(obj)</code></li>
+<li>扩展运算符(…) <code>{...obj}</code></li>
+<li><code>let obj = Object.defineProperties({}, Object.getOwnPropertyDescriptors(copyObj))</code></li>
+</ol>
+<h3 id="深拷贝"><a href="#深拷贝" class="headerlink" title="深拷贝"></a>深拷贝</h3><ol>
+<li><code>JSON.parse(JSON.stringify(obj))</code><br><strong>局限性</strong><ol>
+<li>会忽略 undefined</li>
+<li>不能序列化函数</li>
+<li>不能解决循环引用的对象</li>
+</ol>
+</li>
+<li><code>MessageChannel</code>，不支持包含函数的对象，异步，支持Android4.4+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">function deepCopy(obj) &#123;</span><br><span class="line">  return new Promise(resolve =&gt; &#123;</span><br><span class="line">    const &#123;port1, port2&#125; = new MessageChannel();</span><br><span class="line">    port2.onmessage = ev =&gt; resolve(ev.data);</span><br><span class="line">    port1.postMessage(obj);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h2 id="new的过程"><a href="#new的过程" class="headerlink" title="new的过程"></a>new的过程</h2><ol>
+<li>创建一个新对象</li>
+<li>将构造函数的作用域赋值给新对象</li>
+<li>执行构造函数的代码</li>
+<li>返回新的对象</li>
+</ol>
+<h2 id="禁止扩展方法"><a href="#禁止扩展方法" class="headerlink" title="禁止扩展方法"></a>禁止扩展方法</h2><h3 id="preventExtensions"><a href="#preventExtensions" class="headerlink" title="preventExtensions"></a>preventExtensions</h3><p>禁止对象扩展，可修改已有的值，可以通过defineProperty重新定义已有属性，<code>Object.preventExtensions(obj)</code></p>
+<h3 id="isExtensible"><a href="#isExtensible" class="headerlink" title="isExtensible"></a>isExtensible</h3><p>判断对象是否可扩展，<code>Object.isExtensible(obj)</code></p>
+<h3 id="seal"><a href="#seal" class="headerlink" title="seal"></a>seal</h3><p>禁止对象扩展，可修改已有的值，不可以通过defineProperty重新定义已有属性，<code>Object.seal(obj)</code></p>
+<h3 id="isSealed"><a href="#isSealed" class="headerlink" title="isSealed"></a>isSealed</h3><p>判断对象是否密封，<code>Objct.isSealed(obj)</code></p>
+<h3 id="freeze"><a href="#freeze" class="headerlink" title="freeze"></a>freeze</h3><p>冻结对象，返回冻结的对象，不能做任何操作，只能读取，<code>Object.freeze(obj)</code></p>
+<h3 id="isFrozen"><a href="#isFrozen" class="headerlink" title="isFrozen"></a>isFrozen</h3><p>判断对象是否冻结，<code>Object.isFrozen(obj)</code></p>
+<h3 id="汇总表格"><a href="#汇总表格" class="headerlink" title="汇总表格"></a>汇总表格</h3><table>
+<thead>
+<tr>
+<th>函数</th>
+<th>对象已设置为不可扩展的</th>
+<th>为每个属性将configurable设置为false</th>
+<th>为每个属性将writable设置为false</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Object.preventExtensions</td>
+<td>是</td>
+<td>否</td>
+<td>否</td>
+</tr>
+<tr>
+<td>Object.seal</td>
+<td>是</td>
+<td>是</td>
+<td>否</td>
+</tr>
+<tr>
+<td>Object.freeze</td>
+<td>是</td>
+<td>是</td>
+<td>是</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>函数</th>
+<th>对象是否可扩展</th>
+<th>为每个属性将configurable设置为false</th>
+<th>为每个属性将writable设置为false</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Object.isExtensible</td>
+<td>是</td>
+<td>否</td>
+<td>否</td>
+</tr>
+<tr>
+<td>Object.isSealed</td>
+<td>否</td>
+<td>是</td>
+<td>是</td>
+</tr>
+<tr>
+<td>Object.isFrozen</td>
+<td>否</td>
+<td>是</td>
+<td>是</td>
+</tr>
+</tbody>
+</table>
+<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><p><strong>原型链的顶层是什么</strong><br><code>Object.prototype.__proto__</code> // null</p>
+<p><strong>Object.create(null)、new Object()、{}的区别</strong><br>Object.create(null)创建的对象没有继承Object的属性和方法</p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2019-01-19T15:48:10.395Z" itemprop="dateUpdated">2019-01-19 15:48:10</time>
+</span><br>
+
+
+        
+        以上内容为个人记录
+        
+    </div>
+    
+    <footer>
+        <a href="https://tragiclife.github.io">
+            <img src="/img/avatar.jpg" alt="薛鸿杰">
+            薛鸿杰
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Object/">Object</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://tragiclife.github.io/front-end/js/object/&title=《对象》 — 薛鸿杰的博客&pic=https://tragiclife.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://tragiclife.github.io/front-end/js/object/&title=《对象》 — 薛鸿杰的博客&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://tragiclife.github.io/front-end/js/object/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《对象》 — 薛鸿杰的博客&url=https://tragiclife.github.io/front-end/js/object/&via=https://tragiclife.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://tragiclife.github.io/front-end/js/object/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/front-end/js/canvas/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">Canvas</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/front-end/js/event/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">事件</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <!-- <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style="display:none">
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style="display:none">
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div> -->
+    <div class="bottom">
+        <p><span>薛鸿杰 &copy; 2018 - 2019</span>
+            <span>
+                
+                <a href="http://www.miitbeian.gov.cn/" target="_blank">粤ICP备18140620号-1</a><br>
+                
+                <!-- Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a> -->
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://tragiclife.github.io/front-end/js/object/&title=《对象》 — 薛鸿杰的博客&pic=https://tragiclife.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://tragiclife.github.io/front-end/js/object/&title=《对象》 — 薛鸿杰的博客&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://tragiclife.github.io/front-end/js/object/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《对象》 — 薛鸿杰的博客&url=https://tragiclife.github.io/front-end/js/object/&via=https://tragiclife.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://tragiclife.github.io/front-end/js/object/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACLUlEQVR42u3a0W7jMAwEwP7/T6fPh4PlXckpYGn0ZAROxUkBghL58xOvz8Uav/P/51fvj998bGFgYLyW8RmuPMRxuFfP7b6XVAwMjAMYVxnsqec8HV8938SMgYGBMUyjbXIcl4AYGBgY32Ykp8vxLhgYGBgrh9hxiPn1XL7XV87iGBgYL2Tkt+5///yV/gYGBsarGJ9yzTU427DqqDAwMLZm5NskR9BkkGKlGXATDwYGxtaMuaZj3iRoi878xyr+HAYGxmsZeXBzzci2bZmPlP3zCQYGxtaMuVQ7B26T/lInFgMDY2vGUxXX+KeZG+a4KRMxMDA2ZbRDEsmFWhLcSkIv8jQGBsZ2jLmAkm1WxssiHgYGxtaMNi3ONQxWmpdFasbAwDiGkXxtfcAiHzVLSBgYGCcw8kuxueuzBN9esWFgYJzDyIcn8uTbfre94Ls5i2NgYGzHeGrka6mYKy/vbrbHwMA4gDEXenvobRsPk7UtBgbGpoy59Jdfw7Wh5wMZGBgYJzDmisXkzbZh0P58GBgY5zDmLtTycYo2cddtTgwMjMMYyTFypRBsj8oREgMDY1PGp1xtUyFvA7TF4uX/AQMDYzvGUzn72SSbh15jMDAwXstIkmzSUGzfXxnRuOlvYGBgbMrIQ1xPx98Y78DAwMBIwkqOuG1ZWdSwGBgYGO3ow/IBNS8fMTAwzmE8daGWNzvzwjFqSGBgYGzNaOuulau0cYHYHlwxMDAOYPwC07AD8QuQ+WsAAAAASUVORK5CYII=" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+</body>
+</html>

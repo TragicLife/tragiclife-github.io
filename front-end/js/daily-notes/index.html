@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>日常小记-JS | 薛鸿杰的博客</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#6C88B7">
+    
+    
+    <meta name="keywords" content="">
+    <meta name="description" content="$(“p”).empty与$(“p”).remove1234$(&amp;quot;p&amp;quot;).empty移除p标签中的文本及其子节点，留下p标签$(&amp;quot;p&amp;quot;).remove移除p标签及其文本内容还有其子节点 事件绑定12345678910111213DOM2级事件addEventListener(type, listener, useCapture/options);remove">
+<meta property="og:type" content="article">
+<meta property="og:title" content="日常小记-JS">
+<meta property="og:url" content="https://tragiclife.github.io/front-end/js/daily-notes/index.html">
+<meta property="og:site_name" content="薛鸿杰的博客">
+<meta property="og:description" content="$(“p”).empty与$(“p”).remove1234$(&amp;quot;p&amp;quot;).empty移除p标签中的文本及其子节点，留下p标签$(&amp;quot;p&amp;quot;).remove移除p标签及其文本内容还有其子节点 事件绑定12345678910111213DOM2级事件addEventListener(type, listener, useCapture/options);remove">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-12-24T15:40:55.856Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="日常小记-JS">
+<meta name="twitter:description" content="$(“p”).empty与$(“p”).remove1234$(&amp;quot;p&amp;quot;).empty移除p标签中的文本及其子节点，留下p标签$(&amp;quot;p&amp;quot;).remove移除p标签及其文本内容还有其子节点 事件绑定12345678910111213DOM2级事件addEventListener(type, listener, useCapture/options);remove">
+    
+        <link rel="alternate" type="application/atom+xml" title="薛鸿杰的博客" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide">
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand2.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">薛鸿杰</h5>
+          <a href="mailto:xuehongjiej@163.com" title="xuehongjiej@163.com" class="mail">xuehongjiej@163.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/">
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives">
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags">
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/TragicLife" target="_blank">
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">日常小记-JS</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">日常小记-JS</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2018-12-11T23:59:39.000Z" itemprop="datePublished" class="page-time">
+  2018-12-12
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+
+<article id="post-front-end/js/daily-notes" class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">日常小记-JS</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2018-12-11 23:59:39" datetime="2018-12-11T23:59:39.000Z" itemprop="datePublished">2018-12-11</time>
+
+            
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style="display:none">
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <p><strong>$(“p”).empty与$(“p”).remove</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$(&quot;p&quot;).empty</span><br><span class="line">移除p标签中的文本及其子节点，留下p标签</span><br><span class="line">$(&quot;p&quot;).remove</span><br><span class="line">移除p标签及其文本内容还有其子节点</span><br></pre></td></tr></table></figure></p>
+<p><strong>事件绑定</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">DOM2级事件</span><br><span class="line">addEventListener(type, listener, useCapture/options);</span><br><span class="line">removeEventListener(type, listener, useCapture/options);</span><br><span class="line">useCapture: 默认为false，监听冒泡阶段</span><br><span class="line">options: &#123;</span><br><span class="line">  capture: Boolean, // 是否在捕获阶段触发事件</span><br><span class="line">  passive: Boolean, // 使preventDefault调用无效，可优化界面滚动效果</span><br><span class="line">  once: Boolean, // 是否执行一次</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">IE</span><br><span class="line">attachEvent(&apos;on&apos; + type, listener);</span><br><span class="line">detachEvent(&apos;on&apos; + type, listener);</span><br></pre></td></tr></table></figure></p>
+<p><strong>消除事件处理器的影响</strong></p>
+<p><a href="https://mp.weixin.qq.com/s/YJficujNG3kX45ZwfFQoqA" target="_blank" rel="noopener">图解浏览器的工作原理</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">让浏览器即监听相关事件，又让组合器线程在等等主线程响应前构建新的组合帧</span><br><span class="line">document.body.addEventListener(&apos;touchstart&apos;, event =&gt; &#123;</span><br><span class="line">  if (event.target === area) &#123;</span><br><span class="line">    event.preventDefault()</span><br><span class="line">  &#125;</span><br><span class="line">&#125;, &#123;passive: true&#125;);</span><br><span class="line"></span><br><span class="line">垂直方向的滚动可能会先于event.preventDefault()发生，此时可以通过 event.cancelable 来防止这种情况</span><br><span class="line">document.body.addEventListener(&apos;pointermove&apos;, event =&gt; &#123;</span><br><span class="line">  if (event.cancelable) &#123;</span><br><span class="line">    event.preventDefault(); // block the native scroll</span><br><span class="line">  &#125; </span><br><span class="line">&#125;, &#123;passive: true&#125;);</span><br><span class="line"></span><br><span class="line">也可以使用 css 属性 touch-action 来完全消除事件处理器的影响，如：</span><br><span class="line">#area &#123; </span><br><span class="line">  touch-action: pan-x; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>表示false的值</strong></p>
+<p>false, 0, 空字符串(‘’), null, undefined</p>
+<p><strong>Number,Boolean,String,Undefined比较问题</strong> </p>
+<p>会先将复合对象转换成基本类型（依次调用valueOf和toString方法）再进行比较，undefined被当成基本类型，undefined转换成数字是NaN，因此undefined与除null之外的其它类型值进行比较时始终返回false（注意NaN==NaN返回false）null被当成复合对象，由于null没有valueOf和toStribg方法，因此除了和undefined之外的其它类型值进行比较时始终返回false</p>
+<p><strong>设置prototype的值为对象时，首先要还原构造器</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">let Person = function()&#123;&#125;</span><br><span class="line">Person.prototype = &#123;</span><br><span class="line">    constructor: Person</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p><strong>复制内容到粘贴板(仅支持IE)</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">let text = document.querySelector(&apos;.text&apos;).innerText;</span><br><span class="line">window.clipboardData.setData(&apos;text&apos;, text);</span><br></pre></td></tr></table></figure></p>
+<p><strong>[]和new Array</strong><br>[]的运行速度比new Array快，后者需要调用构造器</p>
+<p><strong>mouseout、mouseleave</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mouseout: 无论鼠标离开被选元素(绑定事件的元素)还是其子元素都会触发</span><br><span class="line">mouseleave: 当鼠标离开被选元素时触发</span><br></pre></td></tr></table></figure></p>
+<p><strong>获取选中select标签的文本</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">// value和选择文本不同时，sel为select标签的dom元素</span><br><span class="line">sel.options[sel.selectedIndex].text</span><br></pre></td></tr></table></figure></p>
+<p><strong>hover事件</strong><br>相当于mouseenter+mouseleave，不相当于mouseover+mouseout，mouseover(mouseout)鼠标进入(离开)某个元素或其子元素时触发。</p>
+<p><strong>javascript:void(0)</strong><br>javascript是伪协议，表示url的内容通过javascript执行。void(0)表示不做任何操作，这样会防止链接跳转到其他界面。这么做可以保存链接的样式，但不让链接执行实际操作，具体的操作交给链接的onclick事件处理</p>
+<p><strong>函数声明</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">函数声明：function fn()&#123;&#125;</span><br><span class="line">函数表达式：var fn = function()&#123;&#125;</span><br></pre></td></tr></table></figure></p>
+<p><strong>将伪数组转换成数组</strong><br>Array.prototype.slice.call(arguments, 0);</p>
+<p><strong>操作class</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">dom.classList.value  获取所有类名</span><br><span class="line">dom.classList.add()  添加类</span><br><span class="line">dom.classList.remove()  移除类</span><br><span class="line">dom.classList.contains()  查看是否存在某个类</span><br><span class="line">dom.classList.toggle()  切换是否显示某个类</span><br></pre></td></tr></table></figure></p>
+<p><strong>获取对象类型</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">Object.prototype.toString.call(xx); // 结果为[object Type]</span><br><span class="line"></span><br><span class="line">// 判断是否为数组</span><br><span class="line">if(typeof Array.isArray===&apos;undefined&apos;)&#123;</span><br><span class="line">  Array.isArray = function(arg)&#123;</span><br><span class="line">    return Object.prototype.toString.call(arg)===&apos;[object Array]&apos;</span><br><span class="line">  &#125;;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p><strong>判断是否为undefined</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">let a;</span><br><span class="line">undefined = 1; // 这样判断就会出错</span><br><span class="line">a === undefined; // undefined不是保留字，能被赋值</span><br><span class="line"></span><br><span class="line">a === void 0; // void后面随便跟上一个组成表达式，返回就是undefined</span><br></pre></td></tr></table></figure></p>
+<p><strong>bind、call、apply的区别</strong></p>
+<ul>
+<li>bind只改变上下文环境，不执行</li>
+<li>call第二个参数开始是参数列表</li>
+<li>allpy第二个参数是数组</li>
+</ul>
+<p><strong>获取元素样式</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">getComputedStyle(dom, 伪类); // 可以获取伪类样式</span><br></pre></td></tr></table></figure></p>
+<p><strong>判断图片是否加载完成</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1. onload</span><br><span class="line">2. 通过img.complete属性判断</span><br><span class="line">3. onreadystatechange，img.readyState为complete或者loaded为加载完成</span><br></pre></td></tr></table></figure></p>
+<p><strong>setTimeout(fn, time, param)</strong></p>
+<ul>
+<li>fn: 回调函数</li>
+<li>time: 延迟调用时间</li>
+<li>param: 传入回调的参数</li>
+</ul>
+<p><strong>获取transform后元素的宽高</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dom.getBoundingClientRect()</span><br></pre></td></tr></table></figure></p>
+<p><strong>语法简写</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">//取整</span><br><span class="line">parseInt(a,10); //Before</span><br><span class="line">Math.floor(a); //Before</span><br><span class="line">a&gt;&gt;0; //Before</span><br><span class="line">~~a; //After</span><br><span class="line">a|0; //After</span><br><span class="line"></span><br><span class="line">//四舍五入</span><br><span class="line">Math.round(a); //Before</span><br><span class="line">a+.5|0; //After</span><br><span class="line"></span><br><span class="line">//内置值</span><br><span class="line">undefined; //Before</span><br><span class="line">void 0; //After, 快</span><br><span class="line">0[0]; //After, 略慢</span><br><span class="line"></span><br><span class="line">//内置值</span><br><span class="line">Infinity;</span><br><span class="line">1/0;</span><br><span class="line"></span><br><span class="line">//布尔值短写法</span><br><span class="line">true; //Before</span><br><span class="line">!0; //After</span><br><span class="line"></span><br><span class="line">//布尔值短写法</span><br><span class="line">false; //Before</span><br><span class="line">!1; //After</span><br></pre></td></tr></table></figure></p>
+<p><strong>base64图片前缀</strong><br>data:image/png;base64,</p>
+<p><strong>拷贝</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">对象拷贝</span><br><span class="line">let obj = Object.defineProperties(&#123;&#125;, Object.getOwnPropertyDescriptors(copyObj))</span><br><span class="line"></span><br><span class="line">数组拷贝</span><br><span class="line">let arr = [].concat(copyArr);</span><br></pre></td></tr></table></figure></p>
+<p><strong>第二次var定义变量如果不赋值，该值为原来定义的值</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var a = 100;</span><br><span class="line">var a;</span><br><span class="line">console.log(a); // 100</span><br></pre></td></tr></table></figure></p>
+<p><strong>函数声明会比变量声明先</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">console.log(a); // function</span><br><span class="line">var a = &apos;123&apos;;</span><br><span class="line">function a ()&#123;&#125;;</span><br><span class="line">console.log(a); // 123</span><br></pre></td></tr></table></figure></p>
+<p><strong>new的过程</strong></p>
+<ol>
+<li>创建一个新对象</li>
+<li>将构造函数的作用域赋值给新对象</li>
+<li>执行构造函数的代码</li>
+<li>返回新的对象</li>
+</ol>
+<p><strong>原型链的顶层</strong><br>null</p>
+<p><strong>自定义事件</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">let evt = document.createEvent(&quot;HTMLEvents&quot;);</span><br><span class="line">// 初始化</span><br><span class="line">evt.initEvent(&quot;alert&quot;, false, false);</span><br><span class="line">// 触发</span><br><span class="line">week.dispatchEvent(evt);</span><br></pre></td></tr></table></figure></p>
+<p><strong>查看元素事件</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">window.getEventListeners(window); // 返回事件对象，如&#123;click:[], mousedown:[]&#125;</span><br><span class="line">window.getEventListeners(window).click[0].listener; // 获取第一个绑定的click事件函数</span><br></pre></td></tr></table></figure></p>
+<p><strong>生成任意长度，且值为undefined的数组</strong><br>Array.apply(null, {length: 2}); // [undefined, undefined]</p>
+<p><strong>移动端将键盘回车变为搜索</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">将input的type改为search</span><br><span class="line">在input外包一层form, form标签设置action属性, 设置autocomplete=&quot;off&quot;去掉弹出的下拉框</span><br><span class="line">设置input[type=&quot;search&quot;]::-webkit-search-cancel-button&#123;display: none;&#125;将默认的X隐藏掉</span><br><span class="line">设置-webkit-appearance: none;去掉默认样式</span><br><span class="line">使用ajax提交时需要preventDefault阻止默认行为</span><br></pre></td></tr></table></figure></p>
+<p><strong>监听APP返回键</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">var hiddenProperty = &apos;hidden&apos; in document ? &apos;hidden&apos; : &apos;webkitHidden&apos; in document ? &apos;webkitHidden&apos; : &apos;mozHidden&apos; in document ? &apos;mozHidden&apos; : null;</span><br><span class="line">var visibilityChangeEvent = hiddenProperty.replace(/hidden/i, &apos;visibilitychange&apos;);</span><br><span class="line">var onVisibilityChange = function()&#123;</span><br><span class="line">  if (document[hiddenProperty]) &#123;    </span><br><span class="line">    console.log(&apos;页面非激活&apos;);</span><br><span class="line">  &#125;else&#123;</span><br><span class="line">    console.log(&apos;页面激活&apos;)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">document.addEventListener(visibilityChangeEvent, onVisibilityChange);</span><br></pre></td></tr></table></figure></p>
+<p><strong>parseInt</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">parseInt(&apos;12abc&apos;); // 12</span><br></pre></td></tr></table></figure></p>
+<p><strong>触发鼠标右键事件</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">on(&quot;contextmenu&quot;)</span><br></pre></td></tr></table></figure></p>
+<p><strong>window.open</strong><br>window.open打开的子窗口可以使用opener访问父窗口的方法和变量</p>
+<p><strong>onInput</strong><br>谷歌控制台使用Ctrl+p可以输入要打开的文件；onInput 是 HTML5 的标准事件，对于检测 textarea, input(text), input(password) 和 input(search) 这几个元素通过用户界面发生的内容变化非常有用，在内容修改后立即被触发，不像 onchange 事件需要失去焦点才触发。oninput 事件在 IE9 以下版本不支持，需要使用 IE 特有的onpropertychange 事件替代。</p>
+<p><strong>try、catch、finally</strong><br>Js如果在try中return则不会进入finally</p>
+<p><strong>改变当前链接</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">location.replace(url)</span><br></pre></td></tr></table></figure></p>
+<p><strong>IOS日期转换问题</strong><br>IOS的Safari在new Date()的时候不支持’2017-3-6’的格式，支持’2017/3/6’，也不支持date为2018/09/19 00.00.00.0，后缀带.0的</p>
+<p><strong>http</strong><br>get请求默认会在浏览器中缓存，可以通过添加时间戳来避免缓存</p>
+<p><strong>NodeJS Event loop</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">console.log(&apos;script start&apos;);</span><br><span class="line"></span><br><span class="line">setTimeout(function() &#123;</span><br><span class="line">  console.log(&apos;setTimeout&apos;);</span><br><span class="line">&#125;, 0);</span><br><span class="line"></span><br><span class="line">new Promise((resolve) =&gt; &#123;</span><br><span class="line">    console.log(&apos;Promise&apos;)</span><br><span class="line">    resolve()</span><br><span class="line">&#125;).then(function() &#123;</span><br><span class="line">  console.log(&apos;promise1&apos;);</span><br><span class="line">&#125;).then(function() &#123;</span><br><span class="line">  console.log(&apos;promise2&apos;);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">console.log(&apos;script end&apos;);</span><br><span class="line">// script start =&gt; Promise =&gt; script end =&gt; promise1 =&gt; promise2 =&gt; setTimeout</span><br><span class="line"></span><br><span class="line">微任务: process.nextTick, promise, Object.observe, MutationObserver</span><br><span class="line">宏任务: script, setTimeout, setInterval, setImmediate, I/O, UI rendering</span><br><span class="line"></span><br><span class="line">&gt; setImmediate会比setTimeout先执行</span><br><span class="line"></span><br><span class="line">Event loop执行顺序</span><br><span class="line">1. 执行同步代码，这属于宏任务</span><br><span class="line">2. 执行栈为空，查询是否有微任务需要执行</span><br><span class="line">3. 执行所有微任务</span><br><span class="line">4. 必要的话渲染 UI</span><br><span class="line">5. 然后开始下一轮 Event loop，执行宏任务中的异步代码</span><br></pre></td></tr></table></figure></p>
+<p><strong>存储</strong><br>特性 | cookie | localStorage | sessionStorage | indexDB<br>—|—|—|—|—<br>数据生命周期 | 一般由服务器生成，可以设置过期时间 |     除非被清理，否则一直存在 | 页面关闭就清理 |     除非被清理，否则一直存在<br>数据存储大小 | 4K | 5M | 5M | 无限<br>与服务端通信 | 每次都会携带在 header 中，对于请求性能影响 | 不参与 | 不参与 | 不参与</p>
+<p><strong>cookie安全性</strong><br>属性 | 作用<br>—|—<br>value | 如果用于保存用户登录态，应该将该值加密，不能使用明文的用户标识<br>http-only | 不能通过 JS 访问 Cookie，减少 XSS 攻击<br>secure | 只能在协议为 HTTPS 的请求中携带<br>same-site | 规定浏览器不能在跨域请求中携带 Cookie，减少 CSRF 攻击</p>
+<p><strong>Service Worker</strong></p>
+<blockquote>
+<p>Service workers 本质上充当Web应用程序与浏览器之间的代理服务器，也可以在网络可用时作为浏览器和网络间的代理。它们旨在（除其他之外）使得能够创建有效的离线体验，拦截网络请求并基于网络是否可用以及更新的资源是否驻留在服务器上来采取适当的动作。他们还允许访问推送通知和后台同步API。</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">// index.js</span><br><span class="line">if (navigator.serviceWorker) &#123;</span><br><span class="line">  navigator.serviceWorker.register(&apos;sw.js&apos;).then(registration =&gt; &#123;</span><br><span class="line">    console.log(&apos;service worker 注册成功&apos;);</span><br><span class="line">  &#125;).catch((err) =&gt; &#123;</span><br><span class="line">    console.log(&apos;service worker 注册失败&apos;);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// sw.js</span><br><span class="line">// 监听install事件，回调缓存所需文件</span><br><span class="line">self.addEventListener(&apos;install&apos;, e =&gt; &#123;</span><br><span class="line">  e.waitUntil(</span><br><span class="line">    // 设置缓存的名称为my-cache</span><br><span class="line">    caches.open(&apos;my-cache&apos;).then(cache =&gt; &#123;</span><br><span class="line">      return cache.addAll([&apos;./index.html&apos;, &apos;./index.js&apos;]);</span><br><span class="line">    &#125;);</span><br><span class="line">  );</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">// 拦截所有请求事件</span><br><span class="line">// 如果缓存中已经有请求的数据就直接用缓存，否则去请求数据</span><br><span class="line">self.addEventListener(&apos;fetch&apos;, e =&gt; &#123;</span><br><span class="line">  e.respondWith(</span><br><span class="line">    caches.match(e.request).then(response =&gt; &#123;</span><br><span class="line">      if (response) &#123;</span><br><span class="line">        return response</span><br><span class="line">      &#125;</span><br><span class="line">      console.log(&apos;fetch source&apos;);</span><br><span class="line">    &#125;);</span><br><span class="line">  );</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p><strong>Load和DOMContentLoaded区别</strong></p>
+<ul>
+<li>Load 事件触发代表页面中的 DOM，CSS，JS，图片已经全部加载完毕</li>
+<li>DOMContentLoaded 事件触发代表初始的 HTML 被完全加载和解析，不需要等待 CSS，JS，图片加载</li>
+</ul>
+<p><strong>生成新图层</strong></p>
+<ul>
+<li>3D变换: translate3d、translateZ</li>
+<li>will-change</li>
+<li>video、iframe标签</li>
+<li>通过动画实现的opacity动画转换</li>
+<li>position: fixed</li>
+</ul>
+<blockquote>
+<p>对于频繁渲染的建议生成一个新的图层，提高性能。但不能生成过多图层，会引起反作用。</p>
+</blockquote>
+<p><strong>重绘(Repaint)和回流(Reflow)</strong></p>
+<ul>
+<li>重绘是当节点需要更改外观而不会影响布局的，比如改变 color 就叫称为重绘</li>
+<li>回流是布局或者几何属性需要改变就称为回流。</li>
+</ul>
+<blockquote>
+<p>回流必定会发生重绘，重绘不一定会引发回流。回流所需的成本比重绘高的多，改变深层次的节点很可能导致父节点的一系列回流。</p>
+</blockquote>
+<p><strong>并行、并发</strong></p>
+<ul>
+<li>并行：宏观和微观上都是同时进行</li>
+<li>并发：宏观上同时，微观上不同时</li>
+</ul>
+<p><strong>工具库</strong><br>loadash、date-fns(日期格式化)、accounting.js(货币格式化)</p>
+<p><strong>jsencrypt</strong><br>用于请求参数加密处理，加密方式为RSA</p>
+<p><strong>vue框架核心方法defineProperty(defineProperties)</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">writable、value和set、get不能同时存在</span><br><span class="line">Object.defineProperty(obj, prop, &#123;</span><br><span class="line">  configurable: false, //是否可以通过delete删除，能否修改属性的特性。直白点：是否可配置</span><br><span class="line">  enumerable: false, //枚举性，表示是否可以通过for-in循环返回</span><br><span class="line">  writable: false, //可写性：是否可以修改属性的值</span><br><span class="line">  value: undefined, //包含属性的值，也就是对应的可读性。</span><br><span class="line">  set: undefined,</span><br><span class="line">  get: undefined</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
+<p><strong>获取github用户信息</strong><br><a href="https://api.github.com/users/{id}" target="_blank" rel="noopener">https://api.github.com/users/{id}</a></p>
+<p><strong>复制功能</strong></p>
+<ul>
+<li><a href="https://clipboardjs.com/" target="_blank" rel="noopener">https://clipboardjs.com/</a></li>
+<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/API/Document/execCommand#%E5%91%BD%E4%BB%A4" target="_blank" rel="noopener">https://developer.mozilla.org/zh-CN/docs/Web/API/Document/execCommand#%E5%91%BD%E4%BB%A4</a></li>
+</ul>
+<p><strong>安装nvm后无法使用问题</strong><br>先nvm install node，然后再nvm use [version]</p>
+<p><strong>nvm安装最新nodejs包</strong><br>nvm install latest</p>
+<p><strong>判断点击元素是否为某个元素的后代元素</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">document.addEventListener(&apos;click&apos;, (e) =&gt; &#123;</span><br><span class="line">  if (el.contains(e.target)) &#123;</span><br><span class="line">    console.log(&apos;包含&apos;)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2018-12-24T15:40:55.856Z" itemprop="dateUpdated">2018-12-24 15:40:55</time>
+</span><br>
+
+
+        
+        以上内容为个人记录
+        
+    </div>
+    
+    <footer>
+        <a href="https://tragiclife.github.io">
+            <img src="/img/avatar.jpg" alt="薛鸿杰">
+            薛鸿杰
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://tragiclife.github.io/front-end/js/daily-notes/&title=《日常小记-JS》 — 薛鸿杰的博客&pic=https://tragiclife.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://tragiclife.github.io/front-end/js/daily-notes/&title=《日常小记-JS》 — 薛鸿杰的博客&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://tragiclife.github.io/front-end/js/daily-notes/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《日常小记-JS》 — 薛鸿杰的博客&url=https://tragiclife.github.io/front-end/js/daily-notes/&via=https://tragiclife.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://tragiclife.github.io/front-end/js/daily-notes/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/front-end/other/problems-encountered-in-the-project/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">项目中的那些事</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/front-end/html/tag-meta/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">meta标签</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <!-- <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style="display:none">
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style="display:none">
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div> -->
+    <div class="bottom">
+        <p><span>薛鸿杰 &copy; 2018 - 2019</span>
+            <span>
+                
+                <a href="http://www.miitbeian.gov.cn/" target="_blank">粤ICP备18140620号-1</a><br>
+                
+                <!-- Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a> -->
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://tragiclife.github.io/front-end/js/daily-notes/&title=《日常小记-JS》 — 薛鸿杰的博客&pic=https://tragiclife.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://tragiclife.github.io/front-end/js/daily-notes/&title=《日常小记-JS》 — 薛鸿杰的博客&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://tragiclife.github.io/front-end/js/daily-notes/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《日常小记-JS》 — 薛鸿杰的博客&url=https://tragiclife.github.io/front-end/js/daily-notes/&via=https://tragiclife.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://tragiclife.github.io/front-end/js/daily-notes/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACJUlEQVR42u3aW24CMRAEwNz/0uQAEbvdniUSdvkLEcJsOZLjefz8xOv1ZyWffPdO+8nHFgYGxtcyXpcrCZAHvsZcx73ZSgwMjAMY1yGvvzo/Rq9/6/r1zTNjYGBgBIGT8PO4GBgYGPNDsE1K17YDAwPjTEaSTCaPnpfq2uT5sVwcAwPjCxltmew/X3+kv4GBgfFVjFe5ktLb/KpXPxUGBsbWjLY01rYwW/DoeTAwMA5mJIBJoS0fIKvnODAwMLZmtMW1pBC29tO8jYqBgbErY16Oz8tn85GOm78DBgbGpoz2gphf7PINegyAgYFxACMpin2uLfpAEouBgXEAIy97JWHaMtxaye/tjBsGBsZGjDZA3nrM25NJknyzHRgYGAcw1kppeRLbDlvUYAwMjK0ZT13m2hZCcnyvzVFgYGDsx8ivfZN3Jsd0FAsDA+NIRrLWGp95PX+xw4CBgbEdow2fNwzaNsPDwxYYGBjbMdrhrTbRzTelHT7DwMA4k5GMghVfPW5SFv8YMDAwDmCsXQQngxQJuLggYmBgHMPID8e20Zgf0O1Bj4GBsTdjrRkwH6FoB8humgcYGBhbM9YOu7YxOUlN2+EPDAyMXRntUEU7QDZPZYskFgMDY2tGe/CtNQMmbYCb6BgYGBhrSeOgwVmX5DAwMDCCPLgdFMu3KWpRYGBgHMBoi/WTFDdPoYtBEAwMjK0Z7b3r+jBtr4Nr1FF/AwMD45sYv0gInTvxZJcaAAAAAElFTkSuQmCC" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>项目中的那些事 | 薛鸿杰的博客</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#6C88B7">
+    
+    
+    <meta name="keywords" content="">
+    <meta name="description" content="vue界面渲染时出现花括号{}123456在挂载vue的标签上使用v-cloak，设置v-cloak属性的样式，vue渲染完后会自动移除该属性&amp;lt;div class=&amp;quot;app&amp;quot; v-cloak&amp;gt;&amp;lt;/div&amp;gt;[v-cloak]&amp;#123;  display: none;&amp;#125; 使用:style或:class绑定时，key名带中划线(-)问题1用引号将该">
+<meta property="og:type" content="article">
+<meta property="og:title" content="项目中的那些事">
+<meta property="og:url" content="https://tragiclife.github.io/front-end/other/problems-encountered-in-the-project/index.html">
+<meta property="og:site_name" content="薛鸿杰的博客">
+<meta property="og:description" content="vue界面渲染时出现花括号{}123456在挂载vue的标签上使用v-cloak，设置v-cloak属性的样式，vue渲染完后会自动移除该属性&amp;lt;div class=&amp;quot;app&amp;quot; v-cloak&amp;gt;&amp;lt;/div&amp;gt;[v-cloak]&amp;#123;  display: none;&amp;#125; 使用:style或:class绑定时，key名带中划线(-)问题1用引号将该">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-01-19T10:47:27.384Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="项目中的那些事">
+<meta name="twitter:description" content="vue界面渲染时出现花括号{}123456在挂载vue的标签上使用v-cloak，设置v-cloak属性的样式，vue渲染完后会自动移除该属性&amp;lt;div class=&amp;quot;app&amp;quot; v-cloak&amp;gt;&amp;lt;/div&amp;gt;[v-cloak]&amp;#123;  display: none;&amp;#125; 使用:style或:class绑定时，key名带中划线(-)问题1用引号将该">
+    
+        <link rel="alternate" type="application/atom+xml" title="薛鸿杰的博客" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide">
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand2.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">薛鸿杰</h5>
+          <a href="mailto:xuehongjiej@163.com" title="xuehongjiej@163.com" class="mail">xuehongjiej@163.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/">
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives">
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags">
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/TragicLife" target="_blank">
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">项目中的那些事</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">项目中的那些事</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2018-12-12T22:03:31.000Z" itemprop="datePublished" class="page-time">
+  2018-12-13
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#vue"><span class="post-toc-number">1.</span> <span class="post-toc-text">vue</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#IOS"><span class="post-toc-number">2.</span> <span class="post-toc-text">IOS</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Android"><span class="post-toc-number">3.</span> <span class="post-toc-text">Android</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#插件"><span class="post-toc-number">4.</span> <span class="post-toc-text">插件</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#svg"><span class="post-toc-number">5.</span> <span class="post-toc-text">svg</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#JS"><span class="post-toc-number">6.</span> <span class="post-toc-text">JS</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#工具"><span class="post-toc-number">7.</span> <span class="post-toc-text">工具</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#http"><span class="post-toc-number">8.</span> <span class="post-toc-text">http</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#好车主APP"><span class="post-toc-number">9.</span> <span class="post-toc-text">好车主APP</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#微信-企业微信"><span class="post-toc-number">10.</span> <span class="post-toc-text">微信/企业微信</span></a></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-front-end/other/problems-encountered-in-the-project" class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">项目中的那些事</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2018-12-12 22:03:31" datetime="2018-12-12T22:03:31.000Z" itemprop="datePublished">2018-12-12</time>
+
+            
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style="display:none">
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h2 id="vue"><a href="#vue" class="headerlink" title="vue"></a>vue</h2><p><strong>界面渲染时出现花括号{}</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">在挂载vue的标签上使用v-cloak，设置v-cloak属性的样式，vue渲染完后会自动移除该属性</span><br><span class="line">&lt;div class=&quot;app&quot; v-cloak&gt;&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">[v-cloak]&#123;</span><br><span class="line">  display: none;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p><strong>使用:style或:class绑定时，key名带中划线(-)问题</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">用引号将该key包裹起来，:style=&#123;&apos;background-color&apos;: &apos;#fff&apos;&#125;</span><br></pre></td></tr></table></figure></p>
+<p><strong>错误捕获</strong></p>
+<blockquote>
+<p>2.2.0+可用, 2.4.0+支持自定义事件的捕获</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">Vue.config.errorHandler捕获钩子函数的报错信息，只能捕获钩子函数的错</span><br><span class="line">Vue.config.errorHandler = (err, vm, info) =&gt; &#123;</span><br><span class="line">  let &#123;</span><br><span class="line">    message, // 异常信息</span><br><span class="line">    name, // 异常名称</span><br><span class="line">    script,  // 异常脚本url</span><br><span class="line">    line,  // 异常行号</span><br><span class="line">    column,  // 异常列号</span><br><span class="line">    stack  // 异常堆栈信息</span><br><span class="line">  &#125; = err;</span><br><span class="line">  // info 是 Vue 特定的错误信息，比如错误所在的生命周期钩子</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>使用ref绑定问题</strong><br>如果绑定的元素为遍历元素，则生成的refs为数组</p>
+<p><strong>vue-router在history模式下使用子路由刷新报错问题</strong><br>修改assetsPublicPath路径，使用绝对路径</p>
+<p><strong>style标签使用scoped的时候无法覆盖子组件样式</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">解决方法:</span><br><span class="line">1. 去掉scoped</span><br><span class="line">2. 混用本地和全局样式，即增加一个style标签，不写scoped，进行样式覆</span><br><span class="line">3. 使用深度选择器 /deep/或者&gt;&gt;&gt;，如.a /dep/ .b&#123;&#125;</span><br></pre></td></tr></table></figure></p>
+<p><strong>进入详情页要缓存，从首页进入时要刷新的处理方法</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">使用keep-alive，在router中定义keeyAlive，在App.vue中</span><br><span class="line">&lt;keep-alive&gt;</span><br><span class="line">  &lt;router-view v-if=&quot;$route.meta.keepAlive&quot;&gt;&lt;/router-view&gt;</span><br><span class="line">&lt;/keep-alive&gt;</span><br><span class="line">&lt;router-view v-if=&quot;!$route.meta.keepAlive&quot;&gt;&lt;/router-view&gt;</span><br><span class="line"></span><br><span class="line">js代码：</span><br><span class="line">watch: &#123;</span><br><span class="line">  $route: &#123;</span><br><span class="line">    handler(to, from) &#123;</span><br><span class="line">      if (to.name === &apos;Home&apos;) &#123;</span><br><span class="line">        this.$refs.customerList.clearStatus();</span><br><span class="line">        from.meta.reload = true;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;,</span><br><span class="line">created() &#123;</span><br><span class="line">  this.loadData();</span><br><span class="line">&#125;,</span><br><span class="line">activated() &#123;</span><br><span class="line">  if (this.$route.meta.reload) &#123;</span><br><span class="line">    this.loadData();</span><br><span class="line">    this.$route.meta.reload = false;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p><strong>style标签使用scss的@import相对路径问题</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">resolve: &#123;</span><br><span class="line">  extensions: [&apos;.js&apos;, &apos;.vue&apos;],</span><br><span class="line">  alias: &#123;</span><br><span class="line">    &apos;@&apos;: path.resolve(__dirname, &apos;src&apos;),</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">引用时，@import &apos;~@/scss/icon.scss&apos;;</span><br></pre></td></tr></table></figure></p>
+<p><strong>Duplicate presence of slot “titleName” found in the same render tree</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">使用具名插槽slot-scope</span><br><span class="line">&lt;template slot=&quot;titleName&quot; slot-scope=&quot;props&quot;&gt;</span><br><span class="line">  &lt;span class=&quot;order-title&quot;&gt;采购订单&lt;/span&gt;</span><br><span class="line">&lt;/template&gt;</span><br></pre></td></tr></table></figure></p>
+<h2 id="IOS"><a href="#IOS" class="headerlink" title="IOS"></a>IOS</h2><p><strong>日期转换问题</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">日期中不允许有-，需要replace(/-/g, &apos;/&apos;)才可以进行new Date()</span><br><span class="line">日期中不允许有.0，如(2018-09-06 00:00:00.0)，需要replace(/\..*/g,&apos;&apos;)替换处理</span><br></pre></td></tr></table></figure></p>
+<p><strong>IOS7伸缩盒兼容性问题</strong><br>使用伸缩盒时加webkit前缀，使用box</p>
+<p><strong>IOS9元素运行动画后不显示问题</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">1. z-index没有设置或者太小</span><br><span class="line">2. 没有设置animation-fill-mode: forwards</span><br></pre></td></tr></table></figure></p>
+<p><strong>animation-play-state失效问题</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">添加父容器，在暂停的时候给父容器加transform</span><br><span class="line">let container = this.$refs.musicContainer</span><br><span class="line">let musicT = getComputedStyle(this.$refs.music).transform</span><br><span class="line">let containerT = getComputedStyle(container).transform</span><br><span class="line">let transform = containerT === &apos;none&apos; ? musicT : musicT.concat(&apos; &apos;, containerT)</span><br><span class="line">container.style.transform = transform</span><br><span class="line">container.style.webkitTransform = transform</span><br></pre></td></tr></table></figure></p>
+<p><strong>滚动暂停问题</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">1. 将滚动容器从body改为app，设置-webkit-overflow-scrolling:touch，该属性会造成scroll事件只会在滚动停止的时候执行一次</span><br><span class="line">2. 使用滚动插件(如better-scroll)</span><br></pre></td></tr></table></figure></p>
+<p><strong>使用-webkit-overflow-scrolling:touch问题</strong><br>如果触发了外层容器的弹性滚动，则该元素短时间内会无法滚动，可以使用better-scroll来实现滚动</p>
+<p><strong>IOS的弹性滚动</strong></p>
+<ol>
+<li>body层滚动(系统特殊化处理):<br>自带弹性滚动，<code>overflow: hidden</code>失效，GIF和定时器暂停 </li>
+<li>局部滚动:<br>没有弹性滚动，没有惯性滚动，不流畅<br><strong>局部滚动开启弹性滚动(仅支持IOS)</strong><br>设置滚动容器<code>-webkit-overflow-scrolling: touch</code>;<blockquote>
+<p>上拉加载使用scroll事件，而不是touch事件(因为android中会有bug)</p>
+</blockquote>
+</li>
+</ol>
+<p><strong>-webkit-overflow-scrolling:touch偶尔卡住或不能滑动的bug</strong><br>在使用该属性的元素上不设置定位或者手动设置定位为static<br>在<code>webkit-overflow-scrolling:touch</code>属性的下一层子元素上，将height加1%或1px。从而主动触发scrollbar。</p>
+<p><strong>-webkit-overflow-scrolling:touch还会导致的bug</strong></p>
+<ol>
+<li>滚动中 scrollTop 属性不会变化</li>
+<li>手势可穿过其他元素触发元素滚动</li>
+<li>滚动时暂停其他 transition</li>
+</ol>
+<h2 id="Android"><a href="#Android" class="headerlink" title="Android"></a>Android</h2><p><strong>打开view时界面会有空白问题</strong><br>在mounted中使用setTimeout进行font-size的设置</p>
+<p><strong>Android4.3中设置background的大小不生效</strong><br>通过background-size设置</p>
+<p><strong>4.3版本的svg无法使用transform</strong><br>用div将svg包裹起来，设置div的transform</p>
+<p><strong>兼容低版本css</strong><br>带webkit的css要放在后面</p>
+<p><strong>Android4系统touchmove问题</strong><br>在touchmove的时候会执行touchcancel事件，导致touchmove只执行一次，需要使用e.preventDefault阻止默认事件才可以执行多次，但是会导致一些默认行为不触发，如scroll</p>
+<p><strong>click事件失效问题</strong><br>父元素的touch事件加了preventDefault导致子元素的click事件不触发，修改子元素的click事件为touch事件</p>
+<p><strong>动画由大变小闪动问题</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">给动画元素的父容器加</span><br><span class="line">position: relative;</span><br><span class="line">overflow: hidden;</span><br></pre></td></tr></table></figure></p>
+<p><strong>安卓手机音频无法自动播放</strong><br>通过touch事件手动触发播放</p>
+<h2 id="插件"><a href="#插件" class="headerlink" title="插件"></a>插件</h2><p><strong>在元素隐藏的时候new Swiper，Swiper会有错位问题</strong></p>
+<ol>
+<li><p>设置obserVer和observParents为true</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">new Swiper(this.$refs.swiperContainer, &#123;</span><br><span class="line">  observer: true,//修改swiper自己或子元素时，自动初始化swiper</span><br><span class="line">  observeParents: false,//修改swiper的父元素时，自动初始化swiper</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>显示的时候手动调用update方法</p>
+</li>
+</ol>
+<p><strong>better-scroll内的子元素无法通过overflow滚动</strong></p>
+<blockquote>
+<p>better-scroll的bug</p>
+</blockquote>
+<p><strong>vue中同事使用keep-alive和better-scroll</strong><br>同时使用keep-alive和better-scroll时，better-scroll注册的事件不会自动销毁，需要手动调用<code>bScroll.destroy()</code>方法进行销毁。</p>
+<h2 id="svg"><a href="#svg" class="headerlink" title="svg"></a>svg</h2><p><strong>使用animate时，animate动画不运行</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">1. 获取animate的DOM，调用beginElement方法执行动画</span><br><span class="line">2. animate的dur设置的时间太小(小于25ms)，动画不会执行</span><br></pre></td></tr></table></figure></p>
+<h2 id="JS"><a href="#JS" class="headerlink" title="JS"></a>JS</h2><p><strong>canvas绘制问题</strong><br>绘制前需要设置canvas的宽高</p>
+<h2 id="工具"><a href="#工具" class="headerlink" title="工具"></a>工具</h2><p><strong>使用webstorm时无法自动编译问题</strong><br>取消webstorm的自动保存功能</p>
+<h2 id="http"><a href="#http" class="headerlink" title="http"></a>http</h2><p><strong>401状态码</strong><br>登录token有问题</p>
+<h2 id="好车主APP"><a href="#好车主APP" class="headerlink" title="好车主APP"></a>好车主APP</h2><p><strong>某些机型打开健步行时白屏问题</strong><br>绘制圆环canvas的时候没有获取到DOM导致webview奔溃，在$nextTick的时候绘制canvas，后面改成了SVG</p>
+<p><strong>aopsId获取失败</strong><br>连续调用了相同的客户端方法，导致前面的被覆盖</p>
+<p><strong>监听APP前后台切换</strong><br>通过postEvent方法监听webview的切换</p>
+<p><strong>因为手机设置字体大小导致样式错位问题</strong><br>安卓客户端通过webview配置<code>webview.getSettings().setTextZoom(100)</code>就可以禁止缩放，按照百分百显示。</p>
+<h2 id="微信-企业微信"><a href="#微信-企业微信" class="headerlink" title="微信/企业微信"></a>微信/企业微信</h2><p><strong>微信端无法自动播放音频问题</strong></p>
+<ol>
+<li><p>使用微信提供的js-sdk，在ready中调用播放的API</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">//首先引用js: </span><br><span class="line">&lt;script src=&quot;http://res.wx.qq.com/open/js/jweixin-1.0.0.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">//然后写方法: </span><br><span class="line">function autoPlayAudio1()&#123;</span><br><span class="line">  wx.config(&#123;</span><br><span class="line">    //配置信息, 即使不正确也能使用 wx.ready</span><br><span class="line">    debug: false,</span><br><span class="line">    appId: &apos;&apos;,</span><br><span class="line">    timestamp: 1,</span><br><span class="line">    nonceStr: &apos;&apos;,</span><br><span class="line">    signature: &apos;&apos;,</span><br><span class="line">    jsApiList: []</span><br><span class="line">  &#125;);</span><br><span class="line">  wx.ready(function() &#123;</span><br><span class="line">    document.getElementById(&apos;audio&apos;).play();</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>监听WeixinJSBridgeReady事件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var audio=document.querySelector(&quot;#audio&quot;);</span><br><span class="line">  document.addEventListener(&quot;WeixinJSBridgeReady&quot;,function()&#123;</span><br><span class="line">  audio.play();</span><br><span class="line">&#125;, false);</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p><strong>隐藏分享栏</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">WeixinJSBridge.call(&apos;hideOptionMenu&apos;)</span><br></pre></td></tr></table></figure></p>
+<p><strong>企业微信注册报invalid signture</strong></p>
+<ul>
+<li>在home界面调用注册方法会报错，修改调用的位置至需要使用新建表单页面</li>
+<li>后台返回的时间戳单位需要为<strong>秒</strong>，注册的url需要encodeURIComponent再传给后台，由后台decode</li>
+<li>项目用的是history模式，每个页面使用sdk都需要重新调用注册方法<blockquote>
+<p>url不调用encodeURIComponent的话链接上通过&amp;字符连接起来的参数会不被加入签名中</p>
+</blockquote>
+</li>
+</ul>
+<p><strong>安卓手机无法预览图片</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">调用接口时，urls必须传</span><br><span class="line">wx.previewImage(&#123;</span><br><span class="line">  current: imgUrl, // 当前显示图片的http链接</span><br><span class="line">  urls: [imgUrl] // 需要预览的图片http链接列表</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2019-01-19T10:47:27.384Z" itemprop="dateUpdated">2019-01-19 10:47:27</time>
+</span><br>
+
+
+        
+        以上内容为个人记录
+        
+    </div>
+    
+    <footer>
+        <a href="https://tragiclife.github.io">
+            <img src="/img/avatar.jpg" alt="薛鸿杰">
+            薛鸿杰
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://tragiclife.github.io/front-end/other/problems-encountered-in-the-project/&title=《项目中的那些事》 — 薛鸿杰的博客&pic=https://tragiclife.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://tragiclife.github.io/front-end/other/problems-encountered-in-the-project/&title=《项目中的那些事》 — 薛鸿杰的博客&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://tragiclife.github.io/front-end/other/problems-encountered-in-the-project/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《项目中的那些事》 — 薛鸿杰的博客&url=https://tragiclife.github.io/front-end/other/problems-encountered-in-the-project/&via=https://tragiclife.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://tragiclife.github.io/front-end/other/problems-encountered-in-the-project/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/front-end/other/interview-record/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">面试记录</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/front-end/js/daily-notes/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">日常小记-JS</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <!-- <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style="display:none">
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style="display:none">
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div> -->
+    <div class="bottom">
+        <p><span>薛鸿杰 &copy; 2018 - 2019</span>
+            <span>
+                
+                <a href="http://www.miitbeian.gov.cn/" target="_blank">粤ICP备18140620号-1</a><br>
+                
+                <!-- Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a> -->
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://tragiclife.github.io/front-end/other/problems-encountered-in-the-project/&title=《项目中的那些事》 — 薛鸿杰的博客&pic=https://tragiclife.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://tragiclife.github.io/front-end/other/problems-encountered-in-the-project/&title=《项目中的那些事》 — 薛鸿杰的博客&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://tragiclife.github.io/front-end/other/problems-encountered-in-the-project/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《项目中的那些事》 — 薛鸿杰的博客&url=https://tragiclife.github.io/front-end/other/problems-encountered-in-the-project/&via=https://tragiclife.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://tragiclife.github.io/front-end/other/problems-encountered-in-the-project/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACuElEQVR42u3aUW7jMAwFwNz/0t0DLOK8R0rdLDD6CmpH9bgAxZJ8veL187iS+593/vtzcvXYwsPDw7vw6M8/SR4r2WGz59tXiYeHh3eNl4fsJEDn979jz54BDw8P75t5SUqd57p5PoyHh4f3//KS4D47EhISHh4e3jfwZlsn1DzQP5chrtda8PDw8LqOVdRF+p7PV/p7eHh4eOuu+qboMCvjtofKh6fFw8PDu8CblVzz0ai8ELwf3nqb0OPh4eEd5Z3aepb4zsq4SbEYDw8P7x7v+RHbsunPaOUNs9nwAR4eHt5ZXhtkZ42x5FuzgkhRhsDDw8M7yksS4mTrTbpcj1IlV/Hw8PAu8Nr0elaWTYod+4OqKPji4eHhrXl5+3/zk9kIQjus8KGAi4eHh3eIN0um861nLbS2/fbhfjw8PLyjvFPJaxv6N4dBUj7Gw8PDu8HLx61mA0+zNPr5r1G03/Dw8PCu8TajTvsGf1L2nX0LDw8P7wYvCfHtITHrv7VttnyIAQ8PD+82Ly+Ytju04wX5eNaHV4CHh4d3lJcH8f2xsW995b8FDw8P7zavTVtnQ1Ft8Xe286utYeDh4eGVvLbD3pZZ26tF0M9fPR4eHt4F3ibEtw2q/KHb8u6rXXh4eHgLXhJ2E3yb8s6Ok/yAwcPDw/sdXpKktoXdGaaN8K/Ne8XDw8Nb8GYN/vxRZoMFq/vx8PDwLvOSID5rdLUHyWy97fLh4eHhHeL9lGvfvsoHF5LX8eEqHh4e3gVeG3Bnbfu8SJE3ug709/Dw8PAWvFlwT8L0PvmeHRt4eHh4v8PbNJySdteBxLfscOHh4eF9D29WXEiQbSGjSKnx8PDw/imvbWK1hYY83Y8OGDw8PLxrvLbYmgwfzCrKm/R9VWvBw8PDi3mzf/jzONweEnnj7XVq4eHh4aW8P/zmK/Dyc/t+AAAAAElFTkSuQmCC" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+</body>
+</html>

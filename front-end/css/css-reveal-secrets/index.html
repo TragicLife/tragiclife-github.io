@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>css揭秘 | 薛鸿杰的博客</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#6C88B7">
+    
+    
+    <meta name="keywords" content="css">
+    <meta name="description" content="边框使用box-shadow制作假边框，第四个值为增大或者减小投影面积(box-shadow范围内不会触发事件)box-shadow 是层层叠加的，第一层投影位于最顶层，依次类推。因此，你需要按此规律调整扩张半径。比如说，在前面的代码中，我们想在外圈再加一道 5px 的外框，那就需要指定扩张半径的值为15px （ 10px+5px ），会随着border-radius贴合border .box-s">
+<meta name="keywords" content="css">
+<meta property="og:type" content="article">
+<meta property="og:title" content="css揭秘">
+<meta property="og:url" content="https://tragiclife.github.io/front-end/css/css-reveal-secrets/index.html">
+<meta property="og:site_name" content="薛鸿杰的博客">
+<meta property="og:description" content="边框使用box-shadow制作假边框，第四个值为增大或者减小投影面积(box-shadow范围内不会触发事件)box-shadow 是层层叠加的，第一层投影位于最顶层，依次类推。因此，你需要按此规律调整扩张半径。比如说，在前面的代码中，我们想在外圈再加一道 5px 的外框，那就需要指定扩张半径的值为15px （ 10px+5px ），会随着border-radius贴合border .box-s">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-01-01T16:02:49.676Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="css揭秘">
+<meta name="twitter:description" content="边框使用box-shadow制作假边框，第四个值为增大或者减小投影面积(box-shadow范围内不会触发事件)box-shadow 是层层叠加的，第一层投影位于最顶层，依次类推。因此，你需要按此规律调整扩张半径。比如说，在前面的代码中，我们想在外圈再加一道 5px 的外框，那就需要指定扩张半径的值为15px （ 10px+5px ），会随着border-radius贴合border .box-s">
+    
+        <link rel="alternate" type="application/atom+xml" title="薛鸿杰的博客" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide">
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand2.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">薛鸿杰</h5>
+          <a href="mailto:xuehongjiej@163.com" title="xuehongjiej@163.com" class="mail">xuehongjiej@163.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/">
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives">
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags">
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/TragicLife" target="_blank">
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">css揭秘</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">css揭秘</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2018-12-10T00:04:00.000Z" itemprop="datePublished" class="page-time">
+  2018-12-10
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#边框"><span class="post-toc-number">1.</span> <span class="post-toc-text">边框</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#形状"><span class="post-toc-number">2.</span> <span class="post-toc-text">形状</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#用户体验"><span class="post-toc-number">3.</span> <span class="post-toc-text">用户体验</span></a></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-front-end/css/css-reveal-secrets" class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">css揭秘</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2018-12-10 00:04:00" datetime="2018-12-10T00:04:00.000Z" itemprop="datePublished">2018-12-10</time>
+
+            
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style="display:none">
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h2 id="边框"><a href="#边框" class="headerlink" title="边框"></a>边框</h2><p><strong>使用box-shadow制作假边框，第四个值为增大或者减小投影面积(box-shadow范围内不会触发事件)</strong><br>box-shadow 是层层叠加的，第一层投影位于最顶层，依次类推。因此，你需要按此规律调整扩张半径。比如说，在前面的代码中，我们想在外圈再加一道 5px 的外框，那就需要指定扩张半径的值为15px （ 10px+5px ），会随着border-radius贴合border</p>
+<p><style>.box-shadow{display: inline-block;margin: 20px;width: 10px;height: 10px;-webkit-box-shadow: 0 0 0 10px red, 0 0 0 15px blue;box-shadow: 0 0 0 10px red, 0 0 0 15px blue;font-size: 12px;}</style></p>
+<div class="box-shadow"></div>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=&quot;box-shadow&quot;&gt;&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">.box-shadow&#123;</span><br><span class="line">  width: 10px;</span><br><span class="line">  height: 10px;</span><br><span class="line">  box-shadow: 0 0 0 10px red, 0 0 0 15px blue;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>outline</strong><br>不触发事件，不随border-radius而贴合border</p>
+<p><style>.outline {margin: 10px;width: 10px;height: 10px;border: 5px solid red;outline: 5px solid blue;box-sizing: content-box;}</style></p>
+<div class="outline"></div>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=&quot;outline&quot;&gt;&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">.outline &#123;</span><br><span class="line">  width: 10px;</span><br><span class="line">  height: 10px;</span><br><span class="line">  border: 5px solid red;</span><br><span class="line">  outline: 5px solid blue;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>background-origin<br>通过backgroun-origin改变background-position的基准位置</p>
+<p>reapting-linear-gradient<br>linear-gradient的扩展</p>
+<p><strong>利用linear-gradient实现网格</strong></p>
+<p><style>.linear-gradient {margin: 10px;width: 100px;height: 100px;background: white;background-image: linear-gradient(90deg, rgba(200,0,0,.5) 50%,transparent 0), linear-gradient( rgba(200,0,0,.5) 50%, transparent 0);background-size: 30px 30px;}</style></p>
+<div class="linear-gradient"></div>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=&quot;linear-gradient&quot;&gt;&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">.linear-gradient &#123;</span><br><span class="line">  width: 100px;</span><br><span class="line">  height: 100px;</span><br><span class="line">  background: white;</span><br><span class="line">  background-image: linear-gradient(90deg, rgba(200,0,0,.5) 50%, transparent 0), linear-gradient( rgba(200,0,0,.5) 50%, transparent 0);</span><br><span class="line">  background-size: 30px 30px;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="形状"><a href="#形状" class="headerlink" title="形状"></a>形状</h2><p>自适应的椭圆(元素为正方形时展示圆形)<br>border-radius: 50% / 50%;可简写为border-radius: 50%;</p>
+<p><style>.circle {display: inline-block;margin: 10px;width: 50px;height: 50px;border-radius: 50%;background: blue;}.circle2 {width: 100px;}</style></p>
+<div class="circle"></div><div class="circle circle2"></div>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=&quot;circle&quot;&gt;&lt;/div&gt;</span><br><span class="line">&lt;div class=&quot;circle circle2&quot;&gt;&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">.circle &#123;</span><br><span class="line">  width: 50px;</span><br><span class="line">  height: 50px;</span><br><span class="line">  border-radius: 50%;</span><br><span class="line">  background: blue;</span><br><span class="line">&#125;</span><br><span class="line">.circle2 &#123;</span><br><span class="line">  width: 100px;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>切角效果</strong></p>
+<p><style>.corner-cutting{display: inline-block;margin: 10px;width:100px; height: 100px;line-height: 100px;background: linear-gradient(135deg, transparent 15px, #58a 0) top left, linear-gradient(-135deg, transparent 15px, #58a 0) top right, linear-gradient(-45deg, transparent 15px, #58a 0) bottom right,linear-gradient(45deg, transparent 15px, #58a 0) bottom left;background-size: 50% 50%;background-repeat: no-repeat;text-align: center;}.clip-path{clip-path:polygon(20px 0, calc(100% - 20px) 0, 100% 20px,100% calc(100% - 20px), calc(100% - 20px) 100%,20px 100%, 0 calc(100% - 20px), 0 20px);}</style></p>
+<div class="corner-cutting">background</div>    <div class="corner-cutting clip-path">clip-path</div>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">.corner-cutting &#123;</span><br><span class="line">  width: 100px;</span><br><span class="line">  height: 100px;</span><br><span class="line">  background: linear-gradient(135deg, transparent 15px, #58a 0) top left, </span><br><span class="line">    linear-gradient(-135deg, transparent 15px, #58a 0) top right, </span><br><span class="line">    linear-gradient(-45deg, transparent 15px, #58a 0) bottom right,</span><br><span class="line">    linear-gradient(45deg, transparent 15px, #58a 0) bottom left;</span><br><span class="line">  background-size: 50% 50%;</span><br><span class="line">  background-repeat: no-repeat;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// 或者使用clip-path</span><br><span class="line">clip-path:polygon(20px 0, calc(100% - 20px) 0, 100% 20px,100% calc(100% - 20px), calc(100% - 20px) 100%,20px 100%, 0 calc(100% - 20px), 0 20px);</span><br></pre></td></tr></table></figure>
+<p><strong>制作单边倾斜的梯形</strong></p>
+<p><style>.trapezoid {margin: 10px;width: 50px;height: 50px;background: blue;transform: perspective(.5em) rotateX(5deg);transform-origin: bottom left;}</style></p>
+<div class="trapezoid"></div>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=&quot;trapezoid&quot;&gt;&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">.trapezoid &#123;</span><br><span class="line">  width: 50px;</span><br><span class="line">  height: 50px;</span><br><span class="line">  background: blue;</span><br><span class="line">  transform: perspective(.5em) rotateX(5deg);</span><br><span class="line">  transform-origin: bottom left;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>投影</strong></p>
+<p><style>.box-shadow {width: 50px;height: 50px;line-height: 50px;}.box-shadow1 {box-shadow: 0 5px 4px -4px black;}.box-shadow2 {box-shadow: 3px 3px 6px -3px black;}.box-shadow3 {box-shadow: 5px 0 5px -5px black, -5px 0 5px -5px black;}</style></p>
+<div class="box-shadow box-shadow1">单边投影</div><div class="box-shadow box-shadow2">邻边投影</div><div class="box-shadow box-shadow3">两侧投影</div>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=&quot;box-shadow box-shadow1&quot;&gt;单边投影&lt;/div&gt;</span><br><span class="line">&lt;div class=&quot;box-shadow box-shadow2&quot;&gt;邻边投影&lt;/div&gt;</span><br><span class="line">&lt;div class=&quot;box-shadow box-shadow3&quot;&gt;两侧投影&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">.box-shadow &#123;</span><br><span class="line">  width: 50px;</span><br><span class="line">  height: 50px;</span><br><span class="line">&#125;</span><br><span class="line">// 单边投影</span><br><span class="line">.box-shadow1 &#123;</span><br><span class="line">  box-shadow: 0 5px 4px -4px black;</span><br><span class="line">&#125;</span><br><span class="line">// 邻边投影</span><br><span class="line">.box-shadow2 &#123;</span><br><span class="line">  box-shadow: 3px 3px 6px -3px black;</span><br><span class="line">&#125;</span><br><span class="line">// 两侧投影</span><br><span class="line">.box-shadow3 &#123;</span><br><span class="line">  box-shadow: 5px 0 5px -5px black, -5px 0 5px -5px black;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>滤镜</strong></p>
+<p><style>.filter {display: inline-block;margin: 10px;width: 50px;height: 50px;background: blue;}.filter-blur {filter: blur(5px);}.filter-grayscale {filter: grayscale();}.filter-drop-shadow {filter: drop-shadow(3px 3px 6px black)}</style></p>
+<div class="filter filter-blur"></div><div class="filter filter-grayscale"></div><div class="filter filter-drop-shadow"></div>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=&quot;filter&quot;&gt;&lt;/div&gt;</span><br><span class="line">.filter-blur &#123;</span><br><span class="line">  width: 50px;</span><br><span class="line">  height: 50px;</span><br><span class="line">  background: blue;</span><br><span class="line">&#125;</span><br><span class="line">.filter-blur &#123;</span><br><span class="line">  filter: blur(5px);</span><br><span class="line">&#125;</span><br><span class="line">.filter-grayscale &#123;</span><br><span class="line">  filter: grayscale();</span><br><span class="line">&#125;</span><br><span class="line">.filter-drop-shadow &#123;</span><br><span class="line">  filter: drop-shadow(3px 3px 6px black)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">filter: blur(5px) grayscale() drop-shadow(3px 3px 6px black)</span><br><span class="line">blur 元素模糊</span><br><span class="line">drop-shadow 类似于box-shadow</span><br></pre></td></tr></table></figure>
+<p><strong>设置缩进</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tab-size: 2;</span><br></pre></td></tr></table></figure></p>
+<p><strong>空心字效果</strong></p>
+<p><style>.hollow-text {display: inline-block;margin-right: 10px;text-shadow: 1px 1px black, -1px -1px black, 1px -1px black, -1px 1px black;}.hollow-text2 {text-shadow: 0 0 1px black, 0 0 1px black, 0 0 1px black, 0 0 1px black, 0 0 1px black, 0 0 1px black;}</style></p>
+<div class="hollow-text">空心字</div><div class="hollow-text hollow-text2">空心字</div>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=&quot;hollow-text&quot;&gt;空心字&lt;/div&gt;</span><br><span class="line">&lt;div class=&quot;hollow-text hollow-text2&quot;&gt;空心字&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">.hollow-text &#123;</span><br><span class="line">  text-shadow: 1px 1px black, -1px -1px black, 1px -1px black, -1px 1px black;</span><br><span class="line">&#125;</span><br><span class="line">.hollow-text2 &#123;</span><br><span class="line">  text-shadow: 0 0 1px black, 0 0 1px black, 0 0 1px black, 0 0 1px black, 0 0 1px black, 0 0 1px black;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>使用text-shadow实现文字模糊效果</strong></p>
+<p><style>.filter-text {color: black;text-shadow: 0 0 .1em black, 0 0 .3em black;}</style></p>
+<div class="filter-text">文字模糊</div>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=&quot;filter-text&quot;&gt;文字模糊&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">.filter-text &#123;</span><br><span class="line">  color: black;</span><br><span class="line">  text-shadow: 0 0 .1em black, 0 0 .3em black;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>利用svg实现环形文字效果</strong></p>
+<p><style>.circular{width: 50px;}</style></p>
+<div class="circular"><svg viewbox="0 0 100 100"><path d="M 0,50 a 50,50 0 1,1 0,1 z" id="circle"/><text><textpath xlink:href="#circle">circular reasoning works because</textpath></text></svg></div>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=&quot;circular&quot;&gt;</span><br><span class="line">  &lt;svg viewBox=&quot;0 0 100 100&quot;&gt;</span><br><span class="line">  &lt;path d=&quot;M 0,50 a 50,50 0 1,1 0,1 z&quot; id=&quot;circle&quot; /&gt;</span><br><span class="line">  &lt;text&gt;</span><br><span class="line">    &lt;textPath xlink:href=&quot;#circle&quot;&gt;circular reasoning works because&lt;/textPath&gt;</span><br><span class="line">  &lt;/text&gt;</span><br><span class="line">  &lt;/svg&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="用户体验"><a href="#用户体验" class="headerlink" title="用户体验"></a>用户体验</h2><ul>
+<li>使用合适的cursor</li>
+<li>增大可点击范围<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">border: 10px solid transparent;</span><br><span class="line">background-clip: padding-box;</span><br><span class="line">需要边框时增加box-shadow: 0 0 0 1px rgba(0,0,0,.3) inset;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><strong>水平居中</strong><br>行内元素：对其父元素设置text-align:center;<br>块级元素：对其自身设置margin:0 auto;</p>
+<p><strong>实现水平垂直居中</strong></p>
+<ol>
+<li>通过position定位<br><style>.position-container {position: relative;margin: 10px;width: 50px;height: 50px;background: red;}.position {position: absolute;top: 50%;left: 50%;width: 30px;height: 30px;background: blue;-webkit-transform: translate(-50%, -50%);transform: translate(-50%, -50%);}</style><div class="position-container"><div class="position"></div></div>
+
+</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=&quot;position-container&quot;&gt;</span><br><span class="line">  &lt;div class=&quot;position&quot;&gt;&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">.position-container &#123;</span><br><span class="line">  position: relative;</span><br><span class="line">  width: 50px;</span><br><span class="line">  height: 50px;</span><br><span class="line">  background: red;</span><br><span class="line">&#125;</span><br><span class="line">.position &#123;</span><br><span class="line">  position: absolute;</span><br><span class="line">  top: 50%;</span><br><span class="line">  left: 50%;</span><br><span class="line">  width: 30px;</span><br><span class="line">  height: 30px;</span><br><span class="line">  background: blue;</span><br><span class="line">  transform: translate(-50%, -50%);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">margin: 50% auto 0;transform: translateY(-50%);(只适用于全屏居中)</span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li>使用flex<br><style>.flex-container {display: flex;margin: 10px;width: 50px;height: 50px;background: red;}.margin-item {margin: auto;width: 30px;height: 30px;background: blue;}.flex-container2 {justify-content: center;align-items: center;}.flex-item {width: 30px;height: 30px;background: blue;}</style><div>margin</div><div class="flex-container"><div class="margin-item"></div></div><div>flex</div><div class="flex-container flex-container2"><div class="flex-item"></div></div>
+
+</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">// 使用margin</span><br><span class="line">&lt;div class=&quot;flex-container&quot;&gt;</span><br><span class="line">  &lt;div class=&quot;margin-item&quot;&gt;&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">.flex-container &#123;</span><br><span class="line">  display: flex;</span><br><span class="line">  width: 50px;</span><br><span class="line">  height: 50px;</span><br><span class="line">  background: red;</span><br><span class="line">&#125;</span><br><span class="line">.margin-item &#123;</span><br><span class="line">  margin: auto;</span><br><span class="line">  width: 30px;</span><br><span class="line">  height: 30px;</span><br><span class="line">  background: blue;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// 使用伸缩盒属性</span><br><span class="line">.flex-container2 &#123;</span><br><span class="line">  justify-content: center;</span><br><span class="line">  align-items: center;</span><br><span class="line">&#125;</span><br><span class="line">.flex-item &#123;</span><br><span class="line">  width: 30px;</span><br><span class="line">  height: 30px;</span><br><span class="line">  background: blue;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>小球回弹动画</strong><br><style>@keyframes bounce {60%, 80%, to {transform: translateX(400px);animation-timing-function: ease;}70% { transform: translateX(300px); }90% { transform: translateX(360px); }}.ball {margin: 10px;width: 50px;height: 50px;background: blue;animation: bounce 3s cubic-bezier(.1,.25,1,.25) infinite;animation-direction: alternate;}</style></p>
+<div class="ball"></div>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=&quot;ball&quot;&gt;&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">@keyframes bounce &#123;</span><br><span class="line">  60%, 80%, to &#123;</span><br><span class="line">    transform: translateX(400px);</span><br><span class="line">    animation-timing-function: ease;</span><br><span class="line">  &#125;</span><br><span class="line">  70% &#123; transform: translateX(300px); &#125;</span><br><span class="line">  90% &#123; transform: translateX(360px); &#125;</span><br><span class="line">&#125;</span><br><span class="line">.ball &#123;</span><br><span class="line">  width: 50px;</span><br><span class="line">  height: 50px;</span><br><span class="line">  background: blue;</span><br><span class="line">  animation: bounce 3s cubic-bezier(.1,.25,1,.25) infinite;</span><br><span class="line">  animation-direction: alternate;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>利用steps对png背景做切换</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">animation: loader 1s infinite steps(8);</span><br><span class="line">@keyframes loader &#123;to &#123; background-position: -800px 0; &#125;&#125;</span><br></pre></td></tr></table></figure></p>
+<p><strong>实现闪烁效果</strong><br><style>@keyframes twinkle {0% {backgroud: blue;}100% {background: transparent;}}.twinkle {margin: 10px;width: 50px;height: 50px;background: blue;animation: twinkle .5s linear infinite alternate;}</style></p>
+<div class="twinkle"></div>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=&quot;twinkle&quot;&gt;&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">@keyframes twinkle &#123;</span><br><span class="line">  0% &#123;</span><br><span class="line">    backgroud: blue;</span><br><span class="line">  &#125;</span><br><span class="line">  100% &#123;</span><br><span class="line">    background: transparent;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">.twinkle &#123;</span><br><span class="line">  width: 50px;</span><br><span class="line">  height: 50px;</span><br><span class="line">  background: blue;</span><br><span class="line">  animation: twinkle .5s linear infinite alternate;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>背景图片来回播放</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">@keyframes panoramic &#123;to &#123; background-position: 100% 0; &#125;&#125;</span><br><span class="line">.panoramic &#123;</span><br><span class="line">  width: 150px; height: 150px;</span><br><span class="line">  background: url(&quot;img/naxos-greece.jpg&quot;);</span><br><span class="line">  background-size: auto 100%;</span><br><span class="line">  animation: panoramic 10s linear infinite alternate;</span><br><span class="line">  animation-play-state: paused;</span><br><span class="line">&#125;</span><br><span class="line">.panoramic:hover, .panoramic:focus &#123;</span><br><span class="line">  animation-play-state: running;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p><strong>利用translate实现transform-origin的效果</strong></p>
+<p><style>.transform-container {margin: 50px;}.transform {width: 50px;height: 50px;background: blue;transform: rotate(30deg);transform-origin: 50px 100px;}.transform2 {transform: translate(50px, 100px) rotate(30deg) translate(-50px, -100px);transform-origin: 0 0;}</style></p>
+<div class="transform-container"><div class="transform"></div><div class="transform transform2"></div></div>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=&quot;transform-container&quot;&gt;</span><br><span class="line">  &lt;div class=&quot;transform&quot;&gt;&lt;/div&gt;</span><br><span class="line">  &lt;div class=&quot;transform2&quot;&gt;&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">.transform-container &#123;</span><br><span class="line">  margin: 50px;</span><br><span class="line">&#125;</span><br><span class="line">.transform &#123;</span><br><span class="line">  width: 50px;</span><br><span class="line">  height: 50px;</span><br><span class="line">  background: blue;</span><br><span class="line">  transform: rotate(30deg);</span><br><span class="line">  transform-origin: 50px 100px;</span><br><span class="line">&#125;</span><br><span class="line">// 效果同上</span><br><span class="line">.transform2 &#123;</span><br><span class="line">  transform: translate(50px, 100px) rotate(30deg) translate(-50px, -100px);</span><br><span class="line">  transform-origin: 0 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2019-01-01T16:02:49.676Z" itemprop="dateUpdated">2019-01-01 16:02:49</time>
+</span><br>
+
+
+        
+        以上内容为个人记录
+        
+    </div>
+    
+    <footer>
+        <a href="https://tragiclife.github.io">
+            <img src="/img/avatar.jpg" alt="薛鸿杰">
+            薛鸿杰
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/css/">css</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://tragiclife.github.io/front-end/css/css-reveal-secrets/&title=《css揭秘》 — 薛鸿杰的博客&pic=https://tragiclife.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://tragiclife.github.io/front-end/css/css-reveal-secrets/&title=《css揭秘》 — 薛鸿杰的博客&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://tragiclife.github.io/front-end/css/css-reveal-secrets/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《css揭秘》 — 薛鸿杰的博客&url=https://tragiclife.github.io/front-end/css/css-reveal-secrets/&via=https://tragiclife.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://tragiclife.github.io/front-end/css/css-reveal-secrets/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/front-end/css/css-centered/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">css实现居中</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/front-end/css/daily-notes/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">日常小记-样式</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <!-- <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style="display:none">
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style="display:none">
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div> -->
+    <div class="bottom">
+        <p><span>薛鸿杰 &copy; 2018 - 2019</span>
+            <span>
+                
+                <a href="http://www.miitbeian.gov.cn/" target="_blank">粤ICP备18140620号-1</a><br>
+                
+                <!-- Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a> -->
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://tragiclife.github.io/front-end/css/css-reveal-secrets/&title=《css揭秘》 — 薛鸿杰的博客&pic=https://tragiclife.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://tragiclife.github.io/front-end/css/css-reveal-secrets/&title=《css揭秘》 — 薛鸿杰的博客&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://tragiclife.github.io/front-end/css/css-reveal-secrets/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《css揭秘》 — 薛鸿杰的博客&url=https://tragiclife.github.io/front-end/css/css-reveal-secrets/&via=https://tragiclife.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://tragiclife.github.io/front-end/css/css-reveal-secrets/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACIElEQVR42u3aS26EQAwFwLn/pckBRoFnGxLRXb3KAhiKSJZ/n098jq9Tveb8ru8nfJ44GBgYr2Ucp+f8FZPXzZ/ZuwYDA2MfRhIKc1Jyb/5b5++GgYGBUU3gkvTuHIOBgYFxF6Oa3lXrUAwMDIxeEXt+fd4B++daHAMD44WMPBT+/d+PzDcwMDBexTiKJ0nXklZaXuJGb4WBgbE0Iw9w9y5S5EOFQsMOAwNjUcZ8GJksWFSTzvwzRdscGBgYL2dUb05WLqofKw/lF2+IgYGxKCMpUHvLXtXCNfre+f8BAwNjOUa1EdYLwYXG2WRbBAMDY2nGJOBOasnbanEMDIylGfkP5EVpXogm4f7iyRgYGEsz5mPLSciuDhh6hTEGBsbbGXnLrJreVZct8rT1YlsEAwNjUUZ1eav6Er0EtFBsY2BgbMbIS8TeKlh1bBBhMDAwNmD01h2eC9Dlg4GBsTSjV45WQ+ddBXNznImBgbEEI1/Y6oXX5nctLmRgYGDsw+iNBKrsCb7cO8TAwFiUkYe8Sfust+TxKxIDA2MDxl1pXDLInITXiyIWAwNjOcZRPL0iM+dVG3YYGBg7MHqTwUkDLl8Xy4cTGBgYOzDyplg+zsxXLvIhaKEWx8DAWJTRK26rBe081fsViYGBgXFrSldNOptfDgMDY2PGZIQwoV4MCTAwMDZgPNEamwwJqgMJDAyMtRl3FaXVxty8cMXAwNiA8QMXNQPxsbig2wAAAABJRU5ErkJggg==" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+</body>
+</html>

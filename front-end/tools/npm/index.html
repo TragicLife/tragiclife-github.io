@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>npm | 薛鸿杰的博客</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#6C88B7">
+    
+    
+    <meta name="keywords" content="npm">
+    <meta name="description" content="NPM的全称是Node Package Manager，是随同NodeJS一起安装的包管理和分发工具，它很方便让JavaScript开发者下载、安装、上传以及管理已经安装的包。 仓库设置设置淘宝仓库npm config set registry https://registry.npm.taobao.orgnpm install --registry=https://registry.npm.ta">
+<meta name="keywords" content="npm">
+<meta property="og:type" content="article">
+<meta property="og:title" content="npm">
+<meta property="og:url" content="https://tragiclife.github.io/front-end/tools/npm/index.html">
+<meta property="og:site_name" content="薛鸿杰的博客">
+<meta property="og:description" content="NPM的全称是Node Package Manager，是随同NodeJS一起安装的包管理和分发工具，它很方便让JavaScript开发者下载、安装、上传以及管理已经安装的包。 仓库设置设置淘宝仓库npm config set registry https://registry.npm.taobao.orgnpm install --registry=https://registry.npm.ta">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-01-23T16:30:07.539Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="npm">
+<meta name="twitter:description" content="NPM的全称是Node Package Manager，是随同NodeJS一起安装的包管理和分发工具，它很方便让JavaScript开发者下载、安装、上传以及管理已经安装的包。 仓库设置设置淘宝仓库npm config set registry https://registry.npm.taobao.orgnpm install --registry=https://registry.npm.ta">
+    
+        <link rel="alternate" type="application/atom+xml" title="薛鸿杰的博客" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide">
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand2.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">薛鸿杰</h5>
+          <a href="mailto:xuehongjiej@163.com" title="xuehongjiej@163.com" class="mail">xuehongjiej@163.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/">
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives">
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags">
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/TragicLife" target="_blank">
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">npm</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">npm</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2019-01-20T23:21:54.000Z" itemprop="datePublished" class="page-time">
+  2019-01-20
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#仓库设置"><span class="post-toc-number">1.</span> <span class="post-toc-text">仓库设置</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#设置淘宝仓库"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">设置淘宝仓库</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#设置回默认仓库"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">设置回默认仓库</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#解决npm下载慢问题"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">解决npm下载慢问题</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#npm-install安装模块"><span class="post-toc-number">2.</span> <span class="post-toc-text">npm install安装模块</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#npm简写"><span class="post-toc-number">3.</span> <span class="post-toc-text">npm简写</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#npm-i"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">npm i</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#S-–save"><span class="post-toc-number">3.2.</span> <span class="post-toc-text">-S, –save</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#D-–save-dev"><span class="post-toc-number">3.3.</span> <span class="post-toc-text">-D, –save-dev</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#O-–save-optional"><span class="post-toc-number">3.4.</span> <span class="post-toc-text">-O, –save-optional</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#E-–save-exact"><span class="post-toc-number">3.5.</span> <span class="post-toc-text">-E, –save-exact</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#常用命令"><span class="post-toc-number">4.</span> <span class="post-toc-text">常用命令</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#本地安装（local）"><span class="post-toc-number">4.1.</span> <span class="post-toc-text">本地安装（local）</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#全局安装（global）-使用-g-或-–global"><span class="post-toc-number">4.2.</span> <span class="post-toc-text">全局安装（global）,使用 -g 或 –global</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#卸载模块"><span class="post-toc-number">4.3.</span> <span class="post-toc-text">卸载模块</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#更新模块"><span class="post-toc-number">4.4.</span> <span class="post-toc-text">更新模块</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#检查模块是否已经过时"><span class="post-toc-number">4.5.</span> <span class="post-toc-text">检查模块是否已经过时</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#查看安装的模块"><span class="post-toc-number">4.6.</span> <span class="post-toc-text">查看安装的模块</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#查看全局安装的模块及依赖"><span class="post-toc-number">4.7.</span> <span class="post-toc-text">查看全局安装的模块及依赖</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#在项目中引导创建一个package-json文件"><span class="post-toc-number">4.8.</span> <span class="post-toc-text">在项目中引导创建一个package.json文件</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#查看某条命令的详细帮助"><span class="post-toc-number">4.9.</span> <span class="post-toc-text">查看某条命令的详细帮助</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#查看包-node-modules-的安装路径"><span class="post-toc-number">4.10.</span> <span class="post-toc-text">查看包(node_modules)的安装路径</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#管理npm的配置路径"><span class="post-toc-number">4.11.</span> <span class="post-toc-text">管理npm的配置路径</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#管理模块的缓存"><span class="post-toc-number">4.12.</span> <span class="post-toc-text">管理模块的缓存</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#启动模块"><span class="post-toc-number">4.13.</span> <span class="post-toc-text">启动模块</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#停止模块"><span class="post-toc-number">4.14.</span> <span class="post-toc-text">停止模块</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#重新启动模块"><span class="post-toc-number">4.15.</span> <span class="post-toc-text">重新启动模块</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#测试模块"><span class="post-toc-number">4.16.</span> <span class="post-toc-text">测试模块</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#查看模块版本"><span class="post-toc-number">4.17.</span> <span class="post-toc-text">查看模块版本</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#查看模块的注册信息"><span class="post-toc-number">4.18.</span> <span class="post-toc-text">查看模块的注册信息</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#发布npm包"><span class="post-toc-number">5.</span> <span class="post-toc-text">发布npm包</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#用户登录"><span class="post-toc-number">5.1.</span> <span class="post-toc-text">用户登录</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#发布模块"><span class="post-toc-number">5.2.</span> <span class="post-toc-text">发布模块</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#撤销发布的模块"><span class="post-toc-number">5.3.</span> <span class="post-toc-text">撤销发布的模块</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#在发布的包上设置访问级别"><span class="post-toc-number">5.4.</span> <span class="post-toc-text">在发布的包上设置访问级别</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#package-json的语法"><span class="post-toc-number">6.</span> <span class="post-toc-text">package.json的语法</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#name"><span class="post-toc-number">6.1.</span> <span class="post-toc-text">name</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#version"><span class="post-toc-number">6.2.</span> <span class="post-toc-text">version</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#description"><span class="post-toc-number">6.3.</span> <span class="post-toc-text">description</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#keywords"><span class="post-toc-number">6.4.</span> <span class="post-toc-text">keywords</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#bugs"><span class="post-toc-number">6.5.</span> <span class="post-toc-text">bugs</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#license"><span class="post-toc-number">6.6.</span> <span class="post-toc-text">license</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#repository"><span class="post-toc-number">6.7.</span> <span class="post-toc-text">repository</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#scripts"><span class="post-toc-number">6.8.</span> <span class="post-toc-text">scripts</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#config"><span class="post-toc-number">6.9.</span> <span class="post-toc-text">config</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#dependencies"><span class="post-toc-number">6.10.</span> <span class="post-toc-text">dependencies</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#devDependencies"><span class="post-toc-number">6.11.</span> <span class="post-toc-text">devDependencies</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#版本号"><span class="post-toc-number">7.</span> <span class="post-toc-text">版本号</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#报错"><span class="post-toc-number">8.</span> <span class="post-toc-text">报错</span></a></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-front-end/tools/npm" class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">npm</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2019-01-20 23:21:54" datetime="2019-01-20T23:21:54.000Z" itemprop="datePublished">2019-01-20</time>
+
+            
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style="display:none">
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <p>NPM的全称是Node Package Manager，是随同NodeJS一起安装的包管理和分发工具，它很方便让JavaScript开发者下载、安装、上传以及管理已经安装的包。</p>
+<h2 id="仓库设置"><a href="#仓库设置" class="headerlink" title="仓库设置"></a>仓库设置</h2><h3 id="设置淘宝仓库"><a href="#设置淘宝仓库" class="headerlink" title="设置淘宝仓库"></a>设置淘宝仓库</h3><p><code>npm config set registry https://registry.npm.taobao.org</code><br><code>npm install --registry=https://registry.npm.taobao.org</code></p>
+<h3 id="设置回默认仓库"><a href="#设置回默认仓库" class="headerlink" title="设置回默认仓库"></a>设置回默认仓库</h3><p><code>npm config set registry https://registry.npmjs.org</code></p>
+<h3 id="解决npm下载慢问题"><a href="#解决npm下载慢问题" class="headerlink" title="解决npm下载慢问题"></a>解决npm下载慢问题</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">npm config set registry https://registry.npm.taobao.org</span><br><span class="line">npm config set disturl https://npm.taobao.org/dist</span><br><span class="line">npm config set electron_mirror https://npm.taobao.org/mirrors/electron/</span><br><span class="line">npm config set sass_binary_site https://npm.taobao.org/mirrors/node-sass/</span><br><span class="line">npm config set phantomjs_cdnurl https://npm.taobao.org/mirrors/phantomjs/</span><br></pre></td></tr></table></figure>
+<h2 id="npm-install安装模块"><a href="#npm-install安装模块" class="headerlink" title="npm install安装模块"></a>npm install安装模块</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">npm install (with no args, in package dir)</span><br><span class="line">npm install [&lt;@scope&gt;/]&lt;name&gt;</span><br><span class="line">npm install [&lt;@scope&gt;/]&lt;name&gt;@&lt;tag&gt;</span><br><span class="line">npm install [&lt;@scope&gt;/]&lt;name&gt;@&lt;version&gt;</span><br><span class="line">npm install [&lt;@scope&gt;/]&lt;name&gt;@&lt;version range&gt;</span><br><span class="line">npm install &lt;tarball file&gt;</span><br><span class="line">npm install &lt;tarball url&gt;</span><br><span class="line">npm install &lt;folder&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="npm简写"><a href="#npm简写" class="headerlink" title="npm简写"></a>npm简写</h2><h3 id="npm-i"><a href="#npm-i" class="headerlink" title="npm i"></a>npm i</h3><p>默认会安装最新版本：<code>common options: [-S|--save|-D|--save-dev|-O|--save-optional] [-E|--save-exact] [--dry-run]</code><br>安装指定版本：<code>npm install gulp@3.9.1</code></p>
+<h3 id="S-–save"><a href="#S-–save" class="headerlink" title="-S, –save"></a>-S, –save</h3><p><code>npm install gulp --save</code> 或 <code>npm install gulp -S</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">// 生产阶段的依赖</span><br><span class="line">// 安装后会在package.json的dependencies属性中添加响应的文件名和版本</span><br><span class="line">&quot;dependencies&quot;: &#123;</span><br><span class="line">  &quot;gulp&quot;: &quot;^3.9.1&quot;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="D-–save-dev"><a href="#D-–save-dev" class="headerlink" title="-D, –save-dev"></a>-D, –save-dev</h3><p><code>npm install gulp --save-dev 或 npm install gulp -D</code><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">// 开发阶段的依赖</span><br><span class="line">// 安装包信息将加入到devDependencies，所以开发阶段一般使用它</span><br><span class="line">&quot;devDependencies&quot;: &#123;</span><br><span class="line">  &quot;gulp&quot;: &quot;^3.9.1&quot;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="O-–save-optional"><a href="#O-–save-optional" class="headerlink" title="-O, –save-optional"></a>-O, –save-optional</h3><p><code>npm install gulp --save-optional 或 npm install gulp -O</code><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">// 可选阶段的依赖</span><br><span class="line">// 安装包信息将加入到optionalDependencies</span><br><span class="line">package.json 文件的optionalDependencies字段：</span><br><span class="line">&quot;optionalDependencies&quot;: &#123;</span><br><span class="line">  &quot;gulp&quot;: &quot;^3.9.1&quot;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="E-–save-exact"><a href="#E-–save-exact" class="headerlink" title="-E, –save-exact"></a>-E, –save-exact</h3><p><code>npm install gulp --save-exact 或 npm install gulp -E</code><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">// 精确安装指定模块版本</span><br><span class="line">// 输入命令npm install gulp -ES，留意package.json 文件的 dependencies 字段，可以看出版本号中的^消失了</span><br><span class="line">&quot;dependencies&quot;: &#123;</span><br><span class="line">  &quot;gulp&quot;: &quot;3.9.1&quot;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><h3 id="本地安装（local）"><a href="#本地安装（local）" class="headerlink" title="本地安装（local）"></a>本地安装（local）</h3><p><code>npm install gulp</code></p>
+<h3 id="全局安装（global）-使用-g-或-–global"><a href="#全局安装（global）-使用-g-或-–global" class="headerlink" title="全局安装（global）,使用 -g 或 –global"></a>全局安装（global）,使用 -g 或 –global</h3><p><code>npm install gulp -g</code></p>
+<h3 id="卸载模块"><a href="#卸载模块" class="headerlink" title="卸载模块"></a>卸载模块</h3><p><code>npm uninstall</code><br><code>npm uninstall [&lt;@scope&gt;/]&lt;pkg&gt;[@&lt;version&gt;]... [-S|--save|-D|--save-dev|-O|--save-optional]</code></p>
+<p>卸载开发版本的模块<br><code>npm uninstall gulp --save-dev</code></p>
+<h3 id="更新模块"><a href="#更新模块" class="headerlink" title="更新模块"></a>更新模块</h3><p><code>npm update</code><br><code>npm update [-g] [&lt;pkg&gt;...]</code></p>
+<h3 id="检查模块是否已经过时"><a href="#检查模块是否已经过时" class="headerlink" title="检查模块是否已经过时"></a>检查模块是否已经过时</h3><p><code>npm outdated</code><br><code>npm outdated [[&lt;@scope&gt;/]&lt;pkg&gt; ...]</code><br>此命令会列出所有已经过时的包，可以及时进行包的更新</p>
+<h3 id="查看安装的模块"><a href="#查看安装的模块" class="headerlink" title="查看安装的模块"></a>查看安装的模块</h3><p><code>npm ls</code><br><code>npm ls [[&lt;@scope&gt;/]&lt;pkg&gt; ...]</code></p>
+<h3 id="查看全局安装的模块及依赖"><a href="#查看全局安装的模块及依赖" class="headerlink" title="查看全局安装的模块及依赖"></a>查看全局安装的模块及依赖</h3><p><code>npm ls -g</code></p>
+<h3 id="在项目中引导创建一个package-json文件"><a href="#在项目中引导创建一个package-json文件" class="headerlink" title="在项目中引导创建一个package.json文件"></a>在项目中引导创建一个package.json文件</h3><p><code>npm init</code><br>安装包的信息可保持到项目的package.json文件中，以便后续的其它的项目开发或者他人合作使用。<br><code>npm init [-f|--force|-y|--yes]</code></p>
+<h3 id="查看某条命令的详细帮助"><a href="#查看某条命令的详细帮助" class="headerlink" title="查看某条命令的详细帮助"></a>查看某条命令的详细帮助</h3><p><code>npm help</code><br><code>npm help &lt;term&gt; [&lt;terms..&gt;]</code><br>例如输入<code>npm help install</code>，系统在默认的浏览器或者默认的编辑器中打开本地nodejs安装包的文件/nodejs/node_modules/npm/html/doc/cli/npm-install.html</p>
+<h3 id="查看包-node-modules-的安装路径"><a href="#查看包-node-modules-的安装路径" class="headerlink" title="查看包(node_modules)的安装路径"></a>查看包(node_modules)的安装路径</h3><p><code>npm root</code><br><code>npm root [-g]</code></p>
+<h3 id="管理npm的配置路径"><a href="#管理npm的配置路径" class="headerlink" title="管理npm的配置路径"></a>管理npm的配置路径</h3><p><code>npm config</code><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">npm config set &lt;key&gt; &lt;value&gt; [-g|--global]</span><br><span class="line">npm config get &lt;key&gt;</span><br><span class="line">npm config delete &lt;key&gt;</span><br><span class="line">npm config list</span><br><span class="line">npm config edit</span><br><span class="line">npm get &lt;key&gt;</span><br><span class="line">npm set &lt;key&gt; &lt;value&gt; [-g|--global]</span><br></pre></td></tr></table></figure></p>
+<p>对于config这块用得最多应该是设置代理，解决npm安装一些模块失败的问题<br>例如我在公司内网，因为公司的防火墙原因，无法完成任何模块的安装，这个时候设置代理可以解决<br><code>npm config set proxy=http://xxx.com:8080</code><br>又如国内的网络环境问题，某官方的IP可能被和谐了，幸好国内有好心人，搭建了镜像，此时我们简单设置镜像<br><code>npm config set registry=&quot;http://r.cnpmjs.org&quot;</code><br>也可以临时配置，如安装淘宝镜像<br><code>npm install -g cnpm --registry=https://registry.npm.taobao.org</code></p>
+<h3 id="管理模块的缓存"><a href="#管理模块的缓存" class="headerlink" title="管理模块的缓存"></a>管理模块的缓存</h3><p><code>npm cache</code><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">npm cache add &lt;tarball file&gt;</span><br><span class="line">npm cache add &lt;folder&gt;</span><br><span class="line">npm cache add &lt;tarball url&gt;</span><br><span class="line">npm cache add &lt;name&gt;@&lt;version&gt;</span><br><span class="line"></span><br><span class="line">npm cache ls [&lt;path&gt;]</span><br><span class="line"></span><br><span class="line">// 清除npm本地缓存</span><br><span class="line">npm cache clean [&lt;path&gt;]</span><br><span class="line">npm cache clean</span><br></pre></td></tr></table></figure></p>
+<h3 id="启动模块"><a href="#启动模块" class="headerlink" title="启动模块"></a>启动模块</h3><p><code>npm start</code><br><code>npm start [-- &lt;args&gt;]</code><br>该命令写在package.json文件scripts的start字段中，可以自定义命令来配置一个服务器环境和安装一系列的必要程序，如<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&quot;scripts&quot;: &#123;</span><br><span class="line">  &quot;start&quot;: &quot;gulp -ws&quot;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>此时在cmd中输入npm start命令相当于执行gulpfile.js文件自定义的watch和server命令。<br>如果package.json文件没有设置start，则将直接启动node server.js</p>
+<h3 id="停止模块"><a href="#停止模块" class="headerlink" title="停止模块"></a>停止模块</h3><p><code>npm stop</code><br><code>npm stop [-- &lt;args&gt;]</code></p>
+<h3 id="重新启动模块"><a href="#重新启动模块" class="headerlink" title="重新启动模块"></a>重新启动模块</h3><p><code>npm restart</code><br><code>npm restart [-- &lt;args&gt;]</code></p>
+<h3 id="测试模块"><a href="#测试模块" class="headerlink" title="测试模块"></a>测试模块</h3><p><code>npm test</code><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">npm test [-- &lt;args&gt;]</span><br><span class="line">npm tst [-- &lt;args&gt;]</span><br><span class="line">该命令写在package.json文件scripts的test字段中，可以自定义该命令来执行一些操作，如</span><br><span class="line">&quot;scripts&quot;: &#123;</span><br><span class="line">    &quot;test&quot;: &quot;gulp release&quot;</span><br><span class="line">&#125;,</span><br><span class="line">此时在cmd中输入npm test命令相当于执行gulpfile.js文件自定义的release命令。</span><br></pre></td></tr></table></figure></p>
+<h3 id="查看模块版本"><a href="#查看模块版本" class="headerlink" title="查看模块版本"></a>查看模块版本</h3><p><code>npm version</code><br><code>npm version [&lt;newversion&gt; | major | minor | patch | premajor | preminor | prepatch | prerelease | from-git]</code></p>
+<p>‘npm [-v | –version]’ to print npm version<br>‘npm view <pkg> version’ to view a package’s published version<br>‘npm ls’ to inspect current package/dependency versions</pkg></p>
+<h3 id="查看模块的注册信息"><a href="#查看模块的注册信息" class="headerlink" title="查看模块的注册信息"></a>查看模块的注册信息</h3><p><code>npm view</code><br><code>npm view [&lt;@scope&gt;/]&lt;name&gt;[@&lt;version&gt;] [&lt;field&gt;[.&lt;subfield&gt;]...]</code><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">查看模块的依赖关系</span><br><span class="line">npm view gulp dependencies</span><br><span class="line">查看模块的源文件地址</span><br><span class="line">npm view gulp repository.url</span><br><span class="line">查看模块的贡献者，包含邮箱地址</span><br><span class="line">npm view npm contributors</span><br></pre></td></tr></table></figure></p>
+<h2 id="发布npm包"><a href="#发布npm包" class="headerlink" title="发布npm包"></a>发布npm包</h2><h3 id="用户登录"><a href="#用户登录" class="headerlink" title="用户登录"></a>用户登录</h3><p><code>npm adduser</code><br><code>npm adduser [--registry=url] [--scope=@orgname] [--always-auth]</code></p>
+<p>发布模板到npm社区前需要先登录，然后再进入发布的操作</p>
+<h3 id="发布模块"><a href="#发布模块" class="headerlink" title="发布模块"></a>发布模块</h3><p><code>npm publish</code><br><code>npm publish [&lt;tarball&gt;|&lt;folder&gt;] [--tag &lt;tag&gt;] [--access &lt;public|restricted&gt;]</code></p>
+<h3 id="撤销发布的模块"><a href="#撤销发布的模块" class="headerlink" title="撤销发布的模块"></a>撤销发布的模块</h3><p><code>npm unpublish</code><br><code>npm unpublish &lt;pkg&gt;</code><br>需要加上–force参数</p>
+<h3 id="在发布的包上设置访问级别"><a href="#在发布的包上设置访问级别" class="headerlink" title="在发布的包上设置访问级别"></a>在发布的包上设置访问级别</h3><p><code>npm access</code><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">npm access public [&lt;package&gt;]</span><br><span class="line">npm access restricted [&lt;package&gt;]</span><br><span class="line"></span><br><span class="line">npm access grant &lt;read-only|read-write&gt; &lt;scope:team&gt; [&lt;package&gt;]</span><br><span class="line">npm access revoke &lt;scope:team&gt; [&lt;package&gt;]</span><br><span class="line"></span><br><span class="line">npm access ls-packages [&lt;user&gt;|&lt;scope&gt;|&lt;scope:team&gt;]</span><br><span class="line">npm access ls-collaborators [&lt;package&gt; [&lt;user&gt;]]</span><br><span class="line">npm access edit [&lt;package&gt;]</span><br></pre></td></tr></table></figure></p>
+<h2 id="package-json的语法"><a href="#package-json的语法" class="headerlink" title="package.json的语法"></a>package.json的语法</h2><p><a href="http://www.cnblogs.com/PeunZhang/p/5553574.html" target="_blank" rel="noopener">参考链接</a><br><a href="https://docs.npmjs.com/files/package.json" target="_blank" rel="noopener">英文原版</a></p>
+<p>npm会根据包内容设置一些默认值。</p>
+<ul>
+<li>“scripts”: {“start”: “node server.js”}<br>如果包的根目录有server.js文件，npm会默认将start命令设置为node server.js。</li>
+<li>“scripts”:{“preinstall”: “node-waf clean || true; node-waf configure build”}<br>如果包的根目录有wscript文件，npm会默认将preinstall命令用node-waf进行编译。</li>
+<li>“scripts”:{“preinstall”: “node-gyp rebuild”}<br>如果包的根目录有binding.gyp文件，npm会默认将preinstall命令用node-gyp进行编译。</li>
+<li>“contributors”: […]<br>如果包的根目录有AUTHORS文件，npm会默认逐行按Name <email> (url)格式处理，邮箱和url是可选的。#号和空格开头的行会被忽略。</email></li>
+</ul>
+<h3 id="name"><a href="#name" class="headerlink" title="name"></a>name</h3><p>在package.json中最重要的就是name和version字段。他们都是必须的，如果没有就无法install。name和version一起组成的标识在假设中是唯一的。改变包应该同时改变version。<br>name是这个东西的名字。注意：<br>不要把node或者js放在名字中。因为你写了package.json它就被假定成为了js，不过你可以用”engine”字段指定一个引擎（见后文）。<br>这个名字会作为在URL的一部分、命令行的参数或者文件夹的名字。任何non-url-safe的字符都是不能用的。<br>这个名字可能会作为参数被传入require()，所以它应该比较短，但也要意义清晰。<br>在你爱上你的名字之前，你可能要去npm registry查看一下这个名字是否已经被使用了。<a href="http://registry.npmjs.org/" target="_blank" rel="noopener">http://registry.npmjs.org/</a></p>
+<h3 id="version"><a href="#version" class="headerlink" title="version"></a>version</h3><p>version必须能被<a href="https://github.com/isaacs/node-semver" target="_blank" rel="noopener">node-semver</a>解析，它被包在npm的依赖中。（要自己用可以执行npm install semver）<br>可用的“数字”或者“范围”.</p>
+<h3 id="description"><a href="#description" class="headerlink" title="description"></a>description</h3><p>放简介，字符串，方便在npm search中搜索</p>
+<h3 id="keywords"><a href="#keywords" class="headerlink" title="keywords"></a>keywords</h3><p>关键字，数组、字符串，方便在npm search中搜索</p>
+<h3 id="bugs"><a href="#bugs" class="headerlink" title="bugs"></a>bugs</h3><p>你项目的提交问题的url和（或）邮件地址<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  &quot;url&quot;: &quot;http://github.com/owner/project/issues&quot;, </span><br><span class="line">  &quot;email&quot;: &quot;project@hostname.com&quot;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="license"><a href="#license" class="headerlink" title="license"></a>license</h3><p>你应该要指定一个许可证，让人知道使用的权利和限制的。<br>最简单的方法是，假如你用一个像BSD或者MIT这样通用的许可证，就只需要指定一个许可证的名字，像这样：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  &quot;license&quot;: &quot;BSD&quot;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>如果你又更复杂的许可条件，或者想要提供给更多地细节，可以这样:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&quot;licenses&quot;: [&#123;</span><br><span class="line">  &quot;type&quot;: &quot;MyLicense&quot;,</span><br><span class="line">  &quot;url&quot;: &quot;http://github.com/owner/project/path/to/license&quot;</span><br><span class="line">&#125;]</span><br></pre></td></tr></table></figure></p>
+<h3 id="repository"><a href="#repository" class="headerlink" title="repository"></a>repository</h3><p>指定你的代码存放的地方。这个对希望贡献的人有帮助。如果git仓库在github上，那么npm docs命令能找到你。<br>这样做：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&quot;repository&quot;: &#123;</span><br><span class="line">  &quot;type&quot;: &quot;git&quot;,</span><br><span class="line">  &quot;url&quot;: &quot;http://github.com/isaacs/npm.git&quot;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&quot;repository&quot;: &#123;</span><br><span class="line">  &quot;type&quot;: &quot;svn&quot;, </span><br><span class="line">  &quot;url&quot; : &quot;http://v8.googlecode.com/svn/trunk/&quot;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>URL应该是公开的（即便是只读的）能直接被未经过修改的版本控制程序处理的url。不应该是一个html的项目页面。因为它是给计算机看的。</p>
+<h3 id="scripts"><a href="#scripts" class="headerlink" title="scripts"></a>scripts</h3><p>“scripts”是一个由脚本命令组成的hash对象，他们在包不同的生命周期中被执行。key是生命周期事件，value是要运行的命令。<br>参考上面的npm start、npm test命令</p>
+<h3 id="config"><a href="#config" class="headerlink" title="config"></a>config</h3><p>“config” hash可以用来配置用于包脚本中的跨版本参数。在实例中，如果一个包有下面的配置：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  &quot;name&quot;: &quot;foo&quot;,</span><br><span class="line">  &quot;config&quot;: &#123; &quot;port&quot; : &quot;8080&quot; &#125; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>然后有一个“start”命令引用了npm_package_config_port环境变量，用户可以通过npm config set foo:port 8001来重写他。</p>
+<h3 id="dependencies"><a href="#dependencies" class="headerlink" title="dependencies"></a>dependencies</h3><p>依赖是给一组包名指定版本范围的一个hash。这个版本范围是一个由一个或多个空格分隔的字符串。依赖还可以用tarball或者git URL。<br>请不要将测试或过渡性的依赖放在dependencieshash中。见下文的devDependencies</p>
+<ul>
+<li>version 必须完全和version一致</li>
+<li><blockquote>
+<p>version 必须比version大</p>
+</blockquote>
+</li>
+<li><blockquote>
+<p>=version 同上</p>
+</blockquote>
+</li>
+<li>&lt;version 同上</li>
+<li>&lt;=version 同上</li>
+<li>~version 大约一样</li>
+<li>1.2.x 1.2.0, 1.2.1, 等，但不包括1.3.0</li>
+<li>http://… 见下文’依赖URL’</li>
+<li><ul>
+<li>所有</li>
+</ul>
+</li>
+<li>“” 空，同*</li>
+<li>version1 - version2 同 &gt;=version1 &lt;=version2.</li>
+<li>range1 || range2 二选一。</li>
+<li>git… 见下文’依赖Git URL’</li>
+<li>user/repo 见下文’GitHub URLs’</li>
+</ul>
+<p>比如下面都是合法的：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  &quot;dependencies&quot;: &#123;</span><br><span class="line">    &quot;foo&quot;: &quot;1.0.0 - 2.9999.9999&quot;,</span><br><span class="line">    &quot;bar&quot;: &quot;&gt;=1.0.2 &lt;2.1.2&quot;,</span><br><span class="line">    &quot;baz&quot;: &quot;&gt;1.0.2 &lt;=2.3.4&quot;,</span><br><span class="line">    &quot;boo&quot;: &quot;2.0.1&quot;,</span><br><span class="line">    &quot;qux&quot;: &quot;&lt;1.0.0 || &gt;=2.3.1 &lt;2.4.5 || &gt;=2.5.2 &lt;3.0.0&quot;,</span><br><span class="line">    &quot;asd&quot;: &quot;http://asdf.com/asdf.tar.gz&quot;,</span><br><span class="line">    &quot;til&quot;: &quot;~1.2&quot;,</span><br><span class="line">    &quot;elf&quot;: &quot;~1.2.3&quot;,</span><br><span class="line">    &quot;two&quot;: &quot;2.x&quot;,</span><br><span class="line">    &quot;thr&quot;: &quot;3.3.x&quot;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="devDependencies"><a href="#devDependencies" class="headerlink" title="devDependencies"></a>devDependencies</h3><p>如果有人要使用你的模块，那么他们可能不需要你开发使用的外部测试或者文档框架。<br>在这种情况下，最好将这些附属的项目列在devDependencies中。<br>这些东西会在执行npm link或者npm install的时候初始化，并可以像其他npm配置参数一样管理。<br>对于非特定平台的构建步骤，比如需要编译CoffeeScript，可以用prepublish脚本去实现，并把它依赖的包放在devDependency中。（译者注：prepublish定义了在执行npm publish的时候先行执行的脚本）<br>比如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&#123; &quot;name&quot;: &quot;ethopia-waza&quot;,</span><br><span class="line">  &quot;description&quot;: &quot;a delightfully fruity coffee varietal&quot;,</span><br><span class="line">  &quot;version&quot;: &quot;1.2.3&quot;,</span><br><span class="line">  &quot;devDependencies&quot;: &#123;</span><br><span class="line">    &quot;coffee-script&quot;: &quot;~1.6.3&quot;</span><br><span class="line">  &#125;,</span><br><span class="line">  &quot;scripts&quot;: &#123;</span><br><span class="line">    &quot;prepublish&quot;: &quot;coffee -o lib/ -c src/waza.coffee&quot;</span><br><span class="line">  &#125;,</span><br><span class="line">  &quot;main&quot;: &quot;lib/waza.js&quot;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>prepublish脚本会在publishing前运行，这样用户就不用自己去require来编译就能使用。并且在开发模式中（比如本地运行npm install）会运行这个脚本以便更好地测试。</p>
+<p>npm list查看模块版本号<br>npm list <pkg></pkg></p>
+<h2 id="版本号"><a href="#版本号" class="headerlink" title="版本号"></a>版本号</h2><p>使用NPM下载和发布代码时都会接触到版本号。NPM使用语义版本号来管理代码，这里简单介绍一下。<br>语义版本号分为X.Y.Z三位，分别代表主版本号、次版本号和补丁版本号。当代码变更时，版本号按以下原则更新。</p>
+<ul>
+<li>如果只是修复bug，需要更新Z位。</li>
+<li>如果是新增了功能，但是向下兼容，需要更新Y位。</li>
+<li>如果有大变动，向下不兼容，需要更新X位。</li>
+</ul>
+<h2 id="报错"><a href="#报错" class="headerlink" title="报错"></a>报错</h2><p><strong>Cannot publish over previously published version</strong><br>已撤销的版本无法发布相同的版本</p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2019-01-23T16:30:07.539Z" itemprop="dateUpdated">2019-01-23 16:30:07</time>
+</span><br>
+
+
+        
+        以上内容为个人记录
+        
+    </div>
+    
+    <footer>
+        <a href="https://tragiclife.github.io">
+            <img src="/img/avatar.jpg" alt="薛鸿杰">
+            薛鸿杰
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/npm/">npm</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://tragiclife.github.io/front-end/tools/npm/&title=《npm》 — 薛鸿杰的博客&pic=https://tragiclife.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://tragiclife.github.io/front-end/tools/npm/&title=《npm》 — 薛鸿杰的博客&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://tragiclife.github.io/front-end/tools/npm/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《npm》 — 薛鸿杰的博客&url=https://tragiclife.github.io/front-end/tools/npm/&via=https://tragiclife.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://tragiclife.github.io/front-end/tools/npm/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/front-end/tools/git/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">Git</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/front-end/html/emmet/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">HTML快捷生成</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <!-- <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style="display:none">
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style="display:none">
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div> -->
+    <div class="bottom">
+        <p><span>薛鸿杰 &copy; 2018 - 2019</span>
+            <span>
+                
+                <a href="http://www.miitbeian.gov.cn/" target="_blank">粤ICP备18140620号-1</a><br>
+                
+                <!-- Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a> -->
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://tragiclife.github.io/front-end/tools/npm/&title=《npm》 — 薛鸿杰的博客&pic=https://tragiclife.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://tragiclife.github.io/front-end/tools/npm/&title=《npm》 — 薛鸿杰的博客&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://tragiclife.github.io/front-end/tools/npm/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《npm》 — 薛鸿杰的博客&url=https://tragiclife.github.io/front-end/tools/npm/&via=https://tragiclife.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://tragiclife.github.io/front-end/tools/npm/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACKklEQVR42u3aQW7EIBAEwP3/p50HREu6wY5kKE6rBBnKhzEzw+cTj+vLGM/5/fdv88czbxsYGBivZVzDkW9lPCf5PV53vAoGBsYJjG8RrF0ymT9H/WPPGBgYGMOF2+A4PgJiYGBg3MVo5yShFgMDA2PMSJLYcaUrT26vYDyYi2NgYLyQkVfd///3I/0NDAyMVzGucrRPm9tWvSsMDIytGfkyeQo6vkiR/7feDwYGxqaMpPSfBNy29D/G5C+r6GBgYGC8lpFPnWtGroTguTYqBgbG3oy5gn6+oZWg38ZVDAyM/Rh54Fu5hLqS1hZBFgMDYzvGNTXyaxBtYnzzVwIDA2MjRh7+5kr5S1+DJMXFwMDYmpGH3eSQlxTj8mfWK2JgYBzMuCsRba+a1S1VDAyMTRntRtuWZNIqmDs4YmBgnMPIk8n82Nc2HtpSXd3rwMDAeDkjTyDngmByEMxT4qK/gYGBsRGjPaLlqWn7gh5vZ2JgYLyc0aajc2lq2ySowzEGBsYBjPxyw9yhMG8YRN+Hce0QAwNja0bezsyvcOVJ6VKbEwMD4xhGktauHARXCmp/IDEwMDZlXOW462B31xW0T1vzw8DAeCFjLtg9UZLLA33R68DAwNiIMRdk8+Dbvr/J52BgYBzAWEli26NeW1aLkBgYGBhlgjp3eWKpJIeBgYHRXn1YTlDzyxwYGBjnMJ4o1ucXJvILZxgYGGcy2nPXev/hrsQVAwPjAMYPlqIi4E2myGAAAAAASUVORK5CYII=" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+</body>
+</html>

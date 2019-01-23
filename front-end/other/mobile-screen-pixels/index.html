@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>移动端屏幕像素 | 薛鸿杰的博客</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#6C88B7">
+    
+    
+    <meta name="keywords" content="">
+    <meta name="description" content="Pixel 移动开发像素知识px: css pixels 逻辑像素，浏览器使用的抽象单位dp,pt: device independent pixels 设备无关像素dpr: devicePixelRatio 设备像素缩放比 计算公式：1px = (dpr)² * dp DPI: 打印机每英寸可以喷的墨汁点(印刷行业)PPI: 屏幕每英寸的像素数量，即单位英寸内的像素密度 计算公式：以iPhone">
+<meta property="og:type" content="article">
+<meta property="og:title" content="移动端屏幕像素">
+<meta property="og:url" content="https://tragiclife.github.io/front-end/other/mobile-screen-pixels/index.html">
+<meta property="og:site_name" content="薛鸿杰的博客">
+<meta property="og:description" content="Pixel 移动开发像素知识px: css pixels 逻辑像素，浏览器使用的抽象单位dp,pt: device independent pixels 设备无关像素dpr: devicePixelRatio 设备像素缩放比 计算公式：1px = (dpr)² * dp DPI: 打印机每英寸可以喷的墨汁点(印刷行业)PPI: 屏幕每英寸的像素数量，即单位英寸内的像素密度 计算公式：以iPhone">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-01-11T15:59:11.117Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="移动端屏幕像素">
+<meta name="twitter:description" content="Pixel 移动开发像素知识px: css pixels 逻辑像素，浏览器使用的抽象单位dp,pt: device independent pixels 设备无关像素dpr: devicePixelRatio 设备像素缩放比 计算公式：1px = (dpr)² * dp DPI: 打印机每英寸可以喷的墨汁点(印刷行业)PPI: 屏幕每英寸的像素数量，即单位英寸内的像素密度 计算公式：以iPhone">
+    
+        <link rel="alternate" type="application/atom+xml" title="薛鸿杰的博客" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide">
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand2.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">薛鸿杰</h5>
+          <a href="mailto:xuehongjiej@163.com" title="xuehongjiej@163.com" class="mail">xuehongjiej@163.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/">
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives">
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags">
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/TragicLife" target="_blank">
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">移动端屏幕像素</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">移动端屏幕像素</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2018-12-14T22:12:06.000Z" itemprop="datePublished" class="page-time">
+  2018-12-15
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Pixel-移动开发像素知识"><span class="post-toc-number">1.</span> <span class="post-toc-text">Pixel 移动开发像素知识</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Viewport"><span class="post-toc-number">2.</span> <span class="post-toc-text">Viewport</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#手机浏览器默认为我们做两件事"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">手机浏览器默认为我们做两件事</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#为什么不适用默认的980px的布局viewport-layout-viewport"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">为什么不适用默认的980px的布局viewport(layout viewport)</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#meta标签"><span class="post-toc-number">3.</span> <span class="post-toc-text">meta标签</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#响应式设计"><span class="post-toc-number">4.</span> <span class="post-toc-text">响应式设计</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#媒体类型："><span class="post-toc-number">4.1.</span> <span class="post-toc-text">媒体类型：</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#常用媒体查询参数："><span class="post-toc-number">4.2.</span> <span class="post-toc-text">常用媒体查询参数：</span></a></li></ol></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-front-end/other/mobile-screen-pixels" class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">移动端屏幕像素</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2018-12-14 22:12:06" datetime="2018-12-14T22:12:06.000Z" itemprop="datePublished">2018-12-14</time>
+
+            
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style="display:none">
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h2 id="Pixel-移动开发像素知识"><a href="#Pixel-移动开发像素知识" class="headerlink" title="Pixel 移动开发像素知识"></a>Pixel 移动开发像素知识</h2><p>px: css pixels 逻辑像素，浏览器使用的抽象单位<br>dp,pt: device independent pixels 设备无关像素<br>dpr: devicePixelRatio 设备像素缩放比</p>
+<p>计算公式：1px = (dpr)² * dp</p>
+<p>DPI: 打印机每英寸可以喷的墨汁点(印刷行业)<br>PPI: 屏幕每英寸的像素数量，即单位英寸内的像素密度</p>
+<p>计算公式：以iPhone5为例子<br>ppi = √ (1136² + 640²) / 4 = 326ppi (视网膜Retina屏)</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"></th>
+<th style="text-align:center">ldpi</th>
+<th style="text-align:center">mdpi</th>
+<th style="text-align:center">hdpi</th>
+<th style="text-align:center">xhdpi</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">ppi</td>
+<td style="text-align:center">120</td>
+<td style="text-align:center">160</td>
+<td style="text-align:center">240</td>
+<td style="text-align:center">320</td>
+</tr>
+<tr>
+<td style="text-align:center">默认缩放比</td>
+<td style="text-align:center">0.75</td>
+<td style="text-align:center">1.0</td>
+<td style="text-align:center">1.5</td>
+<td style="text-align:center">2.0</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>Retina屏(高清屏): dpr都是大于等于2</p>
+</blockquote>
+<p>PPI越高，像素数越高，图像越清晰<br>但可视度越低(小)，系统默认设置缩放比越大</p>
+<h2 id="Viewport"><a href="#Viewport" class="headerlink" title="Viewport"></a>Viewport</h2><h3 id="手机浏览器默认为我们做两件事"><a href="#手机浏览器默认为我们做两件事" class="headerlink" title="手机浏览器默认为我们做两件事"></a>手机浏览器默认为我们做两件事</h3><ol>
+<li>页面渲染在980px(ios)的viewport(为了排版正确)</li>
+<li>缩放(排版正确后，再缩放到手机屏幕大小) //这就是网页在手机上，会全屏显示的原因</li>
+</ol>
+<p>visual viewport：度量/视口viewport宽高<br>visual viewport是页面当前显示在屏幕上的部分。用户可以通过滚动来改变他所看到的页面的部分，或者通过缩放来改变visual viewport的大小。<br>// 无法改变，通过缩放scale控制<br>layout viewport: 布局viewport 如图，ios的默认layout viewport为980px<br>// 可以理解为就是body的宽度，在此之上渲染页面</p>
+<h3 id="为什么不适用默认的980px的布局viewport-layout-viewport"><a href="#为什么不适用默认的980px的布局viewport-layout-viewport" class="headerlink" title="为什么不适用默认的980px的布局viewport(layout viewport)"></a>为什么不适用默认的980px的布局viewport(layout viewport)</h3><ul>
+<li>宽度不可控制，不同系统不同设备的默认值都可能不同</li>
+<li>页面先在layout viewport全屏渲染css,再通过缩放由visual viewport展示，交互不友好</li>
+<li>链接不可点</li>
+<li>有缩放，缩放后又有滚动</li>
+<li>font-size:40px=PC的12px,不规范，字体设置是另外一门学问了。</li>
+</ul>
+<h2 id="meta标签"><a href="#meta标签" class="headerlink" title="meta标签"></a>meta标签</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;meta name=&quot;viewport&quot; content=&quot;name=value,name=value&quot;&gt;</span><br><span class="line">width: 设置布局viewport的特定值(device-width)</span><br><span class="line">initial-scale: 设置页面的初始缩放</span><br><span class="line">minimum-scale: 最小缩放</span><br><span class="line">maximum-scale: 最大缩放</span><br><span class="line">user-scalable: 用户能否缩放</span><br></pre></td></tr></table></figure>
+<p>最常用写法<code>&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width,initial-scale=1,user-scalable=no&quot;&gt;</code></p>
+<p>方案一：根据设备的实际宽度来设计(常用)<br>手机宽320px，拿320px设计<br>方案二：1px=1dp<br>缩放0.5。根据设备的物理像素dp等于抽象像素px来设计。1像素边框和高清图片都不需要额外处理。</p>
+<h2 id="响应式设计"><a href="#响应式设计" class="headerlink" title="响应式设计"></a>响应式设计</h2><h3 id="媒体类型："><a href="#媒体类型：" class="headerlink" title="媒体类型："></a>媒体类型：</h3><p>screen // 屏幕<br>print // 打印机<br>handheld // 手持设备<br>all // 通用</p>
+<h3 id="常用媒体查询参数："><a href="#常用媒体查询参数：" class="headerlink" title="常用媒体查询参数："></a>常用媒体查询参数：</h3><p>width // 视口宽度<br>height // 视口高度<br>device-width // 设备宽度<br>device-height // 设备高度<br>orientation // 定义输出设备中的页面可见区域高度是否大于或等于宽度。大于或等于为portrait(竖屏)，其余为landscape(横屏)</p>
+<blockquote>
+<p>@media screen and (max-width: 300px) {}</p>
+</blockquote>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2019-01-11T15:59:11.117Z" itemprop="dateUpdated">2019-01-11 15:59:11</time>
+</span><br>
+
+
+        
+        以上内容为个人记录
+        
+    </div>
+    
+    <footer>
+        <a href="https://tragiclife.github.io">
+            <img src="/img/avatar.jpg" alt="薛鸿杰">
+            薛鸿杰
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://tragiclife.github.io/front-end/other/mobile-screen-pixels/&title=《移动端屏幕像素》 — 薛鸿杰的博客&pic=https://tragiclife.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://tragiclife.github.io/front-end/other/mobile-screen-pixels/&title=《移动端屏幕像素》 — 薛鸿杰的博客&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://tragiclife.github.io/front-end/other/mobile-screen-pixels/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《移动端屏幕像素》 — 薛鸿杰的博客&url=https://tragiclife.github.io/front-end/other/mobile-screen-pixels/&via=https://tragiclife.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://tragiclife.github.io/front-end/other/mobile-screen-pixels/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/front-end/js/event/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">事件</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/front-end/other/interview-record/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">面试记录</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <!-- <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style="display:none">
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style="display:none">
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div> -->
+    <div class="bottom">
+        <p><span>薛鸿杰 &copy; 2018 - 2019</span>
+            <span>
+                
+                <a href="http://www.miitbeian.gov.cn/" target="_blank">粤ICP备18140620号-1</a><br>
+                
+                <!-- Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a> -->
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://tragiclife.github.io/front-end/other/mobile-screen-pixels/&title=《移动端屏幕像素》 — 薛鸿杰的博客&pic=https://tragiclife.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://tragiclife.github.io/front-end/other/mobile-screen-pixels/&title=《移动端屏幕像素》 — 薛鸿杰的博客&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://tragiclife.github.io/front-end/other/mobile-screen-pixels/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《移动端屏幕像素》 — 薛鸿杰的博客&url=https://tragiclife.github.io/front-end/other/mobile-screen-pixels/&via=https://tragiclife.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://tragiclife.github.io/front-end/other/mobile-screen-pixels/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACu0lEQVR42u3awXIiMQwEUP7/p3ev2Uog3ZZMslVvTikgg98cbNHS4xFffz5cH1/5/JnPn392Pfvk6zs8blx4eHh4g6VPvmwCSB5l/vjw8PDw3sN7tqO+PgZeHw+vD4yzd/M14+Hh4f0eXlLgJvj2Pnh4eHj/L+9soa8Bk0MCDw8P76d4SRiRLDGPD85ijotZCx4eHl7Mm2/f7//7Sn8PDw8Pb9xVTw6JfCtvV7KwWjw8PLwLvHzDzYvXvCBOHkRbLuPh4eG9k9cGAXm8u1ua5+EFHh4e3g1evu3mT6sNYScttG/+Cw8PD+8Cb5KFJvi2BC9Os7LQx8PDw7vBy3/qn41A5eHv2dqKDh4eHh7eKi/ffJMSOVn02QBWG0/g4eHhbfHalv9rRvv5SUvssLOHh4eHN+Yl23Fbak+q2bMEJRq6wsPDw1viFRX3UaCw0KAajCDg4eHh3ea1RXPbuGpHpiaP74uDAQ8PD+8a72yYYBdz9kCLZBoPDw9vwMsbUfnWvBUuzEMNPDw8vPfzkh//7R3ysDh/N+ry4eHh4S3x8k08H73K22btAEH97Xh4eHgXeHnJm7+ebNltUZ4PKPSDE3h4eHgnvLyhlb/eLqWNP+owGg8PD2+V1zac2uGnpBQ+O5DqIwEPDw9vlbcVCiQHQB7OTppteHh4eD/FO4sS2mMmKcFHvxXw8PDwLvDam07ukEfJ7eDX04MBDw8P7wJvt9jdGtVqry/ugIeHh7fKOxuumres8hCk/cZ/3sXDw8O7wGs33PmwVDt8kDfYHvPzBA8PD++ot57fOj9I2q18d8gADw8P7x4vaVnlQUDymLauaHQADw8P7xfwJrFFW1gnafTywYCHh4e3yjsb0srL9MlIQT10hYeHhzfg3QgUJow8uv0GjIeHh3eBN//Bfxa2TsYLlkMNPDw8vJT3F7uMsYbCtGKJAAAAAElFTkSuQmCC" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+</body>
+</html>
