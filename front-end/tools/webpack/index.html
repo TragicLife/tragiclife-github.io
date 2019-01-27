@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>webpack | 薛鸿杰的博客</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#6C88B7">
+    
+    
+    <meta name="keywords" content="tool,webpack">
+    <meta name="description" content="hash和chunkhash的区别 hash:整个应用对应同一个hash；不利于缓存 chunkhash:根据内容计算所得，每个entry单独对应一个hash；上线后无改动的文件不会失去缓存  配置定义全局变量12345plugins:[  new webpack.ProvidePlugin(&amp;#123;    $:&amp;apos;jquery&amp;apos;  &amp;#125;)] scss文件提取到独立文">
+<meta name="keywords" content="tool,webpack">
+<meta property="og:type" content="article">
+<meta property="og:title" content="webpack">
+<meta property="og:url" content="https://tragiclife.github.io/front-end/tools/webpack/index.html">
+<meta property="og:site_name" content="薛鸿杰的博客">
+<meta property="og:description" content="hash和chunkhash的区别 hash:整个应用对应同一个hash；不利于缓存 chunkhash:根据内容计算所得，每个entry单独对应一个hash；上线后无改动的文件不会失去缓存  配置定义全局变量12345plugins:[  new webpack.ProvidePlugin(&amp;#123;    $:&amp;apos;jquery&amp;apos;  &amp;#125;)] scss文件提取到独立文">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-01-25T13:41:24.385Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="webpack">
+<meta name="twitter:description" content="hash和chunkhash的区别 hash:整个应用对应同一个hash；不利于缓存 chunkhash:根据内容计算所得，每个entry单独对应一个hash；上线后无改动的文件不会失去缓存  配置定义全局变量12345plugins:[  new webpack.ProvidePlugin(&amp;#123;    $:&amp;apos;jquery&amp;apos;  &amp;#125;)] scss文件提取到独立文">
+    
+        <link rel="alternate" type="application/atom+xml" title="薛鸿杰的博客" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide">
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand2.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">薛鸿杰</h5>
+          <a href="mailto:xuehongjiej@163.com" title="xuehongjiej@163.com" class="mail">xuehongjiej@163.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/">
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives">
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags">
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/TragicLife" target="_blank">
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">webpack</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">webpack</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2019-01-24T23:21:54.000Z" itemprop="datePublished" class="page-time">
+  2019-01-25
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#hash和chunkhash的区别"><span class="post-toc-number">1.</span> <span class="post-toc-text">hash和chunkhash的区别</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#配置"><span class="post-toc-number">2.</span> <span class="post-toc-text">配置</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#定义全局变量"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">定义全局变量</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#scss文件提取到独立文件-loader中的配置"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">scss文件提取到独立文件(loader中的配置)</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#scss文件提取到独立文件-plugins中的配置"><span class="post-toc-number">2.3.</span> <span class="post-toc-text">scss文件提取到独立文件(plugins中的配置)</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#vue的scss样式提取到独立文件"><span class="post-toc-number">2.4.</span> <span class="post-toc-text">vue的scss样式提取到独立文件</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#使用全局变量"><span class="post-toc-number">2.5.</span> <span class="post-toc-text">使用全局变量</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#打包优化"><span class="post-toc-number">3.</span> <span class="post-toc-text">打包优化</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#其他"><span class="post-toc-number">4.</span> <span class="post-toc-text">其他</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#报错"><span class="post-toc-number">5.</span> <span class="post-toc-text">报错</span></a></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-front-end/tools/webpack" class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">webpack</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2019-01-24 23:21:54" datetime="2019-01-24T23:21:54.000Z" itemprop="datePublished">2019-01-24</time>
+
+            
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style="display:none">
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h2 id="hash和chunkhash的区别"><a href="#hash和chunkhash的区别" class="headerlink" title="hash和chunkhash的区别"></a>hash和chunkhash的区别</h2><ul>
+<li>hash:整个应用对应同一个hash；不利于缓存</li>
+<li>chunkhash:根据内容计算所得，每个entry单独对应一个hash；上线后无改动的文件不会失去缓存</li>
+</ul>
+<h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><h3 id="定义全局变量"><a href="#定义全局变量" class="headerlink" title="定义全局变量"></a>定义全局变量</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">plugins:[</span><br><span class="line">  new webpack.ProvidePlugin(&#123;</span><br><span class="line">    $:&apos;jquery&apos;</span><br><span class="line">  &#125;)</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+<h3 id="scss文件提取到独立文件-loader中的配置"><a href="#scss文件提取到独立文件-loader中的配置" class="headerlink" title="scss文件提取到独立文件(loader中的配置)"></a>scss文件提取到独立文件(loader中的配置)</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ExtractTextPlugin.extract(&#123;fallback:&apos;style-loader&apos;,use:&apos;css-loader!postcss-loader!sass-loader&apos;&#125;)</span><br><span class="line">ExtractTextPlugin.extract(&#123;fallback:&apos;style-loader&apos;,use:[&apos;css-loader&apos;, &#123;loader: &apos;postcss-loader&apos;, options: &#123;sourceMap: true&#125;&#125;, &apos;sass-loader&apos;]&#125;)</span><br></pre></td></tr></table></figure>
+<h3 id="scss文件提取到独立文件-plugins中的配置"><a href="#scss文件提取到独立文件-plugins中的配置" class="headerlink" title="scss文件提取到独立文件(plugins中的配置)"></a>scss文件提取到独立文件(plugins中的配置)</h3><p>new ExtractTextPlugin(‘styles.[contentHash:8].css’)</p>
+<h3 id="vue的scss样式提取到独立文件"><a href="#vue的scss样式提取到独立文件" class="headerlink" title="vue的scss样式提取到独立文件"></a>vue的scss样式提取到独立文件</h3><p>options:{loaders:{scss:ExtractTextPlugin.extract({fallback:’vue-style-loader’,use:’css-loader!postcss-loader!sass-loader})}}</p>
+<p>使用sourcemap才可以在浏览器中调试</p>
+<h3 id="使用全局变量"><a href="#使用全局变量" class="headerlink" title="使用全局变量"></a>使用全局变量</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;test: resolve(&apos;src/utils/index&apos;),</span><br><span class="line">use:[&#123;</span><br><span class="line">loader:&apos;expose-loader&apos;,</span><br><span class="line">options: &apos;Utils&apos; //全局变量名</span><br><span class="line">&#125;]&#125;</span><br></pre></td></tr></table></figure>
+<p>设置路径~assets相当于src/assets</p>
+<p>config/index.js文件中的assetsPublicPath属性需要根据服务器的路径来进行设置<br>如果后台服务器的路径不是 / ，需要设置build.assetsPublicPath属性，<br>如：后台路径为<a href="http://localhost:4100/pl-mls/car-run-activity.html，则设置该值为pl-mls/" target="_blank" rel="noopener">http://localhost:4100/pl-mls/car-run-activity.html，则设置该值为pl-mls/</a><br>如果mode为hash，则不需要修改vue-router的配置<br>如果mode为history，需要在vue-router中设置base为/pl-mls/，dev.assetsPublicPath为’/‘</p>
+<p>css-loader<br>读取.css文件的内容</p>
+<p>style-loader<br>将读取到的css内容插入到style标签</p>
+<p>file-loader<br>将图片文件提取出来</p>
+<p>url-loader(依赖file-loader)<br>将图片转为base64</p>
+<p>devtool<br>使用’#cheap-module-eval-source-map’</p>
+<p>devServer<br>config.devServer:{<br>  port:8080, // 端口号<br>  host: ‘0.0.0.0’, // 地址<br>  overlay:{<br>    errors: true // 错误提示<br>  },<br>  open: true, // 自动打开浏览器<br>  hot: true, // 热加载，局部修改内容<br>  historyFallback: {}<br>}<br>config.plugins.push(<br>  new webpack.HotModuleReplacementPlugin() // 配合hot使用<br>  new webpack.NoEmitOnErrorsPlugin() // 减少不必要的信息展示<br>)</p>
+<p>提取第三方资源到单独文件<br>entry: {<br>  vendor: [‘vue’]<br>}<br>config.plugins.push(<br>  new webpack.optimize.CommonsChunkPlugin({<br>    name: ‘vendor’<br>  })<br>)</p>
+<h2 id="打包优化"><a href="#打包优化" class="headerlink" title="打包优化"></a>打包优化</h2><p>查看项目打包(webpack-bundle-analyzer)<br>webpack有个插件，可以查看项目一共打了多少包，每个包的体积，每个包里面的包情况。<br>首先下载插件<br>npm intall webpack-bundle-analyzer –save-dev<br>同时在webpack.config.js配置<br>const BundleAnalyzerPlugin = require(‘webpack-bundle-analyzer’).BundleAnalyzerPlugin;</p>
+<p>webpackConfig.plugins.push(new BundleAnalyzerPlugin());<br>在package.json中添加命令<br>“script”: {<br>    “analyz”: “NODE_ENV=production npm_config_report=true npm run deploy:prod”<br>}<br>webpack外部扩展<br>引入CDN资源<br>需要配置webpack，使其打包的时候不在将这些资源打包。<br>const webpackConfig = {<br>  name: ‘client’,<br>  target: ‘web’,<br>  devtool: config.compiler_devtool,<br>  resolve: {<br>    root: paths.client(),<br>    extensions: [‘’, ‘.js’, ‘.jsx’, ‘.json’],<br>  },<br>  externals: {<br>    ‘react’: ‘React’,<br>    ‘react-dom’: ‘ReactDOM’,<br>    ‘react-router’: ‘ReactRouter’,<br>    ‘redux’: ‘Redux’,<br>    ‘history’: ‘History’<br>  },<br>  module: {},<br>}<br>DLL<br>dll 全称是：dynamic link library（动态链接库）<br>dll方式也就是通过配置，告诉webpack指定库在项目中的位置，从而直接引入，不将其打包在内。<br>上面介绍的方式是将包放到cdn上，build的时候不在引入对应的包；<br>dll方式就是指定包在项目中，build的时候不在打包对应的包，使用的时候引入。<br>webpack通过webpack.DllPlugin与webpack.DllReferencePlugin两个内嵌插件实现此功能。<br>新建webpack.dll.config.js<br>const path = require(‘path’)<br>const webpack = require(‘webpack’)</p>
+<p>module.exports = {<br>  entry: {<br>    vendor: [‘vue’, ‘vue-router’, ‘vuex’, ‘axios’, ‘vuex-router-sync’, ‘mint-ui’]<br>  },<br>  output: {<br>    path: path.resolve(<strong>dirname, ‘../static’),<br>    filename: ‘[name].dll.js’,<br>    library: ‘[name]_library’<br>  },<br>  plugins: [<br>    new webpack.DllPlugin({<br>      path: path.resolve(</strong>dirname, ‘../[name]-manifest.json’),<br>      name: ‘[name]_library’,<br>      context: <strong>dirname<br>    })<br>  ]<br>}<br>webpack.DllPlugin选项：<br>path：manifest.json文件的输出路径，这个文件会用于后续的业务代码打包；<br>name：dll暴露的对象名，要跟output.library保持一致;<br>context：解析包路径的上下文，这个要跟接下来配置的 webpack.config.js 一致。<br>运行文件<br>运行：webpack –progress –colors –config build/webpack.dll.config.js<br>生成两个文件，一个是打包好的vendor.dll.js，另外一个是vendor-mainifest.json<br>配置webpack.config.js<br>plugins: [<br>  new webpack.DllReferencePlugin({<br>    context: </strong>dirname,<br>    manifest: require(‘../vendor-manifest.json’)<br>  })<br>]<br>webpack.DllReferencePlugin的选项中：<br>context：需要跟之前保持一致，这个用来指导webpack匹配manifest.json中库的路径；<br>manifest：用来引入刚才输出的manifest.json文件。<br>生成vendor.dll.js文件后，在index.html中引入<script src="./static/dll/vendor.dll.js"></script></p>
+<p>设置vue-cli打开网址可以通过localhost、本地ip地址访问<br>使用devServer。设置host为0.0.0.0，或者在命令行中加入–host 0.0.0.0，修改open为false，通过opn模块打开网页地址<br>不使用devServer。删除webpack.dev.conf.js文件中的devServer，新建server.js文件，在通过express建立服务器，使用opn打开网页地址</p>
+<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><ul>
+<li>zip-webpack-plugin压缩打包后的文件</li>
+</ul>
+<p><strong>安装babel</strong><br>babel-loader babel-core</p>
+<p><strong>遍历获取文件名</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">function getEntries(dirName)&#123;</span><br><span class="line">  var jsDir＝path.join(srcDir,dirName),</span><br><span class="line">      entriesFiles＝glob.sync(jsDir+&apos;/*/*.js&apos;),</span><br><span class="line">      map＝&#123;&#125;</span><br><span class="line">  entriesFiles.forEach(function()&#123;</span><br><span class="line">    var fileName＝item.slice(item.lastIndexOf(&apos;\/&apos;)+1,item.lastIndexOf(&apos;.&apos;))</span><br><span class="line">    if(process.env.NODE_ENV===&apos;dev&apos;)&#123;</span><br><span class="line">      </span><br><span class="line">    &#125;else&#123;</span><br><span class="line">      map[fieName]=item</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="报错"><a href="#报错" class="headerlink" title="报错"></a>报错</h2><p>‘cross-env’ 不是内部或外部命令，也不是可运行的程序或批处理文件。<br>安装cross-env插件</p>
+<p>cross-env NODE_ENV=test被 new webpack.DefinePlugin({‘process.env’: require(‘../config/dev.env’)}) 覆盖问题<br>使用cross-env NODE_ENV只在编译代码中生效，不在项目代码中生效<br>在config文件夹中新建test.env.js文件，定义其NODE_ENV为test，在调用webpack.DefinePlugin之前判断其process.env.NODE_ENV</p>
+<p>使用node(8.x)版本运行npm install以后，如果切换到node(6.x)版本，build的时候会报错</p>
+<p>使用vux框架，引用swiper插件打包时，ERROR in static/js/vendor.ca6b94cef1413d8d46f1.js from UglifyJs<br>修改引用方式，将swiper改为swiper/dist/js/swiper</p>
+<p>webpack4<br><a href="https://www.cnblogs.com/carrotWu/p/8665720.html" target="_blank" rel="noopener">https://www.cnblogs.com/carrotWu/p/8665720.html</a><br><a href="https://juejin.im/entry/5c302140f265da611b587f99" target="_blank" rel="noopener">https://juejin.im/entry/5c302140f265da611b587f99</a></p>
+<p>config/index.js相关说明<br><a href="https://www.cnblogs.com/whkl-m/p/6627864.html" target="_blank" rel="noopener">https://www.cnblogs.com/whkl-m/p/6627864.html</a></p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2019-01-25T13:41:24.385Z" itemprop="dateUpdated">2019-01-25 13:41:24</time>
+</span><br>
+
+
+        
+        以上内容为个人记录
+        
+    </div>
+    
+    <footer>
+        <a href="https://tragiclife.github.io">
+            <img src="/img/avatar.jpg" alt="薛鸿杰">
+            薛鸿杰
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/tool/">tool</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/webpack/">webpack</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://tragiclife.github.io/front-end/tools/webpack/&title=《webpack》 — 薛鸿杰的博客&pic=https://tragiclife.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://tragiclife.github.io/front-end/tools/webpack/&title=《webpack》 — 薛鸿杰的博客&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://tragiclife.github.io/front-end/tools/webpack/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《webpack》 — 薛鸿杰的博客&url=https://tragiclife.github.io/front-end/tools/webpack/&via=https://tragiclife.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://tragiclife.github.io/front-end/tools/webpack/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/front-end/tools/git/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">Git</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <!-- <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style="display:none">
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style="display:none">
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div> -->
+    <div class="bottom">
+        <p><span>薛鸿杰 &copy; 2018 - 2019</span>
+            <span>
+                
+                <a href="http://www.miitbeian.gov.cn/" target="_blank">粤ICP备18140620号-1</a><br>
+                
+                <!-- Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a> -->
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://tragiclife.github.io/front-end/tools/webpack/&title=《webpack》 — 薛鸿杰的博客&pic=https://tragiclife.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://tragiclife.github.io/front-end/tools/webpack/&title=《webpack》 — 薛鸿杰的博客&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://tragiclife.github.io/front-end/tools/webpack/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《webpack》 — 薛鸿杰的博客&url=https://tragiclife.github.io/front-end/tools/webpack/&via=https://tragiclife.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://tragiclife.github.io/front-end/tools/webpack/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACKElEQVR42u3aQW7DMAwEwPz/0+m1QFp3V3SCWh6fgsaxNSpAkCIfj/h6fru+/+X129c7X+8/fubrnaddGBgYl2U8D681xnwj8rVhYGDch/Hbi9fumYTj9r0YGBgYx4ldG7iTFBADAwNjzsjL1HwLMDAwMBJGUsS2pLww/mgtjoGBcUFGfur++c9v6W9gYGBcivEsr/YQf5IaFqvCwMDYmpEHuDxxbBuWawEXAwPjnoz5IVp+9H+cdLYBGgMD456MtmHZVpprgD9WhYGBsTWjLUHzUnZyqLcY7jEwMDZltIteK0rzI7zR/wEDA2NTRhsEJ8lcvjUnLB0DA2MjRl7Etu2BNqC3h3eLtTgGBsalGHkCt3YAlwflfPt+eDIGBsbWjHa4oT0IS7apfeOvv8XAwNiUkYfR/Nu2VbCWOGJgYNyN0aZ9kwGyJAWstxgDA2NrRl6+HofRdiBjjbrYGMDAwNiCsTZa0W7HPLzWXVkMDIyNGMl4Vj7IlSw6f0JREmNgYNyAcVYiOAm++UhZXcRiYGBswZgc9Lchu00uMTAwMNYCbvKCyRPa0hoDA2NXxrwlkA91nVU2v6V5iYGB8Y8Z57Y580Qzn+Zaax5gYGDsxzhrcXmbsx1BiwI6BgbGDRhJAtcuZW2b2tCPgYGBkYTFvEBdO54rslcMDAyM8ZDE5Fd/bCIGBsYNGGtjYZPBi6RkTcYyMDAw7sCY5F1r5W67iHnpi4GBcVnGFxBdIuAsc/TvAAAAAElFTkSuQmCC" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+</body>
+</html>

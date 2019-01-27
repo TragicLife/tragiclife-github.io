@@ -141,6 +141,55 @@
     <ul class="post-list">
     
         <li class="post-list-item fade">
+            <article id="post-front-end/tools/webpack" class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2019-01-24 23:21:54" datetime="2019-01-24T23:21:54.000Z" itemprop="datePublished">2019-01-24</time>
+
+        
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/front-end/tools/webpack/">webpack</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        hash和chunkhash的区别
+hash:整个应用对应同一个hash；不利于缓存
+chunkhash:根据内容计算所得，每个entry单独对应一个hash；上线后无改动的文件不会失去缓存
+
+配置定义全局变量12345plugins:[  new webpack.ProvidePlugin(&#123;    $:&apos;jquery&apos;  &#125;)]
+scss文件提取到...
+    
+
+        <a href="/front-end/tools/webpack/" class="post-more waves-effect waves-button">
+            阅读全文…
+        </a>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/tool/">tool</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/webpack/">webpack</a></li></ul>
+
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
             <article id="post-front-end/tools/git" class="article-card article-type-post" itemprop="blogPost">
 
     <div class="post-meta">
@@ -179,7 +228,7 @@
     
     <div class="post-footer">
         
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Object/">Object</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li></ul>
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Git/">Git</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/tool/">tool</a></li></ul>
 
     </div>
     
@@ -224,7 +273,7 @@
     
     <div class="post-footer">
         
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/npm/">npm</a></li></ul>
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/npm/">npm</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/tool/">tool</a></li></ul>
 
     </div>
     
@@ -316,7 +365,7 @@ statistics  数据统计...
     
     <div class="post-footer">
         
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/fiddler/">fiddler</a></li></ul>
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Fiddler/">Fiddler</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/tool/">tool</a></li></ul>
 
     </div>
     
@@ -558,60 +607,6 @@ vue.runtime.**.js 运行时，比vue小30%
     <div class="post-footer">
         
 	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vue/">vue</a></li></ul>
-
-    </div>
-    
-</article>
-
-        </li>
-    
-        <li class="post-list-item fade">
-            <article id="post-front-end/html/daily-notes" class="article-card article-type-post" itemprop="blogPost">
-
-    <div class="post-meta">
-        <time class="post-time" title="2018-12-24 23:16:00" datetime="2018-12-24T23:16:00.000Z" itemprop="datePublished">2018-12-24</time>
-
-        
-
-
-    </div>
-
-    
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/front-end/html/daily-notes/">日常小记-HTML</a>
-    </h3>
-  
-
-
-
-
-    <div class="post-content" id="post-content" itemprop="postContent">
-
-    
-        渲染机制
-处理 HTML 并构建 DOM 树。
-处理 CSS 构建 CSSOM 树。
-将 DOM 与 CSSOM 合并成一个渲染树。
-根据渲染树来布局，计算每个节点的位置。
-调用 GPU 绘制，合成图层，显示在屏幕上。
-
-其他
-textarea添加spellcheck＝”false”去除检查
-
-视频播放自动全屏问题设置playsinline=”true”、webkit-playsinline...
-    
-
-        <a href="/front-end/html/daily-notes/" class="post-more waves-effect waves-button">
-            阅读全文…
-        </a>
-    </div>
-    
-    <div class="post-footer">
-        
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/html/">html</a></li></ul>
 
     </div>
     
