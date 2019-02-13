@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>linux | 薛鸿杰的博客</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#6C88B7">
+    
+    
+    <meta name="keywords" content="linux">
+    <meta name="description" content="处理目录的常用命令 ls: 列出目录 cd：切换目录 pwd：显示目前的目录 mkdir：创建一个新的目录 rmdir：删除一个空的目录 cp: 复制文件或目录 rm: 移除文件或目录  rm(移除文件或目录)  f ：就是 force 的意思，忽略不存在的文件，不会出现警告信息； i ：互动模式，在删除前会询问使用者是否动作 r ：递归删除啊！最常用在目录的删除了！这是非常危险的选项！！！  查">
+<meta name="keywords" content="linux">
+<meta property="og:type" content="article">
+<meta property="og:title" content="linux">
+<meta property="og:url" content="https://tragiclife.github.io/back-end/linux/linux/index.html">
+<meta property="og:site_name" content="薛鸿杰的博客">
+<meta property="og:description" content="处理目录的常用命令 ls: 列出目录 cd：切换目录 pwd：显示目前的目录 mkdir：创建一个新的目录 rmdir：删除一个空的目录 cp: 复制文件或目录 rm: 移除文件或目录  rm(移除文件或目录)  f ：就是 force 的意思，忽略不存在的文件，不会出现警告信息； i ：互动模式，在删除前会询问使用者是否动作 r ：递归删除啊！最常用在目录的删除了！这是非常危险的选项！！！  查">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-01-31T14:00:12.016Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="linux">
+<meta name="twitter:description" content="处理目录的常用命令 ls: 列出目录 cd：切换目录 pwd：显示目前的目录 mkdir：创建一个新的目录 rmdir：删除一个空的目录 cp: 复制文件或目录 rm: 移除文件或目录  rm(移除文件或目录)  f ：就是 force 的意思，忽略不存在的文件，不会出现警告信息； i ：互动模式，在删除前会询问使用者是否动作 r ：递归删除啊！最常用在目录的删除了！这是非常危险的选项！！！  查">
+    
+        <link rel="alternate" type="application/atom+xml" title="薛鸿杰的博客" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide">
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand2.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">薛鸿杰</h5>
+          <a href="mailto:xuehongjiej@163.com" title="xuehongjiej@163.com" class="mail">xuehongjiej@163.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/">
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives">
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags">
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/TragicLife" target="_blank">
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">linux</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">linux</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2019-01-31T21:58:39.000Z" itemprop="datePublished" class="page-time">
+  2019-01-31
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#处理目录的常用命令"><span class="post-toc-number">1.</span> <span class="post-toc-text">处理目录的常用命令</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#磁盘管理"><span class="post-toc-number">2.</span> <span class="post-toc-text">磁盘管理</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Centos7安装nginx"><span class="post-toc-number">3.</span> <span class="post-toc-text">Centos7安装nginx</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#安装node"><span class="post-toc-number">4.</span> <span class="post-toc-text">安装node</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#报错解决"><span class="post-toc-number">5.</span> <span class="post-toc-text">报错解决</span></a></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-back-end/linux/linux" class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">linux</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2019-01-31 21:58:39" datetime="2019-01-31T21:58:39.000Z" itemprop="datePublished">2019-01-31</time>
+
+            
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style="display:none">
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h2 id="处理目录的常用命令"><a href="#处理目录的常用命令" class="headerlink" title="处理目录的常用命令"></a>处理目录的常用命令</h2><ul>
+<li>ls: 列出目录</li>
+<li>cd：切换目录</li>
+<li>pwd：显示目前的目录</li>
+<li>mkdir：创建一个新的目录</li>
+<li>rmdir：删除一个空的目录</li>
+<li>cp: 复制文件或目录</li>
+<li>rm: 移除文件或目录</li>
+</ul>
+<p><strong>rm(移除文件或目录)</strong></p>
+<ul>
+<li>f ：就是 force 的意思，忽略不存在的文件，不会出现警告信息；</li>
+<li>i ：互动模式，在删除前会询问使用者是否动作</li>
+<li>r ：递归删除啊！最常用在目录的删除了！这是非常危险的选项！！！</li>
+</ul>
+<p><strong>查看文件的安装版本</strong></p>
+<p>rpm -qa 文件名 </p>
+<h2 id="磁盘管理"><a href="#磁盘管理" class="headerlink" title="磁盘管理"></a>磁盘管理</h2><p><strong>检查文件系统的磁盘空间占用情况</strong></p>
+<p>df [-ahikHTm] [目录或文件名]</p>
+<ul>
+<li>a ：列出所有的文件系统，包括系统特有的 /proc 等文件系统；</li>
+<li>k ：以 KBytes 的容量显示各文件系统；</li>
+<li>m ：以 MBytes 的容量显示各文件系统；</li>
+<li>h ：以人们较易阅读的 GBytes, MBytes, KBytes 等格式自行显示；</li>
+<li>H ：以 M=1000K 取代 M=1024K 的进位方式；</li>
+<li>T ：显示文件系统类型, 连同该 partition 的 filesystem 名称 (例如 ext3) 也列出；<br>-i ：不用硬盘容量，而以 inode 的数量来显示</li>
+</ul>
+<p><strong>查看文件安装所在路径</strong></p>
+<p>whereis node</p>
+<p><strong>查看运行文件所在路径</strong></p>
+<p>which node</p>
+<h2 id="Centos7安装nginx"><a href="#Centos7安装nginx" class="headerlink" title="Centos7安装nginx"></a>Centos7安装nginx</h2><p><strong>安装nginx环境</strong></p>
+<ol>
+<li>yum install -y gcc-c++</li>
+<li>yum install -y pcre pcre-devel</li>
+<li>yum install -y zlib zlib-devel</li>
+<li>yum install -y openssl openssl-devel</li>
+</ol>
+<blockquote>
+<p>安装nginx需要先将官网下载的源码进行编译，编译依赖gcc环境，如果没有gcc环境，需要安装gcc</p>
+</blockquote>
+<blockquote>
+<p>PCRE(Perl Compatible Regular Expressions)是一个Perl库，包括perl兼容的正则表达式库。nginx的http模块使用pcre来解析正则表达式，所以需要在linux上安装pcre库。pcre-devel是使用pcre开发的一个二次开发库。nginx也需要此库。</p>
+</blockquote>
+<blockquote>
+<p>zlib库提供了很多种压缩和解压缩的方式，nginx使用zlib对http包的内容进行gzip，所以需要在linux上安装zlib库。</p>
+</blockquote>
+<blockquote>
+<p>OpenSSL 是一个强大的安全套接字层密码库，囊括主要的密码算法、常用的密钥和证书封装管理功能及SSL协议，并提供丰富的应用程序供测试或其它目的使用。nginx不仅支持http协议，还支持https（即在ssl协议上传输http），所以需要在linux安装openssl库。</p>
+</blockquote>
+<p><strong>编译安装(路径可根据个人需求进行修改)</strong></p>
+<ol>
+<li>cd /usr/local</li>
+<li>下载nginx: wget <a href="http://nginx.org/download/nginx-1.14.1.tar.gz" target="_blank" rel="noopener">http://nginx.org/download/nginx-1.14.1.tar.gz</a></li>
+<li>解压nginx: tar zxvf nginx-1.14.1.tar.gz</li>
+<li>进入解压目录: cd nginx-1.14.1</li>
+<li>设置安装目录和ssl配置: ./configure –prefix=/usr/local/nginx –with-http_stub_status_module –with-http_ssl_module</li>
+<li>安装nginx: make &amp;&amp; make install</li>
+<li>进入nginx目录: cd /usr/local/nginx/sbin</li>
+<li>启动服务: ./nginx</li>
+</ol>
+<blockquote>
+<p>ssl证书文件需要放在nginx/conf下面</p>
+</blockquote>
+<p><a href="https://www.cnblogs.com/zhanghaoyong/p/7737536.html" target="_blank" rel="noopener">例子</a><br><a href="https://blog.csdn.net/u013144287/article/details/78408001" target="_blank" rel="noopener">例子2</a></p>
+<p><strong>nginx常用命令</strong></p>
+<ul>
+<li>nginx 启动</li>
+<li>nginx -s reload 重启</li>
+<li>nginx -s quit 关闭</li>
+</ul>
+<h2 id="安装node"><a href="#安装node" class="headerlink" title="安装node"></a>安装node</h2><h2 id="报错解决"><a href="#报错解决" class="headerlink" title="报错解决"></a>报错解决</h2><p><strong>nginx: [emerg] the “ssl” parameter requires ngx_http_ssl_module in /usr/local/nginx/conf/nginx.conf</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./configure --prefix=/usr/local/nginx --with-http_stub_status_module --with-http_ssl_module</span><br></pre></td></tr></table></figure></p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2019-01-31T14:00:12.016Z" itemprop="dateUpdated">2019-01-31 14:00:12</time>
+</span><br>
+
+
+        
+        以上内容为个人记录
+        
+    </div>
+    
+    <footer>
+        <a href="https://tragiclife.github.io">
+            <img src="/img/avatar.jpg" alt="薛鸿杰">
+            薛鸿杰
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/">linux</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://tragiclife.github.io/back-end/linux/linux/&title=《linux》 — 薛鸿杰的博客&pic=https://tragiclife.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://tragiclife.github.io/back-end/linux/linux/&title=《linux》 — 薛鸿杰的博客&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://tragiclife.github.io/back-end/linux/linux/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《linux》 — 薛鸿杰的博客&url=https://tragiclife.github.io/back-end/linux/linux/&via=https://tragiclife.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://tragiclife.github.io/back-end/linux/linux/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/front-end/tools/webpack/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">webpack</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <!-- <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style="display:none">
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style="display:none">
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div> -->
+    <div class="bottom">
+        <p><span>薛鸿杰 &copy; 2018 - 2019</span>
+            <span>
+                
+                <a href="http://www.miitbeian.gov.cn/" target="_blank">粤ICP备18140620号-1</a><br>
+                
+                <!-- Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a> -->
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://tragiclife.github.io/back-end/linux/linux/&title=《linux》 — 薛鸿杰的博客&pic=https://tragiclife.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://tragiclife.github.io/back-end/linux/linux/&title=《linux》 — 薛鸿杰的博客&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://tragiclife.github.io/back-end/linux/linux/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《linux》 — 薛鸿杰的博客&url=https://tragiclife.github.io/back-end/linux/linux/&via=https://tragiclife.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://tragiclife.github.io/back-end/linux/linux/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACI0lEQVR42u3aS5KDMAwFwNz/0sx2FoE8SSRV2O3VFGEwzUKlj1+veB3/1tmv13eeXUn+97aFgYHxWMZxufJ75h9itC8GBsYGjCSMVjdOMGdX8nfDwMDAuL4nf5UkWcTAwMD4RsDtBdMcjIGBgVEtYpPH9ZLIn9biGBgYD2TkzbLf//2V+QYGBsajGEdx5c/pDSmP1sLAwFibkQe4yRjg+hWjAjUZiGJgYGzGSNpheak5GWfmpTIGBsYOjF4Y/RAEB4c28g+KgYGxA2N+zOKGLYvp46hHiIGB8SjG5MBWtUGWJJfNsI6BgbE0oxrH8s3uKlnzYx8YGBg7MKoHvHqDhF54zd8ZAwNjVcY8gZuEyNtaexgYGIsy5qPHavmaB+7CCAEDA2MzRrXFP2mf5aH5w9MwMDC2YeRDzSogGU/mgf7NFQwMjKUZ+YmF5Ndqs6w3Rh0dvMDAwHggIw9513fm6eO8SfdmXwwMjKUZzfbWZaGbjw3y8F0IxxgYGIsy8rb+zQ39Vsuv0DvEwMBYjlEdA0zGBr2xaOFcGwYGxqKMPPnrBd9eyZqPFjAwMFZlzA94JVfy5l0zWcTAwFia0Rtw5o+eBNbq58DAwFib0Quy32jVjVp7GBgYGzDywDcpdKufqYDEwMDAKG5TTRCTIUT5tAgGBsbGjHy02Tta0UtAMTAwdmDkhWjS4u8NL/PwioGBsRujmvDlSV7vJe4K0xgYGEsw/gBPjGqYKYQwoQAAAABJRU5ErkJggg==" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+</body>
+</html>
