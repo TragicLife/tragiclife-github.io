@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>SPA、SEO、SSR | 薛鸿杰的博客</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#6C88B7">
+    
+    
+    <meta name="keywords" content="other">
+    <meta name="description" content="SPA单页面应用(Single Page Application) 优缺点优点：  页面之间的切换非常快 一定程度上减少了后端服务器的压力（不用管页面逻辑和渲染） 后端程序只需要提供API，完全不用管客户端到底是Web界面还是手机等  缺点：  首屏打开速度很慢，因为用户首次加载需要先下载SPA框架及应用程序的代码，然后再渲染页面。 不利于SEO  SEO搜索引擎优化(Search Engine">
+<meta name="keywords" content="other">
+<meta property="og:type" content="article">
+<meta property="og:title" content="SPA、SEO、SSR">
+<meta property="og:url" content="https://tragiclife.github.io/front-end/other/SPA-SEO-SSR/index.html">
+<meta property="og:site_name" content="薛鸿杰的博客">
+<meta property="og:description" content="SPA单页面应用(Single Page Application) 优缺点优点：  页面之间的切换非常快 一定程度上减少了后端服务器的压力（不用管页面逻辑和渲染） 后端程序只需要提供API，完全不用管客户端到底是Web界面还是手机等  缺点：  首屏打开速度很慢，因为用户首次加载需要先下载SPA框架及应用程序的代码，然后再渲染页面。 不利于SEO  SEO搜索引擎优化(Search Engine">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-03-03T15:53:59.703Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="SPA、SEO、SSR">
+<meta name="twitter:description" content="SPA单页面应用(Single Page Application) 优缺点优点：  页面之间的切换非常快 一定程度上减少了后端服务器的压力（不用管页面逻辑和渲染） 后端程序只需要提供API，完全不用管客户端到底是Web界面还是手机等  缺点：  首屏打开速度很慢，因为用户首次加载需要先下载SPA框架及应用程序的代码，然后再渲染页面。 不利于SEO  SEO搜索引擎优化(Search Engine">
+    
+        <link rel="alternate" type="application/atom+xml" title="薛鸿杰的博客" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide">
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand2.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">薛鸿杰</h5>
+          <a href="mailto:xuehongjiej@163.com" title="xuehongjiej@163.com" class="mail">xuehongjiej@163.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/">
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives">
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags">
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/TragicLife" target="_blank">
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">SPA、SEO、SSR</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">SPA、SEO、SSR</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2019-02-13T21:58:39.000Z" itemprop="datePublished" class="page-time">
+  2019-02-13
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#SPA"><span class="post-toc-number">1.</span> <span class="post-toc-text">SPA</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#优缺点"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">优缺点</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#SEO"><span class="post-toc-number">2.</span> <span class="post-toc-text">SEO</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#SSR"><span class="post-toc-number">3.</span> <span class="post-toc-text">SSR</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#优缺点-1"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">优缺点</span></a></li></ol></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-front-end/other/SPA-SEO-SSR" class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">SPA、SEO、SSR</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2019-02-13 21:58:39" datetime="2019-02-13T21:58:39.000Z" itemprop="datePublished">2019-02-13</time>
+
+            
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style="display:none">
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h2 id="SPA"><a href="#SPA" class="headerlink" title="SPA"></a>SPA</h2><p>单页面应用(Single Page Application)</p>
+<h3 id="优缺点"><a href="#优缺点" class="headerlink" title="优缺点"></a>优缺点</h3><p>优点：</p>
+<ul>
+<li>页面之间的切换非常快</li>
+<li>一定程度上减少了后端服务器的压力（不用管页面逻辑和渲染）</li>
+<li>后端程序只需要提供API，完全不用管客户端到底是Web界面还是手机等</li>
+</ul>
+<p>缺点：</p>
+<ul>
+<li>首屏打开速度很慢，因为用户首次加载需要先下载SPA框架及应用程序的代码，然后再渲染页面。</li>
+<li>不利于SEO</li>
+</ul>
+<h2 id="SEO"><a href="#SEO" class="headerlink" title="SEO"></a>SEO</h2><p>搜索引擎优化(Search Engine Optimization)，用于提高该网站在搜索引擎中某些关键词的搜索结果排名</p>
+<h2 id="SSR"><a href="#SSR" class="headerlink" title="SSR"></a>SSR</h2><p>服务端渲染(Server-Side Rendering)</p>
+<h3 id="优缺点-1"><a href="#优缺点-1" class="headerlink" title="优缺点"></a>优缺点</h3><p>优点：</p>
+<ul>
+<li>更快的响应时间，不用等待所有的JS都下载完成，浏览器便能显示比较完整的页面了</li>
+<li>更好的SSR，我们可以将SEO的关键信息直接在后台就渲染成HTML，而保证搜索引擎的爬虫都能爬取到关键数据。</li>
+</ul>
+<p>缺点：</p>
+<ul>
+<li>相对于仅仅需要提供静态文件的服务器，SSR中使用的渲染程序会占用更多的CPU和内存资源</li>
+<li>一些常用的浏览器API可能无法正常使用，比如window、docment和alert等，如果使用的话需要对运行的环境加以判断</li>
+<li>开发调试会有一些麻烦，因为涉及了浏览器及服务器，对于SPA的一些组件的生命周期的管理会变得复杂</li>
+<li>可能会由于某些因素导致服务器端渲染的结果与浏览器端的结果不一致。</li>
+</ul>
+<p><a href="https://www.jianshu.com/p/fcb98533bc18" target="_blank" rel="noopener">参考链接</a></p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2019-03-03T15:53:59.703Z" itemprop="dateUpdated">2019-03-03 15:53:59</time>
+</span><br>
+
+
+        
+        以上内容为个人记录
+        
+    </div>
+    
+    <footer>
+        <a href="https://tragiclife.github.io">
+            <img src="/img/avatar.jpg" alt="薛鸿杰">
+            薛鸿杰
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/other/">other</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://tragiclife.github.io/front-end/other/SPA-SEO-SSR/&title=《SPA、SEO、SSR》 — 薛鸿杰的博客&pic=https://tragiclife.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://tragiclife.github.io/front-end/other/SPA-SEO-SSR/&title=《SPA、SEO、SSR》 — 薛鸿杰的博客&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://tragiclife.github.io/front-end/other/SPA-SEO-SSR/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《SPA、SEO、SSR》 — 薛鸿杰的博客&url=https://tragiclife.github.io/front-end/other/SPA-SEO-SSR/&via=https://tragiclife.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://tragiclife.github.io/front-end/other/SPA-SEO-SSR/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/front-end/tools/gulp/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">gulp</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/back-end/linux/linux/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">linux</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <!-- <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style="display:none">
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style="display:none">
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div> -->
+    <div class="bottom">
+        <p><span>薛鸿杰 &copy; 2018 - 2019</span>
+            <span>
+                
+                <a href="http://www.miitbeian.gov.cn/" target="_blank">粤ICP备18140620号-1</a><br>
+                
+                <!-- Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a> -->
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://tragiclife.github.io/front-end/other/SPA-SEO-SSR/&title=《SPA、SEO、SSR》 — 薛鸿杰的博客&pic=https://tragiclife.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://tragiclife.github.io/front-end/other/SPA-SEO-SSR/&title=《SPA、SEO、SSR》 — 薛鸿杰的博客&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://tragiclife.github.io/front-end/other/SPA-SEO-SSR/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《SPA、SEO、SSR》 — 薛鸿杰的博客&url=https://tragiclife.github.io/front-end/other/SPA-SEO-SSR/&via=https://tragiclife.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://tragiclife.github.io/front-end/other/SPA-SEO-SSR/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACMklEQVR42u3a227CQAwFwP7/T9NXpEJybIdKOJOnqoTsTiq568vPT3w9nq7n37y7592nyTP/3nnZhYGB8bWMx+GVL3AMOH4RybrHrwkDA+MOjHfb6t2TbKX6nJM9Y2BgYBwG30d8Ha+IgYGB8YmAmxwcMTAwMK5i5CGymtDmCWp+rMTAwLgbI6+6///PH+lvYGBgfBXjUbyqT+ttq7wrDAyM1Yx8mQkpL9j19oOBgXEHRi90Ji3JPN1NxjWa51kMDIwVjORr8xB57RDGi99gYGAsZSQ3VUdae8Ov+Qs9+TtgYGAsZRQGGgbhOD9KjsYsMDAw1jESUv7oSYntslwcAwNjKSNvW1YZvRfRe8UYGBhbGXmgzI9rkyCbf3oyM4KBgbGIkbcSqwtUU9lqc+LtYREDA2Mdo1cmq46W5kW9aoEPAwPjbowk4CYDXtV7egNkhSQWAwNjBaNXY68OXvQKbYWeBgYGxlJGD5yU/q9KWcvDFhgYGKsZeVI6aUDOxy+iqiEGBsY6xmQ8KzkO5k3K6v+HF0U3DAyM1YzJwMRVgXVUgMPAwLgBo5pATjC9EtvJdzEwMJYyJsMTE3DeLo3WxcDAWM3oBbs8WE/S4N7TMDAwtjJ6TcdewM2LaEmzYTQhgoGB8YWM3vFuUu7vJbQnqSwGBgZGcbahOk5RmA2Zx34MDIwbMKoNzsmRMQroGBgYN2AkSWwSEKsF/V7AxcDAuBvjqnNXtVhWDeLV4I6BgbGC8QthECy6iSbYkAAAAABJRU5ErkJggg==" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+</body>
+</html>

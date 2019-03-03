@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>极客重学前端的记录 | 薛鸿杰的博客</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#6C88B7">
+    
+    
+    <meta name="keywords" content="">
+    <meta name="description" content="数据类型  Undefined Null Boolean String 最大长度2^53 - 1   Number 1231 / -0 // -InfinityMath.abs(0.1 + 0.2 - 0.3) &amp;lt;= Number.EPSILON // truetypeof new Number(&amp;apos;3&amp;apos;) // object  Symbol 123456789101112">
+<meta property="og:type" content="article">
+<meta property="og:title" content="极客重学前端的记录">
+<meta property="og:url" content="https://tragiclife.github.io/front-end/other/relearning-front-end/index.html">
+<meta property="og:site_name" content="薛鸿杰的博客">
+<meta property="og:description" content="数据类型  Undefined Null Boolean String 最大长度2^53 - 1   Number 1231 / -0 // -InfinityMath.abs(0.1 + 0.2 - 0.3) &amp;lt;= Number.EPSILON // truetypeof new Number(&amp;apos;3&amp;apos;) // object  Symbol 123456789101112">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://tragiclife.github.io/front-end/other/relearning-front-end/type-change.jpg">
+<meta property="og:updated_time" content="2019-03-03T13:02:56.760Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="极客重学前端的记录">
+<meta name="twitter:description" content="数据类型  Undefined Null Boolean String 最大长度2^53 - 1   Number 1231 / -0 // -InfinityMath.abs(0.1 + 0.2 - 0.3) &amp;lt;= Number.EPSILON // truetypeof new Number(&amp;apos;3&amp;apos;) // object  Symbol 123456789101112">
+<meta name="twitter:image" content="https://tragiclife.github.io/front-end/other/relearning-front-end/type-change.jpg">
+    
+        <link rel="alternate" type="application/atom+xml" title="薛鸿杰的博客" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide">
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand2.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">薛鸿杰</h5>
+          <a href="mailto:xuehongjiej@163.com" title="xuehongjiej@163.com" class="mail">xuehongjiej@163.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/">
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives">
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags">
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/TragicLife" target="_blank">
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">极客重学前端的记录</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">极客重学前端的记录</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2019-03-02T23:11:31.000Z" itemprop="datePublished" class="page-time">
+  2019-03-03
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+
+<article id="post-front-end/other/relearning-front-end" class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">极客重学前端的记录</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2019-03-02 23:11:31" datetime="2019-03-02T23:11:31.000Z" itemprop="datePublished">2019-03-02</time>
+
+            
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style="display:none">
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <p><strong>数据类型</strong></p>
+<ul>
+<li>Undefined</li>
+<li>Null</li>
+<li>Boolean</li>
+<li>String<ul>
+<li>最大长度2^53 - 1</li>
+</ul>
+</li>
+<li><p>Number</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1 / -0 // -Infinity</span><br><span class="line">Math.abs(0.1 + 0.2 - 0.3) &lt;= Number.EPSILON // true</span><br><span class="line">typeof new Number(&apos;3&apos;) // object</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Symbol</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">自定义iterator行为</span><br><span class="line">    var o = new Object</span><br><span class="line"></span><br><span class="line">  o[Symbol.iterator] = function() &#123;</span><br><span class="line">    var v = 0</span><br><span class="line">    return &#123;</span><br><span class="line">      next: function() &#123;</span><br><span class="line">          return &#123; value: v++, done: v &gt; 10 &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;        </span><br><span class="line">  &#125;;</span><br><span class="line"></span><br><span class="line">  for(var v of o) </span><br><span class="line">      console.log(v); // 0 1 2 3 ... 9</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Object</p>
+</li>
+</ul>
+<p><strong>类型转换</strong></p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/front-end/other/relearning-front-end/./type-change.jpg" alt="类型转换" title="">
+                </div>
+                <div class="image-caption">类型转换</div>
+            </figure>
+<p><strong>装箱转换</strong></p>
+<p>把基本类型转换为对应的对象，new Number(‘3’)<br>Symbol无法使用new来调用，但是可以利用装箱机制来得到一个Symbol对象<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">// 利用call方法强迫产生装箱</span><br><span class="line">let symbolObject = (function()&#123; return this; &#125;).call(Symbol(&apos;a&apos;));</span><br><span class="line"></span><br><span class="line">// 使用内置Object显示调用装箱</span><br><span class="line">let symbolObject = Object(Symbol(&apos;a&apos;))</span><br><span class="line"></span><br><span class="line">console.log(typeof symbolObject); //object</span><br><span class="line">console.log(symbolObject instanceof Symbol); //true</span><br><span class="line">console.log(symbolObject.constructor == Symbol); //true</span><br><span class="line">console.log(Object.prototype.toString.call(symbolObject)); //[object Symbol]</span><br></pre></td></tr></table></figure></p>
+<blockquote>
+<p>装箱机制会频繁产生临时对象，在一些对性能要求较高的场景下，应避免对基本类型做装箱转换</p>
+</blockquote>
+<p><strong>拆箱转换</strong></p>
+<p>把对象类型转换为基本类型<br>拆箱转换会尝试调用valueOf和toString来获得拆箱后的基本类型。如果valueOf和toString都不存在，或者没有返回基本类型，则会产生类型错误TypeError。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">var o = &#123;</span><br><span class="line">  valueOf : () =&gt; &#123;console.log(&quot;valueOf&quot;); return &#123;&#125;&#125;,</span><br><span class="line">  toString : () =&gt; &#123;console.log(&quot;toString&quot;); return &#123;&#125;&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">o * 2</span><br><span class="line">// valueOf</span><br><span class="line">// toString</span><br><span class="line">// TypeError</span><br><span class="line"></span><br><span class="line">// ES6之后，允许对象通过显式指定toPrimitive Symbol来覆盖原有的行为</span><br><span class="line">o[Symbol.toPrimitive] = () =&gt; &#123;console.log(&quot;toPrimitive&quot;); return &quot;hello&quot;&#125;</span><br><span class="line"></span><br><span class="line">console.log(o + &quot;&quot;)</span><br><span class="line">// toPrimitive</span><br><span class="line">// hello</span><br></pre></td></tr></table></figure></p>
+<p><strong>对象的两类属性</strong></p>
+<ul>
+<li>数据属性<ul>
+<li>value：就是属性的值。</li>
+<li>writable：决定属性能否被赋值。</li>
+<li>enumerable：决定for in能否枚举该属性。</li>
+<li>configurable：决定该属性能否被删除或者改变特征值。</li>
+</ul>
+</li>
+<li>访问器(getter/setter)属性<ul>
+<li>getter：函数或 undefined，在取属性值时被调用。</li>
+<li>setter：函数或 undefined，在设置属性值时被调用。</li>
+<li>enumerable：决定 for in 能否枚举该属性。</li>
+<li>configurable：决定该属性能否被删除或者改变特征值。</li>
+</ul>
+</li>
+</ul>
+<p><strong>设置/获取对象的属性</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">var o = &#123; a: 1 &#125;;</span><br><span class="line">Object.defineProperty(o, &quot;b&quot;, &#123;</span><br><span class="line">  value: 2, </span><br><span class="line">  writable: false, </span><br><span class="line">  enumerable: false, </span><br><span class="line">  configurable: true</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">//a 和 b 都是数据属性，但特征值变化了</span><br><span class="line">Object.getOwnPropertyDescriptor(o,&quot;a&quot;); // &#123;value: 1, writable: true, enumerable: true, configurable: true&#125;</span><br><span class="line">Object.getOwnPropertyDescriptor(o,&quot;b&quot;); // &#123;value: 2, writable: false, enumerable: false, configurable: true&#125;</span><br><span class="line">o.b = 3;</span><br><span class="line">console.log(o.b); // 2</span><br></pre></td></tr></table></figure></p>
+<p><strong>操纵原型的API</strong></p>
+<ul>
+<li><code>Object.create</code>根据指定的原型创建新对象，原型可以是 null</li>
+<li><code>Object.getPrototypeOf</code>获得一个对象的原型</li>
+<li><code>Object.setPrototypeOf</code>设置一个对象的原型</li>
+</ul>
+<p><strong>new的过程</strong></p>
+<ol>
+<li>以构造器的 prototype 属性（注意与私有字段 [[prototype]]的区分）为原型，创建新对象；</li>
+<li>将this和调用参数传给构造器，执行；</li>
+<li>如果构造器返回的是对象，则返回，否则返回第一步创建的对象</li>
+</ol>
+<p><strong>获取类型</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">var o = new Object;</span><br><span class="line">var n = new Number;</span><br><span class="line">var s = new String;</span><br><span class="line">var b = new Boolean;</span><br><span class="line">var d = new Date;</span><br><span class="line">var arg = function()&#123; return arguments &#125;();</span><br><span class="line">var r = new RegExp;</span><br><span class="line">var f = new Function;</span><br><span class="line">var arr = new Array;</span><br><span class="line">var e = new Error;</span><br><span class="line">console.log([o, n, s, b, d, arg, r, f, arr, e].map(v =&gt; Object.prototype.toString.call(v)));</span><br><span class="line"></span><br><span class="line">0: &quot;[object Object]&quot;</span><br><span class="line">1: &quot;[object Number]&quot;</span><br><span class="line">2: &quot;[object String]&quot;</span><br><span class="line">3: &quot;[object Boolean]&quot;</span><br><span class="line">4: &quot;[object Date]&quot;</span><br><span class="line">5: &quot;[object Arguments]&quot;</span><br><span class="line">6: &quot;[object RegExp]&quot;</span><br><span class="line">7: &quot;[object Function]&quot;</span><br><span class="line">8: &quot;[object Array]&quot;</span><br><span class="line">9: &quot;[object Error]&quot;</span><br></pre></td></tr></table></figure>
+<p><strong>修改数据类型</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var o = &#123; [Symbol.toStringTag]: &quot;MyObject&quot; &#125;</span><br><span class="line">console.log(o + &quot;&quot;); // [object MyObject]</span><br></pre></td></tr></table></figure>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2019-03-03T13:02:56.760Z" itemprop="dateUpdated">2019-03-03 13:02:56</time>
+</span><br>
+
+
+        
+        以上内容为个人记录
+        
+    </div>
+    
+    <footer>
+        <a href="https://tragiclife.github.io">
+            <img src="/img/avatar.jpg" alt="薛鸿杰">
+            薛鸿杰
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://tragiclife.github.io/front-end/other/relearning-front-end/&title=《极客重学前端的记录》 — 薛鸿杰的博客&pic=https://tragiclife.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://tragiclife.github.io/front-end/other/relearning-front-end/&title=《极客重学前端的记录》 — 薛鸿杰的博客&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://tragiclife.github.io/front-end/other/relearning-front-end/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《极客重学前端的记录》 — 薛鸿杰的博客&url=https://tragiclife.github.io/front-end/other/relearning-front-end/&via=https://tragiclife.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://tragiclife.github.io/front-end/other/relearning-front-end/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/front-end/wx/miniprogram/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">小程序</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <!-- <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style="display:none">
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style="display:none">
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div> -->
+    <div class="bottom">
+        <p><span>薛鸿杰 &copy; 2018 - 2019</span>
+            <span>
+                
+                <a href="http://www.miitbeian.gov.cn/" target="_blank">粤ICP备18140620号-1</a><br>
+                
+                <!-- Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a> -->
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://tragiclife.github.io/front-end/other/relearning-front-end/&title=《极客重学前端的记录》 — 薛鸿杰的博客&pic=https://tragiclife.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://tragiclife.github.io/front-end/other/relearning-front-end/&title=《极客重学前端的记录》 — 薛鸿杰的博客&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://tragiclife.github.io/front-end/other/relearning-front-end/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《极客重学前端的记录》 — 薛鸿杰的博客&url=https://tragiclife.github.io/front-end/other/relearning-front-end/&via=https://tragiclife.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://tragiclife.github.io/front-end/other/relearning-front-end/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACu0lEQVR42u3a0WpbMRAE0Pz/T6fQp0Lr3JldKXHh3KcQx7aOAtIyux8f8fP5+8lf/fzjST7h63f9/fvDDx4eHt5o6a+eBPDq1YSabFzCfrkFeHh4eNd4Xx/3+0W03/j1GvJPwMPDw/tZXl4W50VzW17j4eHh/V+8pJxNroE8bsDDw8N7Z14SRiSRRP43s424mLXg4eHhxby2AfYOP1/s7+Hh4eEtuurtoZ8sKL942qbXPz4ZDw8P7wKvjVY3UewmdMgHEVbLxcPDw1vXoknM2uJny03WUP8/8fDw8Ea82X7kQ1R5RLu5Hl6uDQ8PD+8CLy+CN0HDbIAg/64DwS4eHh5eyWvD2WRT2uh2FlgUkxF4eHh4l3kzfLus5NU87HhogOHh4eEd4s3igDaYSCLd/DPzAAUPDw/ve3izwrotdvNtbdfzcDHg4eHhXeBtGl3tlTALeYswFw8PD+8yb3YcJxHtLLDYjxTg4eHhfSdvMzSwKZo3V9RDPo2Hh4d3iLcZukoK5aQgjo74OMDFw8PD+05eNPoZbMGsEM+L73xVeHh4ePd4+SBp3vraXBXJQFVRcOPh4eEd5W2GA/JyNg9w80+LmmR4eHh4l3nJsZsc2bODfh+FPNx4eHh4eEd5ZxtUm8W1q3oo/fHw8PAu8GYDUkm4kJfF+zDiQIyLh4eHV/LaNtjZplcey+6bZHh4eHineJvWVz4sNXvvZqwBDw8P7zYvWWJ+0M/i2ll4UYvx8PDwDsHOlrz7A73drIehKzw8PLxDvPaMTd7c/mUSXsxabnh4eHj3ePvLoG1NzQKItnDHw8PDu83bDz/tL5JZQfywxXh4eHhvyWtT09lQQhte4OHh4b0DLym426ZX/o3tyBceHh7ebV47BHAqUNgPKKwGCPDw8PDWja62rZVfFW0BnV8eDxcDHh4e3kneL68hc6gIS0XuAAAAAElFTkSuQmCC" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+</body>
+</html>
