@@ -29,7 +29,7 @@
 <meta property="og:site_name" content="薛鸿杰的博客">
 <meta property="og:description" content="处理目录的常用命令 ls: 列出目录 cd：切换目录 pwd：显示目前的目录 mkdir：创建一个新的目录 rmdir：删除一个空的目录 cp: 复制文件或目录 rm: 移除文件或目录  rm(移除文件或目录)  f ：就是 force 的意思，忽略不存在的文件，不会出现警告信息； i ：互动模式，在删除前会询问使用者是否动作 r ：递归删除啊！最常用在目录的删除了！这是非常危险的选项！！！  查">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-01-31T14:00:12.016Z">
+<meta property="og:updated_time" content="2019-03-11T11:38:07.701Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="linux">
 <meta name="twitter:description" content="处理目录的常用命令 ls: 列出目录 cd：切换目录 pwd：显示目前的目录 mkdir：创建一个新的目录 rmdir：删除一个空的目录 cp: 复制文件或目录 rm: 移除文件或目录  rm(移除文件或目录)  f ：就是 force 的意思，忽略不存在的文件，不会出现警告信息； i ：互动模式，在删除前会询问使用者是否动作 r ：递归删除啊！最常用在目录的删除了！这是非常危险的选项！！！  查">
@@ -151,7 +151,7 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#处理目录的常用命令"><span class="post-toc-number">1.</span> <span class="post-toc-text">处理目录的常用命令</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#磁盘管理"><span class="post-toc-number">2.</span> <span class="post-toc-text">磁盘管理</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Centos7安装nginx"><span class="post-toc-number">3.</span> <span class="post-toc-text">Centos7安装nginx</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#安装node"><span class="post-toc-number">4.</span> <span class="post-toc-text">安装node</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#报错解决"><span class="post-toc-number">5.</span> <span class="post-toc-text">报错解决</span></a></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#处理目录的常用命令"><span class="post-toc-number">1.</span> <span class="post-toc-text">处理目录的常用命令</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#磁盘管理"><span class="post-toc-number">2.</span> <span class="post-toc-text">磁盘管理</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Centos7安装nginx"><span class="post-toc-number">3.</span> <span class="post-toc-text">Centos7安装nginx</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#安装node"><span class="post-toc-number">4.</span> <span class="post-toc-text">安装node</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#网络"><span class="post-toc-number">5.</span> <span class="post-toc-text">网络</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#报错解决"><span class="post-toc-number">6.</span> <span class="post-toc-text">报错解决</span></a></li></ol>
         </nav>
     </aside>
 
@@ -245,7 +245,8 @@
 <li>nginx -s reload 重启</li>
 <li>nginx -s quit 关闭</li>
 </ul>
-<h2 id="安装node"><a href="#安装node" class="headerlink" title="安装node"></a>安装node</h2><h2 id="报错解决"><a href="#报错解决" class="headerlink" title="报错解决"></a>报错解决</h2><p><strong>nginx: [emerg] the “ssl” parameter requires ngx_http_ssl_module in /usr/local/nginx/conf/nginx.conf</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./configure --prefix=/usr/local/nginx --with-http_stub_status_module --with-http_ssl_module</span><br></pre></td></tr></table></figure></p>
+<h2 id="安装node"><a href="#安装node" class="headerlink" title="安装node"></a>安装node</h2><h2 id="网络"><a href="#网络" class="headerlink" title="网络"></a>网络</h2><p><strong>查看端口是否被占用</strong><br><code>netstat -anp |grep 端口号</code></p>
+<h2 id="报错解决"><a href="#报错解决" class="headerlink" title="报错解决"></a>报错解决</h2><p><strong>nginx: [emerg] the “ssl” parameter requires ngx_http_ssl_module in /usr/local/nginx/conf/nginx.conf</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./configure --prefix=/usr/local/nginx --with-http_stub_status_module --with-http_ssl_module</span><br></pre></td></tr></table></figure></p>
 
         </div>
 
@@ -254,7 +255,7 @@
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2019-01-31T14:00:12.016Z" itemprop="dateUpdated">2019-01-31 14:00:12</time>
+    最后更新时间：<time datetime="2019-03-11T11:38:07.701Z" itemprop="dateUpdated">2019-03-11 11:38:07</time>
 </span><br>
 
 

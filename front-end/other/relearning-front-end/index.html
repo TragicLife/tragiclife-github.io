@@ -21,18 +21,19 @@
     
     
     <meta name="keywords" content="">
-    <meta name="description" content="数据类型  Undefined Null Boolean String 最大长度2^53 - 1   Number 1231 / -0 // -InfinityMath.abs(0.1 + 0.2 - 0.3) &amp;lt;= Number.EPSILON // truetypeof new Number(&amp;apos;3&amp;apos;) // object  Symbol 123456789101112">
+    <meta name="description" content="JavaScript数据类型  Undefined Null Boolean String 最大长度2^53 - 1   Number 1231 / -0 // -InfinityMath.abs(0.1 + 0.2 - 0.3) &amp;lt;= Number.EPSILON // truetypeof new Number(&amp;apos;3&amp;apos;) // object  Symbol 12345">
 <meta property="og:type" content="article">
 <meta property="og:title" content="极客重学前端的记录">
 <meta property="og:url" content="https://tragiclife.github.io/front-end/other/relearning-front-end/index.html">
 <meta property="og:site_name" content="薛鸿杰的博客">
-<meta property="og:description" content="数据类型  Undefined Null Boolean String 最大长度2^53 - 1   Number 1231 / -0 // -InfinityMath.abs(0.1 + 0.2 - 0.3) &amp;lt;= Number.EPSILON // truetypeof new Number(&amp;apos;3&amp;apos;) // object  Symbol 123456789101112">
+<meta property="og:description" content="JavaScript数据类型  Undefined Null Boolean String 最大长度2^53 - 1   Number 1231 / -0 // -InfinityMath.abs(0.1 + 0.2 - 0.3) &amp;lt;= Number.EPSILON // truetypeof new Number(&amp;apos;3&amp;apos;) // object  Symbol 12345">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://tragiclife.github.io/front-end/other/relearning-front-end/type-change.jpg">
-<meta property="og:updated_time" content="2019-03-03T13:02:56.760Z">
+<meta property="og:image" content="https://tragiclife.github.io/front-end/other/relearning-front-end/native-object.png">
+<meta property="og:updated_time" content="2019-03-10T16:12:05.578Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="极客重学前端的记录">
-<meta name="twitter:description" content="数据类型  Undefined Null Boolean String 最大长度2^53 - 1   Number 1231 / -0 // -InfinityMath.abs(0.1 + 0.2 - 0.3) &amp;lt;= Number.EPSILON // truetypeof new Number(&amp;apos;3&amp;apos;) // object  Symbol 123456789101112">
+<meta name="twitter:description" content="JavaScript数据类型  Undefined Null Boolean String 最大长度2^53 - 1   Number 1231 / -0 // -InfinityMath.abs(0.1 + 0.2 - 0.3) &amp;lt;= Number.EPSILON // truetypeof new Number(&amp;apos;3&amp;apos;) // object  Symbol 12345">
 <meta name="twitter:image" content="https://tragiclife.github.io/front-end/other/relearning-front-end/type-change.jpg">
     
         <link rel="alternate" type="application/atom+xml" title="薛鸿杰的博客" href="/atom.xml">
@@ -149,6 +150,13 @@
 
 <div class="container body-wrap">
     
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#JavaScript"><span class="post-toc-number">1.</span> <span class="post-toc-text">JavaScript</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#CSS"><span class="post-toc-number">2.</span> <span class="post-toc-text">CSS</span></a></li></ol>
+        </nav>
+    </aside>
+
 
 <article id="post-front-end/other/relearning-front-end" class="post-article article-type-post fade" itemprop="blogPost">
 
@@ -168,7 +176,7 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <p><strong>数据类型</strong></p>
+            <h2 id="JavaScript"><a href="#JavaScript" class="headerlink" title="JavaScript"></a>JavaScript</h2><p><strong>数据类型</strong></p>
 <ul>
 <li>Undefined</li>
 <li>Null</li>
@@ -235,6 +243,36 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">var o = new Object;</span><br><span class="line">var n = new Number;</span><br><span class="line">var s = new String;</span><br><span class="line">var b = new Boolean;</span><br><span class="line">var d = new Date;</span><br><span class="line">var arg = function()&#123; return arguments &#125;();</span><br><span class="line">var r = new RegExp;</span><br><span class="line">var f = new Function;</span><br><span class="line">var arr = new Array;</span><br><span class="line">var e = new Error;</span><br><span class="line">console.log([o, n, s, b, d, arg, r, f, arr, e].map(v =&gt; Object.prototype.toString.call(v)));</span><br><span class="line"></span><br><span class="line">0: &quot;[object Object]&quot;</span><br><span class="line">1: &quot;[object Number]&quot;</span><br><span class="line">2: &quot;[object String]&quot;</span><br><span class="line">3: &quot;[object Boolean]&quot;</span><br><span class="line">4: &quot;[object Date]&quot;</span><br><span class="line">5: &quot;[object Arguments]&quot;</span><br><span class="line">6: &quot;[object RegExp]&quot;</span><br><span class="line">7: &quot;[object Function]&quot;</span><br><span class="line">8: &quot;[object Array]&quot;</span><br><span class="line">9: &quot;[object Error]&quot;</span><br></pre></td></tr></table></figure>
 <p><strong>修改数据类型</strong></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var o = &#123; [Symbol.toStringTag]: &quot;MyObject&quot; &#125;</span><br><span class="line">console.log(o + &quot;&quot;); // [object MyObject]</span><br></pre></td></tr></table></figure>
+<p><strong>对象分类</strong></p>
+<ul>
+<li>宿主对象：由JavaScript宿主环境提供的对象</li>
+<li>内置对象：由JavaScript语言提供的对象<ul>
+<li>固有对象：随着JavaScript运行时创建而自动创建的对象实例</li>
+<li>原生对象：可以由用户通过Array、RegExp等内置构造器或者特殊语法创建的对象</li>
+<li>普通对象：由{}语法、Object构造器或者class关键字定义类创建的对象，它能够被原型继承</li>
+</ul>
+</li>
+</ul>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/front-end/other/relearning-front-end/./native-object.png" alt="原生对象" title="">
+                </div>
+                <div class="image-caption">原生对象</div>
+            </figure>
+<p><strong>利用构造器实现私有变量</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">function cls()&#123;</span><br><span class="line">    this.a = 100;</span><br><span class="line">    return &#123;</span><br><span class="line">        getValue:() =&gt; this.a</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">var o = new cls;</span><br><span class="line">o.getValue(); //100</span><br><span class="line">//a 在外面永远无法访问到</span><br></pre></td></tr></table></figure></p>
+<h2 id="CSS"><a href="#CSS" class="headerlink" title="CSS"></a>CSS</h2><p><strong>at规则</strong></p>
+<ul>
+<li><a href="https://www.w3.org/TR/css-syntax-3/" target="_blank" rel="noopener">@charset</a></li>
+<li><a href="https://www.w3.org/TR/css-cascade-4/" target="_blank" rel="noopener">@import</a></li>
+<li><a href="https://www.w3.org/TR/css-conditional/" target="_blank" rel="noopener">@media</a></li>
+<li><a href="https://www.w3.org/TR/css-page-3/" target="_blank" rel="noopener">@page</a></li>
+<li><a href="https://www.w3.org/TR/css-counter-styles-3/" target="_blank" rel="noopener">@counter-style</a></li>
+<li><a href="https://www.w3.org/TR/css-animations-1/" target="_blank" rel="noopener">@keyframes</a></li>
+<li><a href="https://www.w3.org/TR/css-fonts-3/" target="_blank" rel="noopener">@fontface</a></li>
+<li><a href="https://www.w3.org/TR/css-conditional/" target="_blank" rel="noopener">@supports</a></li>
+<li><a href="https://www.w3.org/TR/css-namespaces-3/" target="_blank" rel="noopener">@namespace</a></li>
+</ul>
 
         </div>
 
@@ -243,7 +281,7 @@
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2019-03-03T13:02:56.760Z" itemprop="dateUpdated">2019-03-03 13:02:56</time>
+    最后更新时间：<time datetime="2019-03-10T16:12:05.578Z" itemprop="dateUpdated">2019-03-10 16:12:05</time>
 </span><br>
 
 
@@ -318,7 +356,14 @@
     </div>
 
     
-<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/front-end/js/design-pattern/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">设计模式</h4>
+      </a>
+    </div>
   
 
   

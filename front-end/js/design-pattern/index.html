@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>设计模式 | 薛鸿杰的博客</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#6C88B7">
+    
+    
+    <meta name="keywords" content="js">
+    <meta name="description" content="原则 开闭原则：对扩展开放，对修改关闭 里氏转换原则：子类继承父类，单独调完全可以运行 依赖倒转原则：引用一个对象，如果这个对象有底层类型，直接引用底层 接口格力原则：每一个接口应该是一种角色 合成/聚合复用原则：新的对象应使用一些已有的对象，使之成为新对象的一部分 迪米特原则：一个对象应对其他对象有尽可能少的了解  单例模式保证一个类只有一个实例，实现的方法一般是先判断实例存在与否，如果存在直接">
+<meta name="keywords" content="js">
+<meta property="og:type" content="article">
+<meta property="og:title" content="设计模式">
+<meta property="og:url" content="https://tragiclife.github.io/front-end/js/design-pattern/index.html">
+<meta property="og:site_name" content="薛鸿杰的博客">
+<meta property="og:description" content="原则 开闭原则：对扩展开放，对修改关闭 里氏转换原则：子类继承父类，单独调完全可以运行 依赖倒转原则：引用一个对象，如果这个对象有底层类型，直接引用底层 接口格力原则：每一个接口应该是一种角色 合成/聚合复用原则：新的对象应使用一些已有的对象，使之成为新对象的一部分 迪米特原则：一个对象应对其他对象有尽可能少的了解  单例模式保证一个类只有一个实例，实现的方法一般是先判断实例存在与否，如果存在直接">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-03-10T07:27:42.178Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="设计模式">
+<meta name="twitter:description" content="原则 开闭原则：对扩展开放，对修改关闭 里氏转换原则：子类继承父类，单独调完全可以运行 依赖倒转原则：引用一个对象，如果这个对象有底层类型，直接引用底层 接口格力原则：每一个接口应该是一种角色 合成/聚合复用原则：新的对象应使用一些已有的对象，使之成为新对象的一部分 迪米特原则：一个对象应对其他对象有尽可能少的了解  单例模式保证一个类只有一个实例，实现的方法一般是先判断实例存在与否，如果存在直接">
+    
+        <link rel="alternate" type="application/atom+xml" title="薛鸿杰的博客" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide">
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand2.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">薛鸿杰</h5>
+          <a href="mailto:xuehongjiej@163.com" title="xuehongjiej@163.com" class="mail">xuehongjiej@163.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/">
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives">
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags">
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/TragicLife" target="_blank">
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">设计模式</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">设计模式</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2019-03-05T10:49:34.000Z" itemprop="datePublished" class="page-time">
+  2019-03-05
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#原则"><span class="post-toc-number">1.</span> <span class="post-toc-text">原则</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#单例模式"><span class="post-toc-number">2.</span> <span class="post-toc-text">单例模式</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#作用"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">作用</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#注意事项"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">注意事项</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#示例"><span class="post-toc-number">2.3.</span> <span class="post-toc-text">示例</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#构造函数模式"><span class="post-toc-number">3.</span> <span class="post-toc-text">构造函数模式</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#作用-1"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">作用</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#注意事项-1"><span class="post-toc-number">3.2.</span> <span class="post-toc-text">注意事项</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#示例-1"><span class="post-toc-number">3.3.</span> <span class="post-toc-text">示例</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#建造者模式"><span class="post-toc-number">4.</span> <span class="post-toc-text">建造者模式</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#作用-2"><span class="post-toc-number">4.1.</span> <span class="post-toc-text">作用</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#注意事项-2"><span class="post-toc-number">4.2.</span> <span class="post-toc-text">注意事项</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#示例-2"><span class="post-toc-number">4.3.</span> <span class="post-toc-text">示例</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#工厂模式"><span class="post-toc-number">5.</span> <span class="post-toc-text">工厂模式</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#作用-3"><span class="post-toc-number">5.1.</span> <span class="post-toc-text">作用</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#注意事项-3"><span class="post-toc-number">5.2.</span> <span class="post-toc-text">注意事项</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#示例-3"><span class="post-toc-number">5.3.</span> <span class="post-toc-text">示例</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#外观模式"><span class="post-toc-number">6.</span> <span class="post-toc-text">外观模式</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#作用-4"><span class="post-toc-number">6.1.</span> <span class="post-toc-text">作用</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#注意事项-4"><span class="post-toc-number">6.2.</span> <span class="post-toc-text">注意事项</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#观察者模式"><span class="post-toc-number">7.</span> <span class="post-toc-text">观察者模式</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#作用-5"><span class="post-toc-number">7.1.</span> <span class="post-toc-text">作用</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#注意事项-5"><span class="post-toc-number">7.2.</span> <span class="post-toc-text">注意事项</span></a></li></ol></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-front-end/js/design-pattern" class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">设计模式</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2019-03-05 10:49:34" datetime="2019-03-05T10:49:34.000Z" itemprop="datePublished">2019-03-05</time>
+
+            
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style="display:none">
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h2 id="原则"><a href="#原则" class="headerlink" title="原则"></a>原则</h2><ul>
+<li><strong>开闭原则</strong>：对扩展开放，对修改关闭</li>
+<li><strong>里氏转换原则</strong>：子类继承父类，单独调完全可以运行</li>
+<li><strong>依赖倒转原则</strong>：引用一个对象，如果这个对象有底层类型，直接引用底层</li>
+<li><strong>接口格力原则</strong>：每一个接口应该是一种角色</li>
+<li><strong>合成/聚合复用原则</strong>：新的对象应使用一些已有的对象，使之成为新对象的一部分</li>
+<li><strong>迪米特原则</strong>：一个对象应对其他对象有尽可能少的了解</li>
+</ul>
+<h2 id="单例模式"><a href="#单例模式" class="headerlink" title="单例模式"></a>单例模式</h2><p>保证一个类只有一个实例，实现的方法一般是先判断实例存在与否，如果存在直接返回，如果不存在就创建了在返回。</p>
+<h3 id="作用"><a href="#作用" class="headerlink" title="作用"></a>作用</h3><ol>
+<li>模块间通信</li>
+<li>系统中某个类的对象只能存在一个</li>
+<li>保护自己的属性和方法</li>
+</ol>
+<h3 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h3><ol>
+<li>注意this的使用</li>
+<li>闭包容易造成内存泄漏，不需要的赶快干掉</li>
+<li>注意new的成本</li>
+</ol>
+<h3 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">var Single = function( name )&#123;</span><br><span class="line">    this.name = name;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">Single.prototype.getName = function()&#123;</span><br><span class="line">　　 alert ( this.name );</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">Single.getInstance = (function()&#123;</span><br><span class="line">  var instance = null;</span><br><span class="line">  return function( name )&#123;</span><br><span class="line">    if ( !instance )&#123;</span><br><span class="line">      instance = new Single( name );</span><br><span class="line">    &#125;</span><br><span class="line">    return instance;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)();</span><br></pre></td></tr></table></figure>
+<h2 id="构造函数模式"><a href="#构造函数模式" class="headerlink" title="构造函数模式"></a>构造函数模式</h2><p>用于创建特定类型的对象。不仅声明了使用的对象，构造函数还可以接受参数以便第一次创建对象的时候设置对象的成员值。可以自定义自己的构造函数，然后在里面声明自定义类型对象的属性或方法。</p>
+<h3 id="作用-1"><a href="#作用-1" class="headerlink" title="作用"></a>作用</h3><ol>
+<li>用于创建特定类型的对象</li>
+<li>第一次声明的时候给对象赋值</li>
+<li>自己声明构造函数，赋予属性和方法</li>
+</ol>
+<h3 id="注意事项-1"><a href="#注意事项-1" class="headerlink" title="注意事项"></a>注意事项</h3><ol>
+<li>声明函数的时候处理业务逻辑</li>
+<li>区分和单例的区别，配合单例实现初始化</li>
+<li>构造函数建议大写字母开头</li>
+<li>注意new的成本</li>
+</ol>
+<h3 id="示例-1"><a href="#示例-1" class="headerlink" title="示例"></a>示例</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">function Person(name,age,job)&#123;</span><br><span class="line">  this.name = name;</span><br><span class="line">  this.age = age;</span><br><span class="line">  this.job = job;</span><br><span class="line">  this.sayName = function()&#123;</span><br><span class="line">    alert(this.name);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="建造者模式"><a href="#建造者模式" class="headerlink" title="建造者模式"></a>建造者模式</h2><p>将一个复杂对象的构建与其表示相分离，使得同样的构建过程可以创建不同的表示。也就是说用户只需要指定需要建造的类型就可以得到它们，不需要知道具体的建造过程和细节。</p>
+<h3 id="作用-2"><a href="#作用-2" class="headerlink" title="作用"></a>作用</h3><ol>
+<li>分步创建一个复杂的对象</li>
+<li>解耦封装过程和具体创建的组件</li>
+<li>无需关心组件如何组装</li>
+</ol>
+<h3 id="注意事项-2"><a href="#注意事项-2" class="headerlink" title="注意事项"></a>注意事项</h3><ol>
+<li>一定要一个稳定的算法进行支持</li>
+<li>加工工艺是暴露的</li>
+</ol>
+<h3 id="示例-2"><a href="#示例-2" class="headerlink" title="示例"></a>示例</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">function Fangzi()&#123;</span><br><span class="line">	this.woshi = &quot;&quot;;</span><br><span class="line">	this.keting = &quot;&quot;;</span><br><span class="line">	this.chufang = &quot;&quot;;</span><br><span class="line">&#125;</span><br><span class="line">function Baogongtou()&#123;</span><br><span class="line">  this.gaifangzi = function(gongren)&#123;</span><br><span class="line">    gongren.jian_woshi();</span><br><span class="line">    gongren.jian_keting();</span><br><span class="line">    gongren.jian_chufang();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">function Gongren()&#123;</span><br><span class="line">	this.jian_woshi = function()&#123;</span><br><span class="line">		console.log(&quot;卧室我盖好了&quot;);</span><br><span class="line">	&#125;</span><br><span class="line">	this.jian_keting = function()&#123;</span><br><span class="line">		console.log(&quot;客厅建好了&quot;);</span><br><span class="line">	&#125;</span><br><span class="line">	this.jian_chufang = function()&#123;</span><br><span class="line">		console.log(&quot;厨房建好了&quot;);</span><br><span class="line">	&#125;</span><br><span class="line">	this.jiaogong = function()&#123;</span><br><span class="line">		var _fangzi = new Fangzi();</span><br><span class="line">		_fangzi.woshi = &quot;ok&quot;;</span><br><span class="line">		_fangzi.keting = &quot;ok&quot;;</span><br><span class="line">		_fangzi.chufang = &quot;ok&quot;;</span><br><span class="line">		return _fangzi;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">var gongren = new Gongren();</span><br><span class="line">var baogongtou = new Baogongtou();</span><br><span class="line">baogongtou.gaifangzi(gongren);</span><br><span class="line">//主人要房子</span><br><span class="line">var myfangzi = gongren.jiaogong();</span><br><span class="line">console.log(myfangzi);</span><br></pre></td></tr></table></figure>
+<h2 id="工厂模式"><a href="#工厂模式" class="headerlink" title="工厂模式"></a>工厂模式</h2><p>定义一个用于创建对象的接口，这个接口由子类决定实例化哪一个类。该模式使一个类的实例化延迟到了子类。而子类可以重写接口方法<br>以便创建的时候指定自己的对象类型(抽象工厂)。</p>
+<ul>
+<li>简单工厂：直接处理。</li>
+<li>抽象工厂：只留接口，不作处理。</li>
+</ul>
+<h3 id="作用-3"><a href="#作用-3" class="headerlink" title="作用"></a>作用</h3><p>1.对象的构建十分复杂。<br>2.需要依赖具体的环境创建不同实例。<br>3.处理大量具有相同属性的小对象。</p>
+<h3 id="注意事项-3"><a href="#注意事项-3" class="headerlink" title="注意事项"></a>注意事项</h3><p>1.不能滥用工厂，有时候仅仅是给代码增加复杂度。</p>
+<h3 id="示例-3"><a href="#示例-3" class="headerlink" title="示例"></a>示例</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">// 简单工厂</span><br><span class="line">var XMLHttpFactory = function() &#123;&#125;</span><br><span class="line">XMLHttpFactory.createXMLHttp = function() &#123;</span><br><span class="line">  var XMLHttp = null;</span><br><span class="line">  if(window.XMLHttpRequest) &#123;</span><br><span class="line">    XMLHttp = new XMLHttpRequest()</span><br><span class="line">  &#125; else if(window.ActiveXObject) &#123;</span><br><span class="line">    XMLHttp = new ActiveXObject(&apos;Microsoft.XMLHTTP&apos;)</span><br><span class="line">  &#125;</span><br><span class="line">  return XMLHttp</span><br><span class="line">&#125;</span><br><span class="line">var ajaxHandler = function() &#123;</span><br><span class="line">  var XMLHttp = XMLHttpFactory.createXMLHttp()</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// 抽象工厂</span><br><span class="line">var XMLHttpFactory = function() &#123;&#125;</span><br><span class="line">XMLHttpFactory.prototype = &#123;</span><br><span class="line">  createFactory: function() &#123;</span><br><span class="line">    throw new Error(&apos;This is a abstract class&apos;)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var XHRHandler = function() &#123;</span><br><span class="line">  XMLHttpFactory.call(this)</span><br><span class="line">&#125;</span><br><span class="line">XHRHandler.prototype = new XMLHttpFactory()</span><br><span class="line">XHRHandler.prototype.constructor = XHRHandler</span><br><span class="line">XHRHandler.prototype.createFactory = function() &#123;</span><br><span class="line">  var XMLHttp = null;</span><br><span class="line">  if(window.XMLHttpRequest) &#123;</span><br><span class="line">    XMLHttp = new XMLHttpRequest()</span><br><span class="line">  &#125; else if(window.ActiveXObject) &#123;</span><br><span class="line">    XMLHttp = new ActiveXObject(&apos;Microsoft.XMLHTTP&apos;)</span><br><span class="line">  &#125;</span><br><span class="line">  return XMLHttp</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="外观模式"><a href="#外观模式" class="headerlink" title="外观模式"></a>外观模式</h2><p>为子系统中的一组接口提供了一个一致的界面，此模块定义了一个高层接口，这个接口使得这一子系统更加容易使用。</p>
+<h3 id="作用-4"><a href="#作用-4" class="headerlink" title="作用"></a>作用</h3><ol>
+<li>在设计初期，应该要有意识地将不同的两个层分离，</li>
+<li>在开发阶段，子系统往往因为不断的重构演化而变得越来越复杂，增加外观F可以提供一个简单的接口，减少他们之间的依赖</li>
+<li>在维护一个遗留的大型系统时，为系统开发一个外观Facade类，为设计粗糙和高度复杂的遗留代码提供比较清晰的接口，让新系统和Facade对象交互</li>
+</ol>
+<h3 id="注意事项-4"><a href="#注意事项-4" class="headerlink" title="注意事项"></a>注意事项</h3><p>外观模式被开发者连续使用时会产生一定的性能问题，因为在每次调用时都要检测功能的可用性</p>
+<h2 id="观察者模式"><a href="#观察者模式" class="headerlink" title="观察者模式"></a>观察者模式</h2><p>又称为发布订阅模式(Publish/Subscribe)，它定义了一种一对多的关系，让多个观察者对象同事监听某一个主题对象，这个主题对象的状态发生变化时就会通知所有的观察者对象，使得它们能够自动更新自己。</p>
+<h3 id="作用-5"><a href="#作用-5" class="headerlink" title="作用"></a>作用</h3><ol>
+<li>支持简单的广播通信，自动通知所有已经订阅过的对象</li>
+<li>页面载入后目标对象很容易与观察者存在一种动态关联，增加了灵活性</li>
+<li>目标对象与观察者之间的抽象耦合关系能够单独扩展以及重用</li>
+</ol>
+<h3 id="注意事项-5"><a href="#注意事项-5" class="headerlink" title="注意事项"></a>注意事项</h3><p>监听要在触发之前</p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2019-03-10T07:27:42.178Z" itemprop="dateUpdated">2019-03-10 07:27:42</time>
+</span><br>
+
+
+        
+        以上内容为个人记录
+        
+    </div>
+    
+    <footer>
+        <a href="https://tragiclife.github.io">
+            <img src="/img/avatar.jpg" alt="薛鸿杰">
+            薛鸿杰
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://tragiclife.github.io/front-end/js/design-pattern/&title=《设计模式》 — 薛鸿杰的博客&pic=https://tragiclife.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://tragiclife.github.io/front-end/js/design-pattern/&title=《设计模式》 — 薛鸿杰的博客&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://tragiclife.github.io/front-end/js/design-pattern/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《设计模式》 — 薛鸿杰的博客&url=https://tragiclife.github.io/front-end/js/design-pattern/&via=https://tragiclife.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://tragiclife.github.io/front-end/js/design-pattern/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/front-end/other/relearning-front-end/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">极客重学前端的记录</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <!-- <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style="display:none">
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style="display:none">
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div> -->
+    <div class="bottom">
+        <p><span>薛鸿杰 &copy; 2018 - 2019</span>
+            <span>
+                
+                <a href="http://www.miitbeian.gov.cn/" target="_blank">粤ICP备18140620号-1</a><br>
+                
+                <!-- Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a> -->
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://tragiclife.github.io/front-end/js/design-pattern/&title=《设计模式》 — 薛鸿杰的博客&pic=https://tragiclife.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://tragiclife.github.io/front-end/js/design-pattern/&title=《设计模式》 — 薛鸿杰的博客&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://tragiclife.github.io/front-end/js/design-pattern/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《设计模式》 — 薛鸿杰的博客&url=https://tragiclife.github.io/front-end/js/design-pattern/&via=https://tragiclife.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://tragiclife.github.io/front-end/js/design-pattern/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACMElEQVR42u3aQW7DMAwFUd//0u42gBtnPukEEDVeBYUs62nBSiSPAz/ny/P6l3djriOv46/z3I984JEhQ8ayjPP24R94N4bM2RkjQ4aMfRgkFJJl8Xf5t+7XJkOGDBlkKTx03n+XvCVDhgwZhEGOfWR+vkEyZMiQkYZLcqU8288X7+IyZMhYkMGz7r///ZX6hgwZMpZi1IIgn6dzxAxWJUOGjNEMHuB4Ei1NydUCrgwZMvZhpM0TPBzzNFxa4Dxq+TwZMmQsy6jdEzvbkYLTIqgMGTLmMdLUP2+hIGGUbAfaOBkyZIxmpIGVfzJt+XoMIEOGjKEMEnbToNyBFU+yMmTI2IDBk2i8eJmWMNN/A/+cc2XIkDGOQUJeuggy233g5qVTGTJk7MDoXGUJtdZswYP7AzdyGTJkLMJISwL8Scuf/OAoQ4aMfRid1BgvGKRHvRgjQ4aMbRhpCOblxhRf7FmTIUPGUAZ/rVPaTGd4oNlChgwZQxnpsngijIfjTkOGDBkydmDUXibXUZ6MSw+Ib5NuMmTIGMrgaX2+aH4NTkfKkCFjZ0aahuuk/tO0Gmq2kCFDxjhGrXmCwNJCZi1hJ0OGjB0Y/WDHj279sM4TeTJkyJjH4BfRWkBMd7TWIiZDhowdGP0ra1rOrF1oP1xlZciQISMcw5P7QVMFqhLIkCFDRqWo0E/PfdggGTJkbMCotVzUmjP4FZpvnwwZMmYznjp3pcmyTsmzVd+QIUPGSow/iOz6CG/HDMYAAAAASUVORK5CYII=" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+</body>
+</html>
