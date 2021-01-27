@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>玩转webpack-webpack构建配置 | 薛鸿杰的博客</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#6C88B7">
+    
+    
+    <meta name="keywords" content="tool,webpack,极客时间">
+    <meta name="description" content="构建配置可选方案 通过多个配置文件管理不同环境的构建，webpack --config 参数进行控制 将构建配置设计成一个库，比如：hjs-webpack、Neutrino、webpack-blocks 抽成一个工具进行管理，比如：create-react-app, kyt, nwb 将所有的配置放在一个文件，通过 --env 参数控制分支选择  构建配置包设计通过多个配置文件管理不同环境的 we">
+<meta name="keywords" content="tool,webpack,极客时间">
+<meta property="og:type" content="article">
+<meta property="og:title" content="玩转webpack-webpack构建配置">
+<meta property="og:url" content="https://tragiclife.github.io/front-end/geektime/webpack/building-configurationn/index.html">
+<meta property="og:site_name" content="薛鸿杰的博客">
+<meta property="og:description" content="构建配置可选方案 通过多个配置文件管理不同环境的构建，webpack --config 参数进行控制 将构建配置设计成一个库，比如：hjs-webpack、Neutrino、webpack-blocks 抽成一个工具进行管理，比如：create-react-app, kyt, nwb 将所有的配置放在一个文件，通过 --env 参数控制分支选择  构建配置包设计通过多个配置文件管理不同环境的 we">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2020-04-19T07:23:57.289Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="玩转webpack-webpack构建配置">
+<meta name="twitter:description" content="构建配置可选方案 通过多个配置文件管理不同环境的构建，webpack --config 参数进行控制 将构建配置设计成一个库，比如：hjs-webpack、Neutrino、webpack-blocks 抽成一个工具进行管理，比如：create-react-app, kyt, nwb 将所有的配置放在一个文件，通过 --env 参数控制分支选择  构建配置包设计通过多个配置文件管理不同环境的 we">
+    
+        <link rel="alternate" type="application/atom+xml" title="薛鸿杰的博客" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide">
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand2.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">薛鸿杰</h5>
+          <a href="mailto:xuehongjiej@163.com" title="xuehongjiej@163.com" class="mail">xuehongjiej@163.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/">
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives">
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags">
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/TragicLife" target="_blank">
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">玩转webpack-webpack构建配置</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">玩转webpack-webpack构建配置</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2020-04-06T10:20:23.000Z" itemprop="datePublished" class="page-time">
+  2020-04-06
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#构建配置可选方案"><span class="post-toc-number">1.</span> <span class="post-toc-text">构建配置可选方案</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#构建配置包设计"><span class="post-toc-number">2.</span> <span class="post-toc-text">构建配置包设计</span></a></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-front-end/geektime/webpack/building-configurationn" class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">玩转webpack-webpack构建配置</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2020-04-06 10:20:23" datetime="2020-04-06T10:20:23.000Z" itemprop="datePublished">2020-04-06</time>
+
+            
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style="display:none">
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h2 id="构建配置可选方案"><a href="#构建配置可选方案" class="headerlink" title="构建配置可选方案"></a>构建配置可选方案</h2><ul>
+<li>通过多个配置文件管理不同环境的构建，<code>webpack --config</code> 参数进行控制</li>
+<li>将构建配置设计成一个库，比如：<code>hjs-webpack</code>、<code>Neutrino</code>、<code>webpack-blocks</code></li>
+<li>抽成一个工具进行管理，比如：<code>create-react-app</code>, <code>kyt</code>, <code>nwb</code></li>
+<li>将所有的配置放在一个文件，通过 <code>--env</code> 参数控制分支选择</li>
+</ul>
+<h2 id="构建配置包设计"><a href="#构建配置包设计" class="headerlink" title="构建配置包设计"></a>构建配置包设计</h2><p>通过多个配置文件管理不同环境的 webpack 配置</p>
+<ul>
+<li>基础配置：webpack.base.js</li>
+<li>开发环境：webpack.dev.js</li>
+<li>生产环境：webpack.prod.js</li>
+<li>SSR 环境：webpack.ssr.js</li>
+</ul>
+<p>·规范：Git commit 日志、README、ESLint 规范、Semver 规范<br>·质量：冒烟测试、单元测试、测试覆盖率和 CI<br>·SSR 环境：webpack.ssr.js</p>
+<p><code>npm version patch</code> // 更新小版本，bug 修复</p>
+<hr>
+<p>提交格式要求</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;type&gt;(&lt;scope&gt;): &lt;subject&gt;</span><br></pre></td></tr></table></figure>
+<p>type 代表某次提交的类型，比如是修复一个 bug 还是增加一个新的 feature<br>type 可选值：</p>
+<ul>
+<li>feat</li>
+</ul>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2020-04-19T07:23:57.289Z" itemprop="dateUpdated">2020-04-19 07:23:57</time>
+</span><br>
+
+
+        
+        以上内容为个人记录
+        
+    </div>
+    
+    <footer>
+        <a href="https://tragiclife.github.io">
+            <img src="/img/avatar.jpg" alt="薛鸿杰">
+            薛鸿杰
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/tool/">tool</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/webpack/">webpack</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/极客时间/">极客时间</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://tragiclife.github.io/front-end/geektime/webpack/building-configurationn/&title=《玩转webpack-webpack构建配置》 — 薛鸿杰的博客&pic=https://tragiclife.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://tragiclife.github.io/front-end/geektime/webpack/building-configurationn/&title=《玩转webpack-webpack构建配置》 — 薛鸿杰的博客&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://tragiclife.github.io/front-end/geektime/webpack/building-configurationn/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《玩转webpack-webpack构建配置》 — 薛鸿杰的博客&url=https://tragiclife.github.io/front-end/geektime/webpack/building-configurationn/&via=https://tragiclife.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://tragiclife.github.io/front-end/geektime/webpack/building-configurationn/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/front-end/geektime/git/basic/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">玩转Git-基础篇</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/front-end/geektime/webpack/advance/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">玩转webpack-webpack进阶用法</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <!-- <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style="display:none">
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style="display:none">
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div> -->
+    <div class="bottom">
+        <p><span>薛鸿杰 &copy; 2018 - 2021</span>
+            <span>
+                
+                <a href="https://beian.miit.gov.cn/" target="_blank">粤ICP备18140620号-1</a><br>
+                
+                <!-- Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a> -->
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://tragiclife.github.io/front-end/geektime/webpack/building-configurationn/&title=《玩转webpack-webpack构建配置》 — 薛鸿杰的博客&pic=https://tragiclife.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://tragiclife.github.io/front-end/geektime/webpack/building-configurationn/&title=《玩转webpack-webpack构建配置》 — 薛鸿杰的博客&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://tragiclife.github.io/front-end/geektime/webpack/building-configurationn/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《玩转webpack-webpack构建配置》 — 薛鸿杰的博客&url=https://tragiclife.github.io/front-end/geektime/webpack/building-configurationn/&via=https://tragiclife.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://tragiclife.github.io/front-end/geektime/webpack/building-configurationn/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACq0lEQVR42u3aW44iMRAEQO5/afYAq2ayXuysFP2F6IF2GMmuyfLrFV/vh+vvv3n61Odvfnr9dHf5wsPDw1saev6w/O7n9/Ppyz+Fh4eHd8fLl+x80JOJqI7n8X08PDy8X8PLh5vUunlVjIeHh/c/8t7xNRl0b+Lw8PDwvslLwogktO0Fwb0oZDlrwcPDw+uv2OU21fdfn/T38PDw8MZd9d4mkSzr1UMJzdHi4eHhHfDyBbcaMSRbSzVcaI4TDw8P74CXLMGf369SqxHDwgECPDw8vCVer71UDU/zMj3/NaLP4uHh4Z3x8gNV+YLeW+h70/FDDIGHh4e3yksGVz0ukByimm8MozYYHh4e3jGvGjpUDz8l05E8K9r98PDw8Ma8vGhOGle90HYrey6EEXh4eHgD3qQd1Wv/T56bh8t4eHh417y8kO2VvHmQkS/6hcNYeHh4eKu8XnRbXZrzBltvK3p8Ih4eHt4ZrxcHJKT86EBeOo+KaTw8PLwxb96gqvboc2RS7udTg4eHh7fFm0Sl1eC1OtMLZToeHh7eVQJQiHSTx1SPavXCiOYhBjw8PLwzXrUNVj0icHcE4ZXPKB4eHt6AN2lBbR0ayBf98gkBPDw8vFVe9V/6eQuqCkhG8vgD4OHh4R3w8vb8wv5TjFwn0TAeHh7eNa+6rM9D22qxvtD0wsPDwzvm9Y49TUrz3j4WjQQPDw/vjJfD8kgin5rqRBQ2Dzw8PLxV3rt4bcUQk7ZZYYrx8PDwDnjVBTcJeavlcjW0rYbLeHh4eBe83levtfNXy3o8PDy8b/LyR+Ylb764zzet8m08PDy8f8rL21S9CaqODQ8PD+938pLW13yTmEfMeHh4eHe8PGatNqjyRby3GfxAxcPDwzvgzRv8n6mTBn9vovHw8PDOeH8AaCwNAY5i0PEAAAAASUVORK5CYII=" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+</body>
+</html>

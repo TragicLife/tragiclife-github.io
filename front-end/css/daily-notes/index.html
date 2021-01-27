@@ -29,7 +29,7 @@
 <meta property="og:site_name" content="薛鸿杰的博客">
 <meta property="og:description" content="命名规范BEM(block element modifier) 常用的屏幕大小手机屏：&amp;lt;768pad屏：≥768显示器：≥992大屏显示器：≥1200 禁止文本选中1user-select:none 链接的伪类  :link  // 初始 :visited  // 访问后 :hover  // 鼠标悬停时 :active  // 点击时  浮动问题子元素都为float，则父元素需要设置flo">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-02-21T04:04:48.603Z">
+<meta property="og:updated_time" content="2020-03-01T15:28:57.541Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="日常小记-样式">
 <meta name="twitter:description" content="命名规范BEM(block element modifier) 常用的屏幕大小手机屏：&amp;lt;768pad屏：≥768显示器：≥992大屏显示器：≥1200 禁止文本选中1user-select:none 链接的伪类  :link  // 初始 :visited  // 访问后 :hover  // 鼠标悬停时 :active  // 点击时  浮动问题子元素都为float，则父元素需要设置flo">
@@ -253,6 +253,13 @@
 </ul>
 <p><strong>元素容器宽度固定，当元素超出容器时整个元素换行处理</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=&quot;container&quot;&gt;</span><br><span class="line">  &lt;div class=&quot;item&quot;&gt;123&lt;/div&gt;</span><br><span class="line">  &lt;div class=&quot;item&quot;&gt;123&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">方法一</span><br><span class="line">.item &#123;</span><br><span class="line">  display: inline-block;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">方法二</span><br><span class="line">.container &#123;</span><br><span class="line">  display: flex;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p><strong>实现半圆阴影</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">.half_circle &#123;</span><br><span class="line">  position: absolute;</span><br><span class="line">  top: 50%;</span><br><span class="line">  left: -.25rem;</span><br><span class="line">  z-index: 1;</span><br><span class="line">  width: .2rem;</span><br><span class="line">  height: .2rem;</span><br><span class="line">  border-radius: 50%;</span><br><span class="line">  transform: translate(0, -50%);</span><br><span class="line">  /*background: radial-gradient(circle, #fbfbfb 10px, #fff);*/</span><br><span class="line">  box-shadow: inset 0 0 10px 0 rgba(0, 0, 0, .1);</span><br><span class="line">  &amp;:before &#123;</span><br><span class="line">    content: &apos;&apos;;</span><br><span class="line">    position: absolute;</span><br><span class="line">    top: 0;</span><br><span class="line">    left: 0;</span><br><span class="line">    z-index: 3;</span><br><span class="line">    width: .1rem;</span><br><span class="line">    height: .2rem;</span><br><span class="line">    background: linear-gradient(to left, rgb(250, 250, 250), #fff);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p><strong>实现字体图标渐变</strong><br>核心思想为下面 3 条属性值。</p>
+<ol>
+<li><code>background: -webkit-linear-gradient(-45deg, #caff55 20%, #45cd00 60%);</code> // 设置渐变的背景</li>
+<li><code>-webkit-background-clip: text;</code> // 规定背景的绘制区域为文字区域<br> 这个属性还有其他值：<br> <code>border-box</code> (默认)    背景被剪裁到边框盒<br> <code>padding-box</code>          背景被剪裁到内边距框<br> <code>content-box</code>          背景被剪裁到内容框</li>
+<li><code>-webkit-text-fill-color: transparent;</code>  // 文字填充颜色（这里一定要设置 transparent，不然会覆盖底部的背景色）</li>
+</ol>
+<p><strong>适配iphoneX</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">.container &#123;</span><br><span class="line">    $actionHeight: 56px;</span><br><span class="line">    padding-bottom: $actionHeight;</span><br><span class="line">    padding-bottom: calc(env(safe-area-inset-bottom) + 56px);</span><br><span class="line">    padding-bottom: calc(constant(safe-area-inset-bottom) + 56px);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><ul>
 <li>浏览器html默认字体大小为16px，设置font-size为62.5%后可换算为10px</li>
 <li>只有块级元素或者行内块元素transform属性才回生效</li>
@@ -264,6 +271,7 @@
 <li>ie浏览器的option标签不可改变样式、不触发事件(由select触发)</li>
 <li>伪对象after和before相当于内联元素</li>
 <li>使用inline-block边距会多出4个像素，可通过font-size:0去除</li>
+<li>需要右边框且超出省略时可以用丨(gun)来代替</li>
 </ul>
 
         </div>
@@ -273,7 +281,7 @@
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2019-02-21T04:04:48.603Z" itemprop="dateUpdated">2019-02-21 04:04:48</time>
+    最后更新时间：<time datetime="2020-03-01T15:28:57.541Z" itemprop="dateUpdated">2020-03-01 15:28:57</time>
 </span><br>
 
 
@@ -417,10 +425,10 @@
         </p>
     </div> -->
     <div class="bottom">
-        <p><span>薛鸿杰 &copy; 2018 - 2019</span>
+        <p><span>薛鸿杰 &copy; 2018 - 2021</span>
             <span>
                 
-                <a href="http://www.miitbeian.gov.cn/" target="_blank">粤ICP备18140620号-1</a><br>
+                <a href="https://beian.miit.gov.cn/" target="_blank">粤ICP备18140620号-1</a><br>
                 
                 <!-- Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a> -->
             </span>

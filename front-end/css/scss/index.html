@@ -29,7 +29,7 @@
 <meta property="og:site_name" content="薛鸿杰的博客">
 <meta property="og:description" content="官方文档 安装需要安装sass、sass-loader、node-sass、node-gyp安装node-sass之前需要先安装npm-cli和node-gyp 定义定义变量使用$符定义变量，即$color 定义用于继承的类使用%定义，定义的class不编译 定义列表$list: first second third; 定义混合样式通过@mixin定义，@include引入 继承使用@extend">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-01-11T16:22:54.768Z">
+<meta property="og:updated_time" content="2020-03-01T15:25:58.898Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="scss">
 <meta name="twitter:description" content="官方文档 安装需要安装sass、sass-loader、node-sass、node-gyp安装node-sass之前需要先安装npm-cli和node-gyp 定义定义变量使用$符定义变量，即$color 定义用于继承的类使用%定义，定义的class不编译 定义列表$list: first second third; 定义混合样式通过@mixin定义，@include引入 继承使用@extend">
@@ -188,6 +188,7 @@
 <li>使用url()函数引用时</li>
 <li>import后面带有media queries的时候</li>
 </ol>
+<p><strong>设置底部安全距离</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">/* 底部安全距离 */</span><br><span class="line">@mixin safe-bottom($distance: 0) &#123;</span><br><span class="line">  padding-bottom: #&#123;$distance&#125;px;</span><br><span class="line">  padding-bottom: calc(constant(safe-area-inset-bottom) + #&#123;$distance&#125;px); /* 兼容 iOS &lt; 11.2 */</span><br><span class="line">  padding-bottom: calc(env(safe-area-inset-bottom) + #&#123;$distance&#125;px); /* 兼容 iOS &gt;= 11.2 */</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><ul>
 <li>文件名前面带_表示不编译成css文件，直接引入其他文件</li>
 <li>使用#{$width}包裹变量，避免做除法运算</li>
@@ -195,6 +196,7 @@
 <li><code>.error {&amp;.instrusion {}}  .serious {@extend .error}</code>该继承会生成.serious.instrusion的样式</li>
 <li>extend不能继承嵌套选择器，如.A .B</li>
 <li>使用@at-root将样式提取到最外层，用法@at-root {.main {}}</li>
+<li>7以下版本的深度选择器使用/deep/，8版本开始使用&gt;&gt;&gt;</li>
 </ul>
 
         </div>
@@ -204,7 +206,7 @@
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2019-01-11T16:22:54.768Z" itemprop="dateUpdated">2019-01-11 16:22:54</time>
+    最后更新时间：<time datetime="2020-03-01T15:25:58.898Z" itemprop="dateUpdated">2020-03-01 15:25:58</time>
 </span><br>
 
 
@@ -348,10 +350,10 @@
         </p>
     </div> -->
     <div class="bottom">
-        <p><span>薛鸿杰 &copy; 2018 - 2019</span>
+        <p><span>薛鸿杰 &copy; 2018 - 2021</span>
             <span>
                 
-                <a href="http://www.miitbeian.gov.cn/" target="_blank">粤ICP备18140620号-1</a><br>
+                <a href="https://beian.miit.gov.cn/" target="_blank">粤ICP备18140620号-1</a><br>
                 
                 <!-- Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a> -->
             </span>

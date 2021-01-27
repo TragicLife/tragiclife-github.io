@@ -141,6 +141,430 @@
     <ul class="post-list">
     
         <li class="post-list-item fade">
+            <article id="post-front-end/tools/webpack" class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2019-01-24 23:21:54" datetime="2019-01-24T23:21:54.000Z" itemprop="datePublished">2019-01-24</time>
+
+        
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/front-end/tools/webpack/">webpack</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        api
+webpack打包模块的源代码
+把所有模块的代码放入到函数中，用一个数组保存起来
+根据require时传入的数组索引，能知道需要哪一段代码
+从数组中，根据索引取出包含我们代码的函数
+执行该函数，传入一个对象 module.exports
+我们的代码，按照约定，正好是用module.exports = ‘’进行赋值
+调用函数结束后，module.exports从原来的空对象，就有值了
+...
+    
+
+        <a href="/front-end/tools/webpack/" class="post-more waves-effect waves-button">
+            阅读全文…
+        </a>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/tool/">tool</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/webpack/">webpack</a></li></ul>
+
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-front-end/tools/git" class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2019-01-23 22:08:19" datetime="2019-01-23T22:08:19.000Z" itemprop="datePublished">2019-01-23</time>
+
+        
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/front-end/tools/git/">Git</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        参考资料
+查看、配置用户信息设置全局用户信息(用户名和邮件)git config --global user.name &quot;xxx&quot;git config --global user.email &quot;xxx@xx.com&quot;
+查看用户信息git config user.namegit config user.email
+配置别名git config --glo...
+    
+
+        <a href="/front-end/tools/git/" class="post-more waves-effect waves-button">
+            阅读全文…
+        </a>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Git/">Git</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/tool/">tool</a></li></ul>
+
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-front-end/tools/npm" class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2019-01-20 23:21:54" datetime="2019-01-20T23:21:54.000Z" itemprop="datePublished">2019-01-20</time>
+
+        
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/front-end/tools/npm/">npm</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        NPM的全称是Node Package Manager，是随同NodeJS一起安装的包管理和分发工具，它很方便让JavaScript开发者下载、安装、上传以及管理已经安装的包。
+仓库设置设置淘宝仓库npm config set registry https://registry.npm.taobao.orgnpm install --registry=https://registry.npm...
+    
+
+        <a href="/front-end/tools/npm/" class="post-more waves-effect waves-button">
+            阅读全文…
+        </a>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/npm/">npm</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/tool/">tool</a></li></ul>
+
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-front-end/html/emmet" class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2019-01-20 23:16:41" datetime="2019-01-20T23:16:41.000Z" itemprop="datePublished">2019-01-20</time>
+
+        
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/front-end/html/emmet/">HTML快捷生成</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        HTML初始化html:5 或!：用于HTML5文档类型html:xt：用于XHTML过渡文档类型html:4s：用于HTML4严格文档类型
+添加类、id、属性、文本a.bar#foo[href=#]{foo}类：.barid：#foo属性：[href=#]文本：{foo}
+嵌套&gt;：子元素符号，表示嵌套的元素+：同级标签符号^：可以使该符号前的标签提升一行(提升为上级节点)
+分组(.f...
+    
+
+        <a href="/front-end/html/emmet/" class="post-more waves-effect waves-button">
+            阅读全文…
+        </a>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/emmet/">emmet</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/html/">html</a></li></ul>
+
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-front-end/tools/fiddler" class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2019-01-12 00:23:36" datetime="2019-01-12T00:23:36.000Z" itemprop="datePublished">2019-01-12</time>
+
+        
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/front-end/tools/fiddler/">Fiddler</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        界面按钮功能Replay   重新发起请求，快捷键RGo  用于断点调试Stream  流切换(按下为流模式，弹起为缓存模式)keep  保留回话数(电脑性能不好的情况下不要选择All sessions)Any Process  限定捕捉的服务Find  查找Save  保存现在的请求，可通过File→Recent Archives选中刚才保存的文件进行还原
+statistics  数据统计...
+    
+
+        <a href="/front-end/tools/fiddler/" class="post-more waves-effect waves-button">
+            阅读全文…
+        </a>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Fiddler/">Fiddler</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/tool/">tool</a></li></ul>
+
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-front-end/css/scss" class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2019-01-10 22:06:53" datetime="2019-01-10T22:06:53.000Z" itemprop="datePublished">2019-01-10</time>
+
+        
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/front-end/css/scss/">scss</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        官方文档
+安装需要安装sass、sass-loader、node-sass、node-gyp安装node-sass之前需要先安装npm-cli和node-gyp
+定义定义变量使用$符定义变量，即$color
+定义用于继承的类使用%定义，定义的class不编译
+定义列表$list: first second third;
+定义混合样式通过@mixin定义，@include引入
+继承使用@ext...
+    
+
+        <a href="/front-end/css/scss/" class="post-more waves-effect waves-button">
+            阅读全文…
+        </a>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/css/">css</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/scss/">scss</a></li></ul>
+
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-front-end/js/throttle-and-debounce" class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2019-01-05 22:44:02" datetime="2019-01-05T22:44:02.000Z" itemprop="datePublished">2019-01-05</time>
+
+        
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/front-end/js/throttle-and-debounce/">节流与防抖</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        函数节流1234567891011121314151617function throttle(method,delay,duration)&#123;  var timer=null, begin=new Date();  return function()&#123;    var context=this,                     args=arguments,     ...
+    
+
+        <a href="/front-end/js/throttle-and-debounce/" class="post-more waves-effect waves-button">
+            阅读全文…
+        </a>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/debounce/">debounce</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/throttle/">throttle</a></li></ul>
+
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-front-end/wx/wx" class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2019-01-02 22:56:52" datetime="2019-01-02T22:56:52.000Z" itemprop="datePublished">2019-01-02</time>
+
+        
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/front-end/wx/wx/">微信</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        注册
+引入js文件
+1&lt;script type=&quot;text/javascript&quot; src=&quot;http://res.wx.qq.com/open/js/jweixin-1.2.0.js&quot;&gt;&lt;/script&gt;
+
+调用后台接口获取签名(signature)、时间戳(timestamp)、随机串(nonceStr)，通过config接...
+    
+
+        <a href="/front-end/wx/wx/" class="post-more waves-effect waves-button">
+            阅读全文…
+        </a>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/sdk/">sdk</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/微信/">微信</a></li></ul>
+
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-front-end/wx/qywx" class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2019-01-02 22:56:35" datetime="2019-01-02T22:56:35.000Z" itemprop="datePublished">2019-01-02</time>
+
+        
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/front-end/wx/qywx/">企业微信</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        注册
+引入js文件&lt;script type=&quot;text/javascript&quot; src=&quot;http://res.wx.qq.com/open/js/jweixin-1.2.0.js&quot;&gt;&lt;/script&gt;
+调用后台接口获取签名(signature)、时间戳(timestamp)、随机串(nonceStr)，通过config接口注入...
+    
+
+        <a href="/front-end/wx/qywx/" class="post-more waves-effect waves-button">
+            阅读全文…
+        </a>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/sdk/">sdk</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/企业微信/">企业微信</a></li></ul>
+
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
             <article id="post-front-end/plugins/axios" class="article-card article-type-post" itemprop="blogPost">
 
     <div class="post-meta">
@@ -195,428 +619,12 @@ node端发起http请求
 
         </li>
     
-        <li class="post-list-item fade">
-            <article id="post-front-end/framework/Vuex" class="article-card article-type-post" itemprop="blogPost">
-
-    <div class="post-meta">
-        <time class="post-time" title="2018-12-26 22:30:20" datetime="2018-12-26T22:30:20.000Z" itemprop="datePublished">2018-12-26</time>
-
-        
-
-
-    </div>
-
-    
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/front-end/framework/Vuex/">Vuex相关知识点记录</a>
-    </h3>
-  
-
-
-
-
-    <div class="post-content" id="post-content" itemprop="postContent">
-
-    
-        官网
-使用
-引用vuex，import Vuex from &#39;vuex&#39;
-安装Vuex，Vue.use(Vuex)
-创建store对象
-12345678910111213const state = &#123;  num: 5&#125;;const mutations = &#123;  addNum(state, payload) &#123;    state.num ...
-    
-
-        <a href="/front-end/framework/Vuex/" class="post-more waves-effect waves-button">
-            阅读全文…
-        </a>
-    </div>
-    
-    <div class="post-footer">
-        
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vue/">vue</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vuex/">vuex</a></li></ul>
-
-    </div>
-    
-</article>
-
-        </li>
-    
-        <li class="post-list-item fade">
-            <article id="post-front-end/framework/VueRouter" class="article-card article-type-post" itemprop="blogPost">
-
-    <div class="post-meta">
-        <time class="post-time" title="2018-12-25 22:45:58" datetime="2018-12-25T22:45:58.000Z" itemprop="datePublished">2018-12-25</time>
-
-        
-
-
-    </div>
-
-    
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/front-end/framework/VueRouter/">VueRouter相关知识点记录</a>
-    </h3>
-  
-
-
-
-
-    <div class="post-content" id="post-content" itemprop="postContent">
-
-    
-        官网
-使用
-引用vue-router，import VueRouter from &#39;vue-router&#39;
-安装VueRouter，Vue.use(VueRouter)
-创建、配置路由对象
-1234567891011121314151617181920212223242526272829const routes = [&#123;  name: &apos;login&apo...
-    
-
-        <a href="/front-end/framework/VueRouter/" class="post-more waves-effect waves-button">
-            阅读全文…
-        </a>
-    </div>
-    
-    <div class="post-footer">
-        
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vue/">vue</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vue-router/">vue-router</a></li></ul>
-
-    </div>
-    
-</article>
-
-        </li>
-    
-        <li class="post-list-item fade">
-            <article id="post-front-end/framework/Vue" class="article-card article-type-post" itemprop="blogPost">
-
-    <div class="post-meta">
-        <time class="post-time" title="2018-12-24 23:45:58" datetime="2018-12-24T23:45:58.000Z" itemprop="datePublished">2018-12-24</time>
-
-        
-
-
-    </div>
-
-    
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/front-end/framework/Vue/">Vue相关知识点记录</a>
-    </h3>
-  
-
-
-
-
-    <div class="post-content" id="post-content" itemprop="postContent">
-
-    
-        官网
-dist目录中的相关文件
-vue.common.js 模块化代码
-vue.esm.js ES6模块化代码
-vue.min.js 压缩后的代码
-vue.runtime.**.js 运行时，比vue小30%
-
-指令自带指令
-v-if/v-show: v-if是插入或者移除，v-show是显示或者隐藏(控制display)
-v-else-if/v-else: 需要和v-if搭配使用，且和v-...
-    
-
-        <a href="/front-end/framework/Vue/" class="post-more waves-effect waves-button">
-            阅读全文…
-        </a>
-    </div>
-    
-    <div class="post-footer">
-        
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vue/">vue</a></li></ul>
-
-    </div>
-    
-</article>
-
-        </li>
-    
-        <li class="post-list-item fade">
-            <article id="post-front-end/html/daily-notes" class="article-card article-type-post" itemprop="blogPost">
-
-    <div class="post-meta">
-        <time class="post-time" title="2018-12-24 23:16:00" datetime="2018-12-24T23:16:00.000Z" itemprop="datePublished">2018-12-24</time>
-
-        
-
-
-    </div>
-
-    
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/front-end/html/daily-notes/">日常小记-HTML</a>
-    </h3>
-  
-
-
-
-
-    <div class="post-content" id="post-content" itemprop="postContent">
-
-    
-        渲染机制
-处理 HTML 并构建 DOM 树。
-处理 CSS 构建 CSSOM 树。
-将 DOM 与 CSSOM 合并成一个渲染树。
-根据渲染树来布局，计算每个节点的位置。
-调用 GPU 绘制，合成图层，显示在屏幕上。
-
-其他
-textarea添加spellcheck＝”false”去除检查
-
-视频播放自动全屏问题设置playsinline=”true”、webkit-playsinline...
-    
-
-        <a href="/front-end/html/daily-notes/" class="post-more waves-effect waves-button">
-            阅读全文…
-        </a>
-    </div>
-    
-    <div class="post-footer">
-        
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/daily-notes/">daily-notes</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/html/">html</a></li></ul>
-
-    </div>
-    
-</article>
-
-        </li>
-    
-        <li class="post-list-item fade">
-            <article id="post-front-end/other/front-end-basics" class="article-card article-type-post" itemprop="blogPost">
-
-    <div class="post-meta">
-        <time class="post-time" title="2018-12-23 23:12:07" datetime="2018-12-23T23:12:07.000Z" itemprop="datePublished">2018-12-23</time>
-
-        
-
-
-    </div>
-
-    
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/front-end/other/front-end-basics/">基础小记</a>
-    </h3>
-  
-
-
-
-
-    <div class="post-content" id="post-content" itemprop="postContent">
-
-    
-        网页加载优化123456789// DNS Prefetch 应该尽量的放在网页的前面，推荐放在 &lt;meta charset=&quot;UTF-8&quot;&gt; 后面。具体使用方法如下：&lt;meta http-equiv=&quot;x-dns-prefetch-control&quot; content=&quot;on&quot;&gt;&lt;link rel=&qu...
-    
-
-        <a href="/front-end/other/front-end-basics/" class="post-more waves-effect waves-button">
-            阅读全文…
-        </a>
-    </div>
-    
-    <div class="post-footer">
-        
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/css/">css</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/html/">html</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li></ul>
-
-    </div>
-    
-</article>
-
-        </li>
-    
-        <li class="post-list-item fade">
-            <article id="post-front-end/js/file-type-conversion" class="article-card article-type-post" itemprop="blogPost">
-
-    <div class="post-meta">
-        <time class="post-time" title="2018-12-23 00:10:50" datetime="2018-12-23T00:10:50.000Z" itemprop="datePublished">2018-12-23</time>
-
-        
-
-
-    </div>
-
-    
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/front-end/js/file-type-conversion/">文件类型转换</a>
-    </h3>
-  
-
-
-
-
-    <div class="post-content" id="post-content" itemprop="postContent">
-
-    
-        canvas转dataURL：canvas对象、转换格式、图像品质123function canvasToDataURL(canvas, format, quality) &#123;  return canvas.toDataURL(format || &apos;image/jpeg&apos;, quality || 1.0);&#125;
-DataURL转canvas12345678...
-    
-
-        <a href="/front-end/js/file-type-conversion/" class="post-more waves-effect waves-button">
-            阅读全文…
-        </a>
-    </div>
-    
-</article>
-
-        </li>
-    
-        <li class="post-list-item fade">
-            <article id="post-front-end/js/regexp" class="article-card article-type-post" itemprop="blogPost">
-
-    <div class="post-meta">
-        <time class="post-time" title="2018-12-20 00:35:46" datetime="2018-12-20T00:35:46.000Z" itemprop="datePublished">2018-12-20</time>
-
-        
-
-
-    </div>
-
-    
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/front-end/js/regexp/">正则</a>
-    </h3>
-  
-
-
-
-
-    <div class="post-content" id="post-content" itemprop="postContent">
-
-    
-        正则应用场景文件夹命名1/[\/\\:*?&quot;&lt;&gt;!]+/匹配特殊符号
-去除字符串两端空白123String.prototype.trim ＝ function()&#123;  return this.replace(/(∧\s*)|(\s*$)/g,&apos;&apos;);&#125;
-匹配location.search中的请求参数123let reg = new...
-    
-
-        <a href="/front-end/js/regexp/" class="post-more waves-effect waves-button">
-            阅读全文…
-        </a>
-    </div>
-    
-</article>
-
-        </li>
-    
-        <li class="post-list-item fade">
-            <article id="post-front-end/js/error-catch" class="article-card article-type-post" itemprop="blogPost">
-
-    <div class="post-meta">
-        <time class="post-time" title="2018-12-18 23:37:38" datetime="2018-12-18T23:37:38.000Z" itemprop="datePublished">2018-12-18</time>
-
-        
-
-
-    </div>
-
-    
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/front-end/js/error-catch/">错误捕获</a>
-    </h3>
-  
-
-
-
-
-    <div class="post-content" id="post-content" itemprop="postContent">
-
-    
-        Vue中的错误捕获123456789101112// 2.2.0+支持，2.4.0+支持自定义事件的捕获Vue.config.errorHandler = (err, vm, info) =&gt; &#123;  let &#123;    message, // 异常信息    name, // 异常名称    script,  // 异常脚本url    line,  // 异常行号 ...
-    
-
-        <a href="/front-end/js/error-catch/" class="post-more waves-effect waves-button">
-            阅读全文…
-        </a>
-    </div>
-    
-    <div class="post-footer">
-        
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/error/">error</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vue/">vue</a></li></ul>
-
-    </div>
-    
-</article>
-
-        </li>
-    
-        <li class="post-list-item fade">
-            <article id="post-front-end/js/canvas" class="article-card article-type-post" itemprop="blogPost">
-
-    <div class="post-meta">
-        <time class="post-time" title="2018-12-16 23:39:44" datetime="2018-12-16T23:39:44.000Z" itemprop="datePublished">2018-12-16</time>
-
-        
-
-
-    </div>
-
-    
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/front-end/js/canvas/">Canvas</a>
-    </h3>
-  
-
-
-
-
-    <div class="post-content" id="post-content" itemprop="postContent">
-
-    
-        初始化1234567891011121314151617// 创建canvas对象var ctx = $(&quot;#canvas&quot;)[0].getContext(&apos;2d&apos;);var ctx2 = $(&quot;#canvas2&quot;)[0].getContext(&apos;2d&apos;);// 设置线条颜色ctx.strokeStyle = &...
-    
-
-        <a href="/front-end/js/canvas/" class="post-more waves-effect waves-button">
-            阅读全文…
-        </a>
-    </div>
-    
-    <div class="post-footer">
-        
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/canvas/">canvas</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li></ul>
-
-    </div>
-    
-</article>
-
-        </li>
-    
     </ul>
 
     
 <nav id="page-nav">
     <div class="inner">
-    <a class="extend prev" rel="prev" href="/page/2/">上一页</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/4/">下一页</a>
+    <a class="extend prev" rel="prev" href="/page/2/">上一页</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/4/">下一页</a>
     </div>
 </nav>
 
@@ -647,10 +655,10 @@ DataURL转canvas12345678...
         </p>
     </div> -->
     <div class="bottom">
-        <p><span>薛鸿杰 &copy; 2018 - 2019</span>
+        <p><span>薛鸿杰 &copy; 2018 - 2021</span>
             <span>
                 
-                <a href="http://www.miitbeian.gov.cn/" target="_blank">粤ICP备18140620号-1</a><br>
+                <a href="https://beian.miit.gov.cn/" target="_blank">粤ICP备18140620号-1</a><br>
                 
                 <!-- Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a> -->
             </span>
