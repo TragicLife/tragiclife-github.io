@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>typescript-简介 | 薛鸿杰的博客</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#6C88B7">
+    
+    
+    <meta name="keywords" content="typescript">
+    <meta name="description" content="简介TypeScript 是 JavaScript 的超集，它涵盖 ES6、ES7 等新语法特性。它同时也是一门静态弱类型语言，因为要兼容 JavaScript,因此 TypeScript 几乎不限制 JavaScript 中原有的隐式类型转换。  静态语言：在编译时期报错；动态语言：在运行时期报错  优势  规避大量低级错误，避免时间浪费，省时 减少多人协作项目的成本，大型项目友好，省力 良好代">
+<meta name="keywords" content="typescript">
+<meta property="og:type" content="article">
+<meta property="og:title" content="typescript-简介">
+<meta property="og:url" content="https://xuehongjie.github.io/front-end/typescript/introduction/index.html">
+<meta property="og:site_name" content="薛鸿杰的博客">
+<meta property="og:description" content="简介TypeScript 是 JavaScript 的超集，它涵盖 ES6、ES7 等新语法特性。它同时也是一门静态弱类型语言，因为要兼容 JavaScript,因此 TypeScript 几乎不限制 JavaScript 中原有的隐式类型转换。  静态语言：在编译时期报错；动态语言：在运行时期报错  优势  规避大量低级错误，避免时间浪费，省时 减少多人协作项目的成本，大型项目友好，省力 良好代">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2021-03-28T13:21:17.699Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="typescript-简介">
+<meta name="twitter:description" content="简介TypeScript 是 JavaScript 的超集，它涵盖 ES6、ES7 等新语法特性。它同时也是一门静态弱类型语言，因为要兼容 JavaScript,因此 TypeScript 几乎不限制 JavaScript 中原有的隐式类型转换。  静态语言：在编译时期报错；动态语言：在运行时期报错  优势  规避大量低级错误，避免时间浪费，省时 减少多人协作项目的成本，大型项目友好，省力 良好代">
+    
+        <link rel="alternate" type="application/atom+xml" title="薛鸿杰的博客" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide">
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand2.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">薛鸿杰</h5>
+          <a href="mailto:xuehongjiej@163.com" title="xuehongjiej@163.com" class="mail">xuehongjiej@163.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/">
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives">
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags">
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/xuehongjie" target="_blank">
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">typescript-简介</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">typescript-简介</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2021-03-22T22:43:10.000Z" itemprop="datePublished" class="page-time">
+  2021-03-22
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#简介"><span class="post-toc-number">1.</span> <span class="post-toc-text">简介</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#创建项目"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">创建项目</span></a></li></ol></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-front-end/typescript/introduction" class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">typescript-简介</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2021-03-22 22:43:10" datetime="2021-03-22T22:43:10.000Z" itemprop="datePublished">2021-03-22</time>
+
+            
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style="display:none">
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>TypeScript 是 JavaScript 的超集，它涵盖 ES6、ES7 等新语法特性。它同时也是一门静态弱类型语言，因为要兼容 JavaScript,因此 TypeScript 几乎不限制 JavaScript 中原有的隐式类型转换。</p>
+<blockquote>
+<p>静态语言：在编译时期报错；动态语言：在运行时期报错</p>
+</blockquote>
+<p><strong>优势</strong></p>
+<ol>
+<li>规避大量低级错误，避免时间浪费，省时</li>
+<li>减少多人协作项目的成本，大型项目友好，省力</li>
+<li>良好代码提示，不用反复文件跳转或者翻文档，省心</li>
+</ol>
+<h2 id="创建项目"><a href="#创建项目" class="headerlink" title="创建项目"></a>创建项目</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">// 1. 新建代码目录</span><br><span class="line">// 2. 初始化项目</span><br><span class="line">npm init</span><br><span class="line"></span><br><span class="line">// 3. 安装typescript</span><br><span class="line">npm install typescript -D</span><br><span class="line"></span><br><span class="line">// 4. 初始化typescript配置文件，目录下会多一个 tsconfig.json 文件</span><br><span class="line">tsc --init</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// tsconfig.json文件</span></span><br><span class="line">&#123;</span><br><span class="line">  <span class="string">"compilerOptions"</span>: &#123;</span><br><span class="line">    <span class="comment">/* Basic Options */</span></span><br><span class="line">    <span class="comment">// "incremental": true,                   /* Enable incremental compilation */</span></span><br><span class="line">    <span class="string">"target"</span>: <span class="string">"es5"</span>,                          <span class="comment">/* 指定 EcmaScript 目标版本，Specify ECMAScript target version: 'ES3' (default), 'ES5', 'ES2015', 'ES2016', 'ES2017', 'ES2018', 'ES2019' or 'ESNEXT'. */</span></span><br><span class="line">    <span class="string">"module"</span>: <span class="string">"commonjs"</span>,                     <span class="comment">/* 指定使用模块，Specify module code generation: 'none', 'commonjs', 'amd', 'system', 'umd', 'es2015', or 'ESNext'. */</span></span><br><span class="line">    <span class="string">"lib"</span>: [<span class="string">"es6"</span>, <span class="string">"dom"</span>, <span class="string">"esnext"</span>],                             <span class="comment">/* 指定要包含在编译中的库文件, Specify library files to be included in the compilation. */</span></span><br><span class="line">    <span class="comment">// "allowJs": true,                       /* Allow javascript files to be compiled. */</span></span><br><span class="line">    <span class="comment">// "checkJs": true,                       /* Report errors in .js files. */</span></span><br><span class="line">    <span class="comment">// "jsx": "preserve",                     /* Specify JSX code generation: 'preserve', 'react-native', or 'react'. */</span></span><br><span class="line">    <span class="comment">// "declaration": true,                   /* 生成相应的.d.ts文件, Generates corresponding '.d.ts' file. */</span></span><br><span class="line">    <span class="comment">// "declarationMap": true,                /* Generates a sourcemap for each corresponding '.d.ts' file. */</span></span><br><span class="line">    <span class="comment">// "sourceMap": true,                     /* 把 ts 文件编译成 js 文件的时候，同时生成对应的 map 文件, Generates corresponding '.map' file. */</span></span><br><span class="line">    <span class="comment">// "outFile": "./",                       /* Concatenate and emit output to single file. */</span></span><br><span class="line">    <span class="comment">// "outDir": "./",                        /* Redirect output structure to the directory. */</span></span><br><span class="line">    <span class="comment">// "rootDir": "./",                       /* Specify the root directory of input files. Use to control the output directory structure with --outDir. */</span></span><br><span class="line">    <span class="comment">// "composite": true,                     /* Enable project compilation */</span></span><br><span class="line">    <span class="comment">// "tsBuildInfoFile": "./",               /* Specify file to store incremental compilation information */</span></span><br><span class="line">    <span class="comment">// "removeComments": true,                /* 删除编译后的所有的注释, Do not emit comments to output. */</span></span><br><span class="line">    <span class="comment">// "noEmit": true,                        /* Do not emit outputs. */</span></span><br><span class="line">    <span class="comment">// "importHelpers": true,                 /* 从 tslib 导入辅助工具函数, Import emit helpers from 'tslib'. */</span></span><br><span class="line">    <span class="comment">// "downlevelIteration": true,            /* Provide full support for iterables in 'for-of', spread, and destructuring when targeting 'ES5' or 'ES3'. */</span></span><br><span class="line">    <span class="comment">// "isolatedModules": true,               /* Transpile each file as a separate module (similar to 'ts.transpileModule'). */</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">/* Strict Type-Checking Options */</span></span><br><span class="line">    <span class="string">"strict"</span>: <span class="literal">true</span>,                           <span class="comment">/* 启用所有严格类型检查选项, Enable all strict type-checking options. */</span></span><br><span class="line">    <span class="comment">// "noImplicitAny": true,                 /* 在表达式和声明上有隐含的 any类型时报错, Raise error on expressions and declarations with an implied 'any' type. */</span></span><br><span class="line">    <span class="comment">// "strictNullChecks": true,              /* Enable strict null checks. */</span></span><br><span class="line">    <span class="comment">// "strictFunctionTypes": true,           /* Enable strict checking of function types. */</span></span><br><span class="line">    <span class="comment">// "strictBindCallApply": true,           /* Enable strict 'bind', 'call', and 'apply' methods on functions. */</span></span><br><span class="line">    <span class="comment">// "strictPropertyInitialization": true,  /* Enable strict checking of property initialization in classes. */</span></span><br><span class="line">    <span class="comment">// "noImplicitThis": true,                /* Raise error on 'this' expressions with an implied 'any' type. */</span></span><br><span class="line">    <span class="comment">// "alwaysStrict": true,                  /* 以严格模式检查模块，并在每个文件里加入 'use strict', Parse in strict mode and emit "use strict" for each source file. */</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">/* Additional Checks */</span></span><br><span class="line">    <span class="comment">// "noUnusedLocals": true,                /* Report errors on unused locals. */</span></span><br><span class="line">    <span class="comment">// "noUnusedParameters": true,            /* Report errors on unused parameters. */</span></span><br><span class="line">    <span class="comment">// "noImplicitReturns": true,             /* 不是函数的所有返回路径都有返回值时报错, Report error when not all code paths in function return a value. */</span></span><br><span class="line">    <span class="comment">// "noFallthroughCasesInSwitch": true,    /* Report errors for fallthrough cases in switch statement. */</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">/* Module Resolution Options */</span></span><br><span class="line">    <span class="comment">// "moduleResolution": "node",            /* 模块解析策略，Specify module resolution strategy: 'node' (Node.js) or 'classic' (TypeScript pre-1.6). */</span></span><br><span class="line">    <span class="comment">// "baseUrl": "./",                       /* Base directory to resolve non-absolute module names. */</span></span><br><span class="line">    <span class="comment">// "paths": &#123;&#125;,                           /* A series of entries which re-map imports to lookup locations relative to the 'baseUrl'. */</span></span><br><span class="line">    <span class="comment">// "rootDirs": [],                        /* List of root folders whose combined content represents the structure of the project at runtime. */</span></span><br><span class="line">    <span class="comment">// "typeRoots": [],                       /* List of folders to include type definitions from. */</span></span><br><span class="line">    <span class="comment">// "types": [],                           /* Type declaration files to be included in compilation. */</span></span><br><span class="line">    <span class="comment">// "allowSyntheticDefaultImports": true,  /* 允许从没有设置默认导出的模块中默认导入, Allow default imports from modules with no default export. This does not affect code emit, just typechecking. */</span></span><br><span class="line">    <span class="string">"esModuleInterop"</span>: <span class="literal">true</span>,                  <span class="comment">/* Enables emit interoperability between CommonJS and ES Modules via creation of namespace objects for all imports. Implies 'allowSyntheticDefaultImports'. */</span></span><br><span class="line">    <span class="comment">// "preserveSymlinks": true,              /* Do not resolve the real path of symlinks. */</span></span><br><span class="line">    <span class="comment">// "allowUmdGlobalAccess": true,          /* Allow accessing UMD globals from modules. */</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">/* Source Map Options */</span></span><br><span class="line">    <span class="comment">// "sourceRoot": "",                      /* Specify the location where debugger should locate TypeScript files instead of source locations. */</span></span><br><span class="line">    <span class="comment">// "mapRoot": "",                         /* Specify the location where debugger should locate map files instead of generated locations. */</span></span><br><span class="line">    <span class="comment">// "inlineSourceMap": true,               /* Emit a single file with source maps instead of having a separate file. */</span></span><br><span class="line">    <span class="comment">// "inlineSources": true,                 /* Emit the source alongside the sourcemaps within a single file; requires '--inlineSourceMap' or '--sourceMap' to be set. */</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">/* Experimental Options */</span></span><br><span class="line">    <span class="comment">// "experimentalDecorators": true,        /* 启用实验性的ES装饰器, Enables experimental support for ES7 decorators. */</span></span><br><span class="line">    <span class="comment">// "emitDecoratorMetadata": true,         /* Enables experimental support for emitting type metadata for decorators. */</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">/* Advanced Options */</span></span><br><span class="line">    <span class="string">"forceConsistentCasingInFileNames"</span>: <span class="literal">true</span>  <span class="comment">/* Disallow inconsistently-cased references to the same file. */</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="comment">// 需要编译的ts文件一个*表示文件匹配**表示忽略文件的深度问题</span></span><br><span class="line">  <span class="string">"include"</span>: [</span><br><span class="line">    <span class="string">"./src/**/**.ts"</span></span><br><span class="line">  ],</span><br><span class="line">  <span class="string">"exclude"</span>: [</span><br><span class="line">    <span class="string">"node_modules"</span>,</span><br><span class="line">    <span class="string">"dist"</span>,</span><br><span class="line">    <span class="string">"**/*.test.ts"</span>,</span><br><span class="line">  ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>提示找不到 console 库时，需要在 lib 中引入 dom</p>
+</blockquote>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2021-03-28T13:21:17.699Z" itemprop="dateUpdated">2021-03-28 13:21:17</time>
+</span><br>
+
+
+        
+        以上内容为个人记录
+        
+    </div>
+    
+    <footer>
+        <a href="https://xuehongjie.github.io">
+            <img src="/img/avatar.jpg" alt="薛鸿杰">
+            薛鸿杰
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/typescript/">typescript</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://xuehongjie.github.io/front-end/typescript/introduction/&title=《typescript-简介》 — 薛鸿杰的博客&pic=https://xuehongjie.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://xuehongjie.github.io/front-end/typescript/introduction/&title=《typescript-简介》 — 薛鸿杰的博客&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://xuehongjie.github.io/front-end/typescript/introduction/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《typescript-简介》 — 薛鸿杰的博客&url=https://xuehongjie.github.io/front-end/typescript/introduction/&via=https://xuehongjie.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://xuehongjie.github.io/front-end/typescript/introduction/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/front-end/typescript/type/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">typescript-类型</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/front-end/typescript/basic/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">typescript-类型</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <!-- <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style="display:none">
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style="display:none">
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div> -->
+    <div class="bottom">
+        <p><span>薛鸿杰 &copy; 2018 - 2021</span>
+            <span>
+                
+                <a href="https://beian.miit.gov.cn/" target="_blank">粤ICP备18140620号-1</a><br>
+                
+                <!-- Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a> -->
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://xuehongjie.github.io/front-end/typescript/introduction/&title=《typescript-简介》 — 薛鸿杰的博客&pic=https://xuehongjie.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://xuehongjie.github.io/front-end/typescript/introduction/&title=《typescript-简介》 — 薛鸿杰的博客&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://xuehongjie.github.io/front-end/typescript/introduction/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《typescript-简介》 — 薛鸿杰的博客&url=https://xuehongjie.github.io/front-end/typescript/introduction/&via=https://xuehongjie.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://xuehongjie.github.io/front-end/typescript/introduction/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACr0lEQVR42u3aQW7jQAwEwPz/01kg16zkblIT+1A6GbEtTU2AIU3y6yu+vn+u/btXn0z+fv+U1YWHh4c3WvrVdf+Y36+v7vDs1iRrxsPDwzvNS249O77zLUvuUwcYPDw8vLfy8sM9DwlJCEnweHh4eJ/J2yTQm5DwhriHh4eHF/CSYkRytYAkWW/Xg4eHh3ea1zbAPuH1wf4eHh4e3qKrnhzK+8Q3L2TUq8XDw8M7wJs9oE1qN2nxvoSBh4eHd4KXt5o25YB9+JmNguHh4eE9y5v91J+NVd2n4/kdipMfDw8P7wAvL9reLys/yotFLAYU8PDw8P6Gl5ck2jJBvtCkCNK+i4eHh/csbzbw1Db18wJu+w948S4eHh7eMd4mzW03ZZ+OF8MHeHh4eH/Cm5VlV7l83KnLSxt4eHh4p3nPYlpSXphoxxTw8PDwTvDuv9Y+eJMc5wNVbeKOh4eH9yxv1uJKHhmlvOvGWN3Tw8PDw3uIN2tuteGh3YgkwLx4jYeHh3eYlxdM80Q8DxL7hP4/n8fDw8M7wMvLqcnj83Jwm2rnYSMq4+Lh4eEteJvyQX7c5+2x9g4vNh0PDw/vGG+/6HZsazOUUGwTHh4e3gFedLzGx3e7HQlvU2jGw8PDO8Gr6xZxQaFNx9tBBzw8PLz38vIDepbgtovebNblLwY8PDy8h3izIYDZkEE7jJUXHV4k7nh4eHiP8vJjPV/Q/uhvU+0oJODh4eEd4M0CQ/7bfzaM1Q514eHh4Z3mDQ/cPFtfLDov3W5KIXh4eHgz3iwYzGBJGr3ZoDr64eHh4S14bdMrWdbm721r7fJbeHh4eG/ltZ/JCwdt2SJPvvHw8PA+gdeSNuWPTVMNDw8P7zQvKUa0yLaIkNdgi03Bw8PDO8CbNcBa5GwRm1EGPDw8vAO8f5bm7gOx7Wn7AAAAAElFTkSuQmCC" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+</body>
+</html>

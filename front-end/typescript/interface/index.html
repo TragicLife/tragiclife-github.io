@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>typescript-interface | 薛鸿杰的博客</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#6C88B7">
+    
+    
+    <meta name="keywords" content="typescript">
+    <meta name="description" content="接口(interface)为值的类型命名和为代码或第三方代码定义契约 如何使用接口12345678// 会报错const getName = (user) =&amp;gt; user.name;// 需要通过接口定义 user 的结构interface User &amp;#123;  name: string;&amp;#125;const getName = (user: User) =&amp;gt; user.name">
+<meta name="keywords" content="typescript">
+<meta property="og:type" content="article">
+<meta property="og:title" content="typescript-interface">
+<meta property="og:url" content="https://xuehongjie.github.io/front-end/typescript/interface/index.html">
+<meta property="og:site_name" content="薛鸿杰的博客">
+<meta property="og:description" content="接口(interface)为值的类型命名和为代码或第三方代码定义契约 如何使用接口12345678// 会报错const getName = (user) =&amp;gt; user.name;// 需要通过接口定义 user 的结构interface User &amp;#123;  name: string;&amp;#125;const getName = (user: User) =&amp;gt; user.name">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2021-03-30T15:10:04.471Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="typescript-interface">
+<meta name="twitter:description" content="接口(interface)为值的类型命名和为代码或第三方代码定义契约 如何使用接口12345678// 会报错const getName = (user) =&amp;gt; user.name;// 需要通过接口定义 user 的结构interface User &amp;#123;  name: string;&amp;#125;const getName = (user: User) =&amp;gt; user.name">
+    
+        <link rel="alternate" type="application/atom+xml" title="薛鸿杰的博客" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide">
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand2.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">薛鸿杰</h5>
+          <a href="mailto:xuehongjiej@163.com" title="xuehongjiej@163.com" class="mail">xuehongjiej@163.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/">
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives">
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags">
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/xuehongjie" target="_blank">
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">typescript-interface</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">typescript-interface</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2021-03-26T00:30:14.000Z" itemprop="datePublished" class="page-time">
+  2021-03-26
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#接口-interface"><span class="post-toc-number">1.</span> <span class="post-toc-text">接口(interface)</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#如何使用接口"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">如何使用接口</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#可选属性"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">可选属性</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#只读属性"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">只读属性</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#函数类型"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">函数类型</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#直接在-interface-内部描述"><span class="post-toc-number">1.4.1.</span> <span class="post-toc-text">直接在 interface 内部描述</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#先使用接口描述函数，然后再在-User-中描述"><span class="post-toc-number">1.4.2.</span> <span class="post-toc-text">先使用接口描述函数，然后再在 User 中描述</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#属性检查"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">属性检查</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#可索引类型"><span class="post-toc-number">1.6.</span> <span class="post-toc-text">可索引类型</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#继承接口"><span class="post-toc-number">1.7.</span> <span class="post-toc-text">继承接口</span></a></li></ol></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-front-end/typescript/interface" class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">typescript-interface</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2021-03-26 00:30:14" datetime="2021-03-26T00:30:14.000Z" itemprop="datePublished">2021-03-26</time>
+
+            
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style="display:none">
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h1 id="接口-interface"><a href="#接口-interface" class="headerlink" title="接口(interface)"></a>接口(interface)</h1><p>为值的类型命名和为代码或第三方代码定义契约</p>
+<h2 id="如何使用接口"><a href="#如何使用接口" class="headerlink" title="如何使用接口"></a>如何使用接口</h2><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 会报错</span></span><br><span class="line"><span class="keyword">const</span> getName = <span class="function">(<span class="params">user</span>) =&gt;</span> user.name;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 需要通过接口定义 user 的结构</span></span><br><span class="line"><span class="keyword">interface</span> User &#123;</span><br><span class="line">  name: <span class="built_in">string</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">const</span> getName = <span class="function">(<span class="params">user: User</span>) =&gt;</span> user.name;</span><br></pre></td></tr></table></figure>
+<h2 id="可选属性"><a href="#可选属性" class="headerlink" title="可选属性"></a>可选属性</h2><p>在处理数据的时候，某一项是可选的，这时候需要通过 ? 来描述这种属性</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">interface</span> User &#123;</span><br><span class="line">  name: <span class="built_in">string</span>;</span><br><span class="line">  age?: <span class="built_in">number</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> getAge = <span class="function">(<span class="params">user: User</span>) =&gt;</span> user.age; <span class="comment">// 代码会提示 age 可能是 undefiend</span></span><br></pre></td></tr></table></figure>
+<h2 id="只读属性"><a href="#只读属性" class="headerlink" title="只读属性"></a>只读属性</h2><p>当某个值确定以后就不允许修改了，这时可以通过 readonly 来指定该属性</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">interface</span> User &#123;</span><br><span class="line">  readonly isMale: <span class="built_in">boolean</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">const</span> user: User = &#123;</span><br><span class="line">  isMale: <span class="literal">true</span>,</span><br><span class="line">&#125;;</span><br><span class="line">user.isMale = <span class="literal">false</span>; <span class="comment">// 提示 isMale 是只读属性，不允许修改</span></span><br></pre></td></tr></table></figure>
+<h2 id="函数类型"><a href="#函数类型" class="headerlink" title="函数类型"></a>函数类型</h2><h3 id="直接在-interface-内部描述"><a href="#直接在-interface-内部描述" class="headerlink" title="直接在 interface 内部描述"></a>直接在 interface 内部描述</h3><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">interface</span> User &#123;</span><br><span class="line">  say: <span class="function">(<span class="params">words: <span class="built_in">string</span></span>) =&gt;</span> <span class="built_in">string</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="先使用接口描述函数，然后再在-User-中描述"><a href="#先使用接口描述函数，然后再在-User-中描述" class="headerlink" title="先使用接口描述函数，然后再在 User 中描述"></a>先使用接口描述函数，然后再在 User 中描述</h3><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">interface</span> Say &#123;</span><br><span class="line">  (words: <span class="built_in">string</span>): <span class="built_in">string</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">interface</span> User &#123;</span><br><span class="line">  say: Say;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="属性检查"><a href="#属性检查" class="headerlink" title="属性检查"></a>属性检查</h2><p>对象字面量当被赋值给变量或作为参数传递的时候，会被特殊对待而且经过“额外属性检查”。</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">interface</span> Config &#123;</span><br><span class="line">  width?: <span class="built_in">number</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">CalculateAreas</span>(<span class="params">config: Config</span>): </span>&#123; area: <span class="built_in">number</span> &#125; &#123;</span><br><span class="line">  <span class="keyword">let</span> square = <span class="number">100</span>;</span><br><span class="line">  <span class="keyword">if</span> (config.width) &#123;</span><br><span class="line">    square = config.width * config.width;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> &#123; area: square &#125;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> mySquare = CalculateAreas(&#123; widdth: <span class="number">5</span> &#125;); <span class="comment">// 错误提示：类型“&#123; widdth: number; &#125;”的参数不能赋给类型“Config”的参数。</span></span><br></pre></td></tr></table></figure>
+<p>报错的解决方案：</p>
+<ol>
+<li><p>使用类型断言</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> mySquare = CalculateAreas(&#123; widdth: <span class="number">5</span> &#125; <span class="keyword">as</span> Config);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>添加签名索引</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">interface</span> Config &#123;</span><br><span class="line">  width?: <span class="built_in">number</span>;</span><br><span class="line">  [key: <span class="built_in">string</span>]: <span class="built_in">any</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>将值赋值给另一个变量，并且定义为 any 类型</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> options: <span class="built_in">any</span> = &#123; widdth: <span class="number">5</span> &#125;;</span><br><span class="line"><span class="keyword">let</span> mySquare = CalculateAreas(options);</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<blockquote>
+<p>转为 any 类型方法不到必要的时候不建议使用</p>
+</blockquote>
+<h2 id="可索引类型"><a href="#可索引类型" class="headerlink" title="可索引类型"></a>可索引类型</h2><p>可索引类型描述了对象索引的类型，还有相应的索引返回值类型。</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 假设用户信息如下</span></span><br><span class="line"><span class="keyword">const</span> user = &#123;</span><br><span class="line">  name: <span class="string">'test'</span>,</span><br><span class="line">  email: &#123;</span><br><span class="line">    qq: <span class="string">'test@qq.com'</span>,</span><br><span class="line">    outlook: <span class="string">'test@outlook.com'</span>,</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 通过索引类型解决</span></span><br><span class="line"><span class="keyword">interface</span> Email &#123;</span><br><span class="line">  [name: <span class="built_in">string</span>]: <span class="built_in">string</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">interface</span> User &#123;</span><br><span class="line">  name: <span class="built_in">string</span>;</span><br><span class="line">  email: Email;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="继承接口"><a href="#继承接口" class="headerlink" title="继承接口"></a>继承接口</h2><p>拥有与被继承的接口相同属性，且在这个基础上增加自己的属性</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 继承单个接口</span></span><br><span class="line"><span class="keyword">interface</span> VIPUser <span class="keyword">extends</span> User &#123;</span><br><span class="line">  broadcast: <span class="function"><span class="params">()</span> =&gt;</span> <span class="built_in">void</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 继承多个接口</span></span><br><span class="line"><span class="keyword">interface</span> VIPUser <span class="keyword">extends</span> User, SupperUser &#123;</span><br><span class="line">  broadcast: <span class="function"><span class="params">()</span> =&gt;</span> <span class="built_in">void</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2021-03-30T15:10:04.471Z" itemprop="dateUpdated">2021-03-30 15:10:04</time>
+</span><br>
+
+
+        
+        以上内容为个人记录
+        
+    </div>
+    
+    <footer>
+        <a href="https://xuehongjie.github.io">
+            <img src="/img/avatar.jpg" alt="薛鸿杰">
+            薛鸿杰
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/typescript/">typescript</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://xuehongjie.github.io/front-end/typescript/interface/&title=《typescript-interface》 — 薛鸿杰的博客&pic=https://xuehongjie.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://xuehongjie.github.io/front-end/typescript/interface/&title=《typescript-interface》 — 薛鸿杰的博客&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://xuehongjie.github.io/front-end/typescript/interface/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《typescript-interface》 — 薛鸿杰的博客&url=https://xuehongjie.github.io/front-end/typescript/interface/&via=https://xuehongjie.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://xuehongjie.github.io/front-end/typescript/interface/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/front-end/typescript/class/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">typescript-class</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/front-end/typescript/enumeration/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">typescript-枚举</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <!-- <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style="display:none">
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style="display:none">
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div> -->
+    <div class="bottom">
+        <p><span>薛鸿杰 &copy; 2018 - 2021</span>
+            <span>
+                
+                <a href="https://beian.miit.gov.cn/" target="_blank">粤ICP备18140620号-1</a><br>
+                
+                <!-- Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a> -->
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://xuehongjie.github.io/front-end/typescript/interface/&title=《typescript-interface》 — 薛鸿杰的博客&pic=https://xuehongjie.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://xuehongjie.github.io/front-end/typescript/interface/&title=《typescript-interface》 — 薛鸿杰的博客&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://xuehongjie.github.io/front-end/typescript/interface/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《typescript-interface》 — 薛鸿杰的博客&url=https://xuehongjie.github.io/front-end/typescript/interface/&via=https://xuehongjie.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://xuehongjie.github.io/front-end/typescript/interface/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACLklEQVR42u3aQU7FMAwFQO5/aVgjVPpsB6Qk0xWC/iTzF8aO/fERP5/B8/PNp9/8XDl5c8GDgYGxLaN3uKejJOv39n16BwMD4x5GEgqTEPn0m/zrePrsy5kxMDAwBoHyaZfqvhgYGBiT5VYllP8acDEwMDZkJAf6i6u6eaGLgYFxAyM/yv///Cf9DQwMjK0Yn8Xn94SvF6yTdV5OhYGBcTQjD3C9ArXaTpicBwMD42xGEkZXFaVJ0pm3EAo+DAyMbRm99K6QrhWv0qrNiW8ZLgYGxqGMvMishsVJElltr2JgYJzNSMYdqkevNiN74x3lqQ0MDIzNGXnAzYceegNe1bCLgYFxG2NZMTkY1Kimjy+dWAwMjCMYzaq32HSsDmpUr+owMDBuYPSu+CcjFEnimJMwMDBuY6y6su8F2XwvDAyMexiTNmSeGubIXgjGwMC4gVFNB6vFbYLML/6aH8bAwNicUb0US0rKSbk7mhnBwMA4jpFv0HvmFXazs4GBgXEBI0nd5n+tsl++CAwMjAsY5ZZhkCzmK+RJZzRsgYGBcQFj1djEpIiNjl7NIjEwMDZkzIvSPBBPyuaXNTEwMI5m5E8PVm025Ks1MRgYGNsyekF2niwmzYByPxYDA+NoRm/aqppQrmoGPF63YWBgYMRDWkmQ/f3oyTsLjoKBgXEoozCqFTchqidc/H8DAwNjE0ae2FXx+aGru2BgYNzD6OVdPWpylZaUzaP+BgYGxk6ML2YMslCj9AY6AAAAAElFTkSuQmCC" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+</body>
+</html>

@@ -25,11 +25,11 @@
 <meta name="keywords" content="tool,Git">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Git">
-<meta property="og:url" content="https://tragiclife.github.io/front-end/tools/git/index.html">
+<meta property="og:url" content="https://xuehongjie.github.io/front-end/tools/git/index.html">
 <meta property="og:site_name" content="薛鸿杰的博客">
 <meta property="og:description" content="参考资料 查看、配置用户信息设置全局用户信息(用户名和邮件)git config --global user.name &amp;quot;xxx&amp;quot;git config --global user.email &amp;quot;xxx@xx.com&amp;quot; 查看用户信息git config user.namegit config user.email 配置别名git config --global">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2020-10-24T16:32:51.954Z">
+<meta property="og:updated_time" content="2021-03-28T13:23:04.402Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Git">
 <meta name="twitter:description" content="参考资料 查看、配置用户信息设置全局用户信息(用户名和邮件)git config --global user.name &amp;quot;xxx&amp;quot;git config --global user.email &amp;quot;xxx@xx.com&amp;quot; 查看用户信息git config user.namegit config user.email 配置别名git config --global">
@@ -89,7 +89,7 @@
             </li>
         
             <li class="waves-block waves-effect">
-              <a href="https://github.com/TragicLife" target="_blank">
+              <a href="https://github.com/xuehongjie" target="_blank">
                 <i class="icon icon-lg icon-github"></i>
                 Github
               </a>
@@ -193,9 +193,9 @@
 <h3 id="把暂存区的修改撤销掉-unstage-重新放回工作区"><a href="#把暂存区的修改撤销掉-unstage-重新放回工作区" class="headerlink" title="把暂存区的修改撤销掉(unstage),重新放回工作区"></a>把暂存区的修改撤销掉(unstage),重新放回工作区</h3><p><code>git reset HEAD 文件名</code></p>
 <h3 id="还原单个文件"><a href="#还原单个文件" class="headerlink" title="还原单个文件"></a>还原单个文件</h3><p><code>git reset 提交Id &lt;name&gt;</code><br><code>git checkout -- &lt;name&gt;</code></p>
 <h3 id="删除版本库的文件"><a href="#删除版本库的文件" class="headerlink" title="删除版本库的文件"></a>删除版本库的文件</h3><p><code>git rm &lt;name&gt;</code><br><code>git commit -m &#39;message&#39;</code></p>
-<h3 id="关联远程仓库"><a href="#关联远程仓库" class="headerlink" title="关联远程仓库"></a>关联远程仓库</h3><p><code>git remote add origin git@github.com:TragicLife/git-demo.git</code></p>
+<h3 id="关联远程仓库"><a href="#关联远程仓库" class="headerlink" title="关联远程仓库"></a>关联远程仓库</h3><p><code>git remote add origin git@github.com:xuehongjie/git-demo.git</code></p>
 <h3 id="删除远程仓库"><a href="#删除远程仓库" class="headerlink" title="删除远程仓库"></a>删除远程仓库</h3><p><code>git remote rm origin</code></p>
-<h3 id="修改远程仓库地址"><a href="#修改远程仓库地址" class="headerlink" title="修改远程仓库地址"></a>修改远程仓库地址</h3><p><code>git remote set-url origin git@github.com:TragicLife/git-demo.git</code></p>
+<h3 id="修改远程仓库地址"><a href="#修改远程仓库地址" class="headerlink" title="修改远程仓库地址"></a>修改远程仓库地址</h3><p><code>git remote set-url origin git@github.com:xuehongjie/git-demo.git</code></p>
 <h3 id="将本地文件推送到远程仓库"><a href="#将本地文件推送到远程仓库" class="headerlink" title="将本地文件推送到远程仓库"></a>将本地文件推送到远程仓库</h3><p><code>git push -u origin master</code>-u 参数，Git 不但会把本地的 master 分支内容推送的远程新的 master 分支，还会把本地的 master 分支和远程的 master 分支关联起来，在以后的推送或者拉取时就可以简化命令，<code>git push</code>即可。</p>
 <h2 id="分支"><a href="#分支" class="headerlink" title="分支"></a>分支</h2><h3 id="创建-dev-分支，然后切换到-dev-分支："><a href="#创建-dev-分支，然后切换到-dev-分支：" class="headerlink" title="创建 dev 分支，然后切换到 dev 分支："></a>创建 dev 分支，然后切换到 dev 分支：</h3><p><code>git checkout -b &lt;name&gt;</code>相当于：<code>git branch &lt;name&gt;</code> <code>git checkout &lt;name&gt;</code></p>
 <h3 id="创建分支"><a href="#创建分支" class="headerlink" title="创建分支"></a>创建分支</h3><p><code>git branch &lt;name&gt;</code></p>
@@ -239,7 +239,7 @@
 <h3 id="Linux-安装-git"><a href="#Linux-安装-git" class="headerlink" title="Linux 安装 git"></a>Linux 安装 git</h3><p><code>yum install git-core</code></p>
 <p>提交若出现冲突，解决冲突后重新 add 和 commit</p>
 <h2 id="报错解决"><a href="#报错解决" class="headerlink" title="报错解决"></a>报错解决</h2><p><strong>The authenticity of host ‘github.com (192.30.255.112)’ can’t be established.</strong><br>SSH 警告,当你第一次使用 Git 的 clone 或者 push 命令连接 GitHub 时，会得到一个警告：输入 yes 回车即可</p>
-<p><strong>failed to push some refs to <a href="mailto:&#39;git@github.com" target="_blank" rel="noopener">&#39;git@github.com</a>:TragicLife/git-demo.git’</strong><br>出现错误的主要原因是 github 中的 README.md 文件不在本地代码目录中,可以通过如下命令进行代码合并【注：pull=fetch+merge]<br><code>git pull --rebase origin master</code></p>
+<p><strong>failed to push some refs to <a href="mailto:&#39;git@github.com" target="_blank" rel="noopener">&#39;git@github.com</a>:xuehongjie/git-demo.git’</strong><br>出现错误的主要原因是 github 中的 README.md 文件不在本地代码目录中,可以通过如下命令进行代码合并【注：pull=fetch+merge]<br><code>git pull --rebase origin master</code></p>
 <p><strong>git pull 提示“no tracking information”</strong><br>说明本地分支和远程分支的链接关系没有创建，用命令<code>git branch --set-upstream &lt;branch-name&gt; origin/&lt;branch-name&gt;</code></p>
 <p><strong>git pull 提示 fatal: refusing to merge unrelated histories</strong><br><code>git pull origin master --allow-unrelated-histories</code></p>
 <p><strong>The remote end hung up unexpectedly</strong><br>提交文件过大，可以分批提交</p>
@@ -270,7 +270,7 @@
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2020-10-24T16:32:51.954Z" itemprop="dateUpdated">2020-10-24 16:32:51</time>
+    最后更新时间：<time datetime="2021-03-28T13:23:04.402Z" itemprop="dateUpdated">2021-03-28 13:23:04</time>
 </span><br>
 
 
@@ -280,7 +280,7 @@
     </div>
     
     <footer>
-        <a href="https://tragiclife.github.io">
+        <a href="https://xuehongjie.github.io">
             <img src="/img/avatar.jpg" alt="薛鸿杰">
             薛鸿杰
         </a>
@@ -302,7 +302,7 @@
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://tragiclife.github.io/front-end/tools/git/&title=《Git》 — 薛鸿杰的博客&pic=https://tragiclife.github.io/img/avatar.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://xuehongjie.github.io/front-end/tools/git/&title=《Git》 — 薛鸿杰的博客&pic=https://xuehongjie.github.io/img/avatar.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -312,22 +312,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://tragiclife.github.io/front-end/tools/git/&title=《Git》 — 薛鸿杰的博客&source=" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://xuehongjie.github.io/front-end/tools/git/&title=《Git》 — 薛鸿杰的博客&source=" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://tragiclife.github.io/front-end/tools/git/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://xuehongjie.github.io/front-end/tools/git/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Git》 — 薛鸿杰的博客&url=https://tragiclife.github.io/front-end/tools/git/&via=https://tragiclife.github.io" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Git》 — 薛鸿杰的博客&url=https://xuehongjie.github.io/front-end/tools/git/&via=https://xuehongjie.github.io" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://tragiclife.github.io/front-end/tools/git/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://xuehongjie.github.io/front-end/tools/git/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -434,7 +434,7 @@
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://tragiclife.github.io/front-end/tools/git/&title=《Git》 — 薛鸿杰的博客&pic=https://tragiclife.github.io/img/avatar.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://xuehongjie.github.io/front-end/tools/git/&title=《Git》 — 薛鸿杰的博客&pic=https://xuehongjie.github.io/img/avatar.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -444,22 +444,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://tragiclife.github.io/front-end/tools/git/&title=《Git》 — 薛鸿杰的博客&source=" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://xuehongjie.github.io/front-end/tools/git/&title=《Git》 — 薛鸿杰的博客&source=" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://tragiclife.github.io/front-end/tools/git/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://xuehongjie.github.io/front-end/tools/git/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Git》 — 薛鸿杰的博客&url=https://tragiclife.github.io/front-end/tools/git/&via=https://tragiclife.github.io" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Git》 — 薛鸿杰的博客&url=https://xuehongjie.github.io/front-end/tools/git/&via=https://xuehongjie.github.io" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://tragiclife.github.io/front-end/tools/git/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://xuehongjie.github.io/front-end/tools/git/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -470,7 +470,7 @@
 <div class="page-modal wx-share" id="wxShare">
     <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
-    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACIklEQVR42u3aQXLCMAwFUO5/aXqANuZLCp2J/bJiIOPoZSFkS69XfL0vrvU9v7+/un99520XBgbGYxnv5ZWHuA43+Zyv/wcVAwPjAMZVBuvd8w3qh5gxMDAwlku/g2tdFE5eHwYGBkZyTxJWkmoxMDAw1oxkE3vX8VyeoL+yF8fAwHggIw/r/z9/pb+BgYHxKMa7eFVXuzdZX0aFgYGxNSN/TL4FXQ9S5L+W48HAwNiaUW065kdmeUC9l1VYDgMD47GMPLh8UCxPkVXA5a8YGBhbMyb5qhpQNemPOrEYGBgbMfI0Oh9CnWxrC2MWGBgYWzNyQK/4622PC5tYDAyMrRlJG3IyEjEP9EM8GBgYWzN6ww35QMY6fecvLlkHAwPjZEbemMy3qXmhmf8ZYGBg7MqYDDokpGTlXuGIgYFxJiM53J8HUW1FRBgMDIxjGL2NZa8h2kvQ5fM8DAyMLRiTBmRO6iXrG7qyGBgYGzGSY7JqkZcf7k8aCRgYGKcx8kcmRVs+/lUdESufHWJgYGzE6A1VTMrHKh4DAwMj3y7mIxd5WVk9SfswcoGBgbERY55ke4XdvKk5+sfAwMB4FOOunH1vkq0OfGBgYJzAuGuzmheOyTfVdTAwME5g9IbG8u1rXnpWUz8GBgbGpNKsDk+MjuQwMDAwim2A+QY1Lx8xMDDOYfQO1MoPK76IQhsVAwNja0a17pocpfWC6DVKMTAwtmD8ANsGapipLkV6AAAAAElFTkSuQmCC" alt="微信分享二维码">
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACJUlEQVR42u3aQXLDIAwF0Nz/0u4BMqZfCHdqeKwyqWPreaGCpM8nXtfXyq+5+1V+5bKFgYHxWsY1XHOM7++Tz8lzb2PAwMA4gHEXVnLN3ePHoSQvIokNAwMDo5ook6ATDAYGBsbTCbd/uMXAwMCYO8SOb53cMym0PX4Wx8DAeCEjr7r//edH+hsYGBivYlzFNdfmHP92fMSNosLAwNia0d/qVQcp8r/m8WBgYJzDyG/aGbxINp3jAlxBhoGBsQWjummbC7STZJMXioGBsTejf8js88qtymonFgMD4+WMta3EfHQsSaCTYxYYGBhbM3LAXLNz1QaxXAvEwMB4OSNPjp26Vn/AIooHAwNjU8bcpjBvEiSjq/n3t/fBwMA4gFF92Fxer46aFV4ZBgbGAYxqcuwA8gNtQsLAwDiN0R+2yA+x/bbBgzMjGBgY/5jRbxJ0mgrVjWOhJYCBgfFyxqoG5KoyXGdQDAMDY2/GOMHlJbO54n71Nd1Gi4GBcQCjOgzR2epdwaruADEwME5gtMYdphqii9ucGBgYBzDyBJdcP94IzhXUfkFiYGBsyriKKzl8VhPlXFPzl/8YGBgYGzH6yS4HV5N1/yCNgYGxE6OTZDudxDx9R41MDAyMAxjVxDdXblvVDCicxTEwMA5mzCXfHFAuyWFgYGDEJbZC0zE+TycDZBgYGCcw8kGu6uM7VxbSMQYGxtaMuX1XQloVRF4ExMDA2I7xA5o2vCqWeNW+AAAAAElFTkSuQmCC" alt="微信分享二维码">
 </div>
 
 

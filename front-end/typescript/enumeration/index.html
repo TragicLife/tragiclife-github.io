@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>typescript-枚举 | 薛鸿杰的博客</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#6C88B7">
+    
+    
+    <meta name="keywords" content="typescript">
+    <meta name="description" content="枚举数字枚举默认值是从 0 开始，依次累加 123456789101112131415// 默认从 0 开始enum Num &amp;#123;  Zero,  One,  Two,&amp;#125;console.log(Num.Zero, Num.One, Num.Two); // 0 1 2// 某个值指定了具体的数值，则其后面的值会根据指定值依次累加enum Num &amp;#123;  Zero,  Si">
+<meta name="keywords" content="typescript">
+<meta property="og:type" content="article">
+<meta property="og:title" content="typescript-枚举">
+<meta property="og:url" content="https://xuehongjie.github.io/front-end/typescript/enumeration/index.html">
+<meta property="og:site_name" content="薛鸿杰的博客">
+<meta property="og:description" content="枚举数字枚举默认值是从 0 开始，依次累加 123456789101112131415// 默认从 0 开始enum Num &amp;#123;  Zero,  One,  Two,&amp;#125;console.log(Num.Zero, Num.One, Num.Two); // 0 1 2// 某个值指定了具体的数值，则其后面的值会根据指定值依次累加enum Num &amp;#123;  Zero,  Si">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2021-03-30T15:09:20.946Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="typescript-枚举">
+<meta name="twitter:description" content="枚举数字枚举默认值是从 0 开始，依次累加 123456789101112131415// 默认从 0 开始enum Num &amp;#123;  Zero,  One,  Two,&amp;#125;console.log(Num.Zero, Num.One, Num.Two); // 0 1 2// 某个值指定了具体的数值，则其后面的值会根据指定值依次累加enum Num &amp;#123;  Zero,  Si">
+    
+        <link rel="alternate" type="application/atom+xml" title="薛鸿杰的博客" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide">
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand2.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">薛鸿杰</h5>
+          <a href="mailto:xuehongjiej@163.com" title="xuehongjiej@163.com" class="mail">xuehongjiej@163.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/">
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives">
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags">
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/xuehongjie" target="_blank">
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">typescript-枚举</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">typescript-枚举</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2021-03-25T23:13:05.000Z" itemprop="datePublished" class="page-time">
+  2021-03-25
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#枚举"><span class="post-toc-number">1.</span> <span class="post-toc-text">枚举</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#数字枚举"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">数字枚举</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#字符串枚举"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">字符串枚举</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#异构枚举"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">异构枚举</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#反向映射"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">反向映射</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#枚举的本质"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">枚举的本质</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#常量枚举"><span class="post-toc-number">1.6.</span> <span class="post-toc-text">常量枚举</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#枚举成员类型"><span class="post-toc-number">1.7.</span> <span class="post-toc-text">枚举成员类型</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#联合类型"><span class="post-toc-number">1.8.</span> <span class="post-toc-text">联合类型</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#枚举合并"><span class="post-toc-number">1.9.</span> <span class="post-toc-text">枚举合并</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#为枚举添加静态方法"><span class="post-toc-number">1.10.</span> <span class="post-toc-text">为枚举添加静态方法</span></a></li></ol></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-front-end/typescript/enumeration" class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">typescript-枚举</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2021-03-25 23:13:05" datetime="2021-03-25T23:13:05.000Z" itemprop="datePublished">2021-03-25</time>
+
+            
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style="display:none">
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h1 id="枚举"><a href="#枚举" class="headerlink" title="枚举"></a>枚举</h1><h2 id="数字枚举"><a href="#数字枚举" class="headerlink" title="数字枚举"></a>数字枚举</h2><p>默认值是从 0 开始，依次累加</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 默认从 0 开始</span></span><br><span class="line"><span class="keyword">enum</span> Num &#123;</span><br><span class="line">  Zero,</span><br><span class="line">  One,</span><br><span class="line">  Two,</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(Num.Zero, Num.One, Num.Two); <span class="comment">// 0 1 2</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 某个值指定了具体的数值，则其后面的值会根据指定值依次累加</span></span><br><span class="line"><span class="keyword">enum</span> Num &#123;</span><br><span class="line">  Zero,</span><br><span class="line">  Six = <span class="number">6</span>,</span><br><span class="line">  Seven,</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(Num.Zero, Num.Six, Num.Seven); <span class="comment">// 0 6 7</span></span><br></pre></td></tr></table></figure>
+<h2 id="字符串枚举"><a href="#字符串枚举" class="headerlink" title="字符串枚举"></a>字符串枚举</h2><p>声明字符串枚举时，每个 key 都必须指定相应的值，不声明则会报错</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">enum</span> Num &#123;</span><br><span class="line">  Zero = <span class="string">'0'</span>,</span><br><span class="line">  One = <span class="string">'1'</span>,</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(Num.Zero, Num[<span class="string">'One'</span>]); <span class="comment">// 0 1</span></span><br></pre></td></tr></table></figure>
+<h2 id="异构枚举"><a href="#异构枚举" class="headerlink" title="异构枚举"></a>异构枚举</h2><p>多种类型混合使用</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">enum</span> BooleanEnum &#123;</span><br><span class="line">  No = <span class="number">0</span>,</span><br><span class="line">  Yes = <span class="string">'yes'</span>,</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(BooleanEnum.No); <span class="comment">// 0</span></span><br></pre></td></tr></table></figure>
+<h2 id="反向映射"><a href="#反向映射" class="headerlink" title="反向映射"></a>反向映射</h2><p>可通过枚举值来获取枚举名字</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">enum</span> Num &#123;</span><br><span class="line">  Zero,</span><br><span class="line">  One,</span><br><span class="line">  Two,</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(Num.Zero, Num[<span class="number">1</span>]); <span class="comment">// 0 One</span></span><br></pre></td></tr></table></figure>
+<h2 id="枚举的本质"><a href="#枚举的本质" class="headerlink" title="枚举的本质"></a>枚举的本质</h2><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 编译前</span></span><br><span class="line"><span class="keyword">enum</span> Num &#123;</span><br><span class="line">  Zero,</span><br><span class="line">  One,</span><br><span class="line">  Two,</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 编译后，类似一个 JavaScript 对象</span></span><br><span class="line"><span class="keyword">var</span> Num;</span><br><span class="line">(<span class="function"><span class="keyword">function</span> (<span class="params">Num</span>) </span>&#123;</span><br><span class="line">  Num[(Num[<span class="string">'Zero'</span>] = <span class="number">0</span>)] = <span class="string">'Zero'</span>;</span><br><span class="line">  Num[(Num[<span class="string">'One'</span>] = <span class="number">1</span>)] = <span class="string">'One'</span>;</span><br><span class="line">  Num[(Num[<span class="string">'Two'</span>] = <span class="number">2</span>)] = <span class="string">'Two'</span>;</span><br><span class="line">&#125;)(Num || (Num = &#123;&#125;));</span><br></pre></td></tr></table></figure>
+<h2 id="常量枚举"><a href="#常量枚举" class="headerlink" title="常量枚举"></a>常量枚举</h2><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 编译前</span></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">enum</span> Num &#123;</span><br><span class="line">  Zero,</span><br><span class="line">  One,</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">const</span> a = Num.Zero;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 编译后，Num声明没有了</span></span><br><span class="line"><span class="keyword">var</span> a = <span class="number">0</span>; <span class="comment">/* Zero */</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>如果想要保留枚举声明，则需要在编译的时候加上 <code>--preserveConstEnums</code>，或者是声明 enum 的时候不带 const</p>
+</blockquote>
+<h2 id="枚举成员类型"><a href="#枚举成员类型" class="headerlink" title="枚举成员类型"></a>枚举成员类型</h2><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">enum</span> Num &#123;</span><br><span class="line">  Zero,</span><br><span class="line">  One,</span><br><span class="line">  Two,</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">type</span> c = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">declare</span> <span class="keyword">let</span> b: c;</span><br><span class="line"></span><br><span class="line">b = <span class="number">1</span>; <span class="comment">// 不能将类型“1”分配给类型“0”</span></span><br><span class="line">b = Num.Zero; <span class="comment">// ok</span></span><br></pre></td></tr></table></figure>
+<h2 id="联合类型"><a href="#联合类型" class="headerlink" title="联合类型"></a>联合类型</h2><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">enum</span> Num &#123;</span><br><span class="line">  Zero,</span><br><span class="line">  One,</span><br><span class="line">  Two,</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">declare</span> <span class="keyword">let</span> a: Num;</span><br><span class="line"></span><br><span class="line"><span class="keyword">enum</span> Animal &#123;</span><br><span class="line">  Dog,</span><br><span class="line">  Cat,</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">a = Num.Zero; <span class="comment">// ok</span></span><br><span class="line">a = Animal.Dog; <span class="comment">// 不能将类型“Animal.Dog”分配给类型“Num”</span></span><br></pre></td></tr></table></figure>
+<h2 id="枚举合并"><a href="#枚举合并" class="headerlink" title="枚举合并"></a>枚举合并</h2><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 名称相同的枚举会进行合并</span></span><br><span class="line"><span class="keyword">enum</span> Num &#123;</span><br><span class="line">  Zero,</span><br><span class="line">  Onw,</span><br><span class="line">  Two,</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">enum</span> Num &#123;</span><br><span class="line">  Six = <span class="number">6</span>,</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(Num.Six); <span class="comment">// 6</span></span><br></pre></td></tr></table></figure>
+<h2 id="为枚举添加静态方法"><a href="#为枚举添加静态方法" class="headerlink" title="为枚举添加静态方法"></a>为枚举添加静态方法</h2><p>利用 <code>namespace</code> 命名空间添加</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">enum</span> Month &#123;</span><br><span class="line">  January,</span><br><span class="line">  February,</span><br><span class="line">  March,</span><br><span class="line">  April,</span><br><span class="line">  May,</span><br><span class="line">  June,</span><br><span class="line">  July,</span><br><span class="line">  August,</span><br><span class="line">  September,</span><br><span class="line">  October,</span><br><span class="line">  November,</span><br><span class="line">  December,</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">namespace</span> Month &#123;</span><br><span class="line">  <span class="keyword">export</span> <span class="function"><span class="keyword">function</span> <span class="title">isSummer</span>(<span class="params">month: Month</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">switch</span> (month) &#123;</span><br><span class="line">      <span class="keyword">case</span> Month.June:</span><br><span class="line">      <span class="keyword">case</span> Month.July:</span><br><span class="line">      <span class="keyword">case</span> Month.August:</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">      <span class="keyword">default</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(Month.isSummer(Month.January)); <span class="comment">// false</span></span><br></pre></td></tr></table></figure>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2021-03-30T15:09:20.946Z" itemprop="dateUpdated">2021-03-30 15:09:20</time>
+</span><br>
+
+
+        
+        以上内容为个人记录
+        
+    </div>
+    
+    <footer>
+        <a href="https://xuehongjie.github.io">
+            <img src="/img/avatar.jpg" alt="薛鸿杰">
+            薛鸿杰
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/typescript/">typescript</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://xuehongjie.github.io/front-end/typescript/enumeration/&title=《typescript-枚举》 — 薛鸿杰的博客&pic=https://xuehongjie.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://xuehongjie.github.io/front-end/typescript/enumeration/&title=《typescript-枚举》 — 薛鸿杰的博客&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://xuehongjie.github.io/front-end/typescript/enumeration/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《typescript-枚举》 — 薛鸿杰的博客&url=https://xuehongjie.github.io/front-end/typescript/enumeration/&via=https://xuehongjie.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://xuehongjie.github.io/front-end/typescript/enumeration/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/front-end/typescript/interface/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">typescript-interface</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/front-end/typescript/type/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">typescript-类型</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <!-- <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style="display:none">
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style="display:none">
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div> -->
+    <div class="bottom">
+        <p><span>薛鸿杰 &copy; 2018 - 2021</span>
+            <span>
+                
+                <a href="https://beian.miit.gov.cn/" target="_blank">粤ICP备18140620号-1</a><br>
+                
+                <!-- Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a> -->
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://xuehongjie.github.io/front-end/typescript/enumeration/&title=《typescript-枚举》 — 薛鸿杰的博客&pic=https://xuehongjie.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://xuehongjie.github.io/front-end/typescript/enumeration/&title=《typescript-枚举》 — 薛鸿杰的博客&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://xuehongjie.github.io/front-end/typescript/enumeration/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《typescript-枚举》 — 薛鸿杰的博客&url=https://xuehongjie.github.io/front-end/typescript/enumeration/&via=https://xuehongjie.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://xuehongjie.github.io/front-end/typescript/enumeration/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACI0lEQVR42u3aO27DMBAFwNz/0k7rxsp7XDmAyFEVGIrEUbHY389PfL3ervdf8juv70/uvOHCwMB4LON1ebVHSZ6/9t5P92BgYJzDSEJh8uj8KPOwjoGBgXH9uE8HusbM34uBgYGxFnBbQP5pMDAwMNpiMgm48z7Y12txDAyMBzLyrvv///2V+QYGBsajGK/yaltv+dhgdCoMDIytGXmAWxtqJvi1gIuBgXEOYzKkbJfD8qQzHyHcMGvFwMB4CCP5t7uCY9Jia8eoGBgYZzKKYFeG7zY0R79jYGAcwLhOB/McrB1S5mG92BbBwMDYlNGWsi1gLUyPilgMDIyNGMmBimJyUACvpY/FjhsGBsZjGWvpYHvoySAhSTQxMDD2ZuTDgPmx2lFoTsLAwNibkQSyyaHzYNoWsRgYGKcx1pYq2le2KxfFCggGBsbWjKTtnqR3bQna9vOLkQAGBsYxjHZUuZZi3hXQMTAwzmRMRgJ5E3/S4ItGAhgYGNsx8oSsbffPy9coG8TAwDiGkSSC+ULY2spX8ln/CLgYGBhbM+YrX0kquRZko20RDAyM7Riv8lobLk4+R1RCY2BgbM1o54NJAB0tTNy08IGBgbEfYy3IzhPEdsBQF7EYGBjbMZIBwOQ1a58pL7kxMDAw2iZavpax2CNs18IwMDAOY0xeNhkJ/PFeDAyMAxiTBa+7Dj0pnjEwMPZmtHlX3iBba6VNkk4MDIztGL+L5CLgA1q/pQAAAABJRU5ErkJggg==" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+</body>
+</html>

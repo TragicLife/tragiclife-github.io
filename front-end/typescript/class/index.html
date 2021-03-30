@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>typescript-class | 薛鸿杰的博客</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#6C88B7">
+    
+    
+    <meta name="keywords" content="typescript">
+    <meta name="description" content="类(class)在 ES6 之后，JavaScript 拥有了 class 关键字，虽然其本质还是构造函数，但是开发者已经可以比较舒服地使用 class 了 抽象类作为其它派生类的基类，一般不会被实例化，不同于接口，抽象类可以包含成员的实现细节。 abstract 关键字用于定义抽象类和抽象类内部的抽象方法。 12345678abstract class Animal &amp;#123;  abstra">
+<meta name="keywords" content="typescript">
+<meta property="og:type" content="article">
+<meta property="og:title" content="typescript-class">
+<meta property="og:url" content="https://xuehongjie.github.io/front-end/typescript/class/index.html">
+<meta property="og:site_name" content="薛鸿杰的博客">
+<meta property="og:description" content="类(class)在 ES6 之后，JavaScript 拥有了 class 关键字，虽然其本质还是构造函数，但是开发者已经可以比较舒服地使用 class 了 抽象类作为其它派生类的基类，一般不会被实例化，不同于接口，抽象类可以包含成员的实现细节。 abstract 关键字用于定义抽象类和抽象类内部的抽象方法。 12345678abstract class Animal &amp;#123;  abstra">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2021-03-30T15:09:30.839Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="typescript-class">
+<meta name="twitter:description" content="类(class)在 ES6 之后，JavaScript 拥有了 class 关键字，虽然其本质还是构造函数，但是开发者已经可以比较舒服地使用 class 了 抽象类作为其它派生类的基类，一般不会被实例化，不同于接口，抽象类可以包含成员的实现细节。 abstract 关键字用于定义抽象类和抽象类内部的抽象方法。 12345678abstract class Animal &amp;#123;  abstra">
+    
+        <link rel="alternate" type="application/atom+xml" title="薛鸿杰的博客" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide">
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand2.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">薛鸿杰</h5>
+          <a href="mailto:xuehongjiej@163.com" title="xuehongjiej@163.com" class="mail">xuehongjiej@163.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/">
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives">
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags">
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/xuehongjie" target="_blank">
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">typescript-class</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">typescript-class</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2021-03-27T22:15:40.000Z" itemprop="datePublished" class="page-time">
+  2021-03-27
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#类-class"><span class="post-toc-number">1.</span> <span class="post-toc-text">类(class)</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#抽象类"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">抽象类</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#访问限定符"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">访问限定符</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#public"><span class="post-toc-number">1.2.1.</span> <span class="post-toc-text">public</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#private"><span class="post-toc-number">1.2.2.</span> <span class="post-toc-text">private</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#protected"><span class="post-toc-number">1.2.3.</span> <span class="post-toc-text">protected</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#可以当做接口使用"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">可以当做接口使用</span></a></li></ol></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-front-end/typescript/class" class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">typescript-class</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2021-03-27 22:15:40" datetime="2021-03-27T22:15:40.000Z" itemprop="datePublished">2021-03-27</time>
+
+            
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style="display:none">
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h1 id="类-class"><a href="#类-class" class="headerlink" title="类(class)"></a>类(class)</h1><p>在 ES6 之后，JavaScript 拥有了 class 关键字，虽然其本质还是构造函数，但是开发者已经可以比较舒服地使用 class 了</p>
+<h2 id="抽象类"><a href="#抽象类" class="headerlink" title="抽象类"></a>抽象类</h2><p>作为其它派生类的基类，一般不会被实例化，不同于接口，抽象类可以包含成员的实现细节。</p>
+<p><code>abstract</code> 关键字用于定义抽象类和抽象类内部的抽象方法。</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">abstract</span> <span class="keyword">class</span> Animal &#123;</span><br><span class="line">  <span class="keyword">abstract</span> makeSound(): <span class="built_in">void</span>;</span><br><span class="line">  move(): <span class="built_in">void</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'move'</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> ani = <span class="keyword">new</span> Animal(); <span class="comment">// 不能直接实例化抽象类，会报错</span></span><br></pre></td></tr></table></figure>
+<p>需要创建一个子类，继承基类(抽象类)，然后实例化子类。若基类中含有抽象方法，则子类需要实现该抽象方法。</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> Cat <span class="keyword">extends</span> Animal &#123;</span><br><span class="line">  makeSound() &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'cat sound'</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> cat = <span class="keyword">new</span> Cat();</span><br><span class="line">cat.makeSound();</span><br></pre></td></tr></table></figure>
+<h2 id="访问限定符"><a href="#访问限定符" class="headerlink" title="访问限定符"></a>访问限定符</h2><p>限制变量/方法的访问权限。</p>
+<h3 id="public"><a href="#public" class="headerlink" title="public"></a>public</h3><p>默认的访问限定符，用此限定符修饰的成员是可以被外部访问的。</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> Car &#123;</span><br><span class="line">  <span class="keyword">public</span> run() &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'car run'</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> car = <span class="keyword">new</span> Car();</span><br><span class="line">car.run();</span><br></pre></td></tr></table></figure>
+<h3 id="private"><a href="#private" class="headerlink" title="private"></a>private</h3><p>如果成员被设置为 private，则成员只能在类的内部访问。</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> Car &#123;</span><br><span class="line">  <span class="keyword">private</span> run() &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'car run'</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> car = <span class="keyword">new</span> Car();</span><br><span class="line">car.run(); <span class="comment">// 属性“run”为私有属性，只能在类“Car”中访问</span></span><br></pre></td></tr></table></figure>
+<h3 id="protected"><a href="#protected" class="headerlink" title="protected"></a>protected</h3><p>如果成员被设置为 protected，则成员只能在类的内部及子类中访问。</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> Car &#123;</span><br><span class="line">  <span class="keyword">protected</span> run() &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'car run'</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> BW <span class="keyword">extends</span> Car &#123;</span><br><span class="line">  init() &#123;</span><br><span class="line">    <span class="keyword">this</span>.run();</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> bw = <span class="keyword">new</span> BW();</span><br><span class="line">bw.init();</span><br><span class="line">bw.run(); <span class="comment">// 属性“run”受保护，只能在类“Car”及其子类中访问</span></span><br></pre></td></tr></table></figure>
+<h2 id="可以当做接口使用"><a href="#可以当做接口使用" class="headerlink" title="可以当做接口使用"></a>可以当做接口使用</h2><p>假设有这么一个类，需要申明类型，且需要申明默认值，这时候 class 作为接口的好处就体现出来了。</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 用一个 class 起到了接口和设置默认值的作业</span></span><br><span class="line"><span class="keyword">class</span> Props &#123;</span><br><span class="line">  <span class="keyword">public</span> children: <span class="built_in">Array</span>&lt;object&gt; = [];</span><br><span class="line">  <span class="keyword">public</span> prop1: <span class="built_in">string</span> = <span class="string">'test'</span>;</span><br><span class="line">  <span class="keyword">public</span> prop2: <span class="built_in">number</span> = <span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> defaultProps = <span class="keyword">new</span> Props();</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>class 作为接口的好处：方便统一管理，减少代码量</p>
+</blockquote>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2021-03-30T15:09:30.839Z" itemprop="dateUpdated">2021-03-30 15:09:30</time>
+</span><br>
+
+
+        
+        以上内容为个人记录
+        
+    </div>
+    
+    <footer>
+        <a href="https://xuehongjie.github.io">
+            <img src="/img/avatar.jpg" alt="薛鸿杰">
+            薛鸿杰
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/typescript/">typescript</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://xuehongjie.github.io/front-end/typescript/class/&title=《typescript-class》 — 薛鸿杰的博客&pic=https://xuehongjie.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://xuehongjie.github.io/front-end/typescript/class/&title=《typescript-class》 — 薛鸿杰的博客&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://xuehongjie.github.io/front-end/typescript/class/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《typescript-class》 — 薛鸿杰的博客&url=https://xuehongjie.github.io/front-end/typescript/class/&via=https://xuehongjie.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://xuehongjie.github.io/front-end/typescript/class/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/front-end/typescript/function/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">typescript-function</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/front-end/typescript/interface/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">typescript-interface</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <!-- <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style="display:none">
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style="display:none">
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div> -->
+    <div class="bottom">
+        <p><span>薛鸿杰 &copy; 2018 - 2021</span>
+            <span>
+                
+                <a href="https://beian.miit.gov.cn/" target="_blank">粤ICP备18140620号-1</a><br>
+                
+                <!-- Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a> -->
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://xuehongjie.github.io/front-end/typescript/class/&title=《typescript-class》 — 薛鸿杰的博客&pic=https://xuehongjie.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://xuehongjie.github.io/front-end/typescript/class/&title=《typescript-class》 — 薛鸿杰的博客&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://xuehongjie.github.io/front-end/typescript/class/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《typescript-class》 — 薛鸿杰的博客&url=https://xuehongjie.github.io/front-end/typescript/class/&via=https://xuehongjie.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://xuehongjie.github.io/front-end/typescript/class/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACK0lEQVR42u3aQY7jMAwEwPz/09kHDOJ0U84ClsqnQeCJVDkIYpOvV/y8L59Pb3765O/7yZs3PBgYGI9lJFtMPr/+/utN5+t+XBEDA+MARr58C4s2cfm/13vDwMDAWDkoZ1dADAwMjF8zkgtlcohjYGBgzIrY/ED8RZF8Wy2OgYHxQEaeuv//v3/S38DAwHgU410++ffkV70kyPuyKwwMjK0ZK9e7u8rg9esmBgbG3oxkc7MQvz2srxsGX2AYGBhbM2bXtfyTfNMrAx8YGBh7M9bj+Dw+y0fB2ksnBgbG3oxZCdpGY9dvzlZ8zcQYGBgPZ7RbKRa46ce6oZGJgYHxWEYe1ueR3Gy8rL0+fplxw8DA2IIxC7zydsJKnFeMcWBgYGzNmAX6dx3B6+NiRW6HgYHxWMZsK3ktma/SFrEYGBjnMGYTVnk8l6dhK0cwBgbG3oz1sGz2Tt6cqJsBGBgYWzPuDdpmx27b8sTAwDiB0QZbsxBtpTQtvhMDA+MAxuygTEa7Vi6gRZ6GgYFxAKNtNCZxWz7Msf5fGBgYJzBWwrW8DG6bl8OZEQwMjI0Y7/Jpr4OzUYz8Z8XAwDiBkT9t0NYOh+XHdD0choGBsQUjL0eT5mJblM5aodENFwMDYztGW4KuhP7rzYAvqSEGBgZG0OxsRyjydmmxDAYGxvGMWRdipSVQdGIxMDA2ZeRjE7OxjPYnyAtmDAyMExjtvStvCcyitLZUxsDA2JrxDx4VYL5FEHeaAAAAAElFTkSuQmCC" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+</body>
+</html>

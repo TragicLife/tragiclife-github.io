@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>typescript-function | 薛鸿杰的博客</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#6C88B7">
+    
+    
+    <meta name="keywords" content="typescript">
+    <meta name="description" content="函数定义函数类型12345// 类型推断为 number， 隐式推断const add = (a: number, b: number): number =&amp;gt; a + b;// 显式定义const add: (a: number, b: number) =&amp;gt; number = (a: number, b: number) =&amp;gt; a + b; 参数详解可选参数只需要在参数后面加上">
+<meta name="keywords" content="typescript">
+<meta property="og:type" content="article">
+<meta property="og:title" content="typescript-function">
+<meta property="og:url" content="https://xuehongjie.github.io/front-end/typescript/function/index.html">
+<meta property="og:site_name" content="薛鸿杰的博客">
+<meta property="og:description" content="函数定义函数类型12345// 类型推断为 number， 隐式推断const add = (a: number, b: number): number =&amp;gt; a + b;// 显式定义const add: (a: number, b: number) =&amp;gt; number = (a: number, b: number) =&amp;gt; a + b; 参数详解可选参数只需要在参数后面加上">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2021-03-30T15:09:38.321Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="typescript-function">
+<meta name="twitter:description" content="函数定义函数类型12345// 类型推断为 number， 隐式推断const add = (a: number, b: number): number =&amp;gt; a + b;// 显式定义const add: (a: number, b: number) =&amp;gt; number = (a: number, b: number) =&amp;gt; a + b; 参数详解可选参数只需要在参数后面加上">
+    
+        <link rel="alternate" type="application/atom+xml" title="薛鸿杰的博客" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide">
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand2.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">薛鸿杰</h5>
+          <a href="mailto:xuehongjiej@163.com" title="xuehongjiej@163.com" class="mail">xuehongjiej@163.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/">
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives">
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags">
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/xuehongjie" target="_blank">
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">typescript-function</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">typescript-function</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2021-03-28T23:44:03.000Z" itemprop="datePublished" class="page-time">
+  2021-03-28
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#函数"><span class="post-toc-number">1.</span> <span class="post-toc-text">函数</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#定义函数类型"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">定义函数类型</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#参数详解"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">参数详解</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#可选参数"><span class="post-toc-number">1.2.1.</span> <span class="post-toc-text">可选参数</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#默认参数"><span class="post-toc-number">1.2.2.</span> <span class="post-toc-text">默认参数</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#剩余参数"><span class="post-toc-number">1.2.3.</span> <span class="post-toc-text">剩余参数</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#重载-Overload"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">重载 (Overload)</span></a></li></ol></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-front-end/typescript/function" class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">typescript-function</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2021-03-28 23:44:03" datetime="2021-03-28T23:44:03.000Z" itemprop="datePublished">2021-03-28</time>
+
+            
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style="display:none">
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h1 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h1><h2 id="定义函数类型"><a href="#定义函数类型" class="headerlink" title="定义函数类型"></a>定义函数类型</h2><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 类型推断为 number， 隐式推断</span></span><br><span class="line"><span class="keyword">const</span> add = (a: <span class="built_in">number</span>, b: <span class="built_in">number</span>): <span class="function"><span class="params">number</span> =&gt;</span> a + b;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 显式定义</span></span><br><span class="line"><span class="keyword">const</span> add: <span class="function">(<span class="params">a: <span class="built_in">number</span>, b: <span class="built_in">number</span></span>) =&gt;</span> <span class="built_in">number</span> = <span class="function">(<span class="params">a: <span class="built_in">number</span>, b: <span class="built_in">number</span></span>) =&gt;</span> a + b;</span><br></pre></td></tr></table></figure>
+<h2 id="参数详解"><a href="#参数详解" class="headerlink" title="参数详解"></a>参数详解</h2><h3 id="可选参数"><a href="#可选参数" class="headerlink" title="可选参数"></a>可选参数</h3><p>只需要在参数后面加上 ? ，即代表参数可能不存在</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 参数 b 有 number 或 undefined 两种可能</span></span><br><span class="line"><span class="keyword">const</span> add = <span class="function">(<span class="params">a: <span class="built_in">number</span>, b?: <span class="built_in">number</span></span>) =&gt;</span> a + (b || <span class="number">0</span>);</span><br></pre></td></tr></table></figure>
+<h3 id="默认参数"><a href="#默认参数" class="headerlink" title="默认参数"></a>默认参数</h3><p>与 JavaScript 相同，在参数后面赋值即可。</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> add = <span class="function">(<span class="params">a: <span class="built_in">number</span>, b = 1</span>) =&gt;</span> a + b;</span><br></pre></td></tr></table></figure>
+<h3 id="剩余参数"><a href="#剩余参数" class="headerlink" title="剩余参数"></a>剩余参数</h3><p>与 JavaScript 类似，使用 <code>...</code> 来表示剩余参数</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> add = <span class="function">(<span class="params">a: <span class="built_in">number</span>, ...rest: <span class="built_in">number</span>[]</span>) =&gt;</span> rest.reduce(<span class="function">(<span class="params">a, b</span>) =&gt;</span> a + b, a);</span><br></pre></td></tr></table></figure>
+<h2 id="重载-Overload"><a href="#重载-Overload" class="headerlink" title="重载 (Overload)"></a>重载 (Overload)</h2><p>函数名相同，传入参数个数不同。</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 重载</span></span><br><span class="line"><span class="keyword">interface</span> Direction &#123;</span><br><span class="line">  top: <span class="built_in">number</span>;</span><br><span class="line">  bottom?: <span class="built_in">number</span>;</span><br><span class="line">  left?: <span class="built_in">number</span>;</span><br><span class="line">  right?: <span class="built_in">number</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">assigned</span>(<span class="params">all: <span class="built_in">number</span></span>): <span class="title">Direction</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">assigned</span>(<span class="params">topAndBottom: <span class="built_in">number</span>, leftAndRight: <span class="built_in">number</span></span>): <span class="title">Direction</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">assigned</span>(<span class="params">top: <span class="built_in">number</span>, right: <span class="built_in">number</span>, bottom: <span class="built_in">number</span>, left: <span class="built_in">number</span></span>): <span class="title">Direction</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">assigned</span>(<span class="params">a: <span class="built_in">number</span>, b?: <span class="built_in">number</span>, c?: <span class="built_in">number</span>, d?: <span class="built_in">number</span></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (b === <span class="literal">undefined</span> &amp;&amp; c === <span class="literal">undefined</span> &amp;&amp; d === <span class="literal">undefined</span>) &#123;</span><br><span class="line">    b = c = d = a;</span><br><span class="line">  &#125; <span class="keyword">else</span> <span class="keyword">if</span> (c === <span class="literal">undefined</span> &amp;&amp; d === <span class="literal">undefined</span>) &#123;</span><br><span class="line">    c = a;</span><br><span class="line">    d = b;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> &#123;</span><br><span class="line">    top: a,</span><br><span class="line">    right: b,</span><br><span class="line">    bottom: c,</span><br><span class="line">    left: d,</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">assigned(<span class="number">1</span>);</span><br><span class="line">assigned(<span class="number">1</span>, <span class="number">2</span>);</span><br><span class="line">assigned(<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>); <span class="comment">// 没有需要 3 参数的重载，但存在需要 2 或 4 参数的重载。</span></span><br><span class="line">assigned(<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>);</span><br></pre></td></tr></table></figure>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2021-03-30T15:09:38.321Z" itemprop="dateUpdated">2021-03-30 15:09:38</time>
+</span><br>
+
+
+        
+        以上内容为个人记录
+        
+    </div>
+    
+    <footer>
+        <a href="https://xuehongjie.github.io">
+            <img src="/img/avatar.jpg" alt="薛鸿杰">
+            薛鸿杰
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/typescript/">typescript</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://xuehongjie.github.io/front-end/typescript/function/&title=《typescript-function》 — 薛鸿杰的博客&pic=https://xuehongjie.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://xuehongjie.github.io/front-end/typescript/function/&title=《typescript-function》 — 薛鸿杰的博客&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://xuehongjie.github.io/front-end/typescript/function/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《typescript-function》 — 薛鸿杰的博客&url=https://xuehongjie.github.io/front-end/typescript/function/&via=https://xuehongjie.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://xuehongjie.github.io/front-end/typescript/function/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/front-end/typescript/generic/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">typescript-泛型</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/front-end/typescript/class/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">typescript-class</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <!-- <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style="display:none">
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style="display:none">
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div> -->
+    <div class="bottom">
+        <p><span>薛鸿杰 &copy; 2018 - 2021</span>
+            <span>
+                
+                <a href="https://beian.miit.gov.cn/" target="_blank">粤ICP备18140620号-1</a><br>
+                
+                <!-- Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a> -->
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://xuehongjie.github.io/front-end/typescript/function/&title=《typescript-function》 — 薛鸿杰的博客&pic=https://xuehongjie.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://xuehongjie.github.io/front-end/typescript/function/&title=《typescript-function》 — 薛鸿杰的博客&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://xuehongjie.github.io/front-end/typescript/function/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《typescript-function》 — 薛鸿杰的博客&url=https://xuehongjie.github.io/front-end/typescript/function/&via=https://xuehongjie.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://xuehongjie.github.io/front-end/typescript/function/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACKklEQVR42u3aS27DMAxFUe9/0+60gCH3PlJpK+l6VARuxJMBwY+uCz/34xl9/nzn+5ujb35+2/WJR4YMGcsySCgp4/2UzrnDU2TIkHEAg6TC9xSZvs+p77HJkCFDRsrgsPRcGTJkyEgZreQ4+PwPEq4MGTKWYvB0OXf2NWucJ0OGjL0ZPKzf//sj+w0ZMmQsxbjDhxd2PETyPT9EJUOGjK0ZPMHVguPLzjThypAh42QGT7Wc8R4WWRigYlGGDBlbM2oH19pOMmLj60w0O5QhQ8bijM4Inozy+dWK1vpThgwZhzHSxQAv8nhB2botIkOGjO0YtYaWjNI6+GLoMmTI2JrRXwz0G9da+Th5vyFDhox/yUgvNHRCj1eSnC1DhoxjGOmoq3adgv9AwVpUhgwZxzBqyY63r7VLGwgpQ4aMAxgkIZLjeYJOR3UTLlvIkCFjWQYJK11D8osUnBrsNGTIkLEdo3PdgfwvLxZJekV3RmTIkLEdo3Z8J2UHpV5ahsqQIeMABk++PLhZ7SuqCWXIkHEYozPur72ZJusJvbgMGTKWZZCg+Qqz08TyOGXIkLE34w6flEdKuk66lyFDxgmM2pozbTI7VyhqywMZMmTsx0iTbGeUny4D4n2sDBkytmaQAo7nbILpLAOGrawMGTJklAo+kpTJD5HsM2XIkCEDl2ultrZWgMqQIeMERrqS5MHxoNPmWYYMGecw5tZdZLjWWXO2FpkyZMhYj/EFNoAi4IG9FQ8AAAAASUVORK5CYII=" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+</body>
+</html>
